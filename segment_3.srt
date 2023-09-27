@@ -1,0 +1,2100 @@
+1
+00:00:00,000 --> 00:00:07,240
+So, I think that's it for functions.
+
+2
+00:00:07,240 --> 00:00:12,840
+Now we've talked about functions, arguments, return values.
+
+3
+00:00:12,840 --> 00:00:20,640
+We talked about variables, constants, data types, and keywords in Dart.
+
+4
+00:00:20,640 --> 00:00:26,320
+These are such important parts of learning how to program with Dart and Flutter that
+
+5
+00:00:26,320 --> 00:00:28,840
+I think you need to spend some time and experiment with them.
+
+6
+00:00:28,920 --> 00:00:30,360
+Do some experimentations on your own.
+
+7
+00:00:32,360 --> 00:00:33,960
+Don't take just the first name and last name.
+
+8
+00:00:33,960 --> 00:00:37,000
+Just take, for instance, someone's address, someone's age,
+
+9
+00:00:38,120 --> 00:00:41,960
+play around a little bit with different data types like integers, different numbers.
+
+10
+00:00:41,960 --> 00:00:45,880
+Have a look at the link that I provided earlier, which was here.
+
+11
+00:00:45,880 --> 00:00:47,560
+I'll bring it up again so you can see that.
+
+12
+00:00:48,520 --> 00:00:53,240
+Have a look at this link and have a look at the different examples of different data types.
+
+13
+00:00:53,320 --> 00:01:00,120
+Because in the upcoming chapters and in the rest of this course,
+
+14
+00:01:00,120 --> 00:01:03,480
+we're going to play around with a lot of different types of data types.
+
+15
+00:01:04,520 --> 00:01:08,680
+I think it's important that you have a look a little bit at the documentation as well.
+
+16
+00:01:10,840 --> 00:01:15,480
+Let's leave this chapter at this point, and then in the next chapter,
+
+17
+00:01:15,480 --> 00:01:22,040
+we're going to talk a lot more about more advanced Dart programming language features.
+
+18
+00:01:22,920 --> 00:01:25,880
+Thank you for joining me for this chapter and see you in the next one.
+
+19
+00:01:27,000 --> 00:01:30,840
+Hello, everyone, and welcome to chapter four of this Flutter course.
+
+20
+00:01:31,880 --> 00:01:36,680
+In the previous chapter, chapter three, we talked about keywords, data types, constants,
+
+21
+00:01:36,680 --> 00:01:38,680
+variables, and some basics of functions.
+
+22
+00:01:39,880 --> 00:01:44,840
+In this chapter, we are going to, as you can see on the captions here,
+
+23
+00:01:44,840 --> 00:01:48,840
+we're going to focus on control statements and collections.
+
+24
+00:01:49,800 --> 00:01:57,160
+Now, I'm assuming you're following these chapters chronologically so that you're going
+
+25
+00:01:57,800 --> 00:02:03,800
+one by one. I'm assuming then that you have your Dart project set up and that you've got
+
+26
+00:02:03,800 --> 00:02:11,240
+some sort of a simulator or emulator running. Without further ado, let's have a look at...
+
+27
+00:02:11,800 --> 00:02:17,320
+I'm actually going to bring up the captions here, and then I'm going to put my face at
+
+28
+00:02:17,480 --> 00:02:25,160
+the bottom there and bring up our project that we created in the previous chapter up here.
+
+29
+00:02:26,120 --> 00:02:30,840
+This is running at the moment. If I do a command S or a control S on Linux and Windows,
+
+30
+00:02:31,560 --> 00:02:34,040
+then as you can see here, there is a run button.
+
+31
+00:02:35,240 --> 00:02:40,280
+Then it's just going to do a hot reload, which in turn calls this build function,
+
+32
+00:02:40,280 --> 00:02:43,960
+which we don't yet know really how it works because I haven't really explained it.
+
+33
+00:02:43,960 --> 00:02:50,520
+But what we did, we just called a print function here and then our get full name function.
+
+34
+00:02:53,000 --> 00:02:56,520
+What I'm going to do here is let's remove this code from the build,
+
+35
+00:02:57,240 --> 00:03:01,320
+and let's remove everything that we wrote here as well. Keep the main function,
+
+36
+00:03:01,320 --> 00:03:06,120
+as you can see here, and then keep your stateless widget, which we're going to talk about later.
+
+37
+00:03:07,400 --> 00:03:11,800
+Instead, go and create a new function that is called void test.
+
+38
+00:03:14,760 --> 00:03:20,120
+And then in the build function, just say test. Just like that.
+
+39
+00:03:21,880 --> 00:03:26,920
+The purpose is that in this function, we're going to write most of the code in this chapter.
+
+40
+00:03:26,920 --> 00:03:29,960
+We are going to basically test some code. That's the purpose of this function.
+
+41
+00:03:32,280 --> 00:03:40,520
+Let's talk about if and else. If and else are control statements in most programming languages
+
+42
+00:03:40,520 --> 00:03:47,000
+that allow you to branch your code based on a condition. So if we, for instance,
+
+43
+00:03:47,000 --> 00:03:53,640
+in here create a final variable whose value cannot be changed, if you remember from the
+
+44
+00:03:53,640 --> 00:03:56,360
+previous chapter, whose value cannot be changed after it's been assigned to,
+
+45
+00:03:57,080 --> 00:04:07,720
+let's say final name is foo, and end it with a semicolon. Now, an if statement basically allows
+
+46
+00:04:07,720 --> 00:04:17,880
+you to check the value or a condition to be of a certain value or to be true or false, and then it
+
+47
+00:04:17,880 --> 00:04:24,840
+allows you to execute some code, and then you can also append an else statement to it, which gets
+
+48
+00:04:24,840 --> 00:04:29,960
+executed if the code or if that condition is not met. I'm going to show you how that is written.
+
+49
+00:04:30,840 --> 00:04:38,440
+The syntax for an if statement is just if, and if is a keyword. So you would say if,
+
+50
+00:04:38,440 --> 00:04:44,440
+and then you would open and close parentheses, and then you would put curly brackets like this.
+
+51
+00:04:44,440 --> 00:04:48,040
+That's the syntax of if. And in the parentheses, you would put your condition.
+
+52
+00:04:48,680 --> 00:04:55,640
+So I would say in this case if name, and I would like to, for instance, check if name is foo.
+
+53
+00:04:56,600 --> 00:05:03,080
+Now, we haven't come to operators yet. We're going to talk about operators actually soon.
+
+54
+00:05:04,280 --> 00:05:11,240
+But this is, as you can see here, we're saying final name equal to foo. This is kind of like
+
+55
+00:05:12,040 --> 00:05:19,880
+an assignment operation, and that is an operator. In Dart, it's called an operator. So there is
+
+56
+00:05:19,880 --> 00:05:23,960
+also, and since this is an assignment, we don't want to actually assign anything to name. We want
+
+57
+00:05:24,280 --> 00:05:30,600
+to check if it's of a certain value, and that is with this conditional operator. Equal, equal.
+
+58
+00:05:32,040 --> 00:05:37,080
+And then you would just say, okay, if it's foo, then, for instance, print.
+
+59
+00:05:39,560 --> 00:05:46,280
+Yes, this is foo. And then a semicolon to end it. However, if this condition is not met,
+
+60
+00:05:46,280 --> 00:05:52,680
+you may want to execute another piece of code, and then you can just do else. Like that.
+
+61
+00:05:53,960 --> 00:06:01,160
+Then you would just say, no, this is not foo. And a semicolon. So I'm just going to do command S,
+
+62
+00:06:02,200 --> 00:06:06,440
+and you can see the value or the string, yes, this is foo printed to the screen,
+
+63
+00:06:06,440 --> 00:06:12,920
+or to the terminal here, or to the debug console. You can have multiple statements in here. So you
+
+64
+00:06:12,920 --> 00:06:17,720
+can have more print statements in here. You can just do anything you want basically in here.
+
+65
+00:06:18,360 --> 00:06:25,720
+And the same goes for else. Now, there is a possibility to write if statements kind of
+
+66
+00:06:25,720 --> 00:06:31,080
+without the curly brackets, but you don't see them that often, and I recommend that you actually
+
+67
+00:06:31,080 --> 00:06:36,920
+always try to, as a convention, do with the curly brackets if you can. However, it is possible that
+
+68
+00:06:36,920 --> 00:06:43,160
+inside a code base that you will work on with your colleagues, it is decided that it's okay to have
+
+69
+00:06:44,120 --> 00:06:49,480
+if statements without curly brackets where they are very simple and one-liners, basically.
+
+70
+00:06:50,520 --> 00:06:55,320
+So let me show you an example of that. You could just say, if name is foo,
+
+71
+00:06:57,800 --> 00:07:04,200
+and you would just say print, yes, this is foo. And this is completely accepted as well,
+
+72
+00:07:04,200 --> 00:07:11,720
+because it's a one-liner. But if you then say, okay, I want to have another line, print hello world,
+
+73
+00:07:13,320 --> 00:07:21,080
+you can see it goes to the next line, meaning that this line right here will be executed no matter
+
+74
+00:07:21,080 --> 00:07:25,480
+your condition up there. So this is completely detached from your if statement up here.
+
+75
+00:07:26,840 --> 00:07:30,440
+I just realized that it is quite important for me to be able to show line numbers.
+
+76
+00:07:31,240 --> 00:07:36,120
+And by default, your editor probably has line numbers enabled. I usually disable line numbers
+
+77
+00:07:36,680 --> 00:07:42,360
+when I'm working myself, basically. But when talking about code with other people,
+
+78
+00:07:42,360 --> 00:07:46,200
+it's quite useful to have line numbers, because I can then tell you, oh, look at line nine or
+
+79
+00:07:46,200 --> 00:07:56,520
+look at line 10. Okay. So that's the basic of if and else. Now, you can also have if right after
+
+80
+00:07:56,520 --> 00:08:06,920
+else. So an example of that is, for instance, to say if name is foo, and then you do some code,
+
+81
+00:08:06,920 --> 00:08:15,720
+all right? You say print, yes, it is foo. Not food. After the curly bracket, then you would say
+
+82
+00:08:15,720 --> 00:08:22,840
+else. And then you can then say another if, else if. All right? And then after if comes the
+
+83
+00:08:23,400 --> 00:08:28,760
+parenthesis and a curly bracket, if you remember from the if before. It is the exact same syntax
+
+84
+00:08:28,760 --> 00:08:34,760
+as it is here. So there's pretty much no difference. You can see if and then if.
+
+85
+00:08:35,720 --> 00:08:41,160
+And then you put your condition in here. You would just say if name. And then you may just want to
+
+86
+00:08:41,160 --> 00:08:48,760
+say is not. And that's another operator. It's basically is a not operator. So it's checking
+
+87
+00:08:48,760 --> 00:08:54,120
+to make sure that this name is not of the value that you provide to the right-hand side.
+
+88
+00:08:55,000 --> 00:09:05,640
+And then you can say bar. And print. This value is not bar. Else. And then you can wrap it up,
+
+89
+00:09:05,640 --> 00:09:14,200
+and you can say print. I don't know what this is. Now, I'm so glad I actually accidentally ran into
+
+90
+00:09:14,200 --> 00:09:19,240
+this issue. As you can see now, the editor is kind of going crazy, and Dart's not understanding
+
+91
+00:09:19,240 --> 00:09:24,840
+and Dart's not understanding what this statement is. And as we talked about it previously,
+
+92
+00:09:26,120 --> 00:09:32,520
+strings in Dart are preferred to have to be kind of like created with single codes. However,
+
+93
+00:09:32,520 --> 00:09:37,720
+if your string in itself contains a single code, for instance, in this case, the word don't
+
+94
+00:09:39,080 --> 00:09:45,720
+contains a single code, then Dart kind of gets confused. Like, okay, does the string end here?
+
+95
+00:09:45,720 --> 00:09:51,720
+You can see up until this point, it's green. So it's thinking, oh, the string ends here,
+
+96
+00:09:51,720 --> 00:09:58,200
+but what is all of this then? That follows. If you have that problem, there are two ways of
+
+97
+00:09:58,200 --> 00:10:08,680
+fixing that. Either you escape your single code, and that is a software kind of development lingo.
+
+98
+00:10:08,680 --> 00:10:18,520
+Escape. If you hear that, it pretty much just means that you are kind of wrapping it in a way
+
+99
+00:10:19,560 --> 00:10:24,360
+that Dart understands that you don't mean it literally. You don't mean that I want to
+
+100
+00:10:24,360 --> 00:10:29,720
+end my string here, except that this needs to be escaped and put in the string as its own value.
+
+101
+00:10:29,720 --> 00:10:34,920
+Basically, it's kind of difficult to explain, but I think you know what I mean. So that's one way
+
+102
+00:10:34,920 --> 00:10:40,200
+of doing it. It's a little bit dirty. So in case you run into this issue, it's best to actually
+
+103
+00:10:40,200 --> 00:10:45,640
+wrap your entire string in double quotes. And this way, then Dart understands that whatever
+
+104
+00:10:45,640 --> 00:10:51,800
+comes in here is okay. Like a single code is completely okay. Unless you actually want to have
+
+105
+00:10:52,440 --> 00:10:59,480
+a double quotes in your string that is enclosed with double quotes again. So you'll see if I
+
+106
+00:10:59,480 --> 00:11:04,680
+put a double quote here, then Dart goes crazy. So you can escape it with a backslash like that.
+
+107
+00:11:05,720 --> 00:11:10,440
+So if you have single quotes and double quotes in your string, then you will have to kind of
+
+108
+00:11:10,440 --> 00:11:15,240
+pick a convention. Either you enclose the entire string in single quotes and escape your single
+
+109
+00:11:15,240 --> 00:11:21,560
+quotes inside that string and let the double quotes live, or you enclose your entire string
+
+110
+00:11:21,560 --> 00:11:30,360
+in double quotes and then you will escape your double quotes in the string. I hope that makes
+
+111
+00:11:30,360 --> 00:11:40,680
+sense. So that is if and else in a nutshell. But before I move on, I kind of want to explain
+
+112
+00:11:40,680 --> 00:11:45,800
+an important concept here in that when Dart executes this code, it kind of goes by line by
+
+113
+00:11:45,800 --> 00:11:51,320
+line. So it starts with line seven, the execution of this test function. Then it comes here and
+
+114
+00:11:51,320 --> 00:11:57,560
+it says, okay, name is foo, all right. And it's actually saying that we prefer const. So let me
+
+115
+00:11:57,560 --> 00:12:07,080
+change that to const. And it says, okay, if name is foo, all right, then it comes over here. But
+
+116
+00:12:07,080 --> 00:12:15,000
+let's just change that to foo with triple o. Actually, yeah, no, let's not do that. Let's
+
+117
+00:12:15,000 --> 00:12:22,440
+keep it as foo. So it says if name is foo. Then it says, yeah, that's true. And then it goes here.
+
+118
+00:12:22,440 --> 00:12:31,720
+However, as you can see, the line number 11 also says if name is not bar, then it should execute
+
+119
+00:12:31,720 --> 00:12:39,960
+this as well. And you can see that foo is not bar. So this condition is also true. However,
+
+120
+00:12:39,960 --> 00:12:47,080
+this will never be executed. And that is because when Dart goes inside these curly brackets,
+
+121
+00:12:47,080 --> 00:12:51,800
+then it says, okay, I did what I had to do. I did my print statement. The rest I ignore.
+
+122
+00:12:52,680 --> 00:13:00,600
+So an if statement is kind of like, it puts a stop. When it falls into one of these if statements,
+
+123
+00:13:00,600 --> 00:13:07,000
+it kind of says, okay, I did my job in this entire if else block, then I will execute the code after
+
+124
+00:13:07,000 --> 00:13:12,680
+that. So if I clear the console here and press command S, you can see it only says yes, it is foo.
+
+125
+00:13:12,680 --> 00:13:21,400
+It doesn't come here. However, if you change this condition so that the Dart compiler or
+
+126
+00:13:22,040 --> 00:13:26,760
+basically the execution of the program doesn't fall into line number 10, it will eventually fall
+
+127
+00:13:26,760 --> 00:13:32,600
+to line number 12. So you can see it says this value is not bar. So when you're writing your if
+
+128
+00:13:32,600 --> 00:13:36,840
+statement and else statements, just be careful with that. Just know that it's kind of like as
+
+129
+00:13:36,840 --> 00:13:42,040
+soon as the code jumps into one of those branches, it doesn't go to the rest of the branches and
+
+130
+00:13:42,040 --> 00:13:56,520
+checks them basically. All right. Okay. That was for if and else. Now let me check that in my notes
+
+131
+00:13:56,520 --> 00:14:07,640
+that we've talked about that. What we need to do now is to talk about operators. Operators,
+
+132
+00:14:07,720 --> 00:14:14,600
+there are three different types of operators. There are prefix operators, infix operators,
+
+133
+00:14:14,600 --> 00:14:27,320
+and suffix operators. And I will explain them to you how they work. I think to explain operators
+
+134
+00:14:27,320 --> 00:14:32,120
+probably is best that we talk about numbers. So let's go in this test function and delete
+
+135
+00:14:32,280 --> 00:14:37,480
+in this test function and delete everything that we've written here. And let me just say final
+
+136
+00:14:38,840 --> 00:14:47,160
+age is 20. All right. So now we created a variable whose value cannot be changed after
+
+137
+00:14:47,160 --> 00:14:52,440
+it's been assigned to because we create as a final a variable whose value is 20. All right.
+
+138
+00:14:52,440 --> 00:14:58,440
+Now if you want to calculate half of this value, how would you do that? Well, there is an operator
+
+139
+00:14:58,440 --> 00:15:05,800
+for that and that is a division operator. So you would just say, for instance, final half of age.
+
+140
+00:15:05,800 --> 00:15:10,600
+As you can see, we're using camel case as I explained in the previous chapter. An easy way
+
+141
+00:15:10,600 --> 00:15:19,400
+to do camel case is to say half of age is writing in English, change the first letter of like this
+
+142
+00:15:19,400 --> 00:15:23,880
+here. Change the first letter of all the words except for the first word to uppercase and then
+
+143
+00:15:23,880 --> 00:15:30,200
+remove all the spaces. That's camel case. So half of age is age. And then there is a great
+
+144
+00:15:30,200 --> 00:15:37,480
+operator in Dart called a division operator. And then you would say two. All right. And then
+
+145
+00:15:37,480 --> 00:15:46,200
+you could just say print half of age. So command S. And that says 10. All right. So that's the
+
+146
+00:15:46,200 --> 00:15:52,440
+division operator. And then you will have, let's say, final double the age.
+
+147
+00:15:54,840 --> 00:16:01,480
+And then we will say age multiplied by two. It's kind of like a star. That is an operator. And you
+
+148
+00:16:01,480 --> 00:16:10,600
+can see these both operators, this one, the division and the multiplication, multiplication,
+
+149
+00:16:10,680 --> 00:16:17,560
+it's a bit difficult to say, operators are infix operators. And an infix operator is an operator
+
+150
+00:16:17,560 --> 00:16:21,880
+that has two parameters, one to its right and one to its left. I don't know how you can actually,
+
+151
+00:16:22,600 --> 00:16:29,080
+yeah, one to each side. I don't know if my video is mirrored. So if my right hand is actually
+
+152
+00:16:29,080 --> 00:16:34,920
+right hand on your side as well. So I don't know. Yes, it is probably. So
+
+153
+00:16:34,920 --> 00:16:44,920
+these are infix operators when they have two values, one to each side. However, they're also
+
+154
+00:16:47,000 --> 00:16:55,080
+prefix operators. And an example of that is, for instance, if I said final, age minus one.
+
+155
+00:16:56,440 --> 00:17:04,440
+Actually, we change this to var. I'll explain soon why. And if we said minus, minus age,
+
+156
+00:17:05,640 --> 00:17:11,880
+now, this is an example of a prefix operator. And a prefix operator is an operator that
+
+157
+00:17:12,440 --> 00:17:19,320
+it comes before whatever it has to do its work on. And in this case, this minus,
+
+158
+00:17:19,320 --> 00:17:23,160
+minus operator, what it does is that it takes the value that comes after it,
+
+159
+00:17:24,440 --> 00:17:32,600
+it decreases that value by one, and then it returns its result back to the left-hand side.
+
+160
+00:17:32,600 --> 00:17:38,760
+So in this case, the interpreter comes here and says, okay, you want to calculate something.
+
+161
+00:17:38,760 --> 00:17:45,800
+Okay. It's equal to, oh, a prefix operator that takes a variable here. And it says, okay,
+
+162
+00:17:45,800 --> 00:17:55,000
+what is age? It's 20. Minus one is 19. Puts it in here. And it also puts that 19 in an age. So
+
+163
+00:17:55,640 --> 00:18:01,640
+I think so, at least. So if we say print age and print age minus one, now both should kind of be
+
+164
+00:18:01,640 --> 00:18:09,160
+19. And you can see it says twice. You see two, 19. So that kind of means it's twice. So Flutter
+
+165
+00:18:09,160 --> 00:18:14,440
+has this great ability not to duplicate, basically, log statements or print statements.
+
+166
+00:18:16,360 --> 00:18:22,920
+So we have, I mean, there are some really great operators in Dart. And that is the plus operator.
+
+167
+00:18:24,120 --> 00:18:30,040
+And then you have the minus division multiplication. And then you have the logical
+
+168
+00:18:30,600 --> 00:18:34,920
+operators to check if a value from the left is equal to the value to the right. So
+
+169
+00:18:35,720 --> 00:18:41,880
+these are the basics of the operators in Dart. So you don't have to know so much more about these
+
+170
+00:18:41,880 --> 00:18:50,120
+for now. I would say you can get really far with these. And a lot of these operators actually work
+
+171
+00:18:50,120 --> 00:18:56,760
+not only on numbers, but also on strings. And for instance, this is one of the cool features of Dart,
+
+172
+00:18:56,760 --> 00:19:02,040
+which I absolutely love. I think it was just such a great idea for them to implement this.
+
+173
+00:19:04,920 --> 00:19:09,320
+If you're not coming from a software development background, you may not know this. But if you're
+
+174
+00:19:09,320 --> 00:19:12,680
+coming, for instance, from a design background, also, you would notice that sometimes when you're
+
+175
+00:19:12,680 --> 00:19:19,080
+creating designs or any screen and you want to show that design to someone, like a product owner,
+
+176
+00:19:19,960 --> 00:19:25,080
+you want to actually populate the text inside your design with some lorem ipsum.
+
+177
+00:19:25,880 --> 00:19:31,000
+And lorem ipsum basically has a huge history of where it comes from. But it's usually some sort
+
+178
+00:19:31,000 --> 00:19:37,160
+of a dummy text that you want to place inside your design so that you can display and show it to
+
+179
+00:19:37,160 --> 00:19:42,760
+someone. And a lot of developers, like in many languages, when they want to display some text
+
+180
+00:19:42,760 --> 00:19:46,760
+and they don't know what to say, like, we're just testing stuff. I just want to display some text.
+
+181
+00:19:46,760 --> 00:19:53,400
+They go and grab lorem ipsum and then put it in their code. But Dart has gone to the next step
+
+182
+00:19:53,400 --> 00:19:57,800
+and said, OK, we don't need that. So what you can do, you can say, for instance, name is foo.
+
+183
+00:19:59,240 --> 00:20:08,040
+That's a string name. But you can say name times 20 is name times 20. You can literally say multiply
+
+184
+00:20:08,040 --> 00:20:16,200
+a string by 20. And what that does is that it says foo 20 times. So if I say print name times 20,
+
+185
+00:20:17,000 --> 00:20:22,920
+you can see it says foo 20 times. So it's a great feature. You can say foo, bar,
+
+186
+00:20:22,920 --> 00:20:29,400
+baz, and then just say times 100. And yeah, it just, that's it,
+
+187
+00:20:29,400 --> 00:20:39,960
+copies it for you 100 times in names time 100, for instance. So that is a, that is
+
+188
+00:20:40,120 --> 00:20:47,880
+shortly said, that is the basics of operators in Dart. OK, I'm going to delete that code.
+
+189
+00:20:49,560 --> 00:20:59,160
+I'm going to mark in my notes that we've talked about that. Now, I'm just going to quickly also
+
+190
+00:21:00,120 --> 00:21:11,560
+mention that we can also create custom operators, to be honest with you. And I don't think it is
+
+191
+00:21:11,560 --> 00:21:18,760
+completely all right right now to talk about custom operators. I think it's kind of like a topic to
+
+192
+00:21:18,760 --> 00:21:23,640
+talk about later. So I actually just moved it in my notes that we don't need to talk about it right
+
+193
+00:21:23,720 --> 00:21:29,640
+now because we have to know a little bit about classes and objects so that we can,
+
+194
+00:21:29,640 --> 00:21:33,640
+after we've created our own class, then we can create custom operators as well. So
+
+195
+00:21:34,680 --> 00:21:38,280
+I don't think it's completely appropriate to talk about right now. But just know that
+
+196
+00:21:38,280 --> 00:21:42,680
+in the future, you can also create your own operators and then like, or you can also
+
+197
+00:21:42,680 --> 00:21:47,400
+override like different operators and how they work with different objects. So it is really fun.
+
+198
+00:21:48,200 --> 00:21:53,800
+But that's that. Let's just leave operators to that for now.
+
+199
+00:21:55,800 --> 00:21:59,160
+Now, the next topic that I wanted to talk about is lists.
+
+200
+00:22:01,400 --> 00:22:13,560
+And lists in Dart is a series of things that are similar to each other and they are placed inside
+
+201
+00:22:13,560 --> 00:22:18,360
+a list, as you would have, for instance, on a piece of paper and you could write your shopping
+
+202
+00:22:18,360 --> 00:22:27,320
+list or like a Christmas shopping list or whatever, and it's numbered. So these are called lists in
+
+203
+00:22:27,320 --> 00:22:38,280
+Dart. So for instance, if you say foo, and then bar, and then baz. As you can see, Dart doesn't
+
+204
+00:22:38,840 --> 00:22:42,280
+like this syntax at the moment. It says, okay, what are these? Like, what is this
+
+205
+00:22:44,280 --> 00:22:50,920
+comma here? The way to tell Dart that this is a list of things that are like in place one,
+
+206
+00:22:50,920 --> 00:22:57,720
+two, three is by placing them inside square brackets and then a semicolon, of course.
+
+207
+00:22:58,120 --> 00:23:07,080
+Now, as I've talked about it before, just now, actually, lists have indexes in that they all
+
+208
+00:23:07,080 --> 00:23:12,920
+have their own placement inside the list. All these objects, as we call them, they have their
+
+209
+00:23:12,920 --> 00:23:20,200
+placements inside the list. And you may think that object number one is foo and then object number
+
+210
+00:23:20,200 --> 00:23:27,720
+two is bar and number three is baz. And that's correct. But indexes in, I mean, all the programming
+
+211
+00:23:27,720 --> 00:23:37,400
+languages that I've worked with, C++, C, Rust, Dart, Swift, JavaScript, they pretty much all
+
+212
+00:23:37,400 --> 00:23:44,040
+start at the index of zero. And that is so important to understand because like the placement
+
+213
+00:23:44,040 --> 00:23:54,200
+of this object called foo inside this list is not one. Its index is zero. And that is why lists are
+
+214
+00:23:54,200 --> 00:24:01,000
+called zero-based and their indexes are called zero-based indexes. So you've got to be careful
+
+215
+00:24:01,000 --> 00:24:07,480
+with that. And we're going to talk about indexes soon, actually. So let's just say final names is
+
+216
+00:24:07,480 --> 00:24:14,840
+that. Now, if I want to extract foo from here, I'm just going to say final foo is names at the
+
+217
+00:24:14,840 --> 00:24:20,200
+index of zero, right? And I'm just going to print it. I'm just going to say print foo. And you'll
+
+218
+00:24:20,200 --> 00:24:26,440
+see foo printed here. Now, if I say I want to get baz, then I'm going to say print, sorry,
+
+219
+00:24:27,320 --> 00:24:33,880
+index of three. And you'll see, oh, sorry, index of three. And you'll see, oh, sorry,
+
+220
+00:24:34,040 --> 00:24:40,200
+index of two, because it's the third item. But since indexes are zero-based, then it's index of
+
+221
+00:24:40,200 --> 00:24:46,840
+two. I made the mistake myself. So command S and you'll get baz. And I actually want to go back to
+
+222
+00:24:46,840 --> 00:24:51,720
+this three and then command S. So you can see what happened here. You'll see you'll get something
+
+223
+00:24:51,720 --> 00:24:59,640
+called a range error, which is an exception, an exception in Dart and many other programming
+
+224
+00:24:59,640 --> 00:25:05,160
+languages is when things go wrong so that the language doesn't really know anymore what you
+
+225
+00:25:05,160 --> 00:25:11,400
+mean. And in this case, you can see this through an exception at the language level or at the
+
+226
+00:25:11,400 --> 00:25:17,560
+library's level where it says, there are no four items in this array or in this list, because the
+
+227
+00:25:17,560 --> 00:25:25,560
+index of three indicates four items. Item number one in the list has the index of zero, and then
+
+228
+00:25:25,720 --> 00:25:36,200
+items. Item number two has the index of one. Item number three has the index of two. And item
+
+229
+00:25:36,200 --> 00:25:43,800
+number four has the index of three. And there are only three objects in this array or in this list.
+
+230
+00:25:43,800 --> 00:25:52,280
+So index zero, one, two. So that's it. And index of number three is non-existent. And that is why
+
+231
+00:25:52,280 --> 00:26:01,880
+we're getting this invalid value, not in inclusive range zero to two. So that's how you access items
+
+232
+00:26:01,880 --> 00:26:08,040
+inside a list. And this is how you actually create a list, okay? So you say list of items,
+
+233
+00:26:08,040 --> 00:26:16,440
+which is full bar baz. So you can also, there are some convenient properties on lists that you can,
+
+234
+00:26:16,440 --> 00:26:23,720
+for instance, say, final length. So if you want to know how many items are in this list, you can
+
+235
+00:26:23,720 --> 00:26:32,520
+also say names, dot, and then you would say length. And we're going to talk a little bit about dot now
+
+236
+00:26:32,520 --> 00:26:39,960
+as well, because I think it's so important to understand what dot is. Dot in Dart and in many
+
+237
+00:26:39,960 --> 00:26:46,440
+other programming languages is a way to drill in to something to extract something else from it.
+
+238
+00:26:46,440 --> 00:26:57,240
+And in this case, names is a list. And all lists in Dart have something called properties. Length
+
+239
+00:26:57,240 --> 00:27:07,080
+is a property of the list data type in Dart. And that means every list in Dart has a property
+
+240
+00:27:07,080 --> 00:27:12,760
+called length that is automatically calculated for you. You don't have to do anything. As you
+
+241
+00:27:12,760 --> 00:27:20,280
+enter values in this list, this length is going to then return the right value to you. So I'm just
+
+242
+00:27:20,280 --> 00:27:24,680
+going to talk about that a little bit more. So I'm just going to say print names length. It's going
+
+243
+00:27:24,680 --> 00:27:31,400
+to say, you'll see here, let me scroll a little bit, it'll say three, three items in this array.
+
+244
+00:27:32,360 --> 00:27:36,360
+I'm going to change the names list to var so that we can actually
+
+245
+00:27:39,000 --> 00:27:45,880
+change its contents and mutate it. I just want to add a new name to this names. And I will just say
+
+246
+00:27:45,880 --> 00:27:52,280
+add. It's a function, as you can see, because it has parentheses right after it. And I will say
+
+247
+00:27:54,040 --> 00:28:00,600
+my name. And then semicolon to end the statement. Now, if I say print names length right after this
+
+248
+00:28:00,600 --> 00:28:07,800
+statement, you guessed it. Oh, I can see, actually, you may not see all the print statements
+
+249
+00:28:07,800 --> 00:28:13,880
+because this text is right there. So let me resize my Visual Studio code a little bit so you can see
+
+250
+00:28:13,880 --> 00:28:21,880
+things a little bit better. Sorry about that. So now we have names length here. And you can see
+
+251
+00:28:21,880 --> 00:28:33,160
+the second time around it said four. So when you say dot after the name of a variable,
+
+252
+00:28:33,160 --> 00:28:37,400
+and that means it can be a constant, a variable, or a final variable, after you put dot
+
+253
+00:28:38,200 --> 00:28:44,280
+after its name, you're accessing different properties or different functions inside that
+
+254
+00:28:44,280 --> 00:28:50,120
+thing. So it's kind of like an accessor. It allows you to drill down inside an object and grab things
+
+255
+00:28:50,120 --> 00:28:59,320
+out of it, or maybe make that object do something for you. So I think that's good enough, to be
+
+256
+00:28:59,320 --> 00:29:03,960
+honest with you, about lists. I don't want to go too much into details and scare people about
+
+257
+00:29:04,680 --> 00:29:11,800
+all the different things you can do with lists. But there is great documentation on Dart's own
+
+258
+00:29:11,800 --> 00:29:16,360
+website. All you have to do is just to Google or duck, duck, go, or whatever you want to use, bing
+
+259
+00:29:17,080 --> 00:29:23,960
+your way through and just search for dart arrays documentation, or just dart arrays, and then you
+
+260
+00:29:23,960 --> 00:29:29,160
+will find lots of information about it. Or sorry, dart lists, because in dart they're actually
+
+261
+00:29:29,160 --> 00:29:34,120
+called lists. In some other programming languages they are called arrays, but those names can be
+
+262
+00:29:34,120 --> 00:29:38,680
+used interchangeably, to be honest with you. Lists and arrays are kind of like almost the same thing.
+
+263
+00:29:38,680 --> 00:29:50,440
+So all right, that was lists in dart. I'm going to take it in my notes so that we know we've talked
+
+264
+00:29:50,440 --> 00:29:59,480
+about it. The next topic that I want to talk about in this video are things called sets.
+
+265
+00:30:02,040 --> 00:30:08,520
+All right, and as you can see in the caption I've written here is a list of unique things.
+
+266
+00:30:08,760 --> 00:30:18,280
+Whereas lists were lists of homogeneous things, sets are lists of unique things. So
+
+267
+00:30:20,920 --> 00:30:25,000
+I think the best way actually to explain sets is just to jump right into it.
+
+268
+00:30:25,000 --> 00:30:32,440
+So the syntax for set is with a curly bracket. Actually, I think it is.
+
+269
+00:30:32,440 --> 00:30:39,640
+Yeah, I think so. So let's say final names, and I'm just going to say curly bracket foo,
+
+270
+00:30:40,760 --> 00:30:47,880
+and then end that. Okay, just like that. Now if I type names here, you will see that the suggestion
+
+271
+00:30:47,880 --> 00:30:54,040
+provided here, or the information provided by Visual Studio Code says names is a set of string.
+
+272
+00:30:54,840 --> 00:31:00,040
+We talked about this in the previous chapter, that when I say final names,
+
+273
+00:31:00,040 --> 00:31:07,400
+or final something, name, for instance, is foo, I'm kind of telling Dart to create a variable
+
+274
+00:31:08,680 --> 00:31:14,680
+whose reference name is name, and its value is foo, and Dart automatically understand that the
+
+275
+00:31:14,680 --> 00:31:22,840
+data type of this value is string, because its data is string. So you don't have to say final string
+
+276
+00:31:22,840 --> 00:31:30,280
+is string. Although you could do that, but let's change this to const as well.
+
+277
+00:31:32,680 --> 00:31:37,160
+You don't have to actually say this is a string, because Dart understands it automatically.
+
+278
+00:31:37,160 --> 00:31:41,560
+So you just remove the data type if that's what you want to do, which is what I actually prefer
+
+279
+00:31:41,560 --> 00:31:47,640
+to do instead of being too verbose, unless you have a really good reason to provide the data type.
+
+280
+00:31:47,640 --> 00:31:57,560
+Anyways, let's go back to sets. So we were here. And in the same way that we created a string,
+
+281
+00:31:57,560 --> 00:32:03,400
+and then Dart automatically understood the data type, by putting curly brackets here,
+
+282
+00:32:03,400 --> 00:32:07,800
+or curly braces here, and putting some data inside that, Dart automatically understand,
+
+283
+00:32:07,800 --> 00:32:12,840
+okay, this is a set of some stuff in here, and this stuff for now just looks like a string.
+
+284
+00:32:12,840 --> 00:32:24,440
+So if I say foo bar as, Dart says, okay, this is fine. But if I go in here and I say foo again,
+
+285
+00:32:24,440 --> 00:32:30,280
+you can see I automatically get an error message saying two elements in a constant set literal
+
+286
+00:32:30,280 --> 00:32:35,320
+cannot be equal, because it understands that this foo has already repeated there.
+
+287
+00:32:35,880 --> 00:32:42,120
+Okay. So let's remove foo from here, and let's do an experiment. Let's change these names to var
+
+288
+00:32:42,120 --> 00:32:49,640
+so that we can actually change its contents. Then go to the next line and say names, if I can
+
+289
+00:32:49,640 --> 00:32:59,160
+spell, and say add, and then say foo again. And then say names, add var, and then set add vas,
+
+290
+00:32:59,560 --> 00:33:07,800
+or sorry, names, add vas. And then we'll say print names. Okay. And I'm going to clear the logs with
+
+291
+00:33:07,800 --> 00:33:15,000
+this button right here, and then I'm going to press command S. And you can see that the set
+
+292
+00:33:15,000 --> 00:33:24,440
+is still foo bar vas. Nothing changed really there. That is one of the greatest properties of
+
+293
+00:33:25,080 --> 00:33:33,080
+lists, of sets in Dart, and in pretty much every other programming language that supports sets,
+
+294
+00:33:33,080 --> 00:33:43,080
+and that's sets ensure always that their data is not duplicated. And this is, I mean, there's
+
+295
+00:33:43,080 --> 00:33:48,360
+lots of magic happening in the background that I haven't really talked about. I mean, for instance,
+
+296
+00:33:49,240 --> 00:33:55,720
+the question that you may ask, how does Dart know foo is the same as foo? Does it compare them?
+
+297
+00:33:55,720 --> 00:34:03,720
+Yes, it kind of does, actually. It's internally doing a comparison between these things, but we
+
+298
+00:34:03,720 --> 00:34:10,520
+never told it how that comparison should work. And that is because, if you remember from operators,
+
+299
+00:34:10,520 --> 00:34:17,320
+when we talked about it, the string, now we haven't talked about classes. Well, I'm just going to say
+
+300
+00:34:17,320 --> 00:34:29,240
+strings in Dart already know how they should be compared with other strings. So, they kind of
+
+301
+00:34:29,240 --> 00:34:34,120
+have this logic of hash codes and comparison operators that they know exactly like, okay,
+
+302
+00:34:35,080 --> 00:34:42,680
+given this string, am I the same as that? Sorry, given what I am and this new thing that you're
+
+303
+00:34:42,680 --> 00:34:47,080
+providing me, I'm foo and you're saying foo, am I the same as foo? And then it says yes or no.
+
+304
+00:34:47,080 --> 00:34:56,920
+So, that is what sets are doing internally, but we don't actually see that. So, just know for now
+
+305
+00:34:56,920 --> 00:35:05,400
+that sets in Dart allow you to create unique list of things, okay? And then you may also be a little
+
+306
+00:35:05,400 --> 00:35:14,600
+bit tempted to go and say, okay, I have things here. Let's say const things is equal to foo and
+
+307
+00:35:14,680 --> 00:35:22,680
+then you say one. And this will also work. And that is because Dart has the concept of object
+
+308
+00:35:22,680 --> 00:35:26,920
+as well. You can see, you'll see things and it'll say, oh, now it's a set of object.
+
+309
+00:35:28,440 --> 00:35:34,440
+We haven't talked about objects yet. And if I look at my notes, I can see that we're going to
+
+310
+00:35:34,440 --> 00:35:40,600
+talk about objects in chapter six and we're right now in chapter four. So, we haven't really
+
+311
+00:35:40,600 --> 00:35:47,160
+gotten to that point to talk about objects. And I don't want to really scare you about objects
+
+312
+00:35:47,160 --> 00:35:55,080
+and what they actually are, but just know that there is a hierarchy of data types. So, you have
+
+313
+00:35:55,080 --> 00:36:02,440
+object and then you have data types that kind of derive their functionality from objects. So,
+
+314
+00:36:03,000 --> 00:36:09,000
+here sits object and then here sits string, integer, double, et cetera. And then you have
+
+315
+00:36:09,000 --> 00:36:13,880
+sets and blah, blah, blah. Now, when you were here, when you were first here and you said,
+
+316
+00:36:13,880 --> 00:36:20,120
+I have foo, bar, baz, all strings, then Dart was like, okay, this is a set of strings.
+
+317
+00:36:20,760 --> 00:36:25,160
+But then you said, oh, I have a string and I have an integer, which is a number.
+
+318
+00:36:26,120 --> 00:36:31,480
+Now, Dart was like, oops, I have, I can't, I mean, I don't really, I can't say this is a list of
+
+319
+00:36:31,480 --> 00:36:35,880
+strings and integers. That's not possible in Dart. So, it says I'm going to take the common
+
+320
+00:36:35,880 --> 00:36:43,160
+denominator type that sits above them as their parent to specify what these things are. Okay.
+
+321
+00:36:43,160 --> 00:36:48,840
+And that is kind of like the same thing that we do in real life in that if I give you, for instance,
+
+322
+00:36:51,400 --> 00:36:57,960
+two candies, like a Twix bar, then you would say, this is a Twix bar. That's one thing.
+
+323
+00:36:58,680 --> 00:37:04,760
+If I give you 10 Twix bars, then you will say a lot of Twix bars or 10 Twix bars. If I just give
+
+324
+00:37:04,760 --> 00:37:10,280
+you a bunch of Twix bars, you'll be like, oh, that's a bunch of Twix bars. But if I go and
+
+325
+00:37:11,560 --> 00:37:19,560
+like blend like lots of Twix bars, Mars bars, whatever, all the sweets into a bag and I give
+
+326
+00:37:19,560 --> 00:37:25,800
+you that bag, what do you call it? You don't say, oh, this is a bag of Twix and Snickers and this is
+
+327
+00:37:26,600 --> 00:37:32,600
+and Mars bar. No, you would probably just say candy. It's a bag of candies. And that's what
+
+328
+00:37:32,600 --> 00:37:38,600
+Dart is doing here. Saying, oh, you threw a lot of stuff in here. I can't comprehend it. This is
+
+329
+00:37:38,600 --> 00:37:45,640
+a set of objects. So we do that in real life. And that's what Dart is doing here. So just
+
+330
+00:37:45,640 --> 00:37:49,720
+when you see object, just know that, oh, Dart doesn't really know what this is anymore.
+
+331
+00:37:50,680 --> 00:37:58,120
+Or it kind of knows what it is. It's just a bunch of stuff. So that's what object in this case means.
+
+332
+00:37:58,120 --> 00:38:03,160
+So that was a weird comparison, maybe. But I hope you get what I mean.
+
+333
+00:38:05,080 --> 00:38:08,520
+And if you see me looking here, it's just because I'm looking at my notes to ensure that I've
+
+334
+00:38:08,520 --> 00:38:16,040
+explained the things that I've set out to explain. So talked a little bit about hash codes and sets.
+
+335
+00:38:16,040 --> 00:38:23,240
+We don't have to go into details about that. So now let's go and talk a little bit about maps.
+
+336
+00:38:23,240 --> 00:38:34,120
+Now let's go and talk a little bit about maps. And maps are one of my favorite data structures
+
+337
+00:38:34,120 --> 00:38:38,760
+in any programming language that supports them. Pretty much almost all modern programming languages
+
+338
+00:38:38,760 --> 00:38:47,720
+support maps. So a map is a data structure. As you can see here, maps are used to hold
+
+339
+00:38:47,720 --> 00:38:50,280
+key value pairs of information. And what that means is,
+
+340
+00:38:53,160 --> 00:38:58,680
+let's say that you want to explain a person using their different properties.
+
+341
+00:39:00,520 --> 00:39:12,520
+Then you would say age, their gender, their hair color, their height, whatever, name, all of that.
+
+342
+00:39:12,520 --> 00:39:21,240
+So these are kind of like your keys. So you would explain the properties of that person
+
+343
+00:39:21,240 --> 00:39:26,760
+using those keys. And all those keys have their values. So if you say height, then you would say
+
+344
+00:39:26,760 --> 00:39:36,360
+like 180. And if you say weight, then you would say like 70 kilograms. So these are key values.
+
+345
+00:39:36,360 --> 00:39:41,720
+The keys are the properties of that person and the values are the values of those properties.
+
+346
+00:39:42,680 --> 00:39:49,560
+And the way to create a map is very similar. So it's very similar to a set with curly brackets.
+
+347
+00:39:50,760 --> 00:39:56,360
+You say person, and then you say equal to. Actually, this is just a name. You don't have
+
+348
+00:39:56,360 --> 00:40:01,560
+to say person, but yeah. Or you can just say const. So person, and then you open curly brackets,
+
+349
+00:40:01,560 --> 00:40:06,760
+and then you would do your keys here. And I would say the key of age, for instance, I'll say 20.
+
+350
+00:40:07,720 --> 00:40:14,360
+And then you say colon. Is it colon? Yeah, it's a colon. And then you end the whole set
+
+351
+00:40:14,360 --> 00:40:25,640
+with a semicolon. So I just created a basically here, I created a map whose keys are string
+
+352
+00:40:25,640 --> 00:40:32,360
+and values are integers. Now let's see if Dart understands that. You see, it's a map of string
+
+353
+00:40:32,360 --> 00:40:39,400
+as keys and int as values. But now, as you saw before, the analogy of candies, now if I say,
+
+354
+00:40:39,400 --> 00:40:48,280
+okay, I have another key, and it says name, and I say, oh, the name is foo. Now Dart's going to be
+
+355
+00:40:48,280 --> 00:40:56,200
+like, ooh, what is this person? Oh, it's a map of string as keys and object as the value. Because
+
+356
+00:40:56,200 --> 00:41:02,520
+it just looks at the common denominator of the string, which is foo, and 20, which is an integer.
+
+357
+00:41:02,520 --> 00:41:08,360
+It says, oh, I don't know. I can't create a map whose keys are string and its values are both
+
+358
+00:41:08,360 --> 00:41:13,080
+string and integer. So I'm just going to go to their parent and be like, oh, the parent of both
+
+359
+00:41:13,080 --> 00:41:20,120
+string and integer is object. So your values are of type object. So a bunch of candies, basically.
+
+360
+00:41:20,120 --> 00:41:30,920
+Okay. That's how you create a map in Dart. And the other property of a map is, for instance,
+
+361
+00:41:30,920 --> 00:41:41,080
+you would say, if you go and create an age again here, you see it says two keys and a constant map
+
+362
+00:41:41,080 --> 00:41:46,120
+literal cannot be equal. So it's doing some checks here, making sure that the keys are actually
+
+363
+00:41:46,120 --> 00:41:53,880
+unique. So keys inside a map need to be unique. All right? However, if you go and change this
+
+364
+00:41:53,880 --> 00:42:03,640
+and say var person, and then you later go and say person name is equal to foo, just like that,
+
+365
+00:42:04,600 --> 00:42:10,920
+and then you print the entire person. So I'm just going to say print before and print after.
+
+366
+00:42:11,240 --> 00:42:19,480
+Okay? And you can see here, it said first time age key is 20, it has a value of 20, and the name key
+
+367
+00:42:19,480 --> 00:42:25,480
+has a value of foo with a capital F. Then the second time around on the print statement on line 15,
+
+368
+00:42:26,360 --> 00:42:33,880
+then when we print the person, it has the key of age with a value of 20, because we didn't modify
+
+369
+00:42:33,880 --> 00:42:39,240
+that, and a key of name as it was before with the value of foo with like six, I think,
+
+370
+00:42:40,280 --> 00:42:47,800
+capital O's. So this is how you would modify a map. You would specify the key, and then you would
+
+371
+00:42:47,800 --> 00:42:52,840
+say equal to, which is an operator, and then you would say the new value. All right? However,
+
+372
+00:42:52,840 --> 00:43:01,160
+if you added a new key here, for instance, last name, and you say Baz, and that will just kind
+
+373
+00:43:01,160 --> 00:43:08,680
+of like get appended to the map. So age the same, name the same, now you have a new key
+
+374
+00:43:08,680 --> 00:43:16,040
+whose value is Baz. All right? And that is kind of like the basics of
+
+375
+00:43:17,880 --> 00:43:23,560
+maps. So there are lots of things you can do with maps, and I really encourage you,
+
+376
+00:43:23,560 --> 00:43:27,000
+just like everything else that I talked about in this chapter, that you go and read some of
+
+377
+00:43:27,000 --> 00:43:32,440
+the documentations, because if you're following along with this course and your goal is to become
+
+378
+00:43:32,440 --> 00:43:37,560
+a software engineer, and if you're, for instance, a project manager or a designer, UXer, whoever you
+
+379
+00:43:37,560 --> 00:43:45,480
+are, I think you need to understand that software engineers do not know all the answers. You have to
+
+380
+00:43:45,480 --> 00:43:51,320
+go and read documentations. You have to practice, practice, practice, and put time into it. Countless,
+
+381
+00:43:51,320 --> 00:43:59,880
+countless hours you need to put into learning. So I mean, this course, I think, is going to be so
+
+382
+00:43:59,880 --> 00:44:06,760
+many hours long. The way I can, I mean, I can see the planning for all the chapters that I've put
+
+383
+00:44:06,760 --> 00:44:12,360
+here. There are so many chapters. I think the entirety of this course is going to go over 20
+
+384
+00:44:12,360 --> 00:44:17,960
+hours. So you can imagine that I can't go into details about every single thing. Otherwise,
+
+385
+00:44:17,960 --> 00:44:24,360
+it is just, this course is probably going to be like 200, 300 hours. It's unbelievable. So
+
+386
+00:44:25,000 --> 00:44:29,720
+we can't do that. So what I expect you to do now is just to open your browser and just type
+
+387
+00:44:29,720 --> 00:44:38,520
+dart maps documentation, something like that, dart maps. So, and you also need to know that now that
+
+388
+00:44:38,520 --> 00:44:44,280
+you're starting to Google things, you need to be aware of the word dart and that dart is an existing,
+
+389
+00:44:44,280 --> 00:44:51,640
+very popular name for just darts, darts. Okay. So sometimes depending on what you're Googling,
+
+390
+00:44:52,520 --> 00:44:59,160
+if a topic related to the classic darts that you throw is more popular than the topic of
+
+391
+00:44:59,160 --> 00:45:06,440
+the programming language, which kind of sounds the same, it may pop up first. So in this case,
+
+392
+00:45:06,440 --> 00:45:13,320
+if you say dart map, you may actually end up in some sort of weird website that explains to you
+
+393
+00:45:13,320 --> 00:45:19,640
+how you can throw darts at a map. I don't know. I'm just trying to bring it up because I actually
+
+394
+00:45:19,640 --> 00:45:23,240
+ended up in that situation that I searched for something related to dart. I actually ended up
+
+395
+00:45:23,240 --> 00:45:28,840
+in a weird website talking about darts as like a sport. So know that as well, please.
+
+396
+00:45:30,840 --> 00:45:40,040
+All right. Now we've talked about maps. So I'm going to take that in my notes. Now
+
+397
+00:45:40,040 --> 00:45:51,320
+what's coming in the next chapter, we are going to talk about a very important concept in darts
+
+398
+00:45:51,320 --> 00:45:56,520
+and many other programming languages such as Rust and Swift, and that is null safety or dart calls
+
+399
+00:45:56,520 --> 00:46:04,200
+it the sound null safety. It is a very important thing to know about in darts and it will greatly
+
+400
+00:46:04,200 --> 00:46:09,000
+and it will greatly help you in the future as you write your Flutter applications.
+
+401
+00:46:10,120 --> 00:46:18,360
+In this course, I'm going to use a lot of null. I'm going to make a lot of null references,
+
+402
+00:46:18,360 --> 00:46:24,680
+talk about null quite a lot throughout the course. So it is very important that we go through that
+
+403
+00:46:24,680 --> 00:46:28,120
+as soon as possible, and we're definitely not going to leave that out. So
+
+404
+00:46:29,080 --> 00:46:36,120
+that's going to be for chapter five. So keep an eye out for chapter five that is to follow. So
+
+405
+00:46:36,120 --> 00:46:40,440
+I hope that you enjoyed this chapter, chapter number four, where we talked about dart control
+
+406
+00:46:40,440 --> 00:46:47,720
+statements and collections, and I'll see you in the next chapter. Hello everyone, and welcome to
+
+407
+00:46:47,720 --> 00:46:54,040
+chapter number five of this Flutter course. In this chapter, we're going to talk about null safety.
+
+408
+00:46:54,840 --> 00:46:58,200
+In the previous chapter, chapter number four, we talked about
+
+409
+00:46:59,080 --> 00:47:06,680
+dart control statements and collections. And before we go on to talk about enumerations
+
+410
+00:47:06,680 --> 00:47:12,360
+and objects and classes, I feel it is very important to talk about null safety, which is
+
+411
+00:47:12,360 --> 00:47:22,120
+a concept that is available in most modern languages such as Rust and Swift. So it is
+
+412
+00:47:22,120 --> 00:47:27,480
+important to get this out of the way before we continue. Maybe not even get it out of the way,
+
+413
+00:47:27,480 --> 00:47:33,800
+but actually learn what it means and try to utilize it so that we can write better code.
+
+414
+00:47:33,800 --> 00:47:44,920
+So I thought to just bring up the concept of null values and why they're important to handle. Well,
+
+415
+00:47:46,680 --> 00:47:50,920
+you've seen so far that we have data types. A data type can be, for instance, a string,
+
+416
+00:47:50,920 --> 00:47:59,240
+can be an integer, and then you can put values in them. However, in programming languages,
+
+417
+00:47:59,240 --> 00:48:06,920
+you are also allowed to have the concept of the absence of a value. So on one hand, you have
+
+418
+00:48:06,920 --> 00:48:12,440
+values. So you, for instance, have a string value equal to foo bar or your name or whatever it is.
+
+419
+00:48:13,240 --> 00:48:17,400
+And then on the other hand, you can have the absence of that value. So you can see that,
+
+420
+00:48:18,200 --> 00:48:23,640
+okay, I have a container, I have a variable that can contain the values of type string,
+
+421
+00:48:23,640 --> 00:48:30,760
+or I have a variable that can contain any object. However, at the moment, I don't have that value.
+
+422
+00:48:30,760 --> 00:48:38,440
+So you will just tell Dart that this variable that I have right now can either contain a valid
+
+423
+00:48:38,520 --> 00:48:47,720
+value of type object or of type string or integer, or it can sometimes also during its lifetime
+
+424
+00:48:48,920 --> 00:48:56,440
+contain nothing. And this nothingness is the concept that is known as null.
+
+425
+00:48:58,360 --> 00:49:06,360
+So it's null in Dart is a keyword. It means that it's a word that you can just write in your
+
+426
+00:49:06,360 --> 00:49:11,720
+text editor as you're writing your code. And you say that a variable's value is equal to null.
+
+427
+00:49:12,600 --> 00:49:17,080
+And this tells Dart that, well, okay, this variable at the moment doesn't contain any values.
+
+428
+00:49:17,080 --> 00:49:24,760
+So null is not really a value, but it's actually the absence of a value. You should think of it
+
+429
+00:49:24,760 --> 00:49:33,800
+that way. So let's have a look at this. There's a little bit of a documentation here.
+
+430
+00:49:37,160 --> 00:49:41,720
+On Dart's website, Dart dev null safety. So I'm just going to click on it. You're not going to
+
+431
+00:49:41,720 --> 00:49:49,320
+see my screen at the moment. I'm just bringing it up in a browser, a browser window. I'm going to
+
+432
+00:49:49,320 --> 00:49:56,920
+bring it on the screen and increase the size a little bit and also change the sizing on the
+
+433
+00:49:57,240 --> 00:50:01,720
+the window as well. So you can see the contents in its entirety.
+
+434
+00:50:03,640 --> 00:50:10,280
+So as you can see in Dart, it's called sound null safety. And there's documentation about
+
+435
+00:50:10,280 --> 00:50:19,400
+what this actually means. We're going to look at what null safety actually means in Dart. And
+
+436
+00:50:19,400 --> 00:50:23,560
+I'm going to give you a lot of examples of what that actually practically means. And there's
+
+437
+00:50:23,560 --> 00:50:30,760
+documentation here in Dart's website simply because Dart, in its older versions, not in its
+
+438
+00:50:30,760 --> 00:50:36,680
+current versions, in its older versions, it didn't support null safety. So there was a lot of code
+
+439
+00:50:36,680 --> 00:50:44,120
+written manually by programmers in order to, for instance, check whether a value is absent in a
+
+440
+00:50:44,120 --> 00:50:50,680
+variable. And then there is, as you can see here, it says migrating an existing package or app. So
+
+441
+00:50:50,680 --> 00:50:55,720
+there is documentation written by the Dart team in order to help developers understand how they
+
+442
+00:50:55,720 --> 00:51:02,600
+can move their old code to the new code that supports null safety. However, if you're following
+
+443
+00:51:02,600 --> 00:51:10,040
+along with this course, it's like you're basically just following chronologically from chapter one
+
+444
+00:51:10,040 --> 00:51:13,240
+to all the other chapters. I don't know how many chapters we're going to have, but if you're
+
+445
+00:51:13,240 --> 00:51:16,840
+following along with this course, you don't have to think about migrating because the code that
+
+446
+00:51:16,840 --> 00:51:20,840
+we're writing in this entire course is going to be null safe, meaning that we're going to take
+
+447
+00:51:20,840 --> 00:51:27,240
+advantage of Dart's null safety operators and meaning that we are not going to manually check
+
+448
+00:51:27,240 --> 00:51:32,200
+for values being null and then doing some branches of code, whether they're null or not.
+
+449
+00:51:33,560 --> 00:51:37,080
+So what I mean is that if you read the documentation for sound null safety,
+
+450
+00:51:37,080 --> 00:51:40,280
+you don't have to worry about the migration parts. Just read the rest. Okay.
+
+451
+00:51:40,280 --> 00:51:47,240
+So with that out the way, I'm just going to make sure that I tick that in my notes here. That's why
+
+452
+00:51:47,240 --> 00:51:53,560
+I'm looking in this direction because I have all my notes here. Let's close this window and bring
+
+453
+00:51:53,560 --> 00:52:00,440
+up our Visual Studio Code window that we had from earlier. I'm going to put it here, and I'm just
+
+454
+00:52:00,440 --> 00:52:07,400
+going to ensure that it is of the correct height as well. So you're going to see the window in it
+
+455
+00:52:07,400 --> 00:52:11,720
+height as well. So you're going to see the window in its entirety. Okay.
+
+456
+00:52:13,560 --> 00:52:19,560
+So now that we talked about what null values are and that there are the absence of a value,
+
+457
+00:52:19,560 --> 00:52:26,840
+let's have a look at making any type nullable. And if you follow along with the course up to
+
+458
+00:52:26,840 --> 00:52:30,440
+this point, you should have some sort of a simulator or an emulator running, and then you
+
+459
+00:52:30,440 --> 00:52:35,880
+should have done command shift P or control shift P depending on your operating system,
+
+460
+00:52:35,880 --> 00:52:43,880
+command shift P in Mac and control shift P in Linux and Windows in order to bring up this menu.
+
+461
+00:52:43,880 --> 00:52:47,560
+And then you can just type Flutter, select device, and then you just select the device that you want
+
+462
+00:52:47,560 --> 00:52:51,480
+to run the code on. So I'm kind of assuming that you've already done that and that your code is
+
+463
+00:52:51,480 --> 00:52:55,960
+running. And this is something that we talked about in earlier chapters. So we're not going
+
+464
+00:52:55,960 --> 00:53:03,080
+to go through that again. So I have an iPhone simulator, which you cannot see on the screen,
+
+465
+00:53:03,080 --> 00:53:07,800
+but I have it running in a separate screen just because we don't have enough real estate. I can
+
+466
+00:53:07,800 --> 00:53:11,800
+bring it up to this window, but it will just take a lot of space. So I'm going to bring it up to
+
+467
+00:53:11,800 --> 00:53:17,320
+another monitor so you don't see it. So this code at the moment is running live. So if I press command
+
+468
+00:53:17,320 --> 00:53:26,200
+S, then it's going to run and just print the output for us. Okay. Now let's talk about making
+
+469
+00:53:26,200 --> 00:53:35,560
+any type nullable. And there is a way to do that. Let's have a look here. We talked about that null
+
+470
+00:53:35,560 --> 00:53:40,360
+is a keyword, and that's why you can see it is highlighted here in a different color.
+
+471
+00:53:40,920 --> 00:53:48,680
+So if you, for instance, say final name is foo, as you can see, it says, okay, I accept this as
+
+472
+00:53:48,680 --> 00:53:55,000
+name is foo. But you can't just say name like it's a null because then it doesn't understand. Is it
+
+473
+00:53:55,000 --> 00:54:01,240
+an object? Is it a string? Is it an integer? And if you type here name, then you see it's just
+
+474
+00:54:01,240 --> 00:54:07,400
+dynamic. It doesn't understand the type. And we'll talk about dynamic a little bit later.
+
+475
+00:54:08,120 --> 00:54:13,960
+But what you can do is to actually specify that, okay, I want a string data type that
+
+476
+00:54:14,520 --> 00:54:20,680
+it can contain normal names or strings as we call it, like series of characters, or it can sometimes
+
+477
+00:54:20,680 --> 00:54:26,600
+be null. And in that case, you have to actually specify the data type as not just string,
+
+478
+00:54:27,320 --> 00:54:32,680
+not just this, because you'll see, you'll get an error. And we'll actually get a suggestion. It
+
+479
+00:54:32,680 --> 00:54:37,480
+says, try changing the type of the variable or casting the right-hand type to string.
+
+480
+00:54:38,360 --> 00:54:43,160
+But we're not going to do that. That wasn't such a, it wasn't such a useful suggestion because
+
+481
+00:54:43,160 --> 00:54:48,760
+what you want here is to actually make Dart understand that this variable right here,
+
+482
+00:54:48,760 --> 00:54:55,000
+or this constant right here can sometimes contain the value of null. And the way to do that is you
+
+483
+00:54:55,800 --> 00:55:03,160
+put the suffix after your data type as a question mark. So this is the syntax,
+
+484
+00:55:03,160 --> 00:55:07,320
+which is actually using some other languages as well. It's used in Swift as well.
+
+485
+00:55:08,600 --> 00:55:15,080
+So this tells Dart that, well, here, if we make it actually a variable, as you can see, or sorry,
+
+486
+00:55:16,040 --> 00:55:22,840
+like this. So you say, I have a variable. It's a string, but sometimes it may,
+
+487
+00:55:22,840 --> 00:55:29,960
+the string value may be absent. And then you'll just say, okay, now name is foo.
+
+488
+00:55:30,840 --> 00:55:36,680
+And you can say now name is null. So this is kind of like resetting out names. So if I just say,
+
+489
+00:55:36,680 --> 00:55:43,400
+okay, print name. And then after foo, I say print name. Okay. So let's just
+
+490
+00:55:44,040 --> 00:55:48,120
+clear the console and just run this application. You can see the first time it says it's null.
+
+491
+00:55:48,920 --> 00:55:56,200
+And then the second time around it says it is foo. So this is how you tell Dart that you
+
+492
+00:55:56,200 --> 00:56:02,440
+want to have nullable data type. And you can do this with pretty much all data types. So you can
+
+493
+00:56:02,440 --> 00:56:09,640
+just say, okay, I have an integer of age, and that's 20. But you can see you cannot now assign
+
+494
+00:56:09,640 --> 00:56:14,040
+the value of null to integer because it's not nullable. But as soon as you make it nullable,
+
+495
+00:56:14,040 --> 00:56:23,800
+then that is accepted. And of course, you can do different operations using, for instance,
+
+496
+00:56:23,800 --> 00:56:27,480
+in the previous chapter, I believe, we talked about control statements if and else.
+
+497
+00:56:28,120 --> 00:56:35,320
+So you can say, for instance, if age is 20, and then you can execute some code,
+
+498
+00:56:35,320 --> 00:56:42,360
+or you can say if age is null, execute some code. So they work as you would expect. So
+
+499
+00:56:42,360 --> 00:56:50,600
+there is no difference really. And I mean, if you think about that nullability is just like a
+
+500
+00:56:51,880 --> 00:56:56,760
+suffix to a data type, you can also say, okay, pretty much any data type can be nullable. And
+
+501
+00:56:56,760 --> 00:57:04,520
+that's great. Like, for instance, if you have a list of string of names, you can say, okay,
+
+502
+00:57:04,520 --> 00:57:11,640
+I have foo and bar here. This is a list of strings. I talked about lists in chapter four.
+
+503
+00:57:12,600 --> 00:57:18,680
+Now, you can see here that list of strings, there are two data types here, the list itself,
+
+504
+00:57:18,680 --> 00:57:25,720
+and the contents that it holds. So if you want to make the list in itself nullable, then you would
+
+505
+00:57:25,720 --> 00:57:33,320
+put the question mark after. This means this list of strings in itself can be absent. So you say
+
+506
+00:57:33,320 --> 00:57:41,000
+names null, and that's accepted. However, since you're telling Dart that, okay, the names value
+
+507
+00:57:41,000 --> 00:57:47,320
+here can in its entirety be null, but its values are not supposed to be null. So if you then go
+
+508
+00:57:47,320 --> 00:57:53,080
+in here and just put null in here, then you see that you got an error. And that's because Dart
+
+509
+00:57:53,080 --> 00:57:58,680
+is saying that, okay, you just promised me that the list in itself, it can be absent, but as soon
+
+510
+00:57:58,680 --> 00:58:06,040
+as it is not absent, meaning that as soon as it is present there with some values, its values cannot
+
+511
+00:58:06,040 --> 00:58:13,320
+be null. And that means that this type should be telling me here that it is null. So if you want to
+
+512
+00:58:13,320 --> 00:58:21,880
+make an optional or nullable list of optional strings, then you would put the question mark
+
+513
+00:58:21,880 --> 00:58:27,800
+after the data type of string as well. So this is now, I mean, the way you should read this is,
+
+514
+00:58:28,920 --> 00:58:39,800
+I have a list of strings, and I call that list names. Names can sometimes be null, meaning that
+
+515
+00:58:39,800 --> 00:58:51,480
+it can be absent. And if it is not absent, it can contain objects of type string that themselves
+
+516
+00:58:51,480 --> 00:58:58,760
+can sometimes be absent, meaning that, okay, for instance, if you say foo bar null, that's accepted,
+
+517
+00:58:58,760 --> 00:59:06,360
+but you can also say names is null. See what I mean? So both the container, which is called names,
+
+518
+00:59:06,360 --> 00:59:11,880
+and the values that it contains can be optional. And the word optional is very important for you
+
+519
+00:59:11,880 --> 00:59:17,560
+to learn. It's kind of like an industry accepted way of talking about nulls and nullable values.
+
+520
+00:59:17,560 --> 00:59:26,520
+So this is optional, all right? Okay. Now we talked about that,
+
+521
+00:59:27,960 --> 00:59:33,560
+nullable values and optional values, all right? Basically, you can use those words interchangeably.
+
+522
+00:59:33,560 --> 00:59:40,040
+So if you're talking with a colleague programmer, you would say, oh, how would you describe this?
+
+523
+00:59:40,040 --> 00:59:45,160
+Okay, this is an optional list of optional strings. Or you could also say nullable list
+
+524
+00:59:45,160 --> 00:59:50,200
+of nullable strings. But optional is also a word that is typically used to
+
+525
+00:59:50,200 --> 00:59:58,520
+talk about nullable values, all right? Okay. We talked about making any type nullable. So
+
