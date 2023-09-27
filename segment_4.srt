@@ -1,0 +1,2456 @@
+1
+00:00:00,000 --> 00:00:08,200
+I'm just going to mark that as done that we've talked about it in notes, all right?
+
+2
+00:00:08,200 --> 00:00:12,200
+Now let's talk about cherry picking non-null values.
+
+3
+00:00:12,200 --> 00:00:25,080
+And what this means is with Dart, you can easily ask the language to give you values
+
+4
+00:00:25,080 --> 00:00:26,400
+that are not null.
+
+5
+00:00:26,400 --> 00:00:29,340
+And I'll explain what this actually means.
+
+6
+00:00:29,340 --> 00:00:42,740
+Let's say that you have a string, a final string, first name, and it is equal to foo.
+
+7
+00:00:42,740 --> 00:00:48,060
+Now let's just say this is a constant, all right?
+
+8
+00:00:48,060 --> 00:00:49,980
+That's what the suggestion was, you see?
+
+9
+00:00:49,980 --> 00:00:55,540
+I wrote final because I was not planning to reassign this first name value to anything
+
+10
+00:00:55,980 --> 00:01:03,300
+But then I got a suggestion to actually use the keyword const as you can see here.
+
+11
+00:01:03,300 --> 00:01:08,580
+So let's say const, all right?
+
+12
+00:01:08,580 --> 00:01:19,500
+Now what we want to do here, then, is to also create a last name or a middle name, r, and
+
+13
+00:01:19,500 --> 00:01:25,500
+then we say last name, and I have to change the last name to last name, right?
+
+14
+00:01:25,500 --> 00:01:31,900
+Actually, what we're going to do is we're going to say the first name is null, all right?
+
+15
+00:01:31,900 --> 00:01:36,580
+So first name null, middle name bar, and last name bass.
+
+16
+00:01:36,580 --> 00:01:42,140
+Now if you want to, if you have these values and you want to, for instance, I mean, right
+
+17
+00:01:42,140 --> 00:01:46,220
+now you can actually see the values that you put here, but sometimes these values are passed
+
+18
+00:01:46,220 --> 00:01:48,900
+to your function, so you don't know what they are.
+
+19
+00:01:48,900 --> 00:01:50,780
+Right now you can see what they are, so it's easy.
+
+20
+00:01:50,780 --> 00:01:55,820
+If I told you, pick the first non-null value, then you would say middle name because you
+
+21
+00:01:55,820 --> 00:01:56,820
+can see it.
+
+22
+00:01:56,820 --> 00:02:01,420
+However, if you had a function, for instance, test here that accepted those values, for
+
+23
+00:02:01,420 --> 00:02:09,580
+instance, string, first name, string, last name, and then string, or yeah, middle name,
+
+24
+00:02:09,580 --> 00:02:15,700
+etc., then you wouldn't know what those values are, or you cannot make an assumption about
+
+25
+00:02:15,700 --> 00:02:19,940
+what those values are except that they are nullable or optional strings.
+
+26
+00:02:19,940 --> 00:02:23,140
+So I hope that you get what I'm trying to say.
+
+27
+00:02:23,140 --> 00:02:29,980
+If someone told you to pick the first non-null value, one way to do that is, like the old
+
+28
+00:02:29,980 --> 00:02:42,500
+way of doing that is to say, if first name is not null, then you would say, oh, okay,
+
+29
+00:02:43,220 --> 00:02:51,620
+first name is the first non-null value, okay?
+
+30
+00:02:51,620 --> 00:02:58,860
+And then you say, okay, if first name isn't null, then we pick it, otherwise, else, if
+
+31
+00:02:58,860 --> 00:03:02,740
+middle name is not null, okay?
+
+32
+00:03:02,740 --> 00:03:10,260
+And then you say, okay, middle name is the first non-null value, and then else, if, again,
+
+33
+00:03:10,340 --> 00:03:15,140
+last name is not null, then you would print the same thing.
+
+34
+00:03:15,140 --> 00:03:16,580
+So this is very repetitive.
+
+35
+00:03:22,660 --> 00:03:27,780
+So it is basically very verbose in the way it is created.
+
+36
+00:03:29,300 --> 00:03:35,220
+There is a better way of doing this, and that is with the question mark, question mark operator
+
+37
+00:03:35,300 --> 00:03:40,100
+in Dart, which is available in some other programming languages such as Swift as well.
+
+38
+00:03:40,980 --> 00:03:45,060
+So the way to do that, then, is you would want to pick the first non-null value.
+
+39
+00:03:45,060 --> 00:03:53,140
+So you would say, final or const first non-null value, and you would say that's equal to first
+
+40
+00:03:53,140 --> 00:03:55,540
+name or or.
+
+41
+00:03:55,540 --> 00:04:01,460
+So this is kind of like question mark, question mark, middle name, and then question mark,
+
+42
+00:04:01,460 --> 00:04:02,580
+question mark, last name.
+
+43
+00:04:02,740 --> 00:04:07,780
+So, and, I mean, we're getting a warning here just because Dart understands already that
+
+44
+00:04:07,780 --> 00:04:14,020
+this middle name, although a, so, this is, although an optional, basically, it has a value.
+
+45
+00:04:14,820 --> 00:04:21,220
+But if we meet this null, so, and that warning goes away, but, I mean, it would probably
+
+46
+00:04:21,220 --> 00:04:25,700
+be cleaner if we actually pass these as parameters into this function so we don't get these weird
+
+47
+00:04:25,700 --> 00:04:26,820
+warnings.
+
+48
+00:04:26,820 --> 00:04:31,220
+But the way the question mark, question mark operator is working is that it says, it is
+
+49
+00:04:32,180 --> 00:04:37,300
+an infix operator, just so you know, in, from chapter four, you know, an infix operator is
+
+50
+00:04:37,300 --> 00:04:42,500
+an operator that has two things, one on each, on each side, the right and left.
+
+51
+00:04:43,380 --> 00:04:47,140
+So in this case, on the right side, we have middle name, and on the left side, we have
+
+52
+00:04:47,140 --> 00:04:47,620
+first name.
+
+53
+00:04:47,620 --> 00:04:53,460
+So what this operator does, it says, if the value on my left side is null, I'm going to
+
+54
+00:04:53,460 --> 00:04:54,660
+pick the value on my right.
+
+55
+00:04:55,220 --> 00:04:55,540
+Okay.
+
+56
+00:04:56,580 --> 00:05:00,340
+And let's now, in this case, say, okay, middle name is not null.
+
+57
+00:05:00,340 --> 00:05:03,300
+So what it does, it says, first name, are you null?
+
+58
+00:05:03,300 --> 00:05:04,100
+Yeah, you're null.
+
+59
+00:05:04,100 --> 00:05:05,460
+Then I'm going to go to the right side.
+
+60
+00:05:05,460 --> 00:05:06,580
+Middle name, are you null?
+
+61
+00:05:06,580 --> 00:05:07,700
+Nope, I'm not null.
+
+62
+00:05:07,700 --> 00:05:12,660
+Then it's going to pick that, and the rest of the statement is not going to be executed.
+
+63
+00:05:14,180 --> 00:05:19,380
+However, if middle name was also null in this case, then what happens is that it begins
+
+64
+00:05:19,380 --> 00:05:22,260
+from the left, it says, first name, are you null?
+
+65
+00:05:22,260 --> 00:05:22,980
+Yes.
+
+66
+00:05:22,980 --> 00:05:24,420
+Middle name, are you null?
+
+67
+00:05:24,420 --> 00:05:25,140
+Yes.
+
+68
+00:05:25,140 --> 00:05:31,620
+So this entire operation here, it doesn't yield any value.
+
+69
+00:05:32,980 --> 00:05:35,780
+So this entire operation will let me know.
+
+70
+00:05:35,780 --> 00:05:40,660
+So it says, okay, now I have to compare our left-hand side.
+
+71
+00:05:40,660 --> 00:05:41,140
+Are you null?
+
+72
+00:05:41,140 --> 00:05:43,460
+Yeah, we know that this entire thing was null.
+
+73
+00:05:44,340 --> 00:05:46,580
+And then it says, right-hand side, are you null?
+
+74
+00:05:46,580 --> 00:05:48,180
+Nope, I'm bass.
+
+75
+00:05:48,180 --> 00:05:49,060
+Then it picks bass.
+
+76
+00:05:49,060 --> 00:05:55,700
+So this question mark, question mark operator is a null-aware operator that picks either
+
+77
+00:05:55,700 --> 00:06:01,940
+the left side or the right side, whichever one is not null first in that order.
+
+78
+00:06:01,940 --> 00:06:03,620
+So left side, are you null?
+
+79
+00:06:04,420 --> 00:06:06,180
+If you're null, I go to the right side.
+
+80
+00:06:06,180 --> 00:06:09,060
+But if you're not null, I'll pick you.
+
+81
+00:06:10,500 --> 00:06:11,780
+So keep that in mind.
+
+82
+00:06:11,780 --> 00:06:17,220
+It is a very handy operator, and it will shorten your code quite a lot.
+
+83
+00:06:17,220 --> 00:06:17,720
+All right?
+
+84
+00:06:18,520 --> 00:06:22,920
+Now, if we then go in here and say first, null, null value, you can see it actually says,
+
+85
+00:06:22,920 --> 00:06:23,880
+oh, it's a string.
+
+86
+00:06:24,840 --> 00:06:33,080
+However, if these were parameters, so if we said first name, and then string, last name,
+
+87
+00:06:33,080 --> 00:06:39,480
+sorry, middle name, last name, so they were not provided to us like that,
+
+88
+00:06:41,480 --> 00:06:43,560
+contour was okay, and then we say final.
+
+89
+00:06:43,560 --> 00:06:52,280
+Now, if we say first, non-null value, in this case, since it is a normal case, excuse me,
+
+90
+00:06:53,320 --> 00:06:56,360
+where the Dart compiler isn't working with constants,
+
+91
+00:06:58,760 --> 00:07:03,160
+then it cannot resolve this to a constant value at the moment.
+
+92
+00:07:03,160 --> 00:07:05,320
+So it says, okay, there are three optional values.
+
+93
+00:07:05,320 --> 00:07:07,080
+I have no idea what they are.
+
+94
+00:07:07,080 --> 00:07:11,560
+So I'm going to do my best to pick the first non-null value depending on, I mean,
+
+95
+00:07:11,560 --> 00:07:13,480
+based on what we provided here.
+
+96
+00:07:14,680 --> 00:07:16,920
+However, I may not be able to solve this.
+
+97
+00:07:16,920 --> 00:07:22,360
+So the final result here, as you'll see, is an optional string, meaning that, well,
+
+98
+00:07:22,360 --> 00:07:27,800
+I may not be able to resolve this, meaning that this entire operation on top on line nine
+
+99
+00:07:27,800 --> 00:07:29,400
+may result in a null.
+
+100
+00:07:30,680 --> 00:07:31,180
+All right?
+
+101
+00:07:32,600 --> 00:07:33,240
+Sorry about that.
+
+102
+00:07:33,240 --> 00:07:34,120
+Sorry about my voice.
+
+103
+00:07:35,560 --> 00:07:39,400
+So that is the question mark, question mark operator.
+
+104
+00:07:39,400 --> 00:07:43,560
+So I'm just going to mark that we talked about it in my notes.
+
+105
+00:07:45,400 --> 00:07:45,900
+Okay.
+
+106
+00:07:47,560 --> 00:07:49,240
+So that was that.
+
+107
+00:07:51,800 --> 00:07:59,320
+Now, let's talk about the next topic, which is the null aware assignment operator.
+
+108
+00:07:59,320 --> 00:08:01,480
+I think that's its actual official name.
+
+109
+00:08:03,480 --> 00:08:07,720
+This operator is very similar to the question mark, question mark operator in that it
+
+110
+00:08:09,640 --> 00:08:14,680
+tries to resolve a variable to make sure it is not null.
+
+111
+00:08:15,240 --> 00:08:16,280
+It's going to do its best.
+
+112
+00:08:17,080 --> 00:08:18,840
+And let's have a look at an example.
+
+113
+00:08:18,840 --> 00:08:22,840
+Let's just say bar.
+
+114
+00:08:23,640 --> 00:08:30,200
+I'm going to say, actually, let's just say string and name is first name.
+
+115
+00:08:30,200 --> 00:08:35,960
+So we begin, we say that we have an optional name and we begin by assigning first name to it.
+
+116
+00:08:35,960 --> 00:08:41,480
+So it means that its name might, at the moment, depending on the value of first name, it may be
+
+117
+00:08:41,480 --> 00:08:41,980
+null.
+
+118
+00:08:42,840 --> 00:08:48,040
+Now, if that is null, you may want to assign another value to it.
+
+119
+00:08:48,040 --> 00:08:49,000
+All right?
+
+120
+00:08:49,000 --> 00:08:51,000
+And then you can do that with this operator.
+
+121
+00:08:51,000 --> 00:08:52,200
+You would say last name.
+
+122
+00:08:53,880 --> 00:08:54,840
+Let's see what happened here.
+
+123
+00:08:55,720 --> 00:08:58,040
+We'll try to, oh, is it this?
+
+124
+00:08:58,040 --> 00:08:59,560
+Yes, it is equal to.
+
+125
+00:08:59,560 --> 00:09:06,520
+So I actually should change this case to equal to question mark.
+
+126
+00:09:07,560 --> 00:09:08,280
+Yes.
+
+127
+00:09:08,280 --> 00:09:11,800
+And I'm going to bring it up again so that it is actually correct, let's say.
+
+128
+00:09:14,440 --> 00:09:17,800
+And then name equal to, isn't this working?
+
+129
+00:09:19,160 --> 00:09:23,640
+Last name, oh, where was it this one?
+
+130
+00:09:25,320 --> 00:09:26,200
+Try changing the,
+
+131
+00:09:26,200 --> 00:09:29,640
+is it like this?
+
+132
+00:09:31,640 --> 00:09:33,320
+I'm actually a bit unsure right now.
+
+133
+00:09:33,320 --> 00:09:35,160
+So let's have a look, actually, what this does.
+
+134
+00:09:37,400 --> 00:09:39,000
+And it's a three-positional.
+
+135
+00:09:39,000 --> 00:09:45,080
+And then we say null, null, null, and then bar, and then bass here, okay?
+
+136
+00:09:45,080 --> 00:09:50,680
+So first name is null, middle name is bar, and last name is bass.
+
+137
+00:09:50,680 --> 00:09:54,280
+And to be honest with you, I mean, this is quite a lot for me as well.
+
+138
+00:09:54,280 --> 00:09:58,680
+It is something that is like the syntax of the programming language.
+
+139
+00:09:58,680 --> 00:10:01,480
+It is something that you will kind of need to live with.
+
+140
+00:10:01,480 --> 00:10:05,320
+You're not going to memorize this all just in your head all the time.
+
+141
+00:10:05,320 --> 00:10:11,240
+Of course, like the main parts of it, you're going to remember, but not all of it.
+
+142
+00:10:11,240 --> 00:10:15,640
+So, and you can see for me as well, I'm just like at the moment, okay, which one is it?
+
+143
+00:10:16,760 --> 00:10:17,720
+So I'm going to test that.
+
+144
+00:10:17,720 --> 00:10:20,840
+So to begin with, we say name is first name.
+
+145
+00:10:20,840 --> 00:10:25,800
+And if that is null, then assign, actually, let's just say middle name,
+
+146
+00:10:27,160 --> 00:10:29,960
+name here, then use middle name, and then print the name finally.
+
+147
+00:10:30,600 --> 00:10:32,200
+And I can see it says bar here.
+
+148
+00:10:32,200 --> 00:10:34,600
+So it's actually question mark, question mark equal.
+
+149
+00:10:37,080 --> 00:10:41,240
+So I actually maybe need to edit this text one more time.
+
+150
+00:10:41,240 --> 00:10:44,200
+So I'm just going to say question mark, question mark equal.
+
+151
+00:10:45,400 --> 00:10:47,960
+Bring it up because I think question mark equal is not going to work.
+
+152
+00:10:47,960 --> 00:10:49,880
+An equal question mark isn't going to work either.
+
+153
+00:10:50,840 --> 00:10:51,880
+It's not a valid syntax.
+
+154
+00:10:51,880 --> 00:10:53,240
+So question mark, question mark equal.
+
+155
+00:10:53,240 --> 00:10:53,880
+Sorry about that.
+
+156
+00:10:54,520 --> 00:10:58,600
+So what this operator at the moment is doing is says that I'm going to take
+
+157
+00:10:58,600 --> 00:11:02,040
+the value on the left-hand side and check whether it is null or not.
+
+158
+00:11:02,040 --> 00:11:07,480
+If it is null, then I'm going to assign the value on the right-hand side to the left-hand side.
+
+159
+00:11:08,680 --> 00:11:11,800
+If it is not null, I'm going to leave it alone.
+
+160
+00:11:13,480 --> 00:11:17,400
+So at the moment, first name, as you saw here, is null,
+
+161
+00:11:17,400 --> 00:11:19,080
+the first parameter that we pass here.
+
+162
+00:11:19,880 --> 00:11:25,240
+What it says is, okay, I'm going to check then for middle name if name is null.
+
+163
+00:11:25,240 --> 00:11:26,120
+And it is null.
+
+164
+00:11:26,120 --> 00:11:29,480
+And then it says, okay, middle name, are you present there?
+
+165
+00:11:29,480 --> 00:11:30,920
+And then we'll assign that value here.
+
+166
+00:11:30,920 --> 00:11:37,640
+So it will be basically it will be bar, which is the value of the middle name.
+
+167
+00:11:38,840 --> 00:11:44,280
+Now, if we in here said middle name is also null,
+
+168
+00:11:45,080 --> 00:11:50,920
+right, you could have another operator here that says, okay, if after taking the middle name,
+
+169
+00:11:50,920 --> 00:11:53,400
+we are still null, then take the last name.
+
+170
+00:11:54,600 --> 00:11:59,480
+So, and you can see Baz gets printed to the screen.
+
+171
+00:11:59,480 --> 00:12:04,680
+And that is because because Baz is the last parameter that we're checking on line 10.
+
+172
+00:12:05,400 --> 00:12:06,840
+And its value is not null.
+
+173
+00:12:08,360 --> 00:12:13,800
+So you can see how like if I then went here and actually said the value is not null,
+
+174
+00:12:14,040 --> 00:12:15,800
+the first name is bar.
+
+175
+00:12:15,800 --> 00:12:19,160
+Then you will see that that will be the value that gets printed to the screen here.
+
+176
+00:12:20,200 --> 00:12:26,920
+Because right here, name or first name, which is bar, got assigned to name.
+
+177
+00:12:26,920 --> 00:12:30,360
+So it is an optional string, but it has a value, which is bar.
+
+178
+00:12:31,000 --> 00:12:34,520
+Then when you come to this line number nine, then you're telling Dart,
+
+179
+00:12:34,520 --> 00:12:38,680
+look, if name is null, then assign middle name to it.
+
+180
+00:12:38,680 --> 00:12:42,360
+And Dart says, well, name is a null, it is bar.
+
+181
+00:12:42,360 --> 00:12:44,440
+So I'm not going to assign middle name to it.
+
+182
+00:12:44,440 --> 00:12:46,920
+And then it goes to line number 10 and does the exact same thing.
+
+183
+00:12:46,920 --> 00:12:47,240
+All right.
+
+184
+00:12:48,440 --> 00:12:52,120
+So that is like the null aware assignment operators.
+
+185
+00:12:52,120 --> 00:12:54,760
+And it is useful.
+
+186
+00:12:55,640 --> 00:12:58,360
+I personally, I mean, to be honest with you, I,
+
+187
+00:12:58,360 --> 00:13:02,200
+as you could kind of guess, I don't use this operator so often.
+
+188
+00:13:02,200 --> 00:13:03,000
+It is there.
+
+189
+00:13:03,960 --> 00:13:08,680
+And I have no shame in saying that pretty much in none of my programs have I had to use this.
+
+190
+00:13:09,320 --> 00:13:11,880
+It is present for you to use.
+
+191
+00:13:11,880 --> 00:13:13,880
+It is available if you want to use it.
+
+192
+00:13:13,880 --> 00:13:19,320
+So just don't be like me, but try to remember the syntax is question mark, question mark equal.
+
+193
+00:13:22,440 --> 00:13:25,640
+And I'm going to actually fix that in my notes as well,
+
+194
+00:13:25,640 --> 00:13:28,280
+that it is question mark, question mark equal.
+
+195
+00:13:31,480 --> 00:13:33,880
+And I'm going to check it in the notes that we've talked about it.
+
+196
+00:13:34,360 --> 00:13:45,800
+Now, let's talk a little bit about conditional method or property access or conditional invocation.
+
+197
+00:13:47,080 --> 00:13:52,520
+Now, as we talked about in the previous chapter, with Dart, as like many other
+
+198
+00:13:52,520 --> 00:14:00,920
+programming languages, you can use the dot syntax in order to access or drill down inside properties
+
+199
+00:14:00,920 --> 00:14:03,640
+and methods or functions inside other objects.
+
+200
+00:14:03,640 --> 00:14:09,560
+As we saw, for instance, with the case of lists in Dart, you can say,
+
+201
+00:14:10,440 --> 00:14:13,720
+I have a list and then you want to get its length, then you would say
+
+202
+00:14:15,000 --> 00:14:17,640
+the name of the list dot length.
+
+203
+00:14:17,640 --> 00:14:21,160
+And that drills down inside that list and gets the length property.
+
+204
+00:14:23,160 --> 00:14:27,160
+However, as you saw earlier in this chapter, in chapter number five,
+
+205
+00:14:27,960 --> 00:14:32,280
+even lists or pretty much any data type in Dart can also be nullable.
+
+206
+00:14:32,760 --> 00:14:39,160
+So how do you access properties of a null object?
+
+207
+00:14:39,160 --> 00:14:40,680
+So let's have a look at that now.
+
+208
+00:14:42,040 --> 00:14:47,800
+Let's say I'm going to actually delete these properties, the parameters that come here to
+
+209
+00:14:47,800 --> 00:14:53,800
+our function, and I'm going to say, and I'm going to go down here and remove these parameters as
+
+210
+00:14:54,200 --> 00:14:54,440
+well.
+
+211
+00:14:56,440 --> 00:15:01,800
+And in here, let's just create an optional list of strings.
+
+212
+00:15:02,360 --> 00:15:07,640
+Not optional list of optional strings, but just an optional list of valid strings.
+
+213
+00:15:07,640 --> 00:15:07,880
+Okay.
+
+214
+00:15:07,880 --> 00:15:14,760
+So I'm just going to say list of strings as an optional list, and I'm just going to say names,
+
+215
+00:15:15,320 --> 00:15:18,120
+and that is equal to, let's just say at the moment, foo.
+
+216
+00:15:18,120 --> 00:15:18,440
+All right.
+
+217
+00:15:19,400 --> 00:15:29,960
+Now, here, if you try to say final length of names or number of names is names, length, okay?
+
+218
+00:15:31,320 --> 00:15:36,040
+If you then look at the data type here, I mean, we could actually say this is null.
+
+219
+00:15:38,440 --> 00:15:47,160
+And you can see here, Dart actually is allowed to or is able to give you an error knowing that this
+
+220
+00:15:47,240 --> 00:15:50,040
+list is null at the moment.
+
+221
+00:15:50,040 --> 00:15:54,280
+However, if you accept it, I think it's actually better that we accept this value as a parameter
+
+222
+00:15:54,280 --> 00:16:00,520
+so that Dart analyzer cannot be too smart about making assumptions about what this actually is
+
+223
+00:16:00,520 --> 00:16:01,160
+at the moment.
+
+224
+00:16:02,040 --> 00:16:08,680
+So you can see the analyzer is telling you it cannot be unconditionally accessed because
+
+225
+00:16:08,680 --> 00:16:14,200
+the receiver can be null, and that means, yeah, exactly as it says, it says names can be null.
+
+226
+00:16:14,200 --> 00:16:17,480
+I don't know if it's null right now or not, but it can be.
+
+227
+00:16:19,000 --> 00:16:20,520
+So how do you access that?
+
+228
+00:16:20,520 --> 00:16:27,080
+One way to do that, like, the old way of doing that is to say if names is not null,
+
+229
+00:16:27,960 --> 00:16:31,240
+then length is names length, okay?
+
+230
+00:16:33,240 --> 00:16:37,480
+Final length is names length, okay?
+
+231
+00:16:37,480 --> 00:16:42,120
+So that tells Dart that, look, I'm actually checking for null values,
+
+232
+00:16:43,080 --> 00:16:49,640
+or I'm checking that this list is not null on line 8, and if it is not null,
+
+233
+00:16:50,200 --> 00:16:52,760
+then I will access its length property.
+
+234
+00:16:52,760 --> 00:16:58,360
+And this is kind of, it's called type promotion, and type as in data type.
+
+235
+00:16:59,080 --> 00:17:04,840
+So in this case, you can see on line number 8, or now if I go and create a new line on
+
+236
+00:17:04,840 --> 00:17:10,120
+number, on line number 8 and I say names, this is an optional list
+
+237
+00:17:10,360 --> 00:17:19,000
+that can contain strings, and in here, you can see it is type as the same, but it is promoted
+
+238
+00:17:19,000 --> 00:17:25,320
+to not being null because you've already checked for it, because if you remove these lines of code,
+
+239
+00:17:25,320 --> 00:17:29,640
+you can see now that you get an error, the exact same line, but if you check first for null,
+
+240
+00:17:29,640 --> 00:17:32,520
+and you don't get the error, it's a type promotion, okay?
+
+241
+00:17:33,400 --> 00:17:35,400
+So this is kind of like the old way of doing that.
+
+242
+00:17:35,400 --> 00:17:40,680
+So let's say that you want to have, you want to extract the length, so you say final length,
+
+243
+00:17:40,680 --> 00:17:45,080
+or ints length, right? You create the variable, but you don't assign anything to it.
+
+244
+00:17:46,040 --> 00:17:50,280
+Then you say if names is not null, then the length is equal to the name's length.
+
+245
+00:17:50,280 --> 00:17:54,520
+Otherwise, length is zero, okay? So this is one way of doing that.
+
+246
+00:17:55,560 --> 00:17:57,000
+It's the old way of doing that.
+
+247
+00:17:57,160 --> 00:18:02,760
+And you may be trying to be smart as well and say, okay, I don't need this else statement if I just
+
+248
+00:18:02,760 --> 00:18:07,960
+say this is a variable, and by default, it's zero, and yeah, you would be right, because length is
+
+249
+00:18:07,960 --> 00:18:13,160
+zero by default, and then if names is not null, then you say, okay, length is equal to name's length.
+
+250
+00:18:14,200 --> 00:18:20,920
+However, there's a better way of doing that, and that is using the dot question mark,
+
+251
+00:18:20,920 --> 00:18:26,200
+I believe, or the question mark that actually it is, yeah, operator, which conditionally executes
+
+252
+00:18:27,080 --> 00:18:33,800
+or invokes a method or a property inside an optional if that optional value is present.
+
+253
+00:18:34,600 --> 00:18:37,400
+I'm going to show you how to do that. So if we say final length
+
+254
+00:18:39,960 --> 00:18:44,280
+is names, and then you would put question mark dot, and then you would say length,
+
+255
+00:18:44,280 --> 00:18:48,200
+and you would say, okay, length is equal to name's length, and then you would say
+
+256
+00:18:48,200 --> 00:18:52,360
+question mark dot, and then you would say length, and you would see this code being
+
+257
+00:18:52,360 --> 00:18:57,960
+executed without a problem. However, if you go here, you would see that length is an optional
+
+258
+00:18:57,960 --> 00:19:03,240
+value, is an optional integer. So you may be like, okay, how do I solve that? How do I say that
+
+259
+00:19:05,720 --> 00:19:17,320
+I want length to be zero if this length value is null, meaning that if the names list is null and
+
+260
+00:19:17,320 --> 00:19:22,600
+we can't extract the length, then I want this value to be set to null. And that is using our
+
+261
+00:19:23,160 --> 00:19:28,440
+question mark, question mark operator that we talked about, the null operator that we talked
+
+262
+00:19:28,440 --> 00:19:36,520
+about earlier, the infix operator. So you could just do this. You would say length is if the names
+
+263
+00:19:36,520 --> 00:19:42,600
+list is present, meaning that its value is not null, then grab its length. Otherwise, take the
+
+264
+00:19:42,600 --> 00:19:47,960
+value of zero and assign its length. And if you go to line number nine now and I say length, you can
+
+265
+00:19:47,960 --> 00:19:58,360
+see it's an integer. So it's not an optional integer anymore. So you could do the same thing
+
+266
+00:19:58,360 --> 00:20:03,400
+as well. Like you could say names, and you could do the same thing with properties, and you could
+
+267
+00:20:03,400 --> 00:20:11,000
+also do it for functions. So you can say names, add, adds, right? So you see this is a function
+
+268
+00:20:11,720 --> 00:20:18,040
+and then we're adding the value of bass to that list. However, you can't unconditionally invoke
+
+269
+00:20:18,040 --> 00:20:29,160
+this function on an optional value because it might be null. All right? So that is like a very,
+
+270
+00:20:29,160 --> 00:20:37,240
+very important bit of learning about darts, learning about optionals in darts, how you could use
+
+271
+00:20:38,200 --> 00:20:47,960
+nullable values. And as you will see, and we'll talk about more in this course, there is many
+
+272
+00:20:47,960 --> 00:20:57,800
+cases where you have to take into consideration null values. And especially if you're working
+
+273
+00:20:57,800 --> 00:21:03,320
+with different libraries where the library cannot make too many assumptions and your code is
+
+274
+00:21:03,320 --> 00:21:09,240
+dependent on that library and you will have to take into consideration, okay, the absence of
+
+275
+00:21:09,240 --> 00:21:16,040
+a value means that I personally have to take some decisions in my code consciously in order to
+
+276
+00:21:16,040 --> 00:21:21,640
+execute bits and pieces of code depending on the absence or presence of the value. So try to use
+
+277
+00:21:21,640 --> 00:21:29,880
+these optional null aware operators that I taught you here, which was the null aware, basically
+
+278
+00:21:29,880 --> 00:21:34,040
+the decision making to pick, like the in fix operator that tells you whether the left hand
+
+279
+00:21:34,040 --> 00:21:37,880
+side or the right hand side, depending on which one is not null first, it picks that one, okay?
+
+280
+00:21:38,440 --> 00:21:44,920
+That operator is very important and the all aware invocation operator, which is here, so you see
+
+281
+00:21:44,920 --> 00:21:52,600
+some object which may be null, then do something on it. Or the operator, which is a null aware
+
+282
+00:21:52,600 --> 00:21:57,480
+assignment operator that assigns the value on the right to the variable on the left should the
+
+283
+00:21:57,480 --> 00:22:02,280
+variable on the left be null, all right? So these are very, very important to understand.
+
+284
+00:22:05,640 --> 00:22:12,760
+Okay, now that we've talked about that, I'm going to take that in my notes that that is a topic we
+
+285
+00:22:12,760 --> 00:22:22,760
+talked about. Now, we also have very, very good official documentation about null safety in Dart.
+
+286
+00:22:22,760 --> 00:22:29,320
+So I'm going to bring up this documentation on a separate screen, and then I'm going to bring it
+
+287
+00:22:29,320 --> 00:22:37,640
+up here so you can actually see as well, all right? You can see here it says understanding
+
+288
+00:22:37,640 --> 00:22:45,560
+null safety, and this is great, great documentation about how null safety in Dart works. As you can
+
+289
+00:22:45,560 --> 00:22:52,520
+see, a lot of examples. I mean, it talks about like from the absolute beginning,
+
+290
+00:22:53,960 --> 00:23:01,080
+what it actually means, and you can see here null is at the level of object, so it's not,
+
+291
+00:23:01,080 --> 00:23:06,120
+null itself is not like an object. So you have lists and doubles and integers here,
+
+292
+00:23:06,120 --> 00:23:11,320
+but null sits on top for itself, kind of like the absence of a value.
+
+293
+00:23:12,040 --> 00:23:16,920
+So there's lots of examples in this link, and I highly encourage you to have a look at it.
+
+294
+00:23:16,920 --> 00:23:21,560
+Some things you may not understand, for instance, like this one, you will understand easily because
+
+295
+00:23:21,560 --> 00:23:26,760
+it says there is something called a thing, like a class, but we haven't talked about classes yet,
+
+296
+00:23:27,320 --> 00:23:33,720
+and it's name, parameter name here in this function called show gizmo is called thing,
+
+297
+00:23:33,800 --> 00:23:41,560
+show gizmo is called thing, and you can see it is conditionally accessing a property on that thing.
+
+298
+00:23:44,440 --> 00:23:52,200
+And then if that property in itself is null, it conditionally access that as well. So this
+
+299
+00:23:52,200 --> 00:23:56,840
+property is nullable, and then it's accessing another property inside that nullable property
+
+300
+00:23:57,560 --> 00:24:01,960
+if it's not null. So I mean, it's a great way you can chain them, as you can see here.
+
+301
+00:24:02,920 --> 00:24:08,520
+Then so if this thing is not null, then conditionally accesses this property on that.
+
+302
+00:24:08,520 --> 00:24:13,160
+So it's beautiful. I mean, and this thing is available on many other languages like Rust
+
+303
+00:24:13,160 --> 00:24:20,120
+and Swift as well. So it's nothing new, but it is kind of like such an important topic to understand
+
+304
+00:24:20,120 --> 00:24:24,760
+in Dart that I think you shouldn't just skim over it. So you should just really learn how to work
+
+305
+00:24:24,760 --> 00:24:35,240
+with it. All right. We've now talked about null values. So I'm going to take that in my notes
+
+306
+00:24:35,240 --> 00:24:43,560
+here. Now, I think for chapter five, this information is enough so that we can move on to
+
+307
+00:24:44,120 --> 00:24:51,400
+the next chapter. And in the next chapter, chapter number six, we're going to talk about some really,
+
+308
+00:24:51,400 --> 00:24:57,880
+really juicy stuff. And this is like chapter six is going to be like, as I can see in my notes,
+
+309
+00:24:57,880 --> 00:25:04,280
+I've pressed in a lot of really interesting topics such as enumerations, classes, objects,
+
+310
+00:25:05,160 --> 00:25:11,000
+custom operators, constructors, factory constructors, class methods, I mean, inheritance
+
+311
+00:25:11,000 --> 00:25:20,920
+and subclassing, abstract classes. So as you may have heard, depending on what background you have,
+
+312
+00:25:20,920 --> 00:25:26,120
+you may be like a product owner or product designer, a UXer or whatever. You may not have
+
+313
+00:25:26,120 --> 00:25:34,680
+like a software engineering background, but Dart in its core is an object-oriented programming
+
+314
+00:25:34,680 --> 00:25:41,320
+language. It means that things in Dart are objects. An object is an instance of a class,
+
+315
+00:25:41,320 --> 00:25:48,360
+as we'll talk about in the next chapter. So for you to understand Dart and how these things work,
+
+316
+00:25:48,360 --> 00:25:53,080
+for instance, we've talked about lists and actually typing dots in front of the name of
+
+317
+00:25:53,080 --> 00:25:57,400
+list and getting its length, but you may not really know how that works. So in order to
+
+318
+00:25:57,400 --> 00:26:02,760
+understand all those things, what that dot means, you need to understand what objects are. And in
+
+319
+00:26:02,760 --> 00:26:07,880
+order to understand objects, you need to know what classes are. And when you understand classes,
+
+320
+00:26:07,880 --> 00:26:13,800
+then you will learn about inheritance and then we'll talk about abstract classes, properties,
+
+321
+00:26:13,800 --> 00:26:20,520
+static functions, all that. So what we're going to talk about in chapter six is so important that
+
+322
+00:26:20,520 --> 00:26:26,200
+I believe that every Dart developer needs to know about this. And we're learning all of these things
+
+323
+00:26:26,200 --> 00:26:33,720
+to become good at doing Flutter. So although you can go and write like servers, maybe server
+
+324
+00:26:33,720 --> 00:26:38,520
+applications with Dart, or you could write command line applications with Dart, but these days,
+
+325
+00:26:39,160 --> 00:26:44,840
+Dart is primarily used for writing Flutter applications. And I don't have any data to
+
+326
+00:26:44,840 --> 00:26:49,640
+prove that, but I can see for myself when I'm in the community that most people are using Dart
+
+327
+00:26:49,640 --> 00:26:54,920
+primarily to write Flutter applications. So we're doing all of this to learn more about Flutter.
+
+328
+00:26:54,920 --> 00:26:58,920
+And I highly recommend that you don't skip these chapters where we're talking about Dart,
+
+329
+00:26:58,920 --> 00:27:04,040
+especially if you're new to Flutter development. So with that said, let's leave this chapter
+
+330
+00:27:04,040 --> 00:27:08,520
+the way it is right now. Chapter number five, we're done with that. Let's go to chapter number
+
+331
+00:27:08,520 --> 00:27:15,320
+six and learn about Dart enumerations and objects. Welcome to chapter six of this Flutter course.
+
+332
+00:27:16,040 --> 00:27:22,920
+In this chapter, we're going to talk about Dart enumerations and objects. These are some of my
+
+333
+00:27:22,920 --> 00:27:29,560
+favorite things to actually talk about. So in most programming languages, actually you have the same
+
+334
+00:27:29,560 --> 00:27:35,480
+facilities. So if you follow along with the other chapters, then you should have a working
+
+335
+00:27:35,480 --> 00:27:40,600
+Dart project set up now and maybe running in an emulator or a simulator so that you have
+
+336
+00:27:40,600 --> 00:27:45,640
+the ability to press command S on Mac or control S in Linux and Windows in order to rerun your
+
+337
+00:27:46,440 --> 00:27:52,040
+project. So without you having to pretty much do anything. So let's then get started. I'm just
+
+338
+00:27:52,040 --> 00:27:56,680
+going to make that assumption that you're already set with those requirements.
+
+339
+00:27:58,840 --> 00:28:06,680
+So let's start by talking about enumerations and I'm going to bring up the project from
+
+340
+00:28:06,680 --> 00:28:11,320
+the previous chapter. Let's just make sure that it's on the screen so you can easily see it.
+
+341
+00:28:12,120 --> 00:28:17,640
+Now I'm going to go to this list function that we created, remove the only parameter there and
+
+342
+00:28:17,640 --> 00:28:22,520
+remove that as well. So if I press command S now, nothing should happen on the screen because we
+
+343
+00:28:22,520 --> 00:28:28,040
+don't have any functionality in test. So let's talk about enumerations and what they actually are.
+
+344
+00:28:28,040 --> 00:28:34,680
+As you can see here, enumerations are named list of related items. Now, an enumeration is
+
+345
+00:28:35,240 --> 00:28:42,360
+kind of like equivalent of making a string written programmatically so that it becomes an entity.
+
+346
+00:28:43,320 --> 00:28:52,600
+And by that, I mean that let's say you have the value name and then you could say foo.
+
+347
+00:28:53,240 --> 00:28:59,880
+And you would also say const other name. That's also foo. They're both the same string, but they're
+
+348
+00:28:59,880 --> 00:29:05,720
+not the same identity in that. I mean, internally, actually, in terms of const, I don't want to go
+
+349
+00:29:05,720 --> 00:29:10,120
+too much into how the compiler actually works, but they're kind of going to be the same string.
+
+350
+00:29:10,680 --> 00:29:15,480
+But I mean that you've written it twice, so it's not the exact same thing. You have to write it
+
+351
+00:29:15,480 --> 00:29:24,760
+twice. So an enumeration tries to basically make sure that a value has a name that can be
+
+352
+00:29:24,760 --> 00:29:33,160
+programmatically referred to. So let's say enum, and that's a keyword in Dart. That's how you
+
+353
+00:29:33,160 --> 00:29:39,400
+create an enumeration. I'm going to take this that we've talked about some of the things
+
+354
+00:29:39,400 --> 00:29:44,600
+during the intro. Sorry about that. I have to look at my notes. Anyway, so we have the enum here.
+
+355
+00:29:44,600 --> 00:29:51,080
+That's how you create an enumeration in Dart. And you would then give a name to your enumeration.
+
+356
+00:29:51,080 --> 00:29:58,040
+And unlike variables and constants that are written with camel case, you'd have to basically use
+
+357
+00:29:58,040 --> 00:30:04,040
+another case in here, which is the first letter of every word in your enumeration's name has to be
+
+358
+00:30:04,040 --> 00:30:09,880
+uppercase, and the rest of the letters have to be lowercase. So let's in this case, for instance,
+
+359
+00:30:09,880 --> 00:30:17,720
+say person properties, the properties of any person. Then in this enum, you will write the
+
+360
+00:30:17,720 --> 00:30:24,360
+different properties, for instance, first name, last name, age. So what that basically means is
+
+361
+00:30:24,360 --> 00:30:30,360
+that you've now defined a list of related things, such as first name, last name, age, which are
+
+362
+00:30:30,360 --> 00:30:37,400
+categorized under a particular name, which in this case, person properties. And you can refer
+
+363
+00:30:37,400 --> 00:30:43,960
+to these in your code using the dot notation. So you can say person, properties, dot, first name.
+
+364
+00:30:45,160 --> 00:30:49,880
+And you can print it, actually. So I'm just going to press Command S and you can see it being printed
+
+365
+00:30:49,880 --> 00:30:58,200
+to the screen. So enumerations are really, really great as we go on in learning about Dart and how
+
+366
+00:30:58,200 --> 00:31:05,320
+Dart works, how we can work with Flutter, how we can parse data that comes back from a server,
+
+367
+00:31:05,320 --> 00:31:12,440
+for instance. But for now, it's enough for you to understand that you can categorize related items
+
+368
+00:31:13,480 --> 00:31:18,280
+under an enumeration so that you can refer to them later, okay? And in Dart, you can also get
+
+369
+00:31:18,280 --> 00:31:25,400
+the string representation of these values using their name property. That is something that's
+
+370
+00:31:25,400 --> 00:31:31,320
+created for you by default. So if you just say name, you now see first name being printed to
+
+371
+00:31:31,320 --> 00:31:37,240
+the screen as a string. But before that, if you printed the enumerations in on value here for
+
+372
+00:31:37,240 --> 00:31:45,320
+first name, it would print out the entire thing, okay? So that's short and sweet about enumerations.
+
+373
+00:31:45,320 --> 00:31:52,120
+We're going to use them quite a lot, actually, especially later where we go to more advanced
+
+374
+00:31:52,120 --> 00:31:58,360
+topics as we develop our real application. But for now, just know that this is how you create
+
+375
+00:31:58,360 --> 00:32:02,360
+an enumeration using the enum keyword and then the rest of the properties you just put in curly
+
+376
+00:32:02,360 --> 00:32:12,600
+brackets, okay? So that's for enumerations. Now we need to talk about switch statements. And
+
+377
+00:32:12,600 --> 00:32:17,240
+actually, let's bring this back and I'm going to change these two properties, let's say, okay?
+
+378
+00:32:17,240 --> 00:32:26,120
+And let's just say, for instance, animal type. And let's say cat, dog, and then let's say rabbit.
+
+379
+00:32:30,120 --> 00:32:38,280
+So let's say we have an animal type enumeration. And we want to, and then we, for instance, get
+
+380
+00:32:38,280 --> 00:32:44,200
+in our function, we say animal type, animal type. So there's a property that we expect
+
+381
+00:32:44,200 --> 00:32:49,560
+to be passed to our function called animal type and then we name that property animal type with
+
+382
+00:32:49,560 --> 00:32:54,600
+camel casing here, okay? So if we do that, then we go to our function here where we're calling
+
+383
+00:32:54,600 --> 00:32:58,760
+the function, you can see that we got an error, meaning that there is a parameter expected of type
+
+384
+00:32:58,760 --> 00:33:05,720
+animal type and no one's passing that. So at the call site, which is the place you're calling your
+
+385
+00:33:05,720 --> 00:33:11,320
+function, that's what a call site is known as in programming. So if you're coming from a background
+
+386
+00:33:11,320 --> 00:33:16,440
+of design or anything that is not software development related, so you wouldn't probably
+
+387
+00:33:16,440 --> 00:33:22,440
+know so much about this kind of lingo, but a call site is where you're calling a function. So
+
+388
+00:33:22,440 --> 00:33:29,720
+at this call site, number 19, we're then going to pass an animal type and let's just say
+
+389
+00:33:30,440 --> 00:33:36,840
+cat in this case, okay? So in here, we could just print that. I'm just going to say animal type.
+
+390
+00:33:37,400 --> 00:33:43,000
+I'm going to press command S and you can see cat being printed here, okay? Now, if you want to
+
+391
+00:33:43,000 --> 00:33:50,840
+execute different types of code depending on this animal type, then you could, which is not
+
+392
+00:33:50,840 --> 00:33:57,080
+recommended, you could use an if statement. So if you just said, if animal type is equal to animal
+
+393
+00:33:57,080 --> 00:34:10,120
+is equal to animal type cat, you'd say print all I love cats, okay? Else if animal type is animal
+
+394
+00:34:12,920 --> 00:34:19,240
+dog, then you would say print or you would say dogs are still fluffy or something.
+
+395
+00:34:19,240 --> 00:34:27,800
+And else if animal type is animal type
+
+396
+00:34:30,120 --> 00:34:39,800
+and I wish I had. All right, so this is using normal if statements. You say if animal type is
+
+397
+00:34:39,800 --> 00:34:46,200
+cat, then blah, blah, if blah, blah. Now, it is one way of doing it, but it's not the recommended
+
+398
+00:34:46,200 --> 00:34:49,880
+way of working with enumerations and the recommended way of working with enumeration,
+
+399
+00:34:49,880 --> 00:34:54,680
+especially if you're doing like branching code as we're doing here, is using a switch statement. So
+
+400
+00:34:55,240 --> 00:35:03,160
+let's convert this code to switch. So let's say switch. You put parenthesis, open, close,
+
+401
+00:35:03,160 --> 00:35:07,800
+and then open, close curly brackets. And in here, you would put your enumeration. So you say animal
+
+402
+00:35:07,800 --> 00:35:14,040
+type, okay? And the way to handle these different branches then is with the case keyword. You'd say
+
+403
+00:35:14,040 --> 00:35:24,600
+in the case of animal type, bunny, print bunny, something like this, okay? Case animal type,
+
+404
+00:35:25,640 --> 00:35:40,600
+cat, print cat. And case animal type, dog, print dog. Just like that, okay?
+
+405
+00:35:41,480 --> 00:35:47,480
+Now, this is I'm actually grateful that we're getting this error so you can clearly see what
+
+406
+00:35:47,480 --> 00:35:52,520
+it says. Is that the case should not complete normally, try adding break or return. Now,
+
+407
+00:35:52,520 --> 00:35:57,320
+what this is saying that you see in many programming languages, just like Dart,
+
+408
+00:35:57,320 --> 00:36:03,000
+when the program comes here to the case statement, it kind of like falls through to the next line.
+
+409
+00:36:03,000 --> 00:36:07,960
+And Dart tries to avoid that. So it says, okay, if I handle bunny, then I'm doing some stuff,
+
+410
+00:36:07,960 --> 00:36:12,200
+but it kind of feels like I'm falling down to the next line after this because you didn't tell me
+
+411
+00:36:12,200 --> 00:36:19,160
+what to do after the print statement. So you either tell me to completely go out of this function,
+
+412
+00:36:19,160 --> 00:36:24,200
+go out of the test function by putting the return keyword here. We haven't talked about return
+
+413
+00:36:24,200 --> 00:36:29,560
+really yet. But you could do that. You could just say, okay, return right after all of these. So
+
+414
+00:36:29,560 --> 00:36:34,280
+I'm just going to press command S, and you will see cats being printed to the screen, which is
+
+415
+00:36:34,280 --> 00:36:41,400
+here. But if you didn't have this return statement here, you would get an error. So you either say
+
+416
+00:36:41,400 --> 00:36:47,240
+return or you would use the break keyword. Now there's a difference between these. Let's put
+
+417
+00:36:47,240 --> 00:36:52,760
+a print statement here, and I'm going to say function is finished. So I'm kind of expecting
+
+418
+00:36:52,760 --> 00:37:02,680
+that by executing our code here, our test function here, passing the value of cat at the moment,
+
+419
+00:37:02,680 --> 00:37:08,840
+that we fall into the switch, we check that this is cat and then print the cat, and then we return.
+
+420
+00:37:10,040 --> 00:37:15,320
+This is kind of what it is doing. It means that it kind of skips over this print statement,
+
+421
+00:37:15,320 --> 00:37:19,960
+and you'll see soon. If I say command S, it will just say cat and then we'll return from that.
+
+422
+00:37:20,680 --> 00:37:25,160
+So this is not really what I wanted. I wanted this switch statement to be executed,
+
+423
+00:37:25,160 --> 00:37:30,600
+print cat, and then continue after switch. And that's where you use the break statement,
+
+424
+00:37:30,600 --> 00:37:36,280
+so or the keyword here. So if you say break, it breaks out of the switch statement and then
+
+425
+00:37:36,280 --> 00:37:41,080
+continues with the rest of the function as you would expect. So if I press command S here,
+
+426
+00:37:41,080 --> 00:37:48,520
+you say cat, and then function is finished. All right. So switch is the preferred way of working
+
+427
+00:37:48,520 --> 00:37:53,800
+with enumerations, especially if you're doing branches. So you could also like,
+
+428
+00:37:54,440 --> 00:38:06,280
+for instance, if in this case you said make sure this is a cat, you could also in this case say,
+
+429
+00:38:06,280 --> 00:38:15,720
+if animal type is not animal type, cat, and you would return. Okay? You could do this as well.
+
+430
+00:38:15,720 --> 00:38:20,520
+So this is kind of like a conditional statement that you're putting in the beginning of your
+
+431
+00:38:20,520 --> 00:38:28,840
+function, making sure that any code executed after line 10 is completely sure that the animal
+
+432
+00:38:28,840 --> 00:38:33,880
+type is a cat. Okay? So in that case, you may just use a typical if statement so you don't have to
+
+433
+00:38:33,880 --> 00:38:41,240
+do switches. Okay? But if you're trying to execute special pieces of code depending on
+
+434
+00:38:41,880 --> 00:38:47,240
+which value this enumeration contains at the moment, then I highly suggest that you use
+
+435
+00:38:47,240 --> 00:38:52,920
+switch statement instead of if statement. All right? So kind of depends on your use case.
+
+436
+00:38:52,920 --> 00:38:57,960
+All right? Okay. I'm just going to mark this item as done in my notes.
+
+437
+00:38:59,960 --> 00:39:05,480
+Now let's talk about classes. All right? Which is one of my favorite topics to talk about, actually.
+
+438
+00:39:08,440 --> 00:39:14,440
+Well, classes in Dart and in many other languages actually bring this back to
+
+439
+00:39:14,440 --> 00:39:20,600
+how it was before, make it a test function. All right? Remove the animal type from here.
+
+440
+00:39:27,480 --> 00:39:38,040
+So classes in Dart are grouping of various functionalities into one packageable piece
+
+441
+00:39:38,040 --> 00:39:45,080
+of data. And by that, I mean, for instance, let's say that you have a function called run,
+
+442
+00:39:45,720 --> 00:39:51,640
+another function called breathe, and then you have a person's first name, a person's last name.
+
+443
+00:39:52,520 --> 00:39:56,920
+Of course, you could go and define these things like this. You could say const first name,
+
+444
+00:39:58,600 --> 00:40:07,480
+const last name is something like this. Okay? Goes like that. And then you could have
+
+445
+00:40:08,120 --> 00:40:13,560
+a function, sorry, you would say run, and then you'd have another function called breathe.
+
+446
+00:40:15,960 --> 00:40:21,160
+And you could do that. But these are functions that are kind of like for us in this particular
+
+447
+00:40:21,160 --> 00:40:26,920
+case, or at least in my head at the moment, I am imagining these functions to be related to a person.
+
+448
+00:40:28,120 --> 00:40:31,560
+The person can run, that person can breathe, that person has a first and a last name. So
+
+449
+00:40:31,560 --> 00:40:39,400
+the grouping of these related things is done with a class in Dart, at least. So
+
+450
+00:40:40,280 --> 00:40:44,600
+the way to do that is you would say, for instance, class, which is a keyword in Dart.
+
+451
+00:40:47,720 --> 00:40:52,200
+The name of the class. Now, for the naming of classes and enumerations and any other
+
+452
+00:40:53,000 --> 00:40:59,720
+entity except for variables and constants, you should use just normal casing. I don't actually
+
+453
+00:40:59,720 --> 00:41:06,120
+know if it's called Pascal casing or I think so. But you would just use your uppercase,
+
+454
+00:41:06,120 --> 00:41:13,320
+the first letter of every word. Okay? So let's just say person. Okay? This is how you would say
+
+455
+00:41:13,320 --> 00:41:18,920
+a person class. All right? So I don't think actually we can put constants in there. I'm
+
+456
+00:41:18,920 --> 00:41:24,440
+just going to grab these two functions and just place them inside this person class. All right?
+
+457
+00:41:25,000 --> 00:41:32,040
+And let's in this, say, print, running, run function, and for breathing, we're going to say
+
+458
+00:41:32,040 --> 00:41:41,080
+breathing. All right? And in the test function, you would want to create something called an
+
+459
+00:41:41,080 --> 00:41:48,920
+instance of this class. Now, instances are objects, and objects are created from classes. So
+
+460
+00:41:49,080 --> 00:41:56,840
+you need to understand how instantiation works in software development. And this is for any
+
+461
+00:41:56,840 --> 00:42:05,960
+programming language such as Dart, Rust, Swift, Python, JavaScript, where they allow you to create
+
+462
+00:42:05,960 --> 00:42:13,800
+classes. And now that you know what a class is, in order to use a class, you need to usually
+
+463
+00:42:14,680 --> 00:42:18,440
+create something called an instance of that class. That means that you tell
+
+464
+00:42:19,000 --> 00:42:24,200
+the programming language that, okay, here is the class. I know about that. But give me a copy of
+
+465
+00:42:24,200 --> 00:42:32,520
+it. So every class can be instantiated, meaning that the Dart compiler will create a copy of that
+
+466
+00:42:32,520 --> 00:42:37,480
+exact class with its data, its functions, its properties, and give that copy to you. All right?
+
+467
+00:42:38,280 --> 00:42:46,280
+So that is called instantiation. And it works by using the equal sign and creating, putting
+
+468
+00:42:46,280 --> 00:42:51,400
+parentheses at the end of the name of the class, as I'll show you here. So let's just say final.
+
+469
+00:42:52,760 --> 00:42:57,480
+And we say person, which is the name of our variable in this case, is equal to,
+
+470
+00:42:57,480 --> 00:43:01,800
+as I said, equal sign. Then you would write the name of the class and parentheses just like that.
+
+471
+00:43:02,680 --> 00:43:08,920
+So now you said a person variable in this case is an instance of that person class. Now you'll
+
+472
+00:43:08,920 --> 00:43:15,400
+understand using dots and notation, you could say person dot run. You see? That function is now
+
+473
+00:43:15,400 --> 00:43:22,680
+available on your instance of the person class. And you would say person dot breathe. Okay? So
+
+474
+00:43:22,680 --> 00:43:30,920
+these are functions that are available at instance level of the person class. I know there's a lot
+
+475
+00:43:30,920 --> 00:43:36,600
+of words that I'm just talking about, but I think you understand the point here. So this is how you
+
+476
+00:43:36,600 --> 00:43:42,520
+instantiate the person class, and this is how you invoke various functions on that class. So if I
+
+477
+00:43:42,520 --> 00:43:49,480
+press command S, you can see it says running and breathing. If you said, in this case, person,
+
+478
+00:43:49,480 --> 00:43:56,280
+and then without instantiating using the parentheses, if you said breathe, you will get
+
+479
+00:43:56,280 --> 00:44:03,400
+an error here. Instance member breathe can't be accessed using static access. Okay? And that's,
+
+480
+00:44:03,400 --> 00:44:08,840
+I mean, that is kind of like instance member is an important term also to remember. And instance
+
+481
+00:44:08,840 --> 00:44:16,520
+member means some functionality that is only available at the instance level, meaning that
+
+482
+00:44:16,520 --> 00:44:21,240
+it's not available at the person class level, but you have to make a copy of person in order to be
+
+483
+00:44:21,240 --> 00:44:30,600
+able to access that. All right? So that's the basic of classes. You can do a lot with classes,
+
+484
+00:44:30,600 --> 00:44:36,760
+as we will talk about soon. So I'm just going to leave that person class right there, and then
+
+485
+00:44:37,880 --> 00:44:45,880
+just kind of mark that as talked about in my notes as well. And let's now talk a little bit
+
+486
+00:44:45,880 --> 00:44:53,720
+about objects. Well, objects are actually quite easy to explain. An object is an instance of a
+
+487
+00:44:53,720 --> 00:45:01,800
+class. So you wouldn't like, when someone says, oh, here's an object of type string, it means
+
+488
+00:45:01,800 --> 00:45:09,000
+literally that there is a class called string, I've created an instance of it, and that is an
+
+489
+00:45:09,000 --> 00:45:17,480
+object. So the words instance and object are usually used interchangeably. But if you hear
+
+490
+00:45:17,480 --> 00:45:22,520
+someone say instantiate a class, then you would say, okay, what's the class name? Oh, it's person.
+
+491
+00:45:22,520 --> 00:45:29,000
+All right. Person. Now I created an instance. Okay? And in this case, you can see I'm just
+
+492
+00:45:29,000 --> 00:45:32,520
+creating an instance of person without actually doing anything with it. So that's kind of like
+
+493
+00:45:32,520 --> 00:45:42,520
+a useless object, all right? But if I put, I say foo is a person, then this foo now is an object
+
+494
+00:45:42,520 --> 00:45:46,680
+of type person. And actually, you can write its name here, and you'll see that it tells you that
+
+495
+00:45:46,680 --> 00:45:59,480
+this is a person, okay? So that in short is what objects are. And I can see in my notes that
+
+496
+00:45:59,480 --> 00:46:04,120
+objects are kind of like in the wrong place. I'm going to bring it to the right place. Sorry about
+
+497
+00:46:04,120 --> 00:46:16,040
+that. Okay? Now let's talk a little bit about constructors. And I can see constructors also
+
+498
+00:46:16,040 --> 00:46:20,040
+at the wrong place in my notes, so I'm going to bring those also to the right place. Okay?
+
+499
+00:46:20,840 --> 00:46:30,840
+Sorry about that. What a constructor is at its name, as its name indicates, is a special logic
+
+500
+00:46:30,840 --> 00:46:38,920
+in a class that constructs or initializes or builds that class's instance, all right? So
+
+501
+00:46:39,720 --> 00:46:43,800
+you may say that, okay, let's go to our function here, to our class here, person.
+
+502
+00:46:44,440 --> 00:46:50,840
+And let's say every person has a first name or a name, okay? So let's just define that. We say
+
+503
+00:46:50,840 --> 00:46:56,440
+final string name, all right? As you can see now, Dart is saying, okay, you said that every person
+
+504
+00:46:56,440 --> 00:47:03,000
+has a name, and it's a final, meaning that after the person has been instantiated or after that
+
+505
+00:47:03,000 --> 00:47:09,000
+person has been initialized or created an instance from, you cannot change that name because you said
+
+506
+00:47:09,000 --> 00:47:15,400
+final, all right? If you said string name is foo, that would be different because it means
+
+507
+00:47:15,400 --> 00:47:21,240
+every person instance that gets created has the default value foo for its name. That's a completely
+
+508
+00:47:21,240 --> 00:47:26,680
+different way of saying what the name of the person is. In this case, as you can see, we're
+
+509
+00:47:26,680 --> 00:47:33,000
+saying that every person instance, every person copy that we create has a name. Now Dart is saying,
+
+510
+00:47:33,000 --> 00:47:38,520
+okay, where is the name then? You didn't tell me how to create it. And that's where you would
+
+511
+00:47:38,520 --> 00:47:46,200
+want to use something called constructor, okay? Constructors are sometimes called as initializers.
+
+512
+00:47:46,200 --> 00:47:50,680
+Depending on the background of the programmer, they may call it constructor initializer
+
+513
+00:47:51,400 --> 00:47:55,880
+or maybe some other names that I don't know about. But if you hear that, a constructor,
+
+514
+00:47:55,880 --> 00:48:04,040
+then you will now know what I'm talking about soon actually. So now what you can do, at least
+
+515
+00:48:04,040 --> 00:48:10,120
+in Visual Studio Code, when you get this error is to just hover over it and then press command
+
+516
+00:48:10,120 --> 00:48:17,000
+on Mac or control on Windows or Linux and press dot. Now you will see you will get some suggestions
+
+517
+00:48:17,000 --> 00:48:22,120
+here. And the second suggestion, at least for me here, it says create constructor for final
+
+518
+00:48:22,120 --> 00:48:28,200
+fields, okay? And I can just press that. And what happens here now, you see it's that it creates
+
+519
+00:48:28,200 --> 00:48:35,240
+something that looks kind of like a function, but it doesn't have a name. Its name is implicitly
+
+520
+00:48:35,240 --> 00:48:41,400
+set to the name of the class, okay? So basically, it says I'm a special function with the same name
+
+521
+00:48:41,400 --> 00:48:49,480
+as the class, and I expect a value to be given to me, which I will then in turn assign to the name
+
+522
+00:48:49,480 --> 00:48:56,760
+property of myself. It's kind of like a strange way of doing things, but is quite clean as well,
+
+523
+00:48:56,760 --> 00:49:02,280
+okay? After you do that, so this is how you create a constructor. After you do that, then at the call
+
+524
+00:49:02,280 --> 00:49:07,880
+site where you're calling this person class to create an instance of it, it will complain saying
+
+525
+00:49:07,880 --> 00:49:14,360
+that, oh, I'm expecting an argument, but I didn't find any. And that's where you have to pass the
+
+526
+00:49:14,360 --> 00:49:21,400
+name. So let's say in this case is foo bar, okay? And then on the next line, you can just say print
+
+527
+00:49:21,400 --> 00:49:27,880
+foo name, all right? And press command S, and then you can see foo bar being printed to the screen.
+
+528
+00:49:27,880 --> 00:49:34,760
+So that is like the basic of a constructor. That's how you construct instances of your class,
+
+529
+00:49:34,760 --> 00:49:41,400
+all right? Now, you may be saying that, all right, I don't want, I mean, you can do many fancy things
+
+530
+00:49:41,400 --> 00:49:49,000
+with constructors. You could say, okay, its name, for instance, by default, must have a special
+
+531
+00:49:49,000 --> 00:49:52,680
+value. You could do that. There's lots of things you can do with constructors, which I'm not going
+
+532
+00:49:52,680 --> 00:49:58,280
+to go into the details of. But right now, just know that a constructor is this special kind of
+
+533
+00:49:58,280 --> 00:50:03,560
+function that has the same name as the name of the class, and then parentheses, and then you put your
+
+534
+00:50:03,560 --> 00:50:17,960
+values in here, all right? Okay, that was constructors. Now, let's talk a little bit about
+
+535
+00:50:19,560 --> 00:50:28,840
+methods, all right? And what methods are, I'm actually going to go here and say, we're going
+
+536
+00:50:28,840 --> 00:50:33,960
+to talk about methods. I know it's at the wrong place in my notes as well. Sorry about that.
+
+537
+00:50:33,960 --> 00:50:40,280
+A method of a class we've talked about already, to be honest with you, and a method of a class is
+
+538
+00:50:40,360 --> 00:50:49,960
+a function on the class, which is usually referred to as an instance method, meaning that the
+
+539
+00:50:49,960 --> 00:50:55,080
+function is available after you've instantiated that class, all right, as we're doing in line
+
+540
+00:50:55,080 --> 00:51:03,720
+number 14. Name is an instance variable. So, is a variable that is available at an instance level
+
+541
+00:51:03,720 --> 00:51:09,800
+is not an instance method. An instance method should be a function, all right? So, let's go
+
+542
+00:51:09,800 --> 00:51:15,000
+and create a function here that doesn't return any value denoted by the void return type, and we
+
+543
+00:51:15,000 --> 00:51:22,760
+say print name, all right? The functionality of this function is only just to print the name of
+
+544
+00:51:22,760 --> 00:51:28,600
+the class, all right? That's all it does. And in Dart, you're also, now that we're talking about
+
+545
+00:51:28,600 --> 00:51:35,320
+this, I'll just mention also that in Dart it's usually better not to prefix your instance
+
+546
+00:51:35,320 --> 00:51:46,840
+variables or instance functions inside the class itself using this keyword. This keyword in Dart,
+
+547
+00:51:48,440 --> 00:51:57,800
+the this this or that this keyword basically refers to the current instance of this class,
+
+548
+00:51:57,800 --> 00:52:04,840
+all right? So, you can either tell print name to print this dot name, or it's actually better
+
+549
+00:52:04,840 --> 00:52:09,880
+to remove this and refer to it as name. That's the recommended way of doing it, okay? So,
+
+550
+00:52:09,880 --> 00:52:17,240
+avoid the keyword this as much as you can unless you have to. And we'll come to those points
+
+551
+00:52:17,240 --> 00:52:23,400
+hopefully later in this course why you may have to do that, why you may have to use this.
+
+552
+00:52:24,920 --> 00:52:32,120
+All right. Now we have the print name instance method, all right? So, let's just use it. Instead
+
+553
+00:52:32,120 --> 00:52:38,360
+of this print function that we're doing here, let's just say foo dot print's name, all right?
+
+554
+00:52:38,360 --> 00:52:45,800
+Command S or Control S on Linux and Windows and Command S on Macintosh, and then you get the
+
+555
+00:52:45,800 --> 00:52:54,680
+Flutter foo bar printed here. Or you could just say print, I'm going to, I will now print the name
+
+556
+00:52:54,680 --> 00:53:00,120
+of this person in single quotes. We don't need double quotes, okay? Command S and you will see
+
+557
+00:53:00,120 --> 00:53:04,920
+that message being printed here, followed by the actual name of that instance. So,
+
+558
+00:53:05,480 --> 00:53:10,440
+if someone says method or instance message, you will then know what we're talking about.
+
+559
+00:53:10,440 --> 00:53:16,280
+It's a function created at the class level that does some stuff, all right? So, that's short and
+
+560
+00:53:16,280 --> 00:53:27,000
+sweet. Okay. Now that we've talked about that, let's talk a little bit about inheritance and
+
+561
+00:53:27,000 --> 00:53:31,480
+subclassing. I'm going to bring the caption here so you know what we're talking about.
+
+562
+00:53:33,000 --> 00:53:41,320
+Now, inheritance and subclassing are so, so important in Dart and in any other object-oriented
+
+563
+00:53:41,320 --> 00:53:46,600
+programming language that I don't think anybody should jump over it. Like, for instance, I know
+
+564
+00:53:47,320 --> 00:53:52,120
+developers working in various programming languages that are object-oriented, but they kind of steer
+
+565
+00:53:52,120 --> 00:53:58,440
+clear of the object-oriented aspects of that language. Maybe they don't need it and maybe
+
+566
+00:53:58,440 --> 00:54:03,480
+they just feel like it's unnecessary or they feel like, oh, it's just too complicated.
+
+567
+00:54:03,480 --> 00:54:08,520
+But in Dart, if you want to become a good Flutter developer or a good Dart developer, you need to
+
+568
+00:54:08,520 --> 00:54:20,920
+know about classes and inheritance. So, let's talk about inheritance. What inheritance in Dart is,
+
+569
+00:54:20,920 --> 00:54:30,200
+is that it allows you to define a class and then to add more functionality to that class
+
+570
+00:54:31,000 --> 00:54:41,000
+into a new class. So, let's, for instance, say we go into our test function here and remove that,
+
+571
+00:54:41,080 --> 00:54:50,360
+okay, that code, and also remove the person class. Now, let's create a class living thing,
+
+572
+00:54:50,360 --> 00:55:00,920
+all right, and then we say void, breathe, and then we say print. Living thing is breathing,
+
+573
+00:55:00,920 --> 00:55:07,400
+okay? So, we created a class living thing, and we're saying that anything that lives needs to
+
+574
+00:55:07,400 --> 00:55:12,440
+breathe. Now, this may be an assumption, but anyways, anything that lives and is above the
+
+575
+00:55:14,600 --> 00:55:21,640
+ground and is basically alive is breathing, okay? So, that's our function on the living thing. Now,
+
+576
+00:55:22,440 --> 00:55:29,240
+you may say, okay, any living thing may also have the ability to move, okay? Then we have
+
+577
+00:55:29,240 --> 00:55:36,600
+a function called move. I'm going to say print, I am moving, all right? So, now you may say, okay,
+
+578
+00:55:36,600 --> 00:55:44,120
+now I kind of want a class called cat, all right. Cat is also a living thing. One way to do that,
+
+579
+00:55:44,120 --> 00:55:51,160
+to go about creating a class, the cat class is to say class cat, and then you say, hmm,
+
+580
+00:55:51,160 --> 00:55:55,720
+I kind of need these functions, and you'll go and copy it, and then you paste them here,
+
+581
+00:55:55,720 --> 00:56:04,920
+all right? And then you say, okay, I'm good to go now. But one of the absolute paramount qualities
+
+582
+00:56:04,920 --> 00:56:13,960
+of a developer is that developers do not like to repeat themselves, and it is such an important
+
+583
+00:56:13,960 --> 00:56:18,600
+concept in programming that you need to avoid repeating yourself, that you need to just coin
+
+584
+00:56:18,600 --> 00:56:25,000
+that down now, get it straight so that you don't make this mistake as we're doing in this code
+
+585
+00:56:25,000 --> 00:56:30,760
+right now. So, the first thing you want to do as a developer is say, how can I grab this code?
+
+586
+00:56:31,480 --> 00:56:38,520
+And it's obvious that the cat is also a living thing. So, that's where you want to use the
+
+587
+00:56:38,520 --> 00:56:46,360
+extends keyword that allows you to inherit the functionality inside the living thing class
+
+588
+00:56:46,360 --> 00:56:53,000
+into your cat class. So, in this case, I'm saying cat class extends or read it in English as inherits
+
+589
+00:56:53,720 --> 00:57:00,040
+living thing, all right? So, you can see that the cat class in itself is empty right now,
+
+590
+00:57:00,040 --> 00:57:10,520
+but if you go to the test function and I say, final, fluffers is a cat, and then I can say
+
+591
+00:57:10,520 --> 00:57:18,600
+fluffers, you can see that now that the cat class has breathe and move functionalities,
+
+592
+00:57:18,600 --> 00:57:24,200
+or functions, actually. So, although cat itself didn't define these functions,
+
+593
+00:57:24,200 --> 00:57:30,760
+but they're available for the instance in this case called fluffers of type cat to use. So,
+
+594
+00:57:30,760 --> 00:57:38,040
+you can just say move, and then you can say fluffers, okay? So, if I run this code,
+
+595
+00:57:38,040 --> 00:57:42,360
+if I delete everything in the debug console and run this code, you can see that the cat
+
+596
+00:57:42,360 --> 00:57:47,800
+instance called fluffers is saying move, or I am moving, and it will also say living thing is
+
+597
+00:57:47,800 --> 00:57:58,680
+breathing, okay? Now, we could also talk about, now that we're talking about inheritance and
+
+598
+00:57:58,680 --> 00:58:05,160
+subclassing. Actually, maybe I shouldn't call it subclassing, but I also think it's important
+
+599
+00:58:05,160 --> 00:58:08,680
+for you to understand what subclassing is. Subclassing is literally the same thing as
+
+600
+00:58:08,680 --> 00:58:13,160
+inheritance. Subclassing is saying that you have a class and you're creating a subcomponent, like a
+
+601
+00:58:13,160 --> 00:58:20,440
+subthing of it, which may actually have, it's a little bit of a strange name in sub because
+
+602
+00:58:20,440 --> 00:58:26,280
+sub means kind of like a subset of things available in that class, but it actually is like a superset
+
+603
+00:58:26,280 --> 00:58:32,600
+because it will grab everything, like the cat at the moment has every functionality in living thing,
+
+604
+00:58:32,600 --> 00:58:39,240
+right? But it may not necessarily do that. It's kind of complicated to explain, but if you hear
+
+605
+00:58:39,240 --> 00:58:48,600
+subclassing or inheritance, know that that is what we mean. You use the extents keyword, usually,
+
+606
+00:58:48,600 --> 00:58:56,600
+okay? All right. Now, we've talked about inheritance and subclassing.
+
+607
+00:58:58,520 --> 00:59:06,040
+So, I'm gonna move a little bit my notes around, sorry about that, that I'm looking away from the
+
+608
+00:59:06,040 --> 00:59:14,760
+screen, and now we're gonna talk about abstract classes, all right? There's good documentation
+
+609
+00:59:14,760 --> 00:59:24,520
+about abstract classes, and what we're gonna do here is to just change this class living thing
+
+610
+00:59:24,520 --> 00:59:35,480
+at the moment to abstract, and you'll see that everything works as expected. Well, an abstract
+
+611
+00:59:35,480 --> 00:59:43,720
+class is very similar to a normal class, and there's good documentation about what an abstract
+
+612
+00:59:43,720 --> 00:59:48,280
+class actually is from a Dart perspective, and you can see it says use the abstract modifier to
+
+613
+00:59:48,280 --> 00:59:56,200
+define an abstract class that cannot be instantiated, all right? So, an abstract class is just like a
+
+614
+00:59:56,200 --> 00:59:59,480
+normal class that can't have instances. So,
+

@@ -1,0 +1,615 @@
+start	end	text
+0	8200	I'm just going to mark that as done that we've talked about it in notes, all right?
+8200	12200	Now let's talk about cherry picking non-null values.
+12200	25080	And what this means is with Dart, you can easily ask the language to give you values
+25080	26400	that are not null.
+26400	29340	And I'll explain what this actually means.
+29340	42740	Let's say that you have a string, a final string, first name, and it is equal to foo.
+42740	48060	Now let's just say this is a constant, all right?
+48060	49980	That's what the suggestion was, you see?
+49980	55540	I wrote final because I was not planning to reassign this first name value to anything
+55980	63300	But then I got a suggestion to actually use the keyword const as you can see here.
+63300	68580	So let's say const, all right?
+68580	79500	Now what we want to do here, then, is to also create a last name or a middle name, r, and
+79500	85500	then we say last name, and I have to change the last name to last name, right?
+85500	91900	Actually, what we're going to do is we're going to say the first name is null, all right?
+91900	96580	So first name null, middle name bar, and last name bass.
+96580	102140	Now if you want to, if you have these values and you want to, for instance, I mean, right
+102140	106220	now you can actually see the values that you put here, but sometimes these values are passed
+106220	108900	to your function, so you don't know what they are.
+108900	110780	Right now you can see what they are, so it's easy.
+110780	115820	If I told you, pick the first non-null value, then you would say middle name because you
+115820	116820	can see it.
+116820	121420	However, if you had a function, for instance, test here that accepted those values, for
+121420	129580	instance, string, first name, string, last name, and then string, or yeah, middle name,
+129580	135700	etc., then you wouldn't know what those values are, or you cannot make an assumption about
+135700	139940	what those values are except that they are nullable or optional strings.
+139940	143140	So I hope that you get what I'm trying to say.
+143140	149980	If someone told you to pick the first non-null value, one way to do that is, like the old
+149980	162500	way of doing that is to say, if first name is not null, then you would say, oh, okay,
+163220	171620	first name is the first non-null value, okay?
+171620	178860	And then you say, okay, if first name isn't null, then we pick it, otherwise, else, if
+178860	182740	middle name is not null, okay?
+182740	190260	And then you say, okay, middle name is the first non-null value, and then else, if, again,
+190340	195140	last name is not null, then you would print the same thing.
+195140	196580	So this is very repetitive.
+202660	207780	So it is basically very verbose in the way it is created.
+209300	215220	There is a better way of doing this, and that is with the question mark, question mark operator
+215300	220100	in Dart, which is available in some other programming languages such as Swift as well.
+220980	225060	So the way to do that, then, is you would want to pick the first non-null value.
+225060	233140	So you would say, final or const first non-null value, and you would say that's equal to first
+233140	235540	name or or.
+235540	241460	So this is kind of like question mark, question mark, middle name, and then question mark,
+241460	242580	question mark, last name.
+242740	247780	So, and, I mean, we're getting a warning here just because Dart understands already that
+247780	254020	this middle name, although a, so, this is, although an optional, basically, it has a value.
+254820	261220	But if we meet this null, so, and that warning goes away, but, I mean, it would probably
+261220	265700	be cleaner if we actually pass these as parameters into this function so we don't get these weird
+265700	266820	warnings.
+266820	271220	But the way the question mark, question mark operator is working is that it says, it is
+272180	277300	an infix operator, just so you know, in, from chapter four, you know, an infix operator is
+277300	282500	an operator that has two things, one on each, on each side, the right and left.
+283380	287140	So in this case, on the right side, we have middle name, and on the left side, we have
+287140	287620	first name.
+287620	293460	So what this operator does, it says, if the value on my left side is null, I'm going to
+293460	294660	pick the value on my right.
+295220	295540	Okay.
+296580	300340	And let's now, in this case, say, okay, middle name is not null.
+300340	303300	So what it does, it says, first name, are you null?
+303300	304100	Yeah, you're null.
+304100	305460	Then I'm going to go to the right side.
+305460	306580	Middle name, are you null?
+306580	307700	Nope, I'm not null.
+307700	312660	Then it's going to pick that, and the rest of the statement is not going to be executed.
+314180	319380	However, if middle name was also null in this case, then what happens is that it begins
+319380	322260	from the left, it says, first name, are you null?
+322260	322980	Yes.
+322980	324420	Middle name, are you null?
+324420	325140	Yes.
+325140	331620	So this entire operation here, it doesn't yield any value.
+332980	335780	So this entire operation will let me know.
+335780	340660	So it says, okay, now I have to compare our left-hand side.
+340660	341140	Are you null?
+341140	343460	Yeah, we know that this entire thing was null.
+344340	346580	And then it says, right-hand side, are you null?
+346580	348180	Nope, I'm bass.
+348180	349060	Then it picks bass.
+349060	355700	So this question mark, question mark operator is a null-aware operator that picks either
+355700	361940	the left side or the right side, whichever one is not null first in that order.
+361940	363620	So left side, are you null?
+364420	366180	If you're null, I go to the right side.
+366180	369060	But if you're not null, I'll pick you.
+370500	371780	So keep that in mind.
+371780	377220	It is a very handy operator, and it will shorten your code quite a lot.
+377220	377720	All right?
+378520	382920	Now, if we then go in here and say first, null, null value, you can see it actually says,
+382920	383880	oh, it's a string.
+384840	393080	However, if these were parameters, so if we said first name, and then string, last name,
+393080	399480	sorry, middle name, last name, so they were not provided to us like that,
+401480	403560	contour was okay, and then we say final.
+403560	412280	Now, if we say first, non-null value, in this case, since it is a normal case, excuse me,
+413320	416360	where the Dart compiler isn't working with constants,
+418760	423160	then it cannot resolve this to a constant value at the moment.
+423160	425320	So it says, okay, there are three optional values.
+425320	427080	I have no idea what they are.
+427080	431560	So I'm going to do my best to pick the first non-null value depending on, I mean,
+431560	433480	based on what we provided here.
+434680	436920	However, I may not be able to solve this.
+436920	442360	So the final result here, as you'll see, is an optional string, meaning that, well,
+442360	447800	I may not be able to resolve this, meaning that this entire operation on top on line nine
+447800	449400	may result in a null.
+450680	451180	All right?
+452600	453240	Sorry about that.
+453240	454120	Sorry about my voice.
+455560	459400	So that is the question mark, question mark operator.
+459400	463560	So I'm just going to mark that we talked about it in my notes.
+465400	465900	Okay.
+467560	469240	So that was that.
+471800	479320	Now, let's talk about the next topic, which is the null aware assignment operator.
+479320	481480	I think that's its actual official name.
+483480	487720	This operator is very similar to the question mark, question mark operator in that it
+489640	494680	tries to resolve a variable to make sure it is not null.
+495240	496280	It's going to do its best.
+497080	498840	And let's have a look at an example.
+498840	502840	Let's just say bar.
+503640	510200	I'm going to say, actually, let's just say string and name is first name.
+510200	515960	So we begin, we say that we have an optional name and we begin by assigning first name to it.
+515960	521480	So it means that its name might, at the moment, depending on the value of first name, it may be
+521480	521980	null.
+522840	528040	Now, if that is null, you may want to assign another value to it.
+528040	529000	All right?
+529000	531000	And then you can do that with this operator.
+531000	532200	You would say last name.
+533880	534840	Let's see what happened here.
+535720	538040	We'll try to, oh, is it this?
+538040	539560	Yes, it is equal to.
+539560	546520	So I actually should change this case to equal to question mark.
+547560	548280	Yes.
+548280	551800	And I'm going to bring it up again so that it is actually correct, let's say.
+554440	557800	And then name equal to, isn't this working?
+559160	563640	Last name, oh, where was it this one?
+565320	566200	Try changing the,
+566200	569640	is it like this?
+571640	573320	I'm actually a bit unsure right now.
+573320	575160	So let's have a look, actually, what this does.
+577400	579000	And it's a three-positional.
+579000	585080	And then we say null, null, null, and then bar, and then bass here, okay?
+585080	590680	So first name is null, middle name is bar, and last name is bass.
+590680	594280	And to be honest with you, I mean, this is quite a lot for me as well.
+594280	598680	It is something that is like the syntax of the programming language.
+598680	601480	It is something that you will kind of need to live with.
+601480	605320	You're not going to memorize this all just in your head all the time.
+605320	611240	Of course, like the main parts of it, you're going to remember, but not all of it.
+611240	615640	So, and you can see for me as well, I'm just like at the moment, okay, which one is it?
+616760	617720	So I'm going to test that.
+617720	620840	So to begin with, we say name is first name.
+620840	625800	And if that is null, then assign, actually, let's just say middle name,
+627160	629960	name here, then use middle name, and then print the name finally.
+630600	632200	And I can see it says bar here.
+632200	634600	So it's actually question mark, question mark equal.
+637080	641240	So I actually maybe need to edit this text one more time.
+641240	644200	So I'm just going to say question mark, question mark equal.
+645400	647960	Bring it up because I think question mark equal is not going to work.
+647960	649880	An equal question mark isn't going to work either.
+650840	651880	It's not a valid syntax.
+651880	653240	So question mark, question mark equal.
+653240	653880	Sorry about that.
+654520	658600	So what this operator at the moment is doing is says that I'm going to take
+658600	662040	the value on the left-hand side and check whether it is null or not.
+662040	667480	If it is null, then I'm going to assign the value on the right-hand side to the left-hand side.
+668680	671800	If it is not null, I'm going to leave it alone.
+673480	677400	So at the moment, first name, as you saw here, is null,
+677400	679080	the first parameter that we pass here.
+679880	685240	What it says is, okay, I'm going to check then for middle name if name is null.
+685240	686120	And it is null.
+686120	689480	And then it says, okay, middle name, are you present there?
+689480	690920	And then we'll assign that value here.
+690920	697640	So it will be basically it will be bar, which is the value of the middle name.
+698840	704280	Now, if we in here said middle name is also null,
+705080	710920	right, you could have another operator here that says, okay, if after taking the middle name,
+710920	713400	we are still null, then take the last name.
+714600	719480	So, and you can see Baz gets printed to the screen.
+719480	724680	And that is because because Baz is the last parameter that we're checking on line 10.
+725400	726840	And its value is not null.
+728360	733800	So you can see how like if I then went here and actually said the value is not null,
+734040	735800	the first name is bar.
+735800	739160	Then you will see that that will be the value that gets printed to the screen here.
+740200	746920	Because right here, name or first name, which is bar, got assigned to name.
+746920	750360	So it is an optional string, but it has a value, which is bar.
+751000	754520	Then when you come to this line number nine, then you're telling Dart,
+754520	758680	look, if name is null, then assign middle name to it.
+758680	762360	And Dart says, well, name is a null, it is bar.
+762360	764440	So I'm not going to assign middle name to it.
+764440	766920	And then it goes to line number 10 and does the exact same thing.
+766920	767240	All right.
+768440	772120	So that is like the null aware assignment operators.
+772120	774760	And it is useful.
+775640	778360	I personally, I mean, to be honest with you, I,
+778360	782200	as you could kind of guess, I don't use this operator so often.
+782200	783000	It is there.
+783960	788680	And I have no shame in saying that pretty much in none of my programs have I had to use this.
+789320	791880	It is present for you to use.
+791880	793880	It is available if you want to use it.
+793880	799320	So just don't be like me, but try to remember the syntax is question mark, question mark equal.
+802440	805640	And I'm going to actually fix that in my notes as well,
+805640	808280	that it is question mark, question mark equal.
+811480	813880	And I'm going to check it in the notes that we've talked about it.
+814360	825800	Now, let's talk a little bit about conditional method or property access or conditional invocation.
+827080	832520	Now, as we talked about in the previous chapter, with Dart, as like many other
+832520	840920	programming languages, you can use the dot syntax in order to access or drill down inside properties
+840920	843640	and methods or functions inside other objects.
+843640	849560	As we saw, for instance, with the case of lists in Dart, you can say,
+850440	853720	I have a list and then you want to get its length, then you would say
+855000	857640	the name of the list dot length.
+857640	861160	And that drills down inside that list and gets the length property.
+863160	867160	However, as you saw earlier in this chapter, in chapter number five,
+867960	872280	even lists or pretty much any data type in Dart can also be nullable.
+872760	879160	So how do you access properties of a null object?
+879160	880680	So let's have a look at that now.
+882040	887800	Let's say I'm going to actually delete these properties, the parameters that come here to
+887800	893800	our function, and I'm going to say, and I'm going to go down here and remove these parameters as
+894200	894440	well.
+896440	901800	And in here, let's just create an optional list of strings.
+902360	907640	Not optional list of optional strings, but just an optional list of valid strings.
+907640	907880	Okay.
+907880	914760	So I'm just going to say list of strings as an optional list, and I'm just going to say names,
+915320	918120	and that is equal to, let's just say at the moment, foo.
+918120	918440	All right.
+919400	929960	Now, here, if you try to say final length of names or number of names is names, length, okay?
+931320	936040	If you then look at the data type here, I mean, we could actually say this is null.
+938440	947160	And you can see here, Dart actually is allowed to or is able to give you an error knowing that this
+947240	950040	list is null at the moment.
+950040	954280	However, if you accept it, I think it's actually better that we accept this value as a parameter
+954280	960520	so that Dart analyzer cannot be too smart about making assumptions about what this actually is
+960520	961160	at the moment.
+962040	968680	So you can see the analyzer is telling you it cannot be unconditionally accessed because
+968680	974200	the receiver can be null, and that means, yeah, exactly as it says, it says names can be null.
+974200	977480	I don't know if it's null right now or not, but it can be.
+979000	980520	So how do you access that?
+980520	987080	One way to do that, like, the old way of doing that is to say if names is not null,
+987960	991240	then length is names length, okay?
+993240	997480	Final length is names length, okay?
+997480	1002120	So that tells Dart that, look, I'm actually checking for null values,
+1003080	1009640	or I'm checking that this list is not null on line 8, and if it is not null,
+1010200	1012760	then I will access its length property.
+1012760	1018360	And this is kind of, it's called type promotion, and type as in data type.
+1019080	1024840	So in this case, you can see on line number 8, or now if I go and create a new line on
+1024840	1030120	number, on line number 8 and I say names, this is an optional list
+1030360	1039000	that can contain strings, and in here, you can see it is type as the same, but it is promoted
+1039000	1045320	to not being null because you've already checked for it, because if you remove these lines of code,
+1045320	1049640	you can see now that you get an error, the exact same line, but if you check first for null,
+1049640	1052520	and you don't get the error, it's a type promotion, okay?
+1053400	1055400	So this is kind of like the old way of doing that.
+1055400	1060680	So let's say that you want to have, you want to extract the length, so you say final length,
+1060680	1065080	or ints length, right? You create the variable, but you don't assign anything to it.
+1066040	1070280	Then you say if names is not null, then the length is equal to the name's length.
+1070280	1074520	Otherwise, length is zero, okay? So this is one way of doing that.
+1075560	1077000	It's the old way of doing that.
+1077160	1082760	And you may be trying to be smart as well and say, okay, I don't need this else statement if I just
+1082760	1087960	say this is a variable, and by default, it's zero, and yeah, you would be right, because length is
+1087960	1093160	zero by default, and then if names is not null, then you say, okay, length is equal to name's length.
+1094200	1100920	However, there's a better way of doing that, and that is using the dot question mark,
+1100920	1106200	I believe, or the question mark that actually it is, yeah, operator, which conditionally executes
+1107080	1113800	or invokes a method or a property inside an optional if that optional value is present.
+1114600	1117400	I'm going to show you how to do that. So if we say final length
+1119960	1124280	is names, and then you would put question mark dot, and then you would say length,
+1124280	1128200	and you would say, okay, length is equal to name's length, and then you would say
+1128200	1132360	question mark dot, and then you would say length, and you would see this code being
+1132360	1137960	executed without a problem. However, if you go here, you would see that length is an optional
+1137960	1143240	value, is an optional integer. So you may be like, okay, how do I solve that? How do I say that
+1145720	1157320	I want length to be zero if this length value is null, meaning that if the names list is null and
+1157320	1162600	we can't extract the length, then I want this value to be set to null. And that is using our
+1163160	1168440	question mark, question mark operator that we talked about, the null operator that we talked
+1168440	1176520	about earlier, the infix operator. So you could just do this. You would say length is if the names
+1176520	1182600	list is present, meaning that its value is not null, then grab its length. Otherwise, take the
+1182600	1187960	value of zero and assign its length. And if you go to line number nine now and I say length, you can
+1187960	1198360	see it's an integer. So it's not an optional integer anymore. So you could do the same thing
+1198360	1203400	as well. Like you could say names, and you could do the same thing with properties, and you could
+1203400	1211000	also do it for functions. So you can say names, add, adds, right? So you see this is a function
+1211720	1218040	and then we're adding the value of bass to that list. However, you can't unconditionally invoke
+1218040	1229160	this function on an optional value because it might be null. All right? So that is like a very,
+1229160	1237240	very important bit of learning about darts, learning about optionals in darts, how you could use
+1238200	1247960	nullable values. And as you will see, and we'll talk about more in this course, there is many
+1247960	1257800	cases where you have to take into consideration null values. And especially if you're working
+1257800	1263320	with different libraries where the library cannot make too many assumptions and your code is
+1263320	1269240	dependent on that library and you will have to take into consideration, okay, the absence of
+1269240	1276040	a value means that I personally have to take some decisions in my code consciously in order to
+1276040	1281640	execute bits and pieces of code depending on the absence or presence of the value. So try to use
+1281640	1289880	these optional null aware operators that I taught you here, which was the null aware, basically
+1289880	1294040	the decision making to pick, like the in fix operator that tells you whether the left hand
+1294040	1297880	side or the right hand side, depending on which one is not null first, it picks that one, okay?
+1298440	1304920	That operator is very important and the all aware invocation operator, which is here, so you see
+1304920	1312600	some object which may be null, then do something on it. Or the operator, which is a null aware
+1312600	1317480	assignment operator that assigns the value on the right to the variable on the left should the
+1317480	1322280	variable on the left be null, all right? So these are very, very important to understand.
+1325640	1332760	Okay, now that we've talked about that, I'm going to take that in my notes that that is a topic we
+1332760	1342760	talked about. Now, we also have very, very good official documentation about null safety in Dart.
+1342760	1349320	So I'm going to bring up this documentation on a separate screen, and then I'm going to bring it
+1349320	1357640	up here so you can actually see as well, all right? You can see here it says understanding
+1357640	1365560	null safety, and this is great, great documentation about how null safety in Dart works. As you can
+1365560	1372520	see, a lot of examples. I mean, it talks about like from the absolute beginning,
+1373960	1381080	what it actually means, and you can see here null is at the level of object, so it's not,
+1381080	1386120	null itself is not like an object. So you have lists and doubles and integers here,
+1386120	1391320	but null sits on top for itself, kind of like the absence of a value.
+1392040	1396920	So there's lots of examples in this link, and I highly encourage you to have a look at it.
+1396920	1401560	Some things you may not understand, for instance, like this one, you will understand easily because
+1401560	1406760	it says there is something called a thing, like a class, but we haven't talked about classes yet,
+1407320	1413720	and it's name, parameter name here in this function called show gizmo is called thing,
+1413800	1421560	show gizmo is called thing, and you can see it is conditionally accessing a property on that thing.
+1424440	1432200	And then if that property in itself is null, it conditionally access that as well. So this
+1432200	1436840	property is nullable, and then it's accessing another property inside that nullable property
+1437560	1441960	if it's not null. So I mean, it's a great way you can chain them, as you can see here.
+1442920	1448520	Then so if this thing is not null, then conditionally accesses this property on that.
+1448520	1453160	So it's beautiful. I mean, and this thing is available on many other languages like Rust
+1453160	1460120	and Swift as well. So it's nothing new, but it is kind of like such an important topic to understand
+1460120	1464760	in Dart that I think you shouldn't just skim over it. So you should just really learn how to work
+1464760	1475240	with it. All right. We've now talked about null values. So I'm going to take that in my notes
+1475240	1483560	here. Now, I think for chapter five, this information is enough so that we can move on to
+1484120	1491400	the next chapter. And in the next chapter, chapter number six, we're going to talk about some really,
+1491400	1497880	really juicy stuff. And this is like chapter six is going to be like, as I can see in my notes,
+1497880	1504280	I've pressed in a lot of really interesting topics such as enumerations, classes, objects,
+1505160	1511000	custom operators, constructors, factory constructors, class methods, I mean, inheritance
+1511000	1520920	and subclassing, abstract classes. So as you may have heard, depending on what background you have,
+1520920	1526120	you may be like a product owner or product designer, a UXer or whatever. You may not have
+1526120	1534680	like a software engineering background, but Dart in its core is an object-oriented programming
+1534680	1541320	language. It means that things in Dart are objects. An object is an instance of a class,
+1541320	1548360	as we'll talk about in the next chapter. So for you to understand Dart and how these things work,
+1548360	1553080	for instance, we've talked about lists and actually typing dots in front of the name of
+1553080	1557400	list and getting its length, but you may not really know how that works. So in order to
+1557400	1562760	understand all those things, what that dot means, you need to understand what objects are. And in
+1562760	1567880	order to understand objects, you need to know what classes are. And when you understand classes,
+1567880	1573800	then you will learn about inheritance and then we'll talk about abstract classes, properties,
+1573800	1580520	static functions, all that. So what we're going to talk about in chapter six is so important that
+1580520	1586200	I believe that every Dart developer needs to know about this. And we're learning all of these things
+1586200	1593720	to become good at doing Flutter. So although you can go and write like servers, maybe server
+1593720	1598520	applications with Dart, or you could write command line applications with Dart, but these days,
+1599160	1604840	Dart is primarily used for writing Flutter applications. And I don't have any data to
+1604840	1609640	prove that, but I can see for myself when I'm in the community that most people are using Dart
+1609640	1614920	primarily to write Flutter applications. So we're doing all of this to learn more about Flutter.
+1614920	1618920	And I highly recommend that you don't skip these chapters where we're talking about Dart,
+1618920	1624040	especially if you're new to Flutter development. So with that said, let's leave this chapter
+1624040	1628520	the way it is right now. Chapter number five, we're done with that. Let's go to chapter number
+1628520	1635320	six and learn about Dart enumerations and objects. Welcome to chapter six of this Flutter course.
+1636040	1642920	In this chapter, we're going to talk about Dart enumerations and objects. These are some of my
+1642920	1649560	favorite things to actually talk about. So in most programming languages, actually you have the same
+1649560	1655480	facilities. So if you follow along with the other chapters, then you should have a working
+1655480	1660600	Dart project set up now and maybe running in an emulator or a simulator so that you have
+1660600	1665640	the ability to press command S on Mac or control S in Linux and Windows in order to rerun your
+1666440	1672040	project. So without you having to pretty much do anything. So let's then get started. I'm just
+1672040	1676680	going to make that assumption that you're already set with those requirements.
+1678840	1686680	So let's start by talking about enumerations and I'm going to bring up the project from
+1686680	1691320	the previous chapter. Let's just make sure that it's on the screen so you can easily see it.
+1692120	1697640	Now I'm going to go to this list function that we created, remove the only parameter there and
+1697640	1702520	remove that as well. So if I press command S now, nothing should happen on the screen because we
+1702520	1708040	don't have any functionality in test. So let's talk about enumerations and what they actually are.
+1708040	1714680	As you can see here, enumerations are named list of related items. Now, an enumeration is
+1715240	1722360	kind of like equivalent of making a string written programmatically so that it becomes an entity.
+1723320	1732600	And by that, I mean that let's say you have the value name and then you could say foo.
+1733240	1739880	And you would also say const other name. That's also foo. They're both the same string, but they're
+1739880	1745720	not the same identity in that. I mean, internally, actually, in terms of const, I don't want to go
+1745720	1750120	too much into how the compiler actually works, but they're kind of going to be the same string.
+1750680	1755480	But I mean that you've written it twice, so it's not the exact same thing. You have to write it
+1755480	1764760	twice. So an enumeration tries to basically make sure that a value has a name that can be
+1764760	1773160	programmatically referred to. So let's say enum, and that's a keyword in Dart. That's how you
+1773160	1779400	create an enumeration. I'm going to take this that we've talked about some of the things
+1779400	1784600	during the intro. Sorry about that. I have to look at my notes. Anyway, so we have the enum here.
+1784600	1791080	That's how you create an enumeration in Dart. And you would then give a name to your enumeration.
+1791080	1798040	And unlike variables and constants that are written with camel case, you'd have to basically use
+1798040	1804040	another case in here, which is the first letter of every word in your enumeration's name has to be
+1804040	1809880	uppercase, and the rest of the letters have to be lowercase. So let's in this case, for instance,
+1809880	1817720	say person properties, the properties of any person. Then in this enum, you will write the
+1817720	1824360	different properties, for instance, first name, last name, age. So what that basically means is
+1824360	1830360	that you've now defined a list of related things, such as first name, last name, age, which are
+1830360	1837400	categorized under a particular name, which in this case, person properties. And you can refer
+1837400	1843960	to these in your code using the dot notation. So you can say person, properties, dot, first name.
+1845160	1849880	And you can print it, actually. So I'm just going to press Command S and you can see it being printed
+1849880	1858200	to the screen. So enumerations are really, really great as we go on in learning about Dart and how
+1858200	1865320	Dart works, how we can work with Flutter, how we can parse data that comes back from a server,
+1865320	1872440	for instance. But for now, it's enough for you to understand that you can categorize related items
+1873480	1878280	under an enumeration so that you can refer to them later, okay? And in Dart, you can also get
+1878280	1885400	the string representation of these values using their name property. That is something that's
+1885400	1891320	created for you by default. So if you just say name, you now see first name being printed to
+1891320	1897240	the screen as a string. But before that, if you printed the enumerations in on value here for
+1897240	1905320	first name, it would print out the entire thing, okay? So that's short and sweet about enumerations.
+1905320	1912120	We're going to use them quite a lot, actually, especially later where we go to more advanced
+1912120	1918360	topics as we develop our real application. But for now, just know that this is how you create
+1918360	1922360	an enumeration using the enum keyword and then the rest of the properties you just put in curly
+1922360	1932600	brackets, okay? So that's for enumerations. Now we need to talk about switch statements. And
+1932600	1937240	actually, let's bring this back and I'm going to change these two properties, let's say, okay?
+1937240	1946120	And let's just say, for instance, animal type. And let's say cat, dog, and then let's say rabbit.
+1950120	1958280	So let's say we have an animal type enumeration. And we want to, and then we, for instance, get
+1958280	1964200	in our function, we say animal type, animal type. So there's a property that we expect
+1964200	1969560	to be passed to our function called animal type and then we name that property animal type with
+1969560	1974600	camel casing here, okay? So if we do that, then we go to our function here where we're calling
+1974600	1978760	the function, you can see that we got an error, meaning that there is a parameter expected of type
+1978760	1985720	animal type and no one's passing that. So at the call site, which is the place you're calling your
+1985720	1991320	function, that's what a call site is known as in programming. So if you're coming from a background
+1991320	1996440	of design or anything that is not software development related, so you wouldn't probably
+1996440	2002440	know so much about this kind of lingo, but a call site is where you're calling a function. So
+2002440	2009720	at this call site, number 19, we're then going to pass an animal type and let's just say
+2010440	2016840	cat in this case, okay? So in here, we could just print that. I'm just going to say animal type.
+2017400	2023000	I'm going to press command S and you can see cat being printed here, okay? Now, if you want to
+2023000	2030840	execute different types of code depending on this animal type, then you could, which is not
+2030840	2037080	recommended, you could use an if statement. So if you just said, if animal type is equal to animal
+2037080	2050120	is equal to animal type cat, you'd say print all I love cats, okay? Else if animal type is animal
+2052920	2059240	dog, then you would say print or you would say dogs are still fluffy or something.
+2059240	2067800	And else if animal type is animal type
+2070120	2079800	and I wish I had. All right, so this is using normal if statements. You say if animal type is
+2079800	2086200	cat, then blah, blah, if blah, blah. Now, it is one way of doing it, but it's not the recommended
+2086200	2089880	way of working with enumerations and the recommended way of working with enumeration,
+2089880	2094680	especially if you're doing like branching code as we're doing here, is using a switch statement. So
+2095240	2103160	let's convert this code to switch. So let's say switch. You put parenthesis, open, close,
+2103160	2107800	and then open, close curly brackets. And in here, you would put your enumeration. So you say animal
+2107800	2114040	type, okay? And the way to handle these different branches then is with the case keyword. You'd say
+2114040	2124600	in the case of animal type, bunny, print bunny, something like this, okay? Case animal type,
+2125640	2140600	cat, print cat. And case animal type, dog, print dog. Just like that, okay?
+2141480	2147480	Now, this is I'm actually grateful that we're getting this error so you can clearly see what
+2147480	2152520	it says. Is that the case should not complete normally, try adding break or return. Now,
+2152520	2157320	what this is saying that you see in many programming languages, just like Dart,
+2157320	2163000	when the program comes here to the case statement, it kind of like falls through to the next line.
+2163000	2167960	And Dart tries to avoid that. So it says, okay, if I handle bunny, then I'm doing some stuff,
+2167960	2172200	but it kind of feels like I'm falling down to the next line after this because you didn't tell me
+2172200	2179160	what to do after the print statement. So you either tell me to completely go out of this function,
+2179160	2184200	go out of the test function by putting the return keyword here. We haven't talked about return
+2184200	2189560	really yet. But you could do that. You could just say, okay, return right after all of these. So
+2189560	2194280	I'm just going to press command S, and you will see cats being printed to the screen, which is
+2194280	2201400	here. But if you didn't have this return statement here, you would get an error. So you either say
+2201400	2207240	return or you would use the break keyword. Now there's a difference between these. Let's put
+2207240	2212760	a print statement here, and I'm going to say function is finished. So I'm kind of expecting
+2212760	2222680	that by executing our code here, our test function here, passing the value of cat at the moment,
+2222680	2228840	that we fall into the switch, we check that this is cat and then print the cat, and then we return.
+2230040	2235320	This is kind of what it is doing. It means that it kind of skips over this print statement,
+2235320	2239960	and you'll see soon. If I say command S, it will just say cat and then we'll return from that.
+2240680	2245160	So this is not really what I wanted. I wanted this switch statement to be executed,
+2245160	2250600	print cat, and then continue after switch. And that's where you use the break statement,
+2250600	2256280	so or the keyword here. So if you say break, it breaks out of the switch statement and then
+2256280	2261080	continues with the rest of the function as you would expect. So if I press command S here,
+2261080	2268520	you say cat, and then function is finished. All right. So switch is the preferred way of working
+2268520	2273800	with enumerations, especially if you're doing branches. So you could also like,
+2274440	2286280	for instance, if in this case you said make sure this is a cat, you could also in this case say,
+2286280	2295720	if animal type is not animal type, cat, and you would return. Okay? You could do this as well.
+2295720	2300520	So this is kind of like a conditional statement that you're putting in the beginning of your
+2300520	2308840	function, making sure that any code executed after line 10 is completely sure that the animal
+2308840	2313880	type is a cat. Okay? So in that case, you may just use a typical if statement so you don't have to
+2313880	2321240	do switches. Okay? But if you're trying to execute special pieces of code depending on
+2321880	2327240	which value this enumeration contains at the moment, then I highly suggest that you use
+2327240	2332920	switch statement instead of if statement. All right? So kind of depends on your use case.
+2332920	2337960	All right? Okay. I'm just going to mark this item as done in my notes.
+2339960	2345480	Now let's talk about classes. All right? Which is one of my favorite topics to talk about, actually.
+2348440	2354440	Well, classes in Dart and in many other languages actually bring this back to
+2354440	2360600	how it was before, make it a test function. All right? Remove the animal type from here.
+2367480	2378040	So classes in Dart are grouping of various functionalities into one packageable piece
+2378040	2385080	of data. And by that, I mean, for instance, let's say that you have a function called run,
+2385720	2391640	another function called breathe, and then you have a person's first name, a person's last name.
+2392520	2396920	Of course, you could go and define these things like this. You could say const first name,
+2398600	2407480	const last name is something like this. Okay? Goes like that. And then you could have
+2408120	2413560	a function, sorry, you would say run, and then you'd have another function called breathe.
+2415960	2421160	And you could do that. But these are functions that are kind of like for us in this particular
+2421160	2426920	case, or at least in my head at the moment, I am imagining these functions to be related to a person.
+2428120	2431560	The person can run, that person can breathe, that person has a first and a last name. So
+2431560	2439400	the grouping of these related things is done with a class in Dart, at least. So
+2440280	2444600	the way to do that is you would say, for instance, class, which is a keyword in Dart.
+2447720	2452200	The name of the class. Now, for the naming of classes and enumerations and any other
+2453000	2459720	entity except for variables and constants, you should use just normal casing. I don't actually
+2459720	2466120	know if it's called Pascal casing or I think so. But you would just use your uppercase,
+2466120	2473320	the first letter of every word. Okay? So let's just say person. Okay? This is how you would say
+2473320	2478920	a person class. All right? So I don't think actually we can put constants in there. I'm
+2478920	2484440	just going to grab these two functions and just place them inside this person class. All right?
+2485000	2492040	And let's in this, say, print, running, run function, and for breathing, we're going to say
+2492040	2501080	breathing. All right? And in the test function, you would want to create something called an
+2501080	2508920	instance of this class. Now, instances are objects, and objects are created from classes. So
+2509080	2516840	you need to understand how instantiation works in software development. And this is for any
+2516840	2525960	programming language such as Dart, Rust, Swift, Python, JavaScript, where they allow you to create
+2525960	2533800	classes. And now that you know what a class is, in order to use a class, you need to usually
+2534680	2538440	create something called an instance of that class. That means that you tell
+2539000	2544200	the programming language that, okay, here is the class. I know about that. But give me a copy of
+2544200	2552520	it. So every class can be instantiated, meaning that the Dart compiler will create a copy of that
+2552520	2557480	exact class with its data, its functions, its properties, and give that copy to you. All right?
+2558280	2566280	So that is called instantiation. And it works by using the equal sign and creating, putting
+2566280	2571400	parentheses at the end of the name of the class, as I'll show you here. So let's just say final.
+2572760	2577480	And we say person, which is the name of our variable in this case, is equal to,
+2577480	2581800	as I said, equal sign. Then you would write the name of the class and parentheses just like that.
+2582680	2588920	So now you said a person variable in this case is an instance of that person class. Now you'll
+2588920	2595400	understand using dots and notation, you could say person dot run. You see? That function is now
+2595400	2602680	available on your instance of the person class. And you would say person dot breathe. Okay? So
+2602680	2610920	these are functions that are available at instance level of the person class. I know there's a lot
+2610920	2616600	of words that I'm just talking about, but I think you understand the point here. So this is how you
+2616600	2622520	instantiate the person class, and this is how you invoke various functions on that class. So if I
+2622520	2629480	press command S, you can see it says running and breathing. If you said, in this case, person,
+2629480	2636280	and then without instantiating using the parentheses, if you said breathe, you will get
+2636280	2643400	an error here. Instance member breathe can't be accessed using static access. Okay? And that's,
+2643400	2648840	I mean, that is kind of like instance member is an important term also to remember. And instance
+2648840	2656520	member means some functionality that is only available at the instance level, meaning that
+2656520	2661240	it's not available at the person class level, but you have to make a copy of person in order to be
+2661240	2670600	able to access that. All right? So that's the basic of classes. You can do a lot with classes,
+2670600	2676760	as we will talk about soon. So I'm just going to leave that person class right there, and then
+2677880	2685880	just kind of mark that as talked about in my notes as well. And let's now talk a little bit
+2685880	2693720	about objects. Well, objects are actually quite easy to explain. An object is an instance of a
+2693720	2701800	class. So you wouldn't like, when someone says, oh, here's an object of type string, it means
+2701800	2709000	literally that there is a class called string, I've created an instance of it, and that is an
+2709000	2717480	object. So the words instance and object are usually used interchangeably. But if you hear
+2717480	2722520	someone say instantiate a class, then you would say, okay, what's the class name? Oh, it's person.
+2722520	2729000	All right. Person. Now I created an instance. Okay? And in this case, you can see I'm just
+2729000	2732520	creating an instance of person without actually doing anything with it. So that's kind of like
+2732520	2742520	a useless object, all right? But if I put, I say foo is a person, then this foo now is an object
+2742520	2746680	of type person. And actually, you can write its name here, and you'll see that it tells you that
+2746680	2759480	this is a person, okay? So that in short is what objects are. And I can see in my notes that
+2759480	2764120	objects are kind of like in the wrong place. I'm going to bring it to the right place. Sorry about
+2764120	2776040	that. Okay? Now let's talk a little bit about constructors. And I can see constructors also
+2776040	2780040	at the wrong place in my notes, so I'm going to bring those also to the right place. Okay?
+2780840	2790840	Sorry about that. What a constructor is at its name, as its name indicates, is a special logic
+2790840	2798920	in a class that constructs or initializes or builds that class's instance, all right? So
+2799720	2803800	you may say that, okay, let's go to our function here, to our class here, person.
+2804440	2810840	And let's say every person has a first name or a name, okay? So let's just define that. We say
+2810840	2816440	final string name, all right? As you can see now, Dart is saying, okay, you said that every person
+2816440	2823000	has a name, and it's a final, meaning that after the person has been instantiated or after that
+2823000	2829000	person has been initialized or created an instance from, you cannot change that name because you said
+2829000	2835400	final, all right? If you said string name is foo, that would be different because it means
+2835400	2841240	every person instance that gets created has the default value foo for its name. That's a completely
+2841240	2846680	different way of saying what the name of the person is. In this case, as you can see, we're
+2846680	2853000	saying that every person instance, every person copy that we create has a name. Now Dart is saying,
+2853000	2858520	okay, where is the name then? You didn't tell me how to create it. And that's where you would
+2858520	2866200	want to use something called constructor, okay? Constructors are sometimes called as initializers.
+2866200	2870680	Depending on the background of the programmer, they may call it constructor initializer
+2871400	2875880	or maybe some other names that I don't know about. But if you hear that, a constructor,
+2875880	2884040	then you will now know what I'm talking about soon actually. So now what you can do, at least
+2884040	2890120	in Visual Studio Code, when you get this error is to just hover over it and then press command
+2890120	2897000	on Mac or control on Windows or Linux and press dot. Now you will see you will get some suggestions
+2897000	2902120	here. And the second suggestion, at least for me here, it says create constructor for final
+2902120	2908200	fields, okay? And I can just press that. And what happens here now, you see it's that it creates
+2908200	2915240	something that looks kind of like a function, but it doesn't have a name. Its name is implicitly
+2915240	2921400	set to the name of the class, okay? So basically, it says I'm a special function with the same name
+2921400	2929480	as the class, and I expect a value to be given to me, which I will then in turn assign to the name
+2929480	2936760	property of myself. It's kind of like a strange way of doing things, but is quite clean as well,
+2936760	2942280	okay? After you do that, so this is how you create a constructor. After you do that, then at the call
+2942280	2947880	site where you're calling this person class to create an instance of it, it will complain saying
+2947880	2954360	that, oh, I'm expecting an argument, but I didn't find any. And that's where you have to pass the
+2954360	2961400	name. So let's say in this case is foo bar, okay? And then on the next line, you can just say print
+2961400	2967880	foo name, all right? And press command S, and then you can see foo bar being printed to the screen.
+2967880	2974760	So that is like the basic of a constructor. That's how you construct instances of your class,
+2974760	2981400	all right? Now, you may be saying that, all right, I don't want, I mean, you can do many fancy things
+2981400	2989000	with constructors. You could say, okay, its name, for instance, by default, must have a special
+2989000	2992680	value. You could do that. There's lots of things you can do with constructors, which I'm not going
+2992680	2998280	to go into the details of. But right now, just know that a constructor is this special kind of
+2998280	3003560	function that has the same name as the name of the class, and then parentheses, and then you put your
+3003560	3017960	values in here, all right? Okay, that was constructors. Now, let's talk a little bit about
+3019560	3028840	methods, all right? And what methods are, I'm actually going to go here and say, we're going
+3028840	3033960	to talk about methods. I know it's at the wrong place in my notes as well. Sorry about that.
+3033960	3040280	A method of a class we've talked about already, to be honest with you, and a method of a class is
+3040360	3049960	a function on the class, which is usually referred to as an instance method, meaning that the
+3049960	3055080	function is available after you've instantiated that class, all right, as we're doing in line
+3055080	3063720	number 14. Name is an instance variable. So, is a variable that is available at an instance level
+3063720	3069800	is not an instance method. An instance method should be a function, all right? So, let's go
+3069800	3075000	and create a function here that doesn't return any value denoted by the void return type, and we
+3075000	3082760	say print name, all right? The functionality of this function is only just to print the name of
+3082760	3088600	the class, all right? That's all it does. And in Dart, you're also, now that we're talking about
+3088600	3095320	this, I'll just mention also that in Dart it's usually better not to prefix your instance
+3095320	3106840	variables or instance functions inside the class itself using this keyword. This keyword in Dart,
+3108440	3117800	the this this or that this keyword basically refers to the current instance of this class,
+3117800	3124840	all right? So, you can either tell print name to print this dot name, or it's actually better
+3124840	3129880	to remove this and refer to it as name. That's the recommended way of doing it, okay? So,
+3129880	3137240	avoid the keyword this as much as you can unless you have to. And we'll come to those points
+3137240	3143400	hopefully later in this course why you may have to do that, why you may have to use this.
+3144920	3152120	All right. Now we have the print name instance method, all right? So, let's just use it. Instead
+3152120	3158360	of this print function that we're doing here, let's just say foo dot print's name, all right?
+3158360	3165800	Command S or Control S on Linux and Windows and Command S on Macintosh, and then you get the
+3165800	3174680	Flutter foo bar printed here. Or you could just say print, I'm going to, I will now print the name
+3174680	3180120	of this person in single quotes. We don't need double quotes, okay? Command S and you will see
+3180120	3184920	that message being printed here, followed by the actual name of that instance. So,
+3185480	3190440	if someone says method or instance message, you will then know what we're talking about.
+3190440	3196280	It's a function created at the class level that does some stuff, all right? So, that's short and
+3196280	3207000	sweet. Okay. Now that we've talked about that, let's talk a little bit about inheritance and
+3207000	3211480	subclassing. I'm going to bring the caption here so you know what we're talking about.
+3213000	3221320	Now, inheritance and subclassing are so, so important in Dart and in any other object-oriented
+3221320	3226600	programming language that I don't think anybody should jump over it. Like, for instance, I know
+3227320	3232120	developers working in various programming languages that are object-oriented, but they kind of steer
+3232120	3238440	clear of the object-oriented aspects of that language. Maybe they don't need it and maybe
+3238440	3243480	they just feel like it's unnecessary or they feel like, oh, it's just too complicated.
+3243480	3248520	But in Dart, if you want to become a good Flutter developer or a good Dart developer, you need to
+3248520	3260920	know about classes and inheritance. So, let's talk about inheritance. What inheritance in Dart is,
+3260920	3270200	is that it allows you to define a class and then to add more functionality to that class
+3271000	3281000	into a new class. So, let's, for instance, say we go into our test function here and remove that,
+3281080	3290360	okay, that code, and also remove the person class. Now, let's create a class living thing,
+3290360	3300920	all right, and then we say void, breathe, and then we say print. Living thing is breathing,
+3300920	3307400	okay? So, we created a class living thing, and we're saying that anything that lives needs to
+3307400	3312440	breathe. Now, this may be an assumption, but anyways, anything that lives and is above the
+3314600	3321640	ground and is basically alive is breathing, okay? So, that's our function on the living thing. Now,
+3322440	3329240	you may say, okay, any living thing may also have the ability to move, okay? Then we have
+3329240	3336600	a function called move. I'm going to say print, I am moving, all right? So, now you may say, okay,
+3336600	3344120	now I kind of want a class called cat, all right. Cat is also a living thing. One way to do that,
+3344120	3351160	to go about creating a class, the cat class is to say class cat, and then you say, hmm,
+3351160	3355720	I kind of need these functions, and you'll go and copy it, and then you paste them here,
+3355720	3364920	all right? And then you say, okay, I'm good to go now. But one of the absolute paramount qualities
+3364920	3373960	of a developer is that developers do not like to repeat themselves, and it is such an important
+3373960	3378600	concept in programming that you need to avoid repeating yourself, that you need to just coin
+3378600	3385000	that down now, get it straight so that you don't make this mistake as we're doing in this code
+3385000	3390760	right now. So, the first thing you want to do as a developer is say, how can I grab this code?
+3391480	3398520	And it's obvious that the cat is also a living thing. So, that's where you want to use the
+3398520	3406360	extends keyword that allows you to inherit the functionality inside the living thing class
+3406360	3413000	into your cat class. So, in this case, I'm saying cat class extends or read it in English as inherits
+3413720	3420040	living thing, all right? So, you can see that the cat class in itself is empty right now,
+3420040	3430520	but if you go to the test function and I say, final, fluffers is a cat, and then I can say
+3430520	3438600	fluffers, you can see that now that the cat class has breathe and move functionalities,
+3438600	3444200	or functions, actually. So, although cat itself didn't define these functions,
+3444200	3450760	but they're available for the instance in this case called fluffers of type cat to use. So,
+3450760	3458040	you can just say move, and then you can say fluffers, okay? So, if I run this code,
+3458040	3462360	if I delete everything in the debug console and run this code, you can see that the cat
+3462360	3467800	instance called fluffers is saying move, or I am moving, and it will also say living thing is
+3467800	3478680	breathing, okay? Now, we could also talk about, now that we're talking about inheritance and
+3478680	3485160	subclassing. Actually, maybe I shouldn't call it subclassing, but I also think it's important
+3485160	3488680	for you to understand what subclassing is. Subclassing is literally the same thing as
+3488680	3493160	inheritance. Subclassing is saying that you have a class and you're creating a subcomponent, like a
+3493160	3500440	subthing of it, which may actually have, it's a little bit of a strange name in sub because
+3500440	3506280	sub means kind of like a subset of things available in that class, but it actually is like a superset
+3506280	3512600	because it will grab everything, like the cat at the moment has every functionality in living thing,
+3512600	3519240	right? But it may not necessarily do that. It's kind of complicated to explain, but if you hear
+3519240	3528600	subclassing or inheritance, know that that is what we mean. You use the extents keyword, usually,
+3528600	3536600	okay? All right. Now, we've talked about inheritance and subclassing.
+3538520	3546040	So, I'm gonna move a little bit my notes around, sorry about that, that I'm looking away from the
+3546040	3554760	screen, and now we're gonna talk about abstract classes, all right? There's good documentation
+3554760	3564520	about abstract classes, and what we're gonna do here is to just change this class living thing
+3564520	3575480	at the moment to abstract, and you'll see that everything works as expected. Well, an abstract
+3575480	3583720	class is very similar to a normal class, and there's good documentation about what an abstract
+3583720	3588280	class actually is from a Dart perspective, and you can see it says use the abstract modifier to
+3588280	3596200	define an abstract class that cannot be instantiated, all right? So, an abstract class is just like a
+3596200	3599480	normal class that can't have instances. So,

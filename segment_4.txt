@@ -1,0 +1,614 @@
+I'm just going to mark that as done that we've talked about it in notes, all right?
+Now let's talk about cherry picking non-null values.
+And what this means is with Dart, you can easily ask the language to give you values
+that are not null.
+And I'll explain what this actually means.
+Let's say that you have a string, a final string, first name, and it is equal to foo.
+Now let's just say this is a constant, all right?
+That's what the suggestion was, you see?
+I wrote final because I was not planning to reassign this first name value to anything
+But then I got a suggestion to actually use the keyword const as you can see here.
+So let's say const, all right?
+Now what we want to do here, then, is to also create a last name or a middle name, r, and
+then we say last name, and I have to change the last name to last name, right?
+Actually, what we're going to do is we're going to say the first name is null, all right?
+So first name null, middle name bar, and last name bass.
+Now if you want to, if you have these values and you want to, for instance, I mean, right
+now you can actually see the values that you put here, but sometimes these values are passed
+to your function, so you don't know what they are.
+Right now you can see what they are, so it's easy.
+If I told you, pick the first non-null value, then you would say middle name because you
+can see it.
+However, if you had a function, for instance, test here that accepted those values, for
+instance, string, first name, string, last name, and then string, or yeah, middle name,
+etc., then you wouldn't know what those values are, or you cannot make an assumption about
+what those values are except that they are nullable or optional strings.
+So I hope that you get what I'm trying to say.
+If someone told you to pick the first non-null value, one way to do that is, like the old
+way of doing that is to say, if first name is not null, then you would say, oh, okay,
+first name is the first non-null value, okay?
+And then you say, okay, if first name isn't null, then we pick it, otherwise, else, if
+middle name is not null, okay?
+And then you say, okay, middle name is the first non-null value, and then else, if, again,
+last name is not null, then you would print the same thing.
+So this is very repetitive.
+So it is basically very verbose in the way it is created.
+There is a better way of doing this, and that is with the question mark, question mark operator
+in Dart, which is available in some other programming languages such as Swift as well.
+So the way to do that, then, is you would want to pick the first non-null value.
+So you would say, final or const first non-null value, and you would say that's equal to first
+name or or.
+So this is kind of like question mark, question mark, middle name, and then question mark,
+question mark, last name.
+So, and, I mean, we're getting a warning here just because Dart understands already that
+this middle name, although a, so, this is, although an optional, basically, it has a value.
+But if we meet this null, so, and that warning goes away, but, I mean, it would probably
+be cleaner if we actually pass these as parameters into this function so we don't get these weird
+warnings.
+But the way the question mark, question mark operator is working is that it says, it is
+an infix operator, just so you know, in, from chapter four, you know, an infix operator is
+an operator that has two things, one on each, on each side, the right and left.
+So in this case, on the right side, we have middle name, and on the left side, we have
+first name.
+So what this operator does, it says, if the value on my left side is null, I'm going to
+pick the value on my right.
+Okay.
+And let's now, in this case, say, okay, middle name is not null.
+So what it does, it says, first name, are you null?
+Yeah, you're null.
+Then I'm going to go to the right side.
+Middle name, are you null?
+Nope, I'm not null.
+Then it's going to pick that, and the rest of the statement is not going to be executed.
+However, if middle name was also null in this case, then what happens is that it begins
+from the left, it says, first name, are you null?
+Yes.
+Middle name, are you null?
+Yes.
+So this entire operation here, it doesn't yield any value.
+So this entire operation will let me know.
+So it says, okay, now I have to compare our left-hand side.
+Are you null?
+Yeah, we know that this entire thing was null.
+And then it says, right-hand side, are you null?
+Nope, I'm bass.
+Then it picks bass.
+So this question mark, question mark operator is a null-aware operator that picks either
+the left side or the right side, whichever one is not null first in that order.
+So left side, are you null?
+If you're null, I go to the right side.
+But if you're not null, I'll pick you.
+So keep that in mind.
+It is a very handy operator, and it will shorten your code quite a lot.
+All right?
+Now, if we then go in here and say first, null, null value, you can see it actually says,
+oh, it's a string.
+However, if these were parameters, so if we said first name, and then string, last name,
+sorry, middle name, last name, so they were not provided to us like that,
+contour was okay, and then we say final.
+Now, if we say first, non-null value, in this case, since it is a normal case, excuse me,
+where the Dart compiler isn't working with constants,
+then it cannot resolve this to a constant value at the moment.
+So it says, okay, there are three optional values.
+I have no idea what they are.
+So I'm going to do my best to pick the first non-null value depending on, I mean,
+based on what we provided here.
+However, I may not be able to solve this.
+So the final result here, as you'll see, is an optional string, meaning that, well,
+I may not be able to resolve this, meaning that this entire operation on top on line nine
+may result in a null.
+All right?
+Sorry about that.
+Sorry about my voice.
+So that is the question mark, question mark operator.
+So I'm just going to mark that we talked about it in my notes.
+Okay.
+So that was that.
+Now, let's talk about the next topic, which is the null aware assignment operator.
+I think that's its actual official name.
+This operator is very similar to the question mark, question mark operator in that it
+tries to resolve a variable to make sure it is not null.
+It's going to do its best.
+And let's have a look at an example.
+Let's just say bar.
+I'm going to say, actually, let's just say string and name is first name.
+So we begin, we say that we have an optional name and we begin by assigning first name to it.
+So it means that its name might, at the moment, depending on the value of first name, it may be
+null.
+Now, if that is null, you may want to assign another value to it.
+All right?
+And then you can do that with this operator.
+You would say last name.
+Let's see what happened here.
+We'll try to, oh, is it this?
+Yes, it is equal to.
+So I actually should change this case to equal to question mark.
+Yes.
+And I'm going to bring it up again so that it is actually correct, let's say.
+And then name equal to, isn't this working?
+Last name, oh, where was it this one?
+Try changing the,
+is it like this?
+I'm actually a bit unsure right now.
+So let's have a look, actually, what this does.
+And it's a three-positional.
+And then we say null, null, null, and then bar, and then bass here, okay?
+So first name is null, middle name is bar, and last name is bass.
+And to be honest with you, I mean, this is quite a lot for me as well.
+It is something that is like the syntax of the programming language.
+It is something that you will kind of need to live with.
+You're not going to memorize this all just in your head all the time.
+Of course, like the main parts of it, you're going to remember, but not all of it.
+So, and you can see for me as well, I'm just like at the moment, okay, which one is it?
+So I'm going to test that.
+So to begin with, we say name is first name.
+And if that is null, then assign, actually, let's just say middle name,
+name here, then use middle name, and then print the name finally.
+And I can see it says bar here.
+So it's actually question mark, question mark equal.
+So I actually maybe need to edit this text one more time.
+So I'm just going to say question mark, question mark equal.
+Bring it up because I think question mark equal is not going to work.
+An equal question mark isn't going to work either.
+It's not a valid syntax.
+So question mark, question mark equal.
+Sorry about that.
+So what this operator at the moment is doing is says that I'm going to take
+the value on the left-hand side and check whether it is null or not.
+If it is null, then I'm going to assign the value on the right-hand side to the left-hand side.
+If it is not null, I'm going to leave it alone.
+So at the moment, first name, as you saw here, is null,
+the first parameter that we pass here.
+What it says is, okay, I'm going to check then for middle name if name is null.
+And it is null.
+And then it says, okay, middle name, are you present there?
+And then we'll assign that value here.
+So it will be basically it will be bar, which is the value of the middle name.
+Now, if we in here said middle name is also null,
+right, you could have another operator here that says, okay, if after taking the middle name,
+we are still null, then take the last name.
+So, and you can see Baz gets printed to the screen.
+And that is because because Baz is the last parameter that we're checking on line 10.
+And its value is not null.
+So you can see how like if I then went here and actually said the value is not null,
+the first name is bar.
+Then you will see that that will be the value that gets printed to the screen here.
+Because right here, name or first name, which is bar, got assigned to name.
+So it is an optional string, but it has a value, which is bar.
+Then when you come to this line number nine, then you're telling Dart,
+look, if name is null, then assign middle name to it.
+And Dart says, well, name is a null, it is bar.
+So I'm not going to assign middle name to it.
+And then it goes to line number 10 and does the exact same thing.
+All right.
+So that is like the null aware assignment operators.
+And it is useful.
+I personally, I mean, to be honest with you, I,
+as you could kind of guess, I don't use this operator so often.
+It is there.
+And I have no shame in saying that pretty much in none of my programs have I had to use this.
+It is present for you to use.
+It is available if you want to use it.
+So just don't be like me, but try to remember the syntax is question mark, question mark equal.
+And I'm going to actually fix that in my notes as well,
+that it is question mark, question mark equal.
+And I'm going to check it in the notes that we've talked about it.
+Now, let's talk a little bit about conditional method or property access or conditional invocation.
+Now, as we talked about in the previous chapter, with Dart, as like many other
+programming languages, you can use the dot syntax in order to access or drill down inside properties
+and methods or functions inside other objects.
+As we saw, for instance, with the case of lists in Dart, you can say,
+I have a list and then you want to get its length, then you would say
+the name of the list dot length.
+And that drills down inside that list and gets the length property.
+However, as you saw earlier in this chapter, in chapter number five,
+even lists or pretty much any data type in Dart can also be nullable.
+So how do you access properties of a null object?
+So let's have a look at that now.
+Let's say I'm going to actually delete these properties, the parameters that come here to
+our function, and I'm going to say, and I'm going to go down here and remove these parameters as
+well.
+And in here, let's just create an optional list of strings.
+Not optional list of optional strings, but just an optional list of valid strings.
+Okay.
+So I'm just going to say list of strings as an optional list, and I'm just going to say names,
+and that is equal to, let's just say at the moment, foo.
+All right.
+Now, here, if you try to say final length of names or number of names is names, length, okay?
+If you then look at the data type here, I mean, we could actually say this is null.
+And you can see here, Dart actually is allowed to or is able to give you an error knowing that this
+list is null at the moment.
+However, if you accept it, I think it's actually better that we accept this value as a parameter
+so that Dart analyzer cannot be too smart about making assumptions about what this actually is
+at the moment.
+So you can see the analyzer is telling you it cannot be unconditionally accessed because
+the receiver can be null, and that means, yeah, exactly as it says, it says names can be null.
+I don't know if it's null right now or not, but it can be.
+So how do you access that?
+One way to do that, like, the old way of doing that is to say if names is not null,
+then length is names length, okay?
+Final length is names length, okay?
+So that tells Dart that, look, I'm actually checking for null values,
+or I'm checking that this list is not null on line 8, and if it is not null,
+then I will access its length property.
+And this is kind of, it's called type promotion, and type as in data type.
+So in this case, you can see on line number 8, or now if I go and create a new line on
+number, on line number 8 and I say names, this is an optional list
+that can contain strings, and in here, you can see it is type as the same, but it is promoted
+to not being null because you've already checked for it, because if you remove these lines of code,
+you can see now that you get an error, the exact same line, but if you check first for null,
+and you don't get the error, it's a type promotion, okay?
+So this is kind of like the old way of doing that.
+So let's say that you want to have, you want to extract the length, so you say final length,
+or ints length, right? You create the variable, but you don't assign anything to it.
+Then you say if names is not null, then the length is equal to the name's length.
+Otherwise, length is zero, okay? So this is one way of doing that.
+It's the old way of doing that.
+And you may be trying to be smart as well and say, okay, I don't need this else statement if I just
+say this is a variable, and by default, it's zero, and yeah, you would be right, because length is
+zero by default, and then if names is not null, then you say, okay, length is equal to name's length.
+However, there's a better way of doing that, and that is using the dot question mark,
+I believe, or the question mark that actually it is, yeah, operator, which conditionally executes
+or invokes a method or a property inside an optional if that optional value is present.
+I'm going to show you how to do that. So if we say final length
+is names, and then you would put question mark dot, and then you would say length,
+and you would say, okay, length is equal to name's length, and then you would say
+question mark dot, and then you would say length, and you would see this code being
+executed without a problem. However, if you go here, you would see that length is an optional
+value, is an optional integer. So you may be like, okay, how do I solve that? How do I say that
+I want length to be zero if this length value is null, meaning that if the names list is null and
+we can't extract the length, then I want this value to be set to null. And that is using our
+question mark, question mark operator that we talked about, the null operator that we talked
+about earlier, the infix operator. So you could just do this. You would say length is if the names
+list is present, meaning that its value is not null, then grab its length. Otherwise, take the
+value of zero and assign its length. And if you go to line number nine now and I say length, you can
+see it's an integer. So it's not an optional integer anymore. So you could do the same thing
+as well. Like you could say names, and you could do the same thing with properties, and you could
+also do it for functions. So you can say names, add, adds, right? So you see this is a function
+and then we're adding the value of bass to that list. However, you can't unconditionally invoke
+this function on an optional value because it might be null. All right? So that is like a very,
+very important bit of learning about darts, learning about optionals in darts, how you could use
+nullable values. And as you will see, and we'll talk about more in this course, there is many
+cases where you have to take into consideration null values. And especially if you're working
+with different libraries where the library cannot make too many assumptions and your code is
+dependent on that library and you will have to take into consideration, okay, the absence of
+a value means that I personally have to take some decisions in my code consciously in order to
+execute bits and pieces of code depending on the absence or presence of the value. So try to use
+these optional null aware operators that I taught you here, which was the null aware, basically
+the decision making to pick, like the in fix operator that tells you whether the left hand
+side or the right hand side, depending on which one is not null first, it picks that one, okay?
+That operator is very important and the all aware invocation operator, which is here, so you see
+some object which may be null, then do something on it. Or the operator, which is a null aware
+assignment operator that assigns the value on the right to the variable on the left should the
+variable on the left be null, all right? So these are very, very important to understand.
+Okay, now that we've talked about that, I'm going to take that in my notes that that is a topic we
+talked about. Now, we also have very, very good official documentation about null safety in Dart.
+So I'm going to bring up this documentation on a separate screen, and then I'm going to bring it
+up here so you can actually see as well, all right? You can see here it says understanding
+null safety, and this is great, great documentation about how null safety in Dart works. As you can
+see, a lot of examples. I mean, it talks about like from the absolute beginning,
+what it actually means, and you can see here null is at the level of object, so it's not,
+null itself is not like an object. So you have lists and doubles and integers here,
+but null sits on top for itself, kind of like the absence of a value.
+So there's lots of examples in this link, and I highly encourage you to have a look at it.
+Some things you may not understand, for instance, like this one, you will understand easily because
+it says there is something called a thing, like a class, but we haven't talked about classes yet,
+and it's name, parameter name here in this function called show gizmo is called thing,
+show gizmo is called thing, and you can see it is conditionally accessing a property on that thing.
+And then if that property in itself is null, it conditionally access that as well. So this
+property is nullable, and then it's accessing another property inside that nullable property
+if it's not null. So I mean, it's a great way you can chain them, as you can see here.
+Then so if this thing is not null, then conditionally accesses this property on that.
+So it's beautiful. I mean, and this thing is available on many other languages like Rust
+and Swift as well. So it's nothing new, but it is kind of like such an important topic to understand
+in Dart that I think you shouldn't just skim over it. So you should just really learn how to work
+with it. All right. We've now talked about null values. So I'm going to take that in my notes
+here. Now, I think for chapter five, this information is enough so that we can move on to
+the next chapter. And in the next chapter, chapter number six, we're going to talk about some really,
+really juicy stuff. And this is like chapter six is going to be like, as I can see in my notes,
+I've pressed in a lot of really interesting topics such as enumerations, classes, objects,
+custom operators, constructors, factory constructors, class methods, I mean, inheritance
+and subclassing, abstract classes. So as you may have heard, depending on what background you have,
+you may be like a product owner or product designer, a UXer or whatever. You may not have
+like a software engineering background, but Dart in its core is an object-oriented programming
+language. It means that things in Dart are objects. An object is an instance of a class,
+as we'll talk about in the next chapter. So for you to understand Dart and how these things work,
+for instance, we've talked about lists and actually typing dots in front of the name of
+list and getting its length, but you may not really know how that works. So in order to
+understand all those things, what that dot means, you need to understand what objects are. And in
+order to understand objects, you need to know what classes are. And when you understand classes,
+then you will learn about inheritance and then we'll talk about abstract classes, properties,
+static functions, all that. So what we're going to talk about in chapter six is so important that
+I believe that every Dart developer needs to know about this. And we're learning all of these things
+to become good at doing Flutter. So although you can go and write like servers, maybe server
+applications with Dart, or you could write command line applications with Dart, but these days,
+Dart is primarily used for writing Flutter applications. And I don't have any data to
+prove that, but I can see for myself when I'm in the community that most people are using Dart
+primarily to write Flutter applications. So we're doing all of this to learn more about Flutter.
+And I highly recommend that you don't skip these chapters where we're talking about Dart,
+especially if you're new to Flutter development. So with that said, let's leave this chapter
+the way it is right now. Chapter number five, we're done with that. Let's go to chapter number
+six and learn about Dart enumerations and objects. Welcome to chapter six of this Flutter course.
+In this chapter, we're going to talk about Dart enumerations and objects. These are some of my
+favorite things to actually talk about. So in most programming languages, actually you have the same
+facilities. So if you follow along with the other chapters, then you should have a working
+Dart project set up now and maybe running in an emulator or a simulator so that you have
+the ability to press command S on Mac or control S in Linux and Windows in order to rerun your
+project. So without you having to pretty much do anything. So let's then get started. I'm just
+going to make that assumption that you're already set with those requirements.
+So let's start by talking about enumerations and I'm going to bring up the project from
+the previous chapter. Let's just make sure that it's on the screen so you can easily see it.
+Now I'm going to go to this list function that we created, remove the only parameter there and
+remove that as well. So if I press command S now, nothing should happen on the screen because we
+don't have any functionality in test. So let's talk about enumerations and what they actually are.
+As you can see here, enumerations are named list of related items. Now, an enumeration is
+kind of like equivalent of making a string written programmatically so that it becomes an entity.
+And by that, I mean that let's say you have the value name and then you could say foo.
+And you would also say const other name. That's also foo. They're both the same string, but they're
+not the same identity in that. I mean, internally, actually, in terms of const, I don't want to go
+too much into how the compiler actually works, but they're kind of going to be the same string.
+But I mean that you've written it twice, so it's not the exact same thing. You have to write it
+twice. So an enumeration tries to basically make sure that a value has a name that can be
+programmatically referred to. So let's say enum, and that's a keyword in Dart. That's how you
+create an enumeration. I'm going to take this that we've talked about some of the things
+during the intro. Sorry about that. I have to look at my notes. Anyway, so we have the enum here.
+That's how you create an enumeration in Dart. And you would then give a name to your enumeration.
+And unlike variables and constants that are written with camel case, you'd have to basically use
+another case in here, which is the first letter of every word in your enumeration's name has to be
+uppercase, and the rest of the letters have to be lowercase. So let's in this case, for instance,
+say person properties, the properties of any person. Then in this enum, you will write the
+different properties, for instance, first name, last name, age. So what that basically means is
+that you've now defined a list of related things, such as first name, last name, age, which are
+categorized under a particular name, which in this case, person properties. And you can refer
+to these in your code using the dot notation. So you can say person, properties, dot, first name.
+And you can print it, actually. So I'm just going to press Command S and you can see it being printed
+to the screen. So enumerations are really, really great as we go on in learning about Dart and how
+Dart works, how we can work with Flutter, how we can parse data that comes back from a server,
+for instance. But for now, it's enough for you to understand that you can categorize related items
+under an enumeration so that you can refer to them later, okay? And in Dart, you can also get
+the string representation of these values using their name property. That is something that's
+created for you by default. So if you just say name, you now see first name being printed to
+the screen as a string. But before that, if you printed the enumerations in on value here for
+first name, it would print out the entire thing, okay? So that's short and sweet about enumerations.
+We're going to use them quite a lot, actually, especially later where we go to more advanced
+topics as we develop our real application. But for now, just know that this is how you create
+an enumeration using the enum keyword and then the rest of the properties you just put in curly
+brackets, okay? So that's for enumerations. Now we need to talk about switch statements. And
+actually, let's bring this back and I'm going to change these two properties, let's say, okay?
+And let's just say, for instance, animal type. And let's say cat, dog, and then let's say rabbit.
+So let's say we have an animal type enumeration. And we want to, and then we, for instance, get
+in our function, we say animal type, animal type. So there's a property that we expect
+to be passed to our function called animal type and then we name that property animal type with
+camel casing here, okay? So if we do that, then we go to our function here where we're calling
+the function, you can see that we got an error, meaning that there is a parameter expected of type
+animal type and no one's passing that. So at the call site, which is the place you're calling your
+function, that's what a call site is known as in programming. So if you're coming from a background
+of design or anything that is not software development related, so you wouldn't probably
+know so much about this kind of lingo, but a call site is where you're calling a function. So
+at this call site, number 19, we're then going to pass an animal type and let's just say
+cat in this case, okay? So in here, we could just print that. I'm just going to say animal type.
+I'm going to press command S and you can see cat being printed here, okay? Now, if you want to
+execute different types of code depending on this animal type, then you could, which is not
+recommended, you could use an if statement. So if you just said, if animal type is equal to animal
+is equal to animal type cat, you'd say print all I love cats, okay? Else if animal type is animal
+dog, then you would say print or you would say dogs are still fluffy or something.
+And else if animal type is animal type
+and I wish I had. All right, so this is using normal if statements. You say if animal type is
+cat, then blah, blah, if blah, blah. Now, it is one way of doing it, but it's not the recommended
+way of working with enumerations and the recommended way of working with enumeration,
+especially if you're doing like branching code as we're doing here, is using a switch statement. So
+let's convert this code to switch. So let's say switch. You put parenthesis, open, close,
+and then open, close curly brackets. And in here, you would put your enumeration. So you say animal
+type, okay? And the way to handle these different branches then is with the case keyword. You'd say
+in the case of animal type, bunny, print bunny, something like this, okay? Case animal type,
+cat, print cat. And case animal type, dog, print dog. Just like that, okay?
+Now, this is I'm actually grateful that we're getting this error so you can clearly see what
+it says. Is that the case should not complete normally, try adding break or return. Now,
+what this is saying that you see in many programming languages, just like Dart,
+when the program comes here to the case statement, it kind of like falls through to the next line.
+And Dart tries to avoid that. So it says, okay, if I handle bunny, then I'm doing some stuff,
+but it kind of feels like I'm falling down to the next line after this because you didn't tell me
+what to do after the print statement. So you either tell me to completely go out of this function,
+go out of the test function by putting the return keyword here. We haven't talked about return
+really yet. But you could do that. You could just say, okay, return right after all of these. So
+I'm just going to press command S, and you will see cats being printed to the screen, which is
+here. But if you didn't have this return statement here, you would get an error. So you either say
+return or you would use the break keyword. Now there's a difference between these. Let's put
+a print statement here, and I'm going to say function is finished. So I'm kind of expecting
+that by executing our code here, our test function here, passing the value of cat at the moment,
+that we fall into the switch, we check that this is cat and then print the cat, and then we return.
+This is kind of what it is doing. It means that it kind of skips over this print statement,
+and you'll see soon. If I say command S, it will just say cat and then we'll return from that.
+So this is not really what I wanted. I wanted this switch statement to be executed,
+print cat, and then continue after switch. And that's where you use the break statement,
+so or the keyword here. So if you say break, it breaks out of the switch statement and then
+continues with the rest of the function as you would expect. So if I press command S here,
+you say cat, and then function is finished. All right. So switch is the preferred way of working
+with enumerations, especially if you're doing branches. So you could also like,
+for instance, if in this case you said make sure this is a cat, you could also in this case say,
+if animal type is not animal type, cat, and you would return. Okay? You could do this as well.
+So this is kind of like a conditional statement that you're putting in the beginning of your
+function, making sure that any code executed after line 10 is completely sure that the animal
+type is a cat. Okay? So in that case, you may just use a typical if statement so you don't have to
+do switches. Okay? But if you're trying to execute special pieces of code depending on
+which value this enumeration contains at the moment, then I highly suggest that you use
+switch statement instead of if statement. All right? So kind of depends on your use case.
+All right? Okay. I'm just going to mark this item as done in my notes.
+Now let's talk about classes. All right? Which is one of my favorite topics to talk about, actually.
+Well, classes in Dart and in many other languages actually bring this back to
+how it was before, make it a test function. All right? Remove the animal type from here.
+So classes in Dart are grouping of various functionalities into one packageable piece
+of data. And by that, I mean, for instance, let's say that you have a function called run,
+another function called breathe, and then you have a person's first name, a person's last name.
+Of course, you could go and define these things like this. You could say const first name,
+const last name is something like this. Okay? Goes like that. And then you could have
+a function, sorry, you would say run, and then you'd have another function called breathe.
+And you could do that. But these are functions that are kind of like for us in this particular
+case, or at least in my head at the moment, I am imagining these functions to be related to a person.
+The person can run, that person can breathe, that person has a first and a last name. So
+the grouping of these related things is done with a class in Dart, at least. So
+the way to do that is you would say, for instance, class, which is a keyword in Dart.
+The name of the class. Now, for the naming of classes and enumerations and any other
+entity except for variables and constants, you should use just normal casing. I don't actually
+know if it's called Pascal casing or I think so. But you would just use your uppercase,
+the first letter of every word. Okay? So let's just say person. Okay? This is how you would say
+a person class. All right? So I don't think actually we can put constants in there. I'm
+just going to grab these two functions and just place them inside this person class. All right?
+And let's in this, say, print, running, run function, and for breathing, we're going to say
+breathing. All right? And in the test function, you would want to create something called an
+instance of this class. Now, instances are objects, and objects are created from classes. So
+you need to understand how instantiation works in software development. And this is for any
+programming language such as Dart, Rust, Swift, Python, JavaScript, where they allow you to create
+classes. And now that you know what a class is, in order to use a class, you need to usually
+create something called an instance of that class. That means that you tell
+the programming language that, okay, here is the class. I know about that. But give me a copy of
+it. So every class can be instantiated, meaning that the Dart compiler will create a copy of that
+exact class with its data, its functions, its properties, and give that copy to you. All right?
+So that is called instantiation. And it works by using the equal sign and creating, putting
+parentheses at the end of the name of the class, as I'll show you here. So let's just say final.
+And we say person, which is the name of our variable in this case, is equal to,
+as I said, equal sign. Then you would write the name of the class and parentheses just like that.
+So now you said a person variable in this case is an instance of that person class. Now you'll
+understand using dots and notation, you could say person dot run. You see? That function is now
+available on your instance of the person class. And you would say person dot breathe. Okay? So
+these are functions that are available at instance level of the person class. I know there's a lot
+of words that I'm just talking about, but I think you understand the point here. So this is how you
+instantiate the person class, and this is how you invoke various functions on that class. So if I
+press command S, you can see it says running and breathing. If you said, in this case, person,
+and then without instantiating using the parentheses, if you said breathe, you will get
+an error here. Instance member breathe can't be accessed using static access. Okay? And that's,
+I mean, that is kind of like instance member is an important term also to remember. And instance
+member means some functionality that is only available at the instance level, meaning that
+it's not available at the person class level, but you have to make a copy of person in order to be
+able to access that. All right? So that's the basic of classes. You can do a lot with classes,
+as we will talk about soon. So I'm just going to leave that person class right there, and then
+just kind of mark that as talked about in my notes as well. And let's now talk a little bit
+about objects. Well, objects are actually quite easy to explain. An object is an instance of a
+class. So you wouldn't like, when someone says, oh, here's an object of type string, it means
+literally that there is a class called string, I've created an instance of it, and that is an
+object. So the words instance and object are usually used interchangeably. But if you hear
+someone say instantiate a class, then you would say, okay, what's the class name? Oh, it's person.
+All right. Person. Now I created an instance. Okay? And in this case, you can see I'm just
+creating an instance of person without actually doing anything with it. So that's kind of like
+a useless object, all right? But if I put, I say foo is a person, then this foo now is an object
+of type person. And actually, you can write its name here, and you'll see that it tells you that
+this is a person, okay? So that in short is what objects are. And I can see in my notes that
+objects are kind of like in the wrong place. I'm going to bring it to the right place. Sorry about
+that. Okay? Now let's talk a little bit about constructors. And I can see constructors also
+at the wrong place in my notes, so I'm going to bring those also to the right place. Okay?
+Sorry about that. What a constructor is at its name, as its name indicates, is a special logic
+in a class that constructs or initializes or builds that class's instance, all right? So
+you may say that, okay, let's go to our function here, to our class here, person.
+And let's say every person has a first name or a name, okay? So let's just define that. We say
+final string name, all right? As you can see now, Dart is saying, okay, you said that every person
+has a name, and it's a final, meaning that after the person has been instantiated or after that
+person has been initialized or created an instance from, you cannot change that name because you said
+final, all right? If you said string name is foo, that would be different because it means
+every person instance that gets created has the default value foo for its name. That's a completely
+different way of saying what the name of the person is. In this case, as you can see, we're
+saying that every person instance, every person copy that we create has a name. Now Dart is saying,
+okay, where is the name then? You didn't tell me how to create it. And that's where you would
+want to use something called constructor, okay? Constructors are sometimes called as initializers.
+Depending on the background of the programmer, they may call it constructor initializer
+or maybe some other names that I don't know about. But if you hear that, a constructor,
+then you will now know what I'm talking about soon actually. So now what you can do, at least
+in Visual Studio Code, when you get this error is to just hover over it and then press command
+on Mac or control on Windows or Linux and press dot. Now you will see you will get some suggestions
+here. And the second suggestion, at least for me here, it says create constructor for final
+fields, okay? And I can just press that. And what happens here now, you see it's that it creates
+something that looks kind of like a function, but it doesn't have a name. Its name is implicitly
+set to the name of the class, okay? So basically, it says I'm a special function with the same name
+as the class, and I expect a value to be given to me, which I will then in turn assign to the name
+property of myself. It's kind of like a strange way of doing things, but is quite clean as well,
+okay? After you do that, so this is how you create a constructor. After you do that, then at the call
+site where you're calling this person class to create an instance of it, it will complain saying
+that, oh, I'm expecting an argument, but I didn't find any. And that's where you have to pass the
+name. So let's say in this case is foo bar, okay? And then on the next line, you can just say print
+foo name, all right? And press command S, and then you can see foo bar being printed to the screen.
+So that is like the basic of a constructor. That's how you construct instances of your class,
+all right? Now, you may be saying that, all right, I don't want, I mean, you can do many fancy things
+with constructors. You could say, okay, its name, for instance, by default, must have a special
+value. You could do that. There's lots of things you can do with constructors, which I'm not going
+to go into the details of. But right now, just know that a constructor is this special kind of
+function that has the same name as the name of the class, and then parentheses, and then you put your
+values in here, all right? Okay, that was constructors. Now, let's talk a little bit about
+methods, all right? And what methods are, I'm actually going to go here and say, we're going
+to talk about methods. I know it's at the wrong place in my notes as well. Sorry about that.
+A method of a class we've talked about already, to be honest with you, and a method of a class is
+a function on the class, which is usually referred to as an instance method, meaning that the
+function is available after you've instantiated that class, all right, as we're doing in line
+number 14. Name is an instance variable. So, is a variable that is available at an instance level
+is not an instance method. An instance method should be a function, all right? So, let's go
+and create a function here that doesn't return any value denoted by the void return type, and we
+say print name, all right? The functionality of this function is only just to print the name of
+the class, all right? That's all it does. And in Dart, you're also, now that we're talking about
+this, I'll just mention also that in Dart it's usually better not to prefix your instance
+variables or instance functions inside the class itself using this keyword. This keyword in Dart,
+the this this or that this keyword basically refers to the current instance of this class,
+all right? So, you can either tell print name to print this dot name, or it's actually better
+to remove this and refer to it as name. That's the recommended way of doing it, okay? So,
+avoid the keyword this as much as you can unless you have to. And we'll come to those points
+hopefully later in this course why you may have to do that, why you may have to use this.
+All right. Now we have the print name instance method, all right? So, let's just use it. Instead
+of this print function that we're doing here, let's just say foo dot print's name, all right?
+Command S or Control S on Linux and Windows and Command S on Macintosh, and then you get the
+Flutter foo bar printed here. Or you could just say print, I'm going to, I will now print the name
+of this person in single quotes. We don't need double quotes, okay? Command S and you will see
+that message being printed here, followed by the actual name of that instance. So,
+if someone says method or instance message, you will then know what we're talking about.
+It's a function created at the class level that does some stuff, all right? So, that's short and
+sweet. Okay. Now that we've talked about that, let's talk a little bit about inheritance and
+subclassing. I'm going to bring the caption here so you know what we're talking about.
+Now, inheritance and subclassing are so, so important in Dart and in any other object-oriented
+programming language that I don't think anybody should jump over it. Like, for instance, I know
+developers working in various programming languages that are object-oriented, but they kind of steer
+clear of the object-oriented aspects of that language. Maybe they don't need it and maybe
+they just feel like it's unnecessary or they feel like, oh, it's just too complicated.
+But in Dart, if you want to become a good Flutter developer or a good Dart developer, you need to
+know about classes and inheritance. So, let's talk about inheritance. What inheritance in Dart is,
+is that it allows you to define a class and then to add more functionality to that class
+into a new class. So, let's, for instance, say we go into our test function here and remove that,
+okay, that code, and also remove the person class. Now, let's create a class living thing,
+all right, and then we say void, breathe, and then we say print. Living thing is breathing,
+okay? So, we created a class living thing, and we're saying that anything that lives needs to
+breathe. Now, this may be an assumption, but anyways, anything that lives and is above the
+ground and is basically alive is breathing, okay? So, that's our function on the living thing. Now,
+you may say, okay, any living thing may also have the ability to move, okay? Then we have
+a function called move. I'm going to say print, I am moving, all right? So, now you may say, okay,
+now I kind of want a class called cat, all right. Cat is also a living thing. One way to do that,
+to go about creating a class, the cat class is to say class cat, and then you say, hmm,
+I kind of need these functions, and you'll go and copy it, and then you paste them here,
+all right? And then you say, okay, I'm good to go now. But one of the absolute paramount qualities
+of a developer is that developers do not like to repeat themselves, and it is such an important
+concept in programming that you need to avoid repeating yourself, that you need to just coin
+that down now, get it straight so that you don't make this mistake as we're doing in this code
+right now. So, the first thing you want to do as a developer is say, how can I grab this code?
+And it's obvious that the cat is also a living thing. So, that's where you want to use the
+extends keyword that allows you to inherit the functionality inside the living thing class
+into your cat class. So, in this case, I'm saying cat class extends or read it in English as inherits
+living thing, all right? So, you can see that the cat class in itself is empty right now,
+but if you go to the test function and I say, final, fluffers is a cat, and then I can say
+fluffers, you can see that now that the cat class has breathe and move functionalities,
+or functions, actually. So, although cat itself didn't define these functions,
+but they're available for the instance in this case called fluffers of type cat to use. So,
+you can just say move, and then you can say fluffers, okay? So, if I run this code,
+if I delete everything in the debug console and run this code, you can see that the cat
+instance called fluffers is saying move, or I am moving, and it will also say living thing is
+breathing, okay? Now, we could also talk about, now that we're talking about inheritance and
+subclassing. Actually, maybe I shouldn't call it subclassing, but I also think it's important
+for you to understand what subclassing is. Subclassing is literally the same thing as
+inheritance. Subclassing is saying that you have a class and you're creating a subcomponent, like a
+subthing of it, which may actually have, it's a little bit of a strange name in sub because
+sub means kind of like a subset of things available in that class, but it actually is like a superset
+because it will grab everything, like the cat at the moment has every functionality in living thing,
+right? But it may not necessarily do that. It's kind of complicated to explain, but if you hear
+subclassing or inheritance, know that that is what we mean. You use the extents keyword, usually,
+okay? All right. Now, we've talked about inheritance and subclassing.
+So, I'm gonna move a little bit my notes around, sorry about that, that I'm looking away from the
+screen, and now we're gonna talk about abstract classes, all right? There's good documentation
+about abstract classes, and what we're gonna do here is to just change this class living thing
+at the moment to abstract, and you'll see that everything works as expected. Well, an abstract
+class is very similar to a normal class, and there's good documentation about what an abstract
+class actually is from a Dart perspective, and you can see it says use the abstract modifier to
+define an abstract class that cannot be instantiated, all right? So, an abstract class is just like a
+normal class that can't have instances. So,
