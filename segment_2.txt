@@ -1,0 +1,1152 @@
+and try to follow along with the steps provided.
+So after you've done all of this,
+you should be able to be anywhere on your computer
+and just say Flutter doctor.
+Now Flutter doctor is a very important command
+because it looks at your Flutter installation
+and it kind of makes sure that it's in good health,
+as denoted by the word doctor.
+So because Flutter in itself is a framework
+and it depends on many other bits and pieces
+which your computer may need to have
+in order for Flutter to actually work optimally,
+Flutter doctor will then go through a series of steps
+to ensure that first Flutter is updated
+and that you for instance have Android tool chain
+that you have Xcode installed, Chrome, blah, blah.
+So I mean, this result at the moment
+looks quite fine on my computer,
+but if you're running Flutter doctor
+for the first time on your computer,
+you may get a few problems.
+Some of the problems that you will experience probably
+is gonna say Android SDK couldn't be found,
+Xcode couldn't be found,
+because if you're running Flutter on a Windows machine
+or a Linux machine, then you can't have Xcode.
+Xcode is like the software provided by Apple.
+And only runs unfortunately on Mac OS
+and it's used for compiling or creating Mac OS,
+iOS and iPad OS pieces of software.
+So although you can run Flutter on your Linux
+and on your Windows machine without a problem,
+you won't be able to produce or test your Flutter code
+running on an iPhone, unfortunately,
+unless you have access to Xcode.
+And the easiest way to get access to that is of course,
+to have a Macintosh.
+And that's unfortunate because yeah,
+it's just not available for other platforms.
+So you've run Flutter doctor and it's basically gonna tell you
+that, okay, now I'm gonna assume that you're on a Macintosh.
+It's gonna tell you that, okay, Xcode, for instance,
+you need to install Xcode.
+And the way to do that is you need to open App Store
+on your computer and just type Xcode here
+and go and install Xcode on your computer.
+So depending on, I don't know which version
+is the latest at the moment,
+but if you're trying to develop Flutter app to be able
+to run on your iOS phone or the iOS simulator,
+then you need to install Xcode.
+If you're on a Macintosh, sorry,
+if you're on a Linux computer or Windows,
+you don't have to do this step.
+Actually, you can't do unfortunately this step.
+So once you've done that,
+you also need to make sure that you've installed
+developer tools for Xcode.
+So you need to install Xcode.
+Developer tools for Xcode.
+So let's see how we can do that.
+Developer tools, Xcode.
+Command line tools, right.
+Let's see, install from terminal,
+there's a command that you can execute in order to do that.
+And that command actually looks like this.
+Here, I will zoom into it so you can see better.
+It says sudo xcode select install.
+So you need to issue that command in your terminal.
+So if I do that and it says, what's the password,
+I'll enter my password and it says they're already installed.
+So if you haven't done that,
+please go ahead and execute this command
+in order to install command line tools for your Xcode.
+Now, the next piece after Xcode that you will need is
+let's see if I can actually bring up.
+So we've talked about Flutter Doctor,
+that was Flutter Doctor.
+And we also talked about installing Xcode.
+So I'm now bringing that up a little bit late.
+But now the next step is to install Android Studio.
+So what Android Studio is, is like the equivalent of Xcode,
+but for writing Android specific applications.
+Now, in order to write Flutter applications,
+you don't need Android Studio per se,
+but you kind of need the SDK manager.
+Now, both iOS and Android,
+for programmers, they provide you with something called an SDK,
+just like Flutter is an SDK or toolkit.
+iOS and Android also provide you with SDK
+in order to write native applications.
+And since Flutter utilizes these native capabilities
+of each platform in order to, for instance,
+create an application that's compatible with iOS or Android,
+it will utilize the native components, sorry,
+or the native pieces of software,
+namely called Xcode, sorry,
+namely called iOS SDK and Android SDK.
+So you need to download Android Studio
+so you get access to the SDK manager
+so you can install an Android SDK.
+Now, Xcode in itself,
+when you download the latest version of Xcode,
+it comes with the latest version of the iOS SDK,
+but Android Studio doesn't do that.
+Well, wait a minute.
+Yeah, it probably does in the latest versions,
+but we can check that out.
+So if you go to your browser and just say Android Studio,
+and then you open up developerandroid.com.
+Let's just go there.
+And then you can just click on download Android Studio,
+and then there are download options,
+and you can see there's available for Windows, Mac, and Linux.
+So then please go ahead and download your Android Studio,
+and I can see for Macintosh is a package,
+so you can install it easily.
+You don't have to unzip anything,
+and for Windows is also like an executable,
+so tar.gz as well for Linux.
+So now let's say that you've done that.
+Now, after doing that,
+then you should be able to bring up Android Studio.
+Let's see.
+I'll bring it up here.
+Now, when you bring up your Android Studio,
+it will just pretty much be empty here on the screen,
+and you'll get some tips and tricks
+how to use Android Studio.
+But the important thing for you here
+is to be able to install the Android SDK.
+So if you go then to tools,
+I believe there is an SDK manager right here.
+So just ensure that you have an SDK installed.
+For me, I have Android 12 installed here.
+So ensure that you have one of these SDKs
+ready for you to use by Flutter.
+And as soon as you've done that,
+then when you run then your Flutter doctor command,
+then the part about Android SDK is going to be ticked here.
+Sorry, the Android Studio.
+So that's that.
+So we've talked about the Android tool chain,
+which is the Android SDK you can see.
+We've talked about Xcode.
+Chrome is just a web browser.
+If you want, you can have that.
+If you're developing Flutter applications for the web,
+it kinda is necessary.
+And then you can run Flutter.
+And then this, you're probably,
+if you're just getting started with Flutter,
+you're not gonna have this VS Code part ticked
+because VS Code is a code editor,
+an open source code editor provided by Microsoft.
+And it is the code editor
+that I'm gonna use for the entire course,
+for this entire course as we go on.
+And to be honest with you,
+I've tried Android Studio
+and I've tried VS Code for Flutter development
+and I can highly recommend that you use VS Code
+just for its sheer performance,
+it's for its simplicity, extensions,
+and its ability just to really focus on a simple editor
+without bothering you with lots of bells and whistles.
+So it's a preference though.
+Some people use Android Studio for Flutter development
+and some people use VS Code.
+So I don't think one is better than the other.
+It's completely a preference.
+So that's for Android Studio and the Android SDK.
+So now let's go ahead and install Visual Studio Code,
+which is the tool that I'm gonna use for this course.
+So let's bring up a new window
+and I'm gonna say, install Visual Studio Code.
+And I'm gonna bring the window up here so you see.
+Let's go here and you can download the one that you prefer
+for your computer, I've chosen Mac.
+And for me specifically,
+I have a Macintosh with an Apple Silicon.
+So I then choose this one Mac with an Apple Silicon
+and then it's gonna download that for you automatically.
+So it's just about 200 megabytes, I think,
+or actually 100 megabyte only.
+After you've done that just on a Macintosh,
+you would go and put that on in your applications folder.
+So I'm actually gonna delete that,
+which I downloaded just now
+because I already have VS Code on my system.
+So that's for Visual Studio Code.
+So let's go ahead now, now that we've done that,
+I'm gonna talk a little bit about some extensions
+that we're gonna use in Visual Studio Code.
+So let me bring up my terminal
+and we don't need that.
+Let's go and bring up Visual Studio Code.
+And then I already actually have
+so many Visual Studio Code windows open,
+but I can just say new window.
+So you see how Visual Studio Code looks like.
+And then let's see, don't show again.
+Okay, so this is pretty much how Visual Studio Code
+looks like, so it's a very simple application to begin with.
+Now, what we need to do for this example
+is to enable a few extensions.
+Now, the first extension that we're gonna enable
+is called error lens.
+And you need to go here on the left-hand side,
+find extensions and just type error,
+if I can type error and just say error lens, just like that.
+Click on error lens and just press enable or install,
+I believe it's called.
+So error lens allows you to see errors in line
+without you having to click on a specific line
+of error, basically.
+So it expands the entire error as you're coding,
+you will probably have some errors in your code.
+That error will be then displayed right there
+in front of your face in its entirety.
+So you don't have to press a little small button
+to be able to see that complete error.
+So it's a fantastic extension, to be honest with you.
+Now, the other thing that you'll need
+is something called bracket pair colorizer.
+And that bracket pair colorizer is something
+that is already installed in Visual Studio code.
+It used to be an extension that you could download,
+but it was so popular that Microsoft has added that
+internally to Visual Studio code.
+So you don't have to do that manually,
+sorry, by installing an extension.
+Now that we've talked about that,
+the next step is to actually install
+Flutter and Dart extensions.
+So here, just type Flutter.
+Let's do that.
+And then just click on the install button.
+I've already installed that,
+so there's a disable button for me here.
+The Flutter extension,
+and then you'll also need the Dart extension.
+So just type Dart and then install that as well.
+So after these two installations,
+we also need to install another great extension called block.
+B-L-O-C.
+I'm not gonna go into the details of what block is,
+because you will learn about block a lot later in the course,
+but it is just a great extension to have.
+As we go on, you're gonna learn about it.
+So I can't really explain exactly what it is right now,
+but just install it,
+and I will tell you more about block later
+in the course, I promise.
+So that was basically installing a block.
+Now, when you start up your Visual Studio code,
+it probably doesn't look like the way it does for me.
+And that is because I have a custom theme
+installed on my Visual Studio code called Tokyo Night.
+It is a very, very mellow, dark theme, as it's called.
+And themes in Visual Studio code can be installed
+just like you install an extension.
+So if you like my theme,
+you're more than welcome to go into extensions
+and then search for Tokyo Night and just install it.
+So it has different theme colors as well.
+This is the one I use, Tokyo Night.
+Actually, I use this one, Tokyo Night.
+So if you want that theme, please go ahead and install it.
+And now that we've talked about that,
+we come to the last point that I wanted to discuss basically
+before we wrap up this chapter, which is our chapter two.
+So now that we talked about a little bit of setup
+for setting up your Flutter installation
+and setting up your Flutter installation,
+and setting up your text editor,
+which in this case is Visual Studio code.
+In the next chapter, which is chapter three,
+we're gonna talk about Dart programming.
+So before we actually jump into writing Flutter applications,
+we're gonna talk about how to write code in Dart,
+or at least understand like the basics of Dart.
+So without further ado, let's close up this chapter
+and I'll see you in the next one.
+Hello everyone, and welcome to the third chapter
+of our Flutter course.
+In this chapter, I thought maybe we could focus
+a little bit on, actually not a little bit,
+but quite a lot on Dart.
+As you know from the previous chapter,
+we know now that Dart is the programming language
+that powers Flutter.
+So it would be a good idea for us at least
+to get a little bit of introduction to Dart,
+how it works, a little bit of its internals,
+different data types, functions, methods, classes,
+but this chapter as well, just like the entire course,
+I'm kind of assuming that you haven't done
+any programming at all before.
+So I'm gonna take things very slowly,
+take the concepts one at a time, introduce them to you.
+So, and I will give you some references to read more
+about the topics as we won't have really that much
+of a time in this course to go into detail about everything.
+So the goal of this chapter is to basically get you started
+with programming Dart and writing your apps
+then later for Flutter.
+In order to do that, we need to have a project set up.
+And by project, I mean, you need to have some kind
+of a playground set up so that you can start writing
+Dart code and then you can try it on, for instance,
+a telephone or a simulator or what have you.
+Now, a lot of people would rather go to Dart pad
+as we saw in the previous chapter
+and start writing their code in Dart pad.
+That's one way of doing it.
+But since in this course, we're gonna write an application,
+release it for iOS and Android,
+it is safe to say that we can literally start actually
+creating our real project here and now
+so that we can then later build upon it
+rather than writing all our code in Dart pad
+because you can then by doing, by writing your code
+in an actual Flutter project, you can get used
+to how we work with Flutter as a whole.
+So I think this is a little bit of a time invested
+into later chapters as well, where we're gonna work
+and continue working on the same project.
+So we have to just set it up once.
+But at the same time, there is a little bit of a value
+in not blending in too much of our test code,
+like what we're doing in this chapter
+with what we're gonna do later in the actual application,
+if you know what I mean.
+So I think it would be better now for us to set up
+just a test application and then keep working on it.
+And then later on, when we start doing
+the actual application,
+then we create a separate project for that.
+So now let's then do that together.
+So I'm gonna bring my face down here
+so you see the entire screen.
+I'm then going to create a new terminal window
+and bring it up here on the screen so you can see it.
+And I'm gonna increase the font
+so it's a little bit easier to spot when I'm typing.
+So let's go to a folder where you try to,
+or where you keep your projects.
+For me, I go to dev projects
+and I have a folder there called Flutter.
+So I try to put all my Flutter projects in here.
+Then in order to create a new Flutter project,
+what you have to do is to issue the Flutter create command.
+And this create command is already shipped inside Flutter.
+So if you say which Flutter,
+this is gonna go and find the actual Flutter binary.
+If you remember from the previous chapters
+where we installed Flutter.
+It's gonna find the Flutter binary
+and then call the create command on it.
+So if you say Flutter create,
+it expects you to kind of like provide it
+with some sort of a name of a project.
+So let's just say, learning Dart.
+So that's the binary, that's the command
+and that is the name of the project.
+So this is the easiest way to create a new Flutter project
+in my opinion at least.
+So let's execute that command.
+It's gonna do its thing.
+And what I'm gonna do then is to,
+I've created a new folder called learning Dart.
+So let's go and I'm gonna say, CD learning Dart.
+And then I'm going to issue a command called code dot.
+And I can actually bring this a little bit to the right
+so you can, and also do it like this
+so you can see what I'm typing.
+As you can see, I've written code dot.
+And what code does is that it brings up Visual Studio code.
+So it's just like a command that you can issue
+in order to bring up Visual Studio code.
+And if I just bring up Visual Studio code
+the way it is right now, and for instance, you can see it,
+you can't see it right now
+but it's because I have a separate screen here.
+I'll bring up Visual Studio code as you can see here by hand.
+There is a good extension or there is an ability
+for Visual Studio code to install this code shortcut
+for you in terminal in your path.
+So if you say which code, it just says user local bin code.
+So it's just an executable that allows you then
+to open up Visual Studio code with a path.
+Like, so you can say open up Visual Studio code
+in this folder.
+So you can just say code dot, so.
+And you can do that in Visual Studio code.
+You can allow that to be installed
+by doing command shift P on Macintosh or control shift P,
+I believe in windows and Linux.
+And there's this little command here that says shell command
+install code command in path.
+So if you execute that once, then it's already set up for you.
+You don't have to do that anymore.
+So if you'd like to be able to say code dots in terminal
+and open the current folder within Visual Studio code
+without you having to open Visual Studio code manually
+and then doing file open, then I suggest
+that you do command shift P or control shift P
+in Visual Studio code, depending on which operating system
+you're using and then choosing shell command
+install code command in path.
+So I've already done that, so I can just say code dot
+and I'll bring this up here.
+So as you can see, this is the basics of a simple
+Flutter project that you create with Flutter Create.
+Now, Visual Studio code has a built-in terminal,
+so I don't have to have this terminal window open anymore.
+So I'm just going to close it.
+And I'm going to make this full screen,
+increase the size a little bit so you can see better.
+And perhaps I could even remove this Flutter logo on top right
+so you can see the content a little bit better as well.
+So that's the creation of our simple Flutter project.
+Now, in order for this Flutter project to run
+and you be able to run this application
+and keep testing your project,
+you would have to select a target.
+And you do that with command shift P
+and then choosing Flutter select device.
+So you can just say Flutter select device, enter.
+Command shift P is on Macintosh and control shift P
+I believe is in Linux and Windows.
+So do that, command shift P is a very important command.
+You're going to use it quite a lot in this course.
+So just learn that please.
+Then I'm going to say select device
+and I'm going to choose, since I'm on a Macintosh
+and as you saw earlier, we have Xcode already installed.
+Xcode comes also with the entire iOS SDK
+and also with the simulator.
+I can choose to run our application on iOS simulator
+or I can choose to run it on an actual phone.
+Now for this, I believe,
+I don't know if we've talked already about SCRCPY
+to be honest with you.
+I'm just going to search in my notes
+to see if you've talked about that.
+And if you just give me one second, please just check here.
+I believe we're going to set it up in chapter six.
+So we haven't set up SCRCPY yet.
+So for that purpose, I'm just going to say
+select device and I'm just going to say start iOS simulator.
+So that is going to, as you can see,
+start up iOS simulator.
+And that for now is like the best way
+for us to test our application.
+So while this is connecting,
+I can show you a little bit around as well.
+We have, as you can see, lots of files here
+already created for us.
+We're going to go through some of these.
+But one of the most important files
+that you're going to need to get used to
+is this lib slash main.dart.
+And this is where the majority of the code is written.
+So this is its contents at the moment.
+Let's see what it's doing with the simulator.
+I'm just going to have a look here.
+It's taking a little bit longer than expected.
+So what I'm going to do is I'm just going to
+kill the iOS simulator manually.
+This usually doesn't happen, but that's okay.
+If it does happen, then you know how to deal with it.
+Just close the simulator.
+And then I'm just going to go to Command-Shift-P,
+select device, and then start iOS simulator fresh.
+So it's starting right now.
+Okay, so that's our simulator.
+And I'm actually going to decrease the size of this
+a little bit since I realized that it is a very large font.
+So this is our main.dart file.
+This is like where the Flutter command line command
+has created, it is the file that has been created for us.
+So we don't have to play around with it too much,
+to be honest with you, at the moment.
+For the purpose of this chapter,
+we're just going to have a look at basically kind of like
+exploiting this code so that we can inject our code into it
+so we can learn Dart a little bit.
+So you don't have to understand all of this code
+the way it is right now.
+There's lots of comments and et cetera.
+So that's that part.
+So now that we're here and then you can see
+we have a little simulator here.
+And in order to run this application on this simulator,
+since you've already done the Flutter select command,
+you just go to run and you say run without debugging for now.
+So since the simulator is already selected,
+then it understands that it needs to compile this project
+for my simulator.
+So, and we're just going to give it some time
+depending on your machine and like,
+what do you have for specifications on your machine?
+This command could take anywhere between a couple of seconds
+to maybe 30 seconds or even more.
+And I'm not sure how long it's going to take
+for a fresh Flutter project, to be honest with you,
+to start running on the simulator,
+but it took about 21 seconds or 22 seconds.
+I will bring up the project now.
+And this is like the basic Flutter project.
+I'm not going to go into details about how it works,
+but you can press the plus button if you want to.
+But what I'm going to do,
+I'm just going to close this widget inspector
+that was opened automatically.
+And I'm just going to bring this a little bit down
+so that we can see the debug console, okay?
+So that's for setting up our project.
+So that part is done.
+Now, the first thing that we need to talk about
+when we start talking about Dart is the concept of keywords.
+Now, since I'm assuming that you haven't done
+any programming language in any other place before,
+you need to understand what keywords are.
+They're very important in understanding
+any programming language, basically.
+And keywords are concisely explained.
+They're words that are reserved for the programming language
+that you cannot use for anything else
+than what the programming language intends those words
+to be used as.
+I know that sounds a little bit difficult,
+but I mean, there's no real good analogy
+in like if you're coming from Figma,
+if you're coming from a design world,
+what a keyword could be because in a design world,
+you're not really talking in terms of code with your product
+or with your software where you're designing your stuff.
+But when you come to programming language,
+as you know, it's a language.
+So words mean stuff in a programming language.
+So a keyword is, as its name indicates,
+is a word that has a special meaning
+in that particular language.
+And I'll provide a link here for you that you can check out,
+but I'm gonna open it up and bring it to the screen here,
+increase the size a little bit so we can see better.
+Have a look at my screen here.
+And you can see this is part of the documentation
+for Dart programming language
+that explains what keywords are in Dart.
+And you can see there are some words
+that have special meaning like show, import,
+extends, async, await, break.
+So you can say that the language,
+the Dart language is made out of these keywords.
+That is pretty much it.
+It's just like series of keywords,
+like the things that you tell the language that,
+hey, I wanna do something.
+And then it says, okay, what do you wanna do?
+Then you say, okay, I wanna do this or this or this.
+So special words for the programming language
+so that it understands what you mean, basically.
+So that's for keywords.
+For now, we don't have to really go into so much more details
+about what a keyword is, but for now,
+just understand that a keyword is a special word
+in the programming language's brain,
+kind of so that you can talk to it.
+It's your interface with the programming language
+to make it understand what you wanna do, okay?
+And please check out the link that I provided here
+to understand more about keywords.
+Okay, so we've talked about keywords.
+I'm just gonna check it in my notes
+so that we know we've talked about it.
+Now, the next concept that we need to talk about
+are data types.
+If you, for instance, come from a design background,
+then you have different tools to work with.
+For instance, you may have, in your design system,
+whatever you're using, if you're using product from Adobe
+or if you're using, for instance, Figma or whatever,
+Visio or whatever tool you're using,
+then there's a set of components that you can work with.
+For instance, you can drag in a text field
+or you can drag in an image field, sorry, an image,
+or you can, for instance, assign a color to a text.
+So these are all things that you can do with that software.
+Now, a data type in a programming language,
+like Dart, is the type of a thing, for instance.
+You would say, I have some data in my mind.
+Okay, what is it?
+It's the first name of my friend.
+Okay, his name is Jack or whatever.
+And then you would say, okay, what type is Jack?
+Is it a number?
+No, is it like, is it a list of things?
+Well, yeah, it's a list of characters, yeah.
+Okay, then that is this data type.
+Or you could say, I'm thinking about my age.
+My age is, let's say I'm 37.
+Okay, what is 37?
+Is it a list of things?
+Well, yeah, kind of.
+It's a list of numbers, a list of digits,
+but it's also in itself a number.
+So then there has been this convention
+in different programming languages,
+and every programming language pretty much
+that you can use these days has this concept of data types.
+Data type is, as its name indicates,
+a specific name assigned to a series,
+to a series, a specific name assigned to a data
+that is bound to be of a specific type as well.
+So for instance, in Dart,
+you have data types called integers,
+or you have strings, or you have arrays and sets,
+which we'll talk about soon,
+but a data type just for now, no,
+it's just a stamp on a piece of data
+to say that you're of this specific type.
+So you could think of a data type as a nationality.
+You could say like every person coming from Sweden
+is Swedish, boom, that's his data type.
+So it's just a categorization of data
+based on their appearance
+or based on what they actually hold.
+So for instance, you can say,
+here's a university full of engineers,
+and these are software engineers,
+these are mechanical engineers,
+so the software engineer is a data type
+or is a person type or category type.
+So putting stamps on things based on the categorization
+is kind of what data type does.
+And in short, I mean, you just have to know
+that it's just a categorization of things
+based on what they hold.
+So, and there's a website that you can read
+about Dart data types, and it's right here.
+I don't know if I've provided it here on the link below,
+as you can see Dart Core Library HTML, so.
+And here you can read more about Dart data types,
+but we're not gonna go into so much detail
+about all of these right now.
+Just know that data type in Dart is,
+or any programming language basically that has data types
+is a categorization of data
+based on their appearance or contents.
+Now, let's talk a little about
+something called constants in Dart.
+A constant, usually in programming languages
+are values whose value cannot be changed.
+That's a little bit meta, but let's say for instance,
+the value of 10 is a number.
+It cannot be changed.
+10 is 10, and it will always be 10.
+Or your name, that is a constant.
+Although you can go and change it,
+but as long as that is your name, it is a constant.
+So, another example of a, I mean,
+there are so many values that can be constants,
+which will actually be quite abstract for me
+to explain right now, but just know that a constant
+is a value whose internal data cannot change
+during where you're writing your program,
+and also during when you're running your program.
+So, that is kind of what a constant is.
+But there is also this notion of a compile time constant
+and a runtime constant.
+And I mean, you don't have to know about
+like those different types of constants right now,
+just because like in Dart, a constant is a constant,
+whether it's runtime or compile time is a constant,
+it's just a constant, as you'll see soon.
+But I still believe that it's important to understand
+the difference between compile time and runtime.
+When you're talking about programming,
+when you're becoming a software developer,
+and I hope by the end of this course,
+you'll actually become a software developer
+if you're not already, that would be really amazing.
+But the notion of a compile time
+and runtime is very important to understand.
+And developers like to make a distinction
+between whether something has happened during compile time
+or something has happened during runtime.
+And compile time is, or before I explain compile time,
+maybe I should explain compile.
+Compile is where you take the program
+that you're writing here, and you tell the computer
+that I want you to package this up
+so that I can run it later on X and Y machine.
+So that process of packaging things up, simply said,
+is in very simple terms, is called compiling
+or a compilation, okay?
+So from where you start writing your program with a hand
+with your fingers until where you package it,
+you're pretty much just compiling it, okay?
+But when you run it, like we're running it at the moment
+on iOS simulator, that session from where you start
+outputting your program into this device
+and for it to run your program from that moment on,
+then the distinction separates into runtime.
+So you have then compile time and runtime,
+and a constant is a value that is the same
+during compile time and runtime.
+So its value doesn't change.
+So the value of 10 is 10 while you're writing your program
+and also stays the value of 10 while the program is running.
+So that is a very simple explanation of a constant.
+So now let's put constants and data types in practice.
+Now, in this project that was created for you
+by Flutter Create, in this line of code,
+as you can see, it says void main.
+We're not gonna talk about exactly what that is,
+but just press Enter at the end of it
+and just write final,
+and I'm gonna tell you what final is.
+So, and just saying name is equal to foo, okay?
+This is, there's lots going on in here
+and I'm gonna tell you what is actually happening here.
+But before we actually go through all these details,
+let's add something here called a constant.
+So I'm just gonna say const age is 27, or yeah, 27.
+As you can see, this is how you write code in Dart.
+You start by a keyword, usually,
+or a variable name or something
+as we're gonna talk about it.
+But const is a keyword, okay?
+And it tells Dart that what is following here is a name.
+Right after const, I'm gonna write some name.
+And in that name, then I'm gonna basically say,
+okay, I'm adding the value of 27 to this age.
+I'm sorry about this, my dog also barking a little bit.
+So what is happening here is that you're telling Dart
+that I'm putting the value of 27 into a constant called age.
+And you can refer to this age later.
+For instance, you can say then const age twice the age.
+You can say it's equal to age multiplied by two.
+And this is also a constant because at compile time,
+where Dart is basically trying to understand
+what you've written, it says, okay, you said 27,
+and then you're saying 27 is a constant.
+So its value is never gonna change.
+And if you tell me 27 multiplied by two,
+that also is a constant because both this side
+and this side are compile time constants.
+So that's what we mean by a constant.
+It's a value that is specified during compile time
+and it cannot change.
+So also it's important to notice that you're learning Dart
+and here is, sorry, I have to just tick some items
+in my notes to make sure that I've explained
+all of those to you.
+You can see here that every line of code in Dart
+needs to end with a semicolon.
+And that tells Dart that, yeah,
+you're starting a new line of code.
+Of course you can put two lines of code like this,
+but if you just press save,
+there is a program automatically running in the background
+which is called Dart FMT, which is the Dart formatter,
+which is gonna format your code and pre-ify it.
+So if I put a lot of spaces in here and just press save,
+you can see upon doing command S on Mac
+or control S on Linux and Windows,
+upon saving Dart formatter is gonna kick in
+and format the code for you.
+So just a little hint.
+Okay, those are constants.
+So we've talked about that.
+Now let's talk about variables a little bit.
+A variable is usually anything that contains
+a value that is not a constant.
+I mean, I think that's the simplest way
+of explaining what a variable is.
+A variable as a name indicates, it can vary.
+And that means that the data that it holds,
+it doesn't need to be constantly the same.
+It means that from where you start the program,
+you may actually assign a value to this variable
+and you may also change that variable
+depending on what type of variable it is.
+So there's also this notion of a final variable in Dart,
+which we'll talk about soon.
+So before we do that, let's go through this main function
+here and you could just say var name is foo.
+And here, what I've done is that I've created a variable
+indicated by the var keyword whose value is foo,
+or let's just say Alex,
+and set my column to end the line.
+Now, if I wanna change this value,
+all I could say here is to say name is equal to Anthony,
+or whatever.
+Now, this is basically us assigning a new value
+to this variable, saying Anthony.
+As I said, there is also the notion in Dart
+for a keyword called final.
+So you could just say final name equal to Alex.
+And it's a little bit strange
+because final is also a variable
+whose value cannot be changed.
+So you may be like, okay, what kind of a variable is that?
+How is that not a constant?
+Now, there's a little limitation
+because you may try to like say const name Alex.
+But this, as you will see later in the course,
+final gives you the flexibility
+to assign a value to your variable
+a little bit later maybe in the process of creating it,
+but it still indicates to Dart
+that the value of this variable is not gonna change
+after it has been assigned to.
+It's a little bit, yeah,
+it's just a little bit confusing maybe at the moment.
+So let's just say a variable is like a constant,
+but its value can be changed.
+Let's just leave it at that, okay?
+So that's it.
+Okay, now that we talked a little bit about variables,
+let's talk about functions.
+So I didn't specify exactly what this is
+just because we hadn't really come to functions,
+but a function is a body of code,
+is a grouping of a series of lines of code,
+one to N number, N lines of codes
+that is logically grouped.
+And it has a few properties.
+One is its return value here indicated by void.
+The other part of its information is its name
+followed by a pair of parenthesis,
+an open parenthesis and a closed parenthesis
+in which you will write something
+called the function arguments or parameters.
+It's pretty much just like imagine like a box
+where you input things in it.
+It does some processing and then it outputs that stuff,
+whatever it wants to output.
+So what we could do here is to create
+a very simple function for ourselves.
+As you saw before, or as I mentioned before,
+what you write for a function in the beginning
+is this data type.
+I mean, what data comes out of this function.
+And here, let's say we wanna add someone's first name
+and their last name with a space between it.
+So if I say foo as the first name and bar as the last name,
+then the full name should be foo bar
+and with a space in between.
+So as I said, then you need to specify the data type first,
+what you're gonna return.
+And if you looked at the documentation
+that I provided earlier,
+there's a data type called string,
+which is a series of characters.
+Basically it can be a name, a family name,
+the dress of your house or whatever.
+And that data type is string.
+Okay, so we say we're outputting string.
+And then you say, okay, what should this function be called?
+There's a convention in Dart
+that your functions should follow camel case
+naming convention, basically.
+Camel cases, if you, for instance, say in English,
+my function should be called get full name.
+That's my function name,
+but you cannot have spaces in your function names in Dart
+or pretty much every program language that I know about.
+Then remove all the spaces.
+And then except for the first word,
+change all the other words first letter to uppercase.
+So it was like this before,
+you could actually change them to uppercase first
+and then remove the spacing.
+So this is how you should write your function names.
+This is called camel case.
+Get full name, okay.
+And we said that we also have to open parenthesis.
+Now, let's just say then here,
+we need to specify some kind of function.
+We need to specify somehow
+that we're gonna accept the first name and the last name.
+Well, what kind of a data type does a first name have?
+Well, it's kind of like a string.
+It's a name.
+It's a series of characters.
+So let's just type string here.
+And then we wanna take a first name
+and we know about camel case now.
+So let's just say first name is uppercase
+and remove the spacing.
+So first name.
+Hey, that's the parameter.
+And then you wanna go to the next parameter.
+So just say comma.
+And then you wanna say string last name.
+You take the first name and the last name.
+Now, we also said that after the parenthesis,
+after you have accepted your parameters,
+you wanna go and create like your curly brackets here.
+I don't know actually if I mentioned that before,
+but every function is either its body or its logic.
+It's either followed by equal graded unsigned,
+which we're gonna talk about later
+or is by curly brackets.
+So we're just gonna use curly brackets.
+Now, what you wanna do here,
+you wanna take the first name
+and add a space to the first name
+and then follow that by the last name.
+So you need to tell Dart
+that that is the data you wanna return.
+And thankfully, there is a keyword called return
+that tells Dart
+that you wanna return some value from a function.
+So then what you're gonna do,
+you're gonna say, I wanna return what?
+The first name and I wanna add a space.
+Single quotes, the space, us, last name, right?
+So, I mean, this is a very simple implementation
+of get full name.
+So, however, there's actually a better way
+of doing this in Dart
+and I'll explain it to you right now.
+And that is by formatting your strings.
+So let's say that you want to basically tell Dart
+kind of like how your result looks like
+and you wanna ask Dart to insert the first name
+and last name into that result for you.
+And that's how you'll do it like this.
+You say, okay, I wanna return a string.
+You know, we could buy the single quotation marks here.
+And you can also do a string in Dart
+with double quotation marks,
+but I'm gonna explain that a little bit later.
+So let's say that you want to return
+the first name in here.
+But if you say first name,
+what's gonna happen here is that it's actually gonna return
+what's gonna happen here is that it's actually gonna take
+this first name as you've written in the string.
+So when you get this return value,
+it's actually gonna say first name,
+not the value that you pass to this.
+I know it may be a little bit difficult to understand
+when I say the value that you pass to this.
+What does it even mean?
+So let's put this actually to test first, okay?
+Go now into this build function,
+as you can see here on line 16.
+Now it may not be on line 16 for you,
+but for me it is at the moment on line 16.
+Just find this class my app stateless widget
+and find this widget build stuff that's written there.
+Create a new line here, okay?
+And just say full name or sorry, say print.
+As I'm writing it here, print.
+And then just say, what do we call our function?
+Get full name.
+See here?
+And it says, okay, what's the first name?
+I'll say quotation marks foo and the last name is bar
+and ended with a semicolon.
+So, and ignore this call for now.
+Sorry, this warning avoid print calls in production code.
+So, okay.
+So now we're calling that function.
+It's, I mean, it's called calling, it's called invoking.
+It may have other names,
+but usually programmers call this calling,
+call the function.
+And these are the parameters
+that you're passing to this function, okay?
+So, I mean, there are two words used for
+in the programming world to explain these parameters,
+like with name.
+And that is called a parameter or an argument.
+I mean, they're used interchangeably.
+The meaning of them is kind of like getting convoluted
+to the point that no one knows which one is which,
+but you could just use parameter or argument
+and everybody would understand what you're saying.
+So, but there's a little bit of a difference,
+which I'm not gonna go into the detail of,
+but if someone just says call this function
+with parameters or arguments,
+you know at least what you're doing, okay?
+Foobar.
+Now we're printing its value.
+All you have to do in order to execute this code
+is press command S and you will see the result outputted here.
+Now, what we did here,
+what we did here was a very key feature in Flutter
+called hot reload.
+As you saw, I didn't execute my code again.
+I didn't press like the run button again.
+I just said save.
+Now, saving in Flutter triggers an action called hot reload.
+Hot reload in Flutter, it's a whole topic of its own,
+which I'm not gonna go so much into detail of,
+but what hot reload does really is it looks for changes
+in your code hierarchy without complicating it too much.
+I'm just trying to phrase my sentence right
+so that it's not too complicated for this chapter.
+It looks for changes that you made to the code
+and executes only those changes, okay?
+And in the process of executing those changes,
+it might execute everything else that is in its path.
+And by doing a save,
+this function gets called somehow magically,
+which I'm not gonna go into right now,
+which in turn then calls or invokes our function
+called get full name,
+and its value will then be passed
+into another function called print, okay?
+I hope that that makes sense.
+And as you can see,
+the result isn't really what we expected.
+It just says first name.
+And that is because here we said return first name.
+And as you can see,
+if you put first name like this inside your string,
+it becomes its own string.
+It has nothing to do with this anymore.
+If you remove these quotation marks, however,
+then it says, oh, first name is this parameter.
+You see, it actually, it highlights it.
+So then if I press Command S on Mac
+or Control S on Linux on Windows,
+you will see full being printed to the screen, okay?
+You can also say last name here and it will say bar, right?
+And also notice that when I'm changing these things,
+it's not executing immediately automatically
+on pressing Command S.
+So just keep that in mind, please.
+So that's for a function.
+But before we move on explaining the basics of a function,
+I wanna also explain a little bit about string formatting.
+And that is we said that we're gonna put first name
+and a last name because this is what we did
+in the beginning, first name plus space plus last name.
+And this wasn't so pretty because it's like
+doing string concatenation in a very old fashioned manner.
+In a very old fashioned manner, yeah.
+I think I said it right the first time.
+But what you wanna do here is to use
+Dart's built-in formatting capabilities.
+And you do that by first saying that, okay,
+I wanna return some sort of a string.
+And I wanna have first name, space, last name.
+But as you saw this earlier, if I Command S or Control S,
+it just returns those strings exactly as I've written them,
+not the parameters.
+What you can do is just to put a dollar before them.
+And you can see their coloring now changes
+depending on a theme that you're using
+or depending on the text editor that you're using.
+If you're using Android Studio,
+it may not color it the same way.
+Or if you're using Visual Studio Code
+with a different theme on a different maybe platform,
+it may not even change the color.
+But for me, at least you can see that the colors change.
+So as to indicate that now I'm not actually returning
+the string exactly as you wrote,
+except returning the parameters that are here.
+So Command S.
+And now you can see that the result is full bar.
+Okay.
+So that is the basics of functions in Dart.
+Before we move on from functions,
+I also wanna explain quickly that
+a function doesn't necessarily have to return anything.
+And that means that you may have a function here
+that wants to just print some data to the screen
+or to here to the debug console.
+And you could just call it print my name
+and parenthesis and curly brackets.
+And as you can see here,
+I can just write the name of the function
+without any data type to be returned.
+But it's a little bit of a convention
+that you actually tell Dart that this is a void function.
+Meaning void is a keyword,
+as we talked about it earlier
+in the beginning of this chapter.
+Void is a keyword telling Dart
+that this is a function that doesn't return anything.
+And as you can see,
+Dart is completely fine with this function
+being completely empty.
+Meaning that, well, yeah,
+you said you are not returning anything.
+You're probably just gonna do some stuff in here.
+So I'm not gonna bother you with some errors saying that,
+oh, you forgot to do something.
+But as soon as you change the return value
+or the return data type of your function
+to, for instance, string,
+then you'll get an error saying that,
+oh, yeah, the body might complete normally
+causing null to be returned, blah, blah.
+You don't have to know exactly what that means.
+But essentially what that means
+is you're telling Dart that you're returning a string,
+but you're not returning anything.
+It's literally looking for the return keyword saying that,
+oh, you missed it.
+So you could silence that error
+by saying return an empty string, a semi-call.
+So I think this pretty much explains the basics
+of functions, to be honest with you.
+There's lots more to learn about functions.
+And as I said,
+functions can also be written using this syntax.
+And this syntax is used
+when your function is very simple
+or in that it doesn't need to break
+into different lines of code by a semi-colon.
+So a function who has a very simple logic,
+you can just skip writing these square brackets,
+no, curly brackets, sorry.
+And you can just say, you see, I will remove this,
+put equal sign, greater than sign,
+remove the closing curly bracket,
+and then you can remove the return statement, and that's it.
+That is a short hand, it's a function shorthand in Dart.
+And you could use it simply to simplify kind of your code.
+Some people may like it,
+some people kind of may be against it,
+just because it kind of splits your code
+into two different styles.
+Some functions are with curly brackets,
+some functions are with this pointer thingy.
+And kind of depends on you and your team, to be honest.
+I know usually from my experience,
+usually we software developers like to follow a convention.
+So in one project, the developers may decide,
+okay, we're just gonna go with this convention.
+And since using curly brackets engulfs the ability
+to have both complicated and simple return statements
+in a function, it's actually preferred as a convention
+than using this syntax simply because this syntax
+doesn't allow you to split your code
+into separate lines of code.
+It has to all be in one statement.
+So if that makes any sense.

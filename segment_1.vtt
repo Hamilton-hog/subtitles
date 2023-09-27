@@ -1,0 +1,1568 @@
+WEBVTT
+
+00:00.000 --> 00:04.320
+This massive Flutter course will take you from being an absolute beginner to being able to
+
+00:04.320 --> 00:09.360
+release apps on the Google Play Store and the App Store. Vandad is a very experienced
+
+00:09.360 --> 00:14.560
+software developer and an excellent teacher. Hello everyone and welcome to this free Flutter
+
+00:14.560 --> 00:19.360
+course. My name is Vandad and I'm a Google Developer Expert for Flutter and Dart.
+
+00:20.160 --> 00:24.800
+Let's jump right in. Who is this course for? I designed this course mainly for absolute
+
+00:24.800 --> 00:29.440
+beginners, so whoever hasn't even done a written a single line of code before.
+
+00:30.160 --> 00:34.080
+I actually, when designing this course, I designed it for two specific personas. One was a graphic
+
+00:34.080 --> 00:38.400
+designer who was working mainly with Figma. Actually, it doesn't really matter what graphical
+
+00:38.400 --> 00:44.160
+tool you're using, Photoshop or Figma or whatever or Sketch. And the other persona was a project
+
+00:44.160 --> 00:50.160
+manager who's mainly working with Jira. So I made the assumption that you pretty much don't know
+
+00:50.160 --> 00:55.200
+anything about software development from before. And even if you're a software developer, you could
+
+00:55.200 --> 00:59.280
+perhaps jump over the things that you might know. But if you haven't done
+
+00:59.280 --> 01:03.280
+Flutter development from before, I strongly suggest that you actually follow the chapters
+
+01:03.280 --> 01:08.960
+chronologically, which is the way I've designed this course basically. So as I mentioned,
+
+01:10.080 --> 01:15.120
+when I designed this course, I wanted everybody to just follow the chapters one at a time and one
+
+01:15.120 --> 01:20.560
+after each other chronologically. So I highly recommend that you don't jump over chapters just
+
+01:20.560 --> 01:25.600
+because there's so much information provided in each chapter. And I will be referring back to
+
+01:25.600 --> 01:29.920
+information that I provided in previous chapters in each chapter. So I think it's very good if you
+
+01:29.920 --> 01:35.120
+can just follow the course the way I designed it to be consumed, which is chronologically.
+
+01:36.480 --> 01:42.320
+And what you learn in this course is not only the basics, but you'll also go from a complete
+
+01:42.320 --> 01:48.240
+beginner to being able to release your applications in Apple's App Store and Google's
+
+01:48.240 --> 01:53.680
+Play Store. And we're going to be using a blend of different tools and software. We're going to be
+
+01:53.680 --> 01:58.560
+using Visual Studio Code. We're using Firebase for the backend, which I'll teach you all about.
+
+01:59.280 --> 02:05.120
+We're using even Figma as a graphic designer to create our icons and screenshots and even our
+
+02:05.520 --> 02:12.480
+loading screens. So there's lots to be learned. And I'll take you through those steps. And I don't
+
+02:12.480 --> 02:17.440
+make any assumptions about what you may know from before. So I'll explain everything along the way.
+
+02:17.440 --> 02:23.360
+So you'll go from absolute beginner to being able to actually release your two applications,
+
+02:23.360 --> 02:29.520
+which is the same code base in Apple's App Store and Google's Play Store. If you're attending this
+
+02:29.520 --> 02:35.600
+course, please do follow me on social media. And I'd really appreciate it. I'm Van.np on Twitter.
+
+02:35.600 --> 02:40.160
+And also you can find me by my full name on LinkedIn. That'd be much appreciated.
+
+02:40.160 --> 02:46.720
+This course, of course, for free. But for those who want to and are able to support me,
+
+02:47.360 --> 02:55.280
+then you can do that by buying me a cup of coffee on buymeacoffee.com. So without further ado,
+
+02:55.280 --> 03:03.520
+let's just jump right into it. Hello, everyone, and welcome to the first chapter of our Flutter
+
+03:03.520 --> 03:10.880
+course. There are so many different topics that I could choose for the first chapter.
+
+03:12.240 --> 03:18.720
+And they're all very important. However, after going through the material that I've been
+
+03:18.720 --> 03:24.880
+preparing for you for this course, I realized that one of the absolute basic points that we
+
+03:24.880 --> 03:32.960
+have to go through is the developer accounts for Apple and Google. Now, if you're not familiar
+
+03:32.960 --> 03:38.480
+with the term of developer account, there are basically what a developer account allows you to
+
+03:38.480 --> 03:48.320
+do is to release your applications on Apple's App Store and Google's Play Store. As I mentioned
+
+03:48.400 --> 03:56.160
+in the introduction, you may choose to follow along this course without actually releasing the
+
+03:56.160 --> 04:05.200
+application to the App Store and the Play Store. But even if you do decide to not release the
+
+04:05.200 --> 04:13.440
+applications on the aforementioned stores, you will still, for the optimal experience of development
+
+04:13.440 --> 04:22.080
+for iOS and Android, you will most definitely need a developer account. And the reason behind that
+
+04:22.080 --> 04:31.920
+is, I mean, it is quite deep to try to explain the actual reason behind it. But from my perspective,
+
+04:31.920 --> 04:36.480
+one of the most important reasons you may want to have a developer account is to create the so-called
+
+04:37.200 --> 04:46.080
+app IDs. So every application on iOS and every application on Android has an identifier,
+
+04:46.080 --> 04:51.680
+which is usually something called a reverse domain identifier. And it's kind of like,
+
+04:52.800 --> 05:01.600
+I still find it strange the way it is, but somewhere, somehow it was decided that every
+
+05:02.240 --> 05:07.040
+application needs to have an identifier and every identifier is kind of like associated with a
+
+05:07.040 --> 05:10.800
+domain name. And a domain name is kind of like a website. For instance, if you have
+
+05:12.240 --> 05:20.640
+yourname.com as your website, then you would say that, okay, I'm going to create an application
+
+05:20.640 --> 05:27.600
+for iOS and Android in Flutter, and I'm going to call it foobar. Then it was somehow decided
+
+05:27.600 --> 05:34.240
+that your application's identifier would then in that case be, if you reverse it,
+
+05:34.880 --> 05:44.800
+then it would literally be your domain in reverse, which would be com.yourname.yourapplicationsname.
+
+05:46.320 --> 05:53.680
+I don't really know. I mean, if somebody knows the reason behind it, I would be glad to hear that.
+
+05:53.680 --> 05:57.520
+And I'm sure that there's resources out there explaining why that is the case, but it kind of
+
+05:57.520 --> 06:07.680
+feels like it's become the norm and we just have to roll with it. So the reason I explained the
+
+06:07.680 --> 06:15.840
+app identifier is that when you set up your backend later, when we set up the backend later
+
+06:15.840 --> 06:22.320
+together, in that the client that we write in Flutter is going to talk with our backend
+
+06:22.880 --> 06:28.880
+store the notes, retrieve the notes, create a user, sign in with a user, et cetera, et cetera,
+
+06:30.880 --> 06:38.960
+that backend setup also will require you to have your app identifier. And
+
+06:41.280 --> 06:47.440
+even though you don't necessarily need to have a developer account to get an app identifier,
+
+06:47.440 --> 06:52.560
+because an app identifier is just something that you decide, okay, here's my app identifier.
+
+06:52.560 --> 06:57.440
+I think my website is called this, blah, blah. And even though you actually need a website,
+
+06:57.440 --> 07:01.360
+that's the thing, but an app identifier is usually associated with a website. So don't
+
+07:01.360 --> 07:05.840
+worry about it. You don't have to have a website in order to follow along with these steps that I'm
+
+07:05.840 --> 07:12.720
+going to name here, but it is still good practice to create your developer account in order to
+
+07:12.720 --> 07:22.480
+officially register your app identifiers. And another reason that you will need a
+
+07:22.480 --> 07:32.320
+developer account for Apple and Google is that you will, for Apple, if you want to be able to
+
+07:33.600 --> 07:39.760
+deploy your application onto a telephone and not use a simulator,
+
+07:40.720 --> 07:47.120
+then you will need to register a developer account and use some resources that Apple provides you
+
+07:47.120 --> 07:53.760
+in forms of certificates and keys and profiles in order to deploy your application to a telephone
+
+07:53.760 --> 08:01.200
+or an iPad, for instance. In Android, the world is a little bit different in that you don't have
+
+08:01.200 --> 08:09.360
+to do the same process, but in order to then submit your application to Google for review,
+
+08:10.160 --> 08:14.080
+later, so that it can be available for everybody who has an Android telephone
+
+08:15.360 --> 08:20.560
+or a tablet, you will still need a developer account. So it goes without saying that it is
+
+08:20.560 --> 08:32.480
+a very important step that even if you decide not to deploy your application later to App Store and
+
+08:32.480 --> 08:39.200
+Play Store, it's still a very fundamental step. So I suggest that you actually go through these
+
+08:39.200 --> 08:44.640
+steps that I'm going to provide you in the first chapter. And that's why I actually decided to have
+
+08:44.640 --> 08:52.640
+this as chapter one. Sorry, I have to just edit my notes a little bit. If you haven't watched the
+
+08:52.640 --> 08:56.720
+introduction to this course, and you're just jumping here, I suggest that you go to the
+
+08:56.720 --> 09:01.200
+introduction and watch it. I know it was about 34 minutes. It was quite a long introduction,
+
+09:01.200 --> 09:07.360
+but there were so many important points that I feel everybody needs to know before you get
+
+09:07.440 --> 09:12.240
+started with the course. So please watch those. If you see me moving my head around, then you know
+
+09:12.240 --> 09:19.520
+the reason. And I explain a lot of things that are like the fundamentals of this course and the
+
+09:19.520 --> 09:25.760
+reasoning behind all those decisions, which I believe are so important that I still suggest
+
+09:25.760 --> 09:33.200
+everybody watched an introduction before they actually start with the course. So we've now
+
+09:33.200 --> 09:42.000
+talked about the basics. And if you go to why we need a developer account, I believe I've already
+
+09:42.000 --> 09:50.800
+covered this in that the developer account is the utility is an account that you register for Apple
+
+09:50.800 --> 09:57.280
+and Google that gives you extra resources as a developer in order to be able to deploy your
+
+09:57.760 --> 10:01.760
+test and deploy your applications to the respective app stores.
+
+10:04.560 --> 10:14.720
+Now, if we talk about developer accounts, there are two main types of developer accounts. One is
+
+10:14.720 --> 10:24.640
+an individual account, and the other one is a company account. And for me, the biggest
+
+10:24.640 --> 10:31.760
+difference between these two different accounts is the liability. And by liability, I mean, if you
+
+10:33.840 --> 10:42.400
+register an individual account, then you as an individual are liable for that application. And
+
+10:42.400 --> 10:46.720
+as users download your application and interact with it, if they have any problems and if, for
+
+10:46.720 --> 10:55.840
+instance, there's any judiciary problems, like if someone for some reason believes that you're
+
+10:55.840 --> 11:00.320
+storing their data in the wrong way or that you're storing their personal information without
+
+11:00.320 --> 11:06.400
+exposing that and telling the users about that, then they can personally hold you liable for,
+
+11:08.560 --> 11:15.040
+for instance, breach of information or GDPR infringements or whatever it is. So
+
+11:16.800 --> 11:24.080
+just know that you can register yourself as an individual for both Apple's App Store and Google's
+
+11:24.080 --> 11:30.640
+Play Store, but you need to also be aware that should you wish to do that, then you're personally
+
+11:30.640 --> 11:37.680
+liable for any problems that may be occurring in the future. So that's the personal account
+
+11:38.480 --> 11:45.680
+or an individual account. And as a company account, then you kind of like, based on what
+
+11:45.680 --> 11:56.960
+type of company you've created, you may or may not be personally liable for any damages that may
+
+11:56.960 --> 12:01.360
+be caused to your users and if they bring it up to you. Now, I know this is all sounding a lot
+
+12:01.360 --> 12:09.040
+serious. In reality, what we are trying to do is not that big a deal, but we are still trying to
+
+12:09.040 --> 12:19.280
+store. I mean, the goal of this course is to go through an application and create an application
+
+12:19.280 --> 12:27.360
+that can store users' notes. Notes can be quite personal and you're storing those notes then
+
+12:28.320 --> 12:34.240
+on a backend that you have full access to. So you're kind of like storing user-created data.
+
+12:35.040 --> 12:39.600
+So it is very important that you actually treat that data correctly. Make sure that nobody
+
+12:40.240 --> 12:49.840
+except those who are authorized can access that data. So from a responsibility point of view,
+
+12:49.840 --> 12:57.200
+it is actually a little bit different what kind of company account you want to create, if that's
+
+12:57.200 --> 13:03.520
+what you want to create now. Because for instance, in Sweden, where I live, you can have a personal
+
+13:03.520 --> 13:09.280
+company account in that, sorry, a personal company. So you can register a personal company. It
+
+13:09.280 --> 13:16.880
+means that you are personally liable for that company. And you can also create a company that
+
+13:18.400 --> 13:23.760
+it has like, it's like an umbrella. Basically, it sits on top and then there are people who are
+
+13:24.400 --> 13:28.480
+directors of the company and blah, blah. So you're not personally liable.
+
+13:29.440 --> 13:36.240
+And that is the same structure that you can find in many other countries. I believe US, Germany,
+
+13:36.240 --> 13:45.040
+Sweden, England, many other countries, you can set up companies that are either sole proprietorship
+
+13:45.040 --> 13:48.960
+or something called, English is not my first language, but it's something like that. Or you
+
+13:48.960 --> 13:53.120
+can create like a limited company that you have limited liability and you're not personally liable.
+
+13:53.120 --> 13:58.560
+So these are the different types of developer accounts that you can set up.
+
+13:59.360 --> 14:06.480
+So we can, I mean, that point, I think we all understand now that you can create
+
+14:06.480 --> 14:15.600
+individual or a company account. Now, I think, I mean, I personally registered already an account
+
+14:16.240 --> 14:22.240
+as an iOS developer and an Android app developer. So,
+
+14:24.400 --> 14:31.280
+and since I registered a company account, I can't go through setting up the exact same company again,
+
+14:31.920 --> 14:39.520
+but at least I can show you some of the steps involved in creating those accounts.
+
+14:40.480 --> 14:48.960
+So what we could do is to, now you can't see the screen right now, but I will bring it up here
+
+14:50.560 --> 14:59.040
+so that you can also see. Now I'm going to bring my studio here and I'm going to make this screen
+
+14:59.040 --> 15:06.160
+a little bit bigger so that you can see my screen better. So let me also make this a little bit
+
+15:06.480 --> 15:12.960
+smaller on top so that you can see the content a little bit better.
+
+15:14.800 --> 15:20.560
+So you can see here that there are two options available to you. Either you enroll as an individual
+
+15:20.560 --> 15:26.560
+or you enroll as an organization. And it is strongly recommended actually.
+
+15:29.440 --> 15:33.200
+So you need to make sure that you have two-factor authentication turned on.
+
+15:33.200 --> 15:39.920
+And so that's not a problem. All this means basically as an individual, it means that just
+
+15:40.480 --> 15:46.880
+you will need an account. You will need to set up an account. However, if you want to set up as an
+
+15:46.880 --> 15:52.160
+organization, like if you have a limited company and you want to create an Apple developer account
+
+15:52.160 --> 15:59.040
+that is linked to that organization, it's a little bit different because you will need to set up
+
+15:59.040 --> 16:03.520
+something called a duns or duns or I don't know how you want to pronounce it D-U-N-S.
+
+16:04.640 --> 16:12.400
+Which is kind of like, it's a new thing for me at least, but it is an identifier for your company
+
+16:12.400 --> 16:20.880
+that you either have been assigned to already. I think there is a company called DMB.
+
+16:20.880 --> 16:28.720
+So if you go to, let me see if I can bring the notes for that.
+
+16:30.720 --> 16:42.320
+Let's see. Learn more. If you go to learn more here. Here, DMB is called by Don and Bradstreet.
+
+16:42.320 --> 16:51.440
+So there then we have the ability to register a D-U-N-S number.
+
+16:53.360 --> 16:58.800
+For me, I was one of the lucky people to have already been assigned a D-U-N-S number for my
+
+16:58.800 --> 17:06.720
+company by DMB because you either have, let's see if they write it here.
+
+17:07.680 --> 17:11.440
+You see it says DMB may have already assigned your organization a free
+
+17:11.440 --> 17:16.800
+D-U-N-S number. Before enrolling, look up your organization to see if you have a D-U-N-S number.
+
+17:16.800 --> 17:24.880
+So you can just click on the link and we can go here and you can then select your region. For me,
+
+17:24.880 --> 17:31.040
+it would be Sweden. Then I would write my company name, some address information, contact information,
+
+17:31.040 --> 17:37.440
+etc. Then you can check whether there is a D-U-N-S number assigned to your company.
+
+17:37.440 --> 17:41.200
+So I suggest that you actually do this by going to this website.
+
+17:46.000 --> 17:50.880
+So that's for a D-U-N-S number if you already have one, but if you don't have one,
+
+17:50.880 --> 17:58.320
+then you will have to create and request a D-U-N-S number from DMB. I would show you the website for
+
+17:58.320 --> 18:05.360
+DMB and D-U-N-S number right now, but my browser is set up so that my locale is already provided to
+
+18:05.360 --> 18:09.280
+the browser, which is Swedish. Then if I go to the DMB website, you're going to see everything in
+
+18:09.280 --> 18:16.560
+Swedish. That doesn't make any sense just to read the information in Swedish. I believe you can go
+
+18:16.560 --> 18:27.040
+to DMB's website. So if I search for a DMB, D-U-N-S or D-U-N-S are here. So this is a Swedish
+
+18:28.080 --> 18:33.600
+localized website for DMB. Let's see if it can change the language.
+
+18:37.520 --> 18:41.760
+Actually, I can see here that they're very, they're actually in Sweden.
+
+18:41.760 --> 18:48.960
+And I wonder if we can, here, change country. Let's just say
+
+18:52.880 --> 18:53.600
+international.
+
+18:56.400 --> 19:01.200
+So if we go here, let's see if we can,
+
+19:03.920 --> 19:10.240
+if there's any way to actually request a D-U-N-S number, like if you say D-U-N-S.
+
+19:12.560 --> 19:20.160
+And I can't see anything related to that, to be honest with you. So if we go back
+
+19:23.680 --> 19:30.720
+here, I can see, I can request the D-U-N-S and here the locale is S-V-S-E. And here,
+
+19:30.720 --> 19:36.400
+the locale was E-N-G-B. So what happens if we just go back to this URL that we were on before,
+
+19:36.880 --> 19:44.720
+and then I just change the locale? Does that work? Well, unfortunately. But, I mean, here,
+
+19:44.720 --> 19:53.520
+D-U-N-S number, get a D-U-N-S number. Okay, that's good. And then, and you can here say,
+
+19:53.520 --> 20:03.040
+I'm an Apple developer, press continue. Oh, it sends you back here. That was really bad.
+
+20:03.360 --> 20:14.240
+So it says, look up your organization in Apple's website. And when you try to get a D-U-N-S number,
+
+20:15.040 --> 20:26.000
+it tells you to go to Apple's website. If we say that, then okay, legal business name, etc., etc.
+
+20:26.720 --> 20:34.160
+Then okay, legal business name, etc., etc. Okay, so you will need to go through this process,
+
+20:34.160 --> 20:39.600
+which doesn't seem to be completely easy to get a D-U-N-S number. You see, request the D-U-N-S
+
+20:39.600 --> 20:48.240
+number. So you probably just want to go to dmb.com, it's like d-u-n-s-number.html. And I can't
+
+20:48.240 --> 20:52.800
+explain this complete process, to be honest with you, because first of all, it will be a waste of
+
+20:52.800 --> 21:00.160
+time for both of us. Because these are so many moving parts and a third party company that I
+
+21:00.160 --> 21:06.080
+have no control over. So if I even try to explain their process, it may change tomorrow. So there's,
+
+21:06.080 --> 21:11.360
+it's not a good investment of our time. But everybody else has figured it out. And I'm
+
+21:11.360 --> 21:14.960
+pretty sure that if you just go and say, request the D-U-N-S number, you can just
+
+21:15.520 --> 21:21.920
+follow the process and then get your D-U-N-S number. But begin by going through,
+
+21:23.120 --> 21:30.560
+look up your organization. So you may already have been assigned a free D-U-N-S number. So
+
+21:31.600 --> 21:37.040
+do that first, please. But if you have to request the D-U-N-S number, I believe there is a little
+
+21:37.040 --> 21:44.000
+bit of a cost to it. And that is about $70. If I'm 70 to $80 at the time of recording this video.
+
+21:44.720 --> 21:55.040
+So count with almost about $100. And hopefully not more, hopefully actually a lot less, but around
+
+21:56.720 --> 22:06.160
+$70 at least. Does that make sense? I said so many numbers, $70 at least. So try to get your
+
+22:06.160 --> 22:11.920
+D-U-N-S number. At least that that's what Apple says you will need. Now, of course, if you want
+
+22:11.920 --> 22:19.840
+to register as a company, I can't stress this enough. You will need a website. I remember vividly
+
+22:19.840 --> 22:28.000
+when I registered a developer account at Apple and they rejected my request saying that, well,
+
+22:28.640 --> 22:35.680
+your website doesn't have any content. And they were right because I just created an empty website,
+
+22:35.680 --> 22:40.800
+like a domain. I know I didn't actually create an empty website. I registered a domain.
+
+22:42.240 --> 22:48.480
+And there was no website. So when you typed my website's name, it would just not show you anything.
+
+22:51.440 --> 22:54.960
+And they came back and said, no, your application is rejected because you don't have a website.
+
+22:54.960 --> 23:01.440
+What kind of company are you? So then I had to actually get like a hosting service and I have
+
+23:01.440 --> 23:08.880
+some content in there, have like a support. So if you are registering as a website, sorry,
+
+23:08.880 --> 23:14.400
+as a company and as an organization, you will need a hosting service. You will need a domain
+
+23:14.400 --> 23:20.480
+provider. You will need to ensure that you have a website because they're not the same thing. If
+
+23:20.480 --> 23:26.400
+you have a host and you have a domain provider, it still doesn't mean that you have content
+
+23:27.520 --> 23:34.480
+on your web page. But what I realized is that if you register your domain and have a hosting
+
+23:34.480 --> 23:39.680
+service, make sure that you have a website. Just have some content in there and say, hello,
+
+23:39.680 --> 23:46.240
+we are this business, that business. We work with this and this. If you have any questions,
+
+23:46.240 --> 23:50.480
+contact this email. And here's our phone number. Here's their address, et cetera. So
+
+23:50.480 --> 23:57.520
+you need to ensure that if you have an organization, it is actually an organization. It's not just like,
+
+23:57.520 --> 24:04.080
+hi, my name is Fubar. I'm sitting at home. Contact me if you have any questions. Not like that.
+
+24:04.640 --> 24:10.400
+So and of course, after you made your decision, you start the enrollment process. So
+
+24:12.400 --> 24:18.560
+now learn more, continue enrollment on the web you can do. And then you come here and you will
+
+24:18.560 --> 24:23.920
+basically need to provide your information and continue with the process. Now we're not going
+
+24:23.920 --> 24:30.400
+to go through this, but the important thing I have to mention here is that as you go through
+
+24:30.400 --> 24:39.040
+the enrollment process, as an Apple developer, unfortunately, there is a cost last time, which
+
+24:39.040 --> 24:44.320
+is about a few months ago when I registered, or I had to renew my registration. You have to renew
+
+24:44.320 --> 24:53.840
+your registration for Apple's developer account. You have to renew it every year. And as I've
+
+24:53.840 --> 25:02.000
+mentioned here, the process is not free, unfortunately. It costs, or last time I
+
+25:02.000 --> 25:07.520
+registered or renewed my registration, it costs $99. And I believe it's been $99 for a very long
+
+25:07.520 --> 25:12.720
+time. So if you're in Sweden, it costs about a thousand crowns. If you're in England, it probably
+
+25:12.720 --> 25:19.760
+costs about 80 pounds or something. And in the US it's about, yeah, just count with almost $100. So
+
+25:20.320 --> 25:24.400
+I used to be able to provide this like you have to have some sort of a credit card or debit card
+
+25:24.400 --> 25:30.400
+to be able to pay for it. So after you've done that, after you register your account as an
+
+25:30.400 --> 25:35.760
+organization, you will have direct access then, or an immediate access to your developer account.
+
+25:35.760 --> 25:42.720
+And you can start developing applications, et cetera, et cetera. So if you're following along
+
+25:43.520 --> 25:50.240
+with this course and you want to deploy your application to the App Store and Play Store,
+
+25:50.240 --> 25:58.640
+please do this first. Get your developer account either as an organization or as an individual.
+
+25:59.600 --> 26:04.160
+Get that process out of the way because a developer account, especially if you're an
+
+26:04.160 --> 26:10.480
+organization, as I mentioned here, is not a super fast process. I mean, when you get the account,
+
+26:10.480 --> 26:16.960
+then it's simple. It's fast and you're in there immediately. But the process itself is a long
+
+26:16.960 --> 26:22.640
+process. So I remember for me, it took about two weeks because I got one rejection. It took about
+
+26:22.640 --> 26:31.680
+one week for them to review the documents again. So it's not a fast process, unfortunately. It's
+
+26:31.680 --> 26:42.960
+like very, yeah, it's just a long, long, boring process. So get that out of the way, if you can,
+
+26:42.960 --> 26:59.600
+please. So that's for the long and not free part for iOS. And also, one more thing that I need to
+
+26:59.600 --> 27:06.800
+mention is that if you're registering and you want to sell applications, which is not the purpose of
+
+27:06.800 --> 27:11.520
+this course, but if you want to sell applications, then you will have to provide some banking
+
+27:12.080 --> 27:17.440
+and tax information. So they need to ensure that the stuff that you're selling in different
+
+27:17.440 --> 27:22.720
+countries, the money that is then being sent to your bank account, will be accounted for when
+
+27:22.720 --> 27:30.240
+you're paying your taxes. So, and I believe that if you're trying to sell apps on the app store,
+
+27:30.240 --> 27:38.320
+then you will have to fill in some forms with the US tax offices. I don't even remember IRS, I think
+
+27:39.840 --> 27:45.280
+internal revenue services or something like the IRS. I believe that you have to fill some forms,
+
+27:45.280 --> 27:49.680
+like send the forms to them, then they will come back with some sort of identifier to you.
+
+27:49.680 --> 27:54.960
+And then you will need to use that identifier on Apple's website in order to basically say
+
+27:54.960 --> 27:59.840
+that, yeah, yeah, I know, I'm selling stuff in the US, I'm selling stuff in Japan, I'm selling
+
+27:59.840 --> 28:06.960
+stuff in Sweden, Norway, but I'm going to pay taxes for them here in my country. And that's
+
+28:06.960 --> 28:15.360
+what the form says here. Here's my name, here's my company. I'm an organization or I'm an individual,
+
+28:15.360 --> 28:23.200
+so I have no company. My personal identification number in my country is this, is my address,
+
+28:23.200 --> 28:28.240
+my phone number, et cetera. And then you send it to them, to IRS, and then they come back and say,
+
+28:28.240 --> 28:35.920
+okay, now we know who you are. And here is your identifier number, like a business identifier
+
+28:35.920 --> 28:40.320
+number, BIN or something they call it, I think. I don't remember exactly, but I believe depending
+
+28:40.320 --> 28:43.920
+on whether you're a business or an individual, then the number is a little bit different.
+
+28:44.880 --> 28:48.800
+So if you're a business, I think it's BIN. And if you're an individual is in, I don't know.
+
+28:49.600 --> 28:54.560
+So I don't know what that dialogue was. Some Bluetooth devices wants to connect to my computer.
+
+28:54.560 --> 29:03.040
+I don't know what it is. So that's that part. It can be long and it's not free. Okay.
+
+29:05.920 --> 29:13.840
+That was a lot of information. That's for iOS. Now, what we can do now is to talk
+
+29:13.840 --> 29:19.680
+a little bit about Android as well. And the good thing about the Android process,
+
+29:19.680 --> 29:26.000
+like setting up your account for, as a Google developer, is that it's a lot more straightforward
+
+29:26.000 --> 29:32.320
+as you would expect from Google. And given that they're even like sending updates to
+
+29:32.320 --> 29:37.360
+an Android app to the Google developer console is a lot more straightforward than it is for iOS.
+
+29:37.360 --> 29:42.640
+I don't want to scare you, but it is a fact. And you will know that later when we actually
+
+29:42.640 --> 29:48.800
+get to the end of this course where we release the apps for iOS and Android, that it is a little
+
+29:48.800 --> 29:58.080
+bit more straightforward for Google Play Store. But you still need to sign up for a developer
+
+29:58.080 --> 30:08.080
+account. So I'm going to take in my notes that I've talked about that. So what we also need to know
+
+30:08.080 --> 30:14.000
+is that there is a URL that we can go to. I'm going to copy that and paste it over here. So
+
+30:14.000 --> 30:22.400
+you see which one I'm talking about. Over here. Then you can see that you can set up a developer
+
+30:22.400 --> 30:26.080
+account. And once you've logged in, so I'm assuming that you're logged in, then you go to
+
+30:26.080 --> 30:34.560
+play.google.com slash console slash user or you zero sign up where URL, it may change. So let's
+
+30:34.560 --> 30:40.480
+just, what you can do is just a Google, Google Play Console developer account or a Google
+
+30:40.480 --> 30:46.000
+developer account. Then you will end up in a URL that looks kind of like this. So don't count
+
+30:46.000 --> 30:50.400
+with this URL that I mentioned here because it may change. That's what I'm saying. And
+
+30:51.760 --> 30:55.920
+you can, as it is for iOS development, you can either set it up personally as an individual or
+
+30:55.920 --> 31:01.040
+you can set up as an organization. Now I happen to have set it up for myself as an organization
+
+31:01.040 --> 31:06.080
+because I do have a company here in Sweden. So it is a lot easier for me to tie all my business
+
+31:06.080 --> 31:11.200
+relations with Apple and Google into one entity, which is my developer account for,
+
+31:13.600 --> 31:20.880
+sorry, which is my company. So it wouldn't make so much sense for me to explain this either to go
+
+31:20.880 --> 31:25.120
+through all the details, but if you want to set it up for yourself as an individual, just press on
+
+31:25.120 --> 31:28.480
+get started. Or if you want to set up as an organization, just press get started there.
+
+31:28.480 --> 31:33.920
+As you can see, you can provide information about your organization. And you can see here as well,
+
+31:34.480 --> 31:39.920
+as soon as you say I'm an organization, then they say, okay, what's the website? So you can see if
+
+31:39.920 --> 31:43.520
+you say, I don't have a website, we recommend adding a website that represents your organization.
+
+31:43.520 --> 31:48.320
+Well, it kind of makes sense. I mean, if you're a company, where's your website? Every company
+
+31:48.320 --> 31:53.520
+should have a website unless you're like a pizza restaurant or something. Even a pizza restaurant
+
+31:53.520 --> 31:57.280
+probably needs a website, but we have a pizza restaurant here in our town that doesn't have
+
+31:57.280 --> 32:05.280
+a website. So they're on Facebook. And you probably don't want to say that your company's
+
+32:05.280 --> 32:13.680
+website is on Facebook. So yeah, where were we? Here. And if you say you're an individual,
+
+32:13.680 --> 32:19.840
+then you come here and they ask for some other stuff, but still interesting because
+
+32:20.720 --> 32:27.120
+it says enter the URL of your website or social media profile. So here you kind of have to need
+
+32:28.080 --> 32:32.400
+to enter that as well. So maybe you can get away with a Facebook URL. I laughed about it, but
+
+32:33.280 --> 32:37.120
+maybe you can get away with it. I don't know. But I don't recommend that, to be honest with you,
+
+32:37.120 --> 32:43.040
+because as you will see later in the course, when we actually submit our apps to App Store and Play
+
+32:43.040 --> 32:51.120
+Store, there are a few key data points that you have to provide to both stores. One is a privacy
+
+32:51.200 --> 33:03.840
+policy URL, and the other one is a support URL. And there are also two other emails you have to
+
+33:03.840 --> 33:14.160
+provide. The first one is the support email and the other one is a contact email. And if you're
+
+33:14.160 --> 33:18.560
+setting up a business account, then I really suggest that you actually set up a website,
+
+33:18.560 --> 33:23.040
+because if you set up a website and you have a domain, you have an email provider,
+
+33:23.040 --> 33:32.160
+then your email will kind of be like foobar at mybusiness.com. It's a lot more professional
+
+33:32.160 --> 33:39.280
+to set up an email that is connected to your email or to your domain than it is to say
+
+33:40.000 --> 33:47.920
+mrjohnson at gmail.com. I wouldn't trust a business that has a gmail.com account.
+
+33:49.280 --> 33:52.960
+I kind of want to know that, yeah, here's a serious business, that they have their own website,
+
+33:52.960 --> 34:01.040
+and blah, blah, blah. But on the contrary, setting up a website, setting up some emails
+
+34:01.040 --> 34:06.960
+doesn't necessarily mean you're serious either. But it makes it more dedicated, if you know what
+
+34:06.960 --> 34:17.680
+I mean. So yeah, that's the process for setting up an account also as an Android developer.
+
+34:19.520 --> 34:26.640
+I think that's about it. That's all I wanted to mention in this first chapter of our course.
+
+34:28.320 --> 34:34.000
+I highly recommend that you get your developer accounts for Apple and for
+
+34:37.120 --> 34:43.520
+Google. What you'll also need to know is that, I mean, I've talked a lot about now,
+
+34:44.000 --> 34:53.920
+Apple account and a Google developer account, but if you're developing your application
+
+34:56.160 --> 35:00.240
+on a Windows machine, for instance, if you're trying to learn how to develop Flutter
+
+35:00.240 --> 35:04.560
+applications and you don't care about releasing your application at all, you don't have to do
+
+35:04.560 --> 35:12.400
+any of this. Just follow along with the course as usual, no problem. But if you want to actually
+
+35:12.400 --> 35:17.840
+release your application for iOS, then you most definitely need to also have a Mac because you
+
+35:17.840 --> 35:23.840
+can't build your application otherwise. There are some tricks you can do. You can build your
+
+35:23.840 --> 35:29.040
+Flutter application and later on, like a friend's Macintosh if they have one, or you can send it to
+
+35:29.040 --> 35:33.600
+a service that's in the cloud and they build the app for you and then they will send it back to
+
+35:33.600 --> 35:39.280
+you and then you can submit it. Or maybe they even have to submit it. It's a bit hairy, to be
+
+35:39.280 --> 35:45.840
+honest with you, but it's a complicated topic. It is a little bit difficult to explain.
+
+35:48.000 --> 35:53.120
+For instance, if you're on a Windows machine, you can't even have Xcode. Xcode is the tool
+
+35:53.680 --> 36:01.840
+and the entire chain of tool sets that gets installed on a Macintosh in order to build
+
+36:02.880 --> 36:08.560
+an application for iOS platform. Now, why am I talking about this? The reasoning behind that
+
+36:08.560 --> 36:15.520
+is that if you're developing a Flutter application, then Flutter can be deployed
+
+36:15.520 --> 36:24.080
+on a Windows machine, Macintosh, or collectively called as desktop, web, Android, iOS, five
+
+36:24.080 --> 36:32.480
+platforms at the moment. If you're trying to release your application and build it for iOS,
+
+36:32.480 --> 36:38.800
+for instance, and test on an iPhone or an iPad, you can't do that on a Windows machine,
+
+36:38.800 --> 36:45.520
+unfortunately. There's nothing wrong with a Windows machine. It's just Apple's fault for
+
+36:45.520 --> 36:51.520
+locking down their build systems and alter tools to Macintosh. They haven't made the
+
+36:52.720 --> 36:57.840
+conscious decision or yeah, they haven't made the decision to
+
+36:58.640 --> 37:06.240
+bring their tool system and tooling to Windows, unfortunately, or Linux. Swift,
+
+37:06.240 --> 37:12.880
+which is the language to write native applications for iOS, can be run, I believe, on Linux.
+
+37:13.920 --> 37:19.680
+Windows might be, but its main platform is still Mac.
+
+37:20.640 --> 37:25.920
+I know that this is a lot of information also to learn, but if there is anything I want to
+
+37:26.720 --> 37:33.600
+close this chapter, the first chapter of this course with is, you can learn Flutter and follow
+
+37:33.600 --> 37:38.720
+along with the steps I'm going to provide in this course without having to register any accounts
+
+37:38.720 --> 37:48.000
+yet. So that's point one. Point two is that you will need a Macintosh if you want to use it for
+
+37:48.640 --> 37:55.520
+if you want to comfortably build and release your Flutter app for iOS.
+
+37:58.000 --> 38:03.600
+If you want to release your application on Google Play Store, which is point three,
+
+38:03.600 --> 38:09.360
+if you want to do that, you will need to register a developer account on Google Play Console,
+
+38:09.920 --> 38:16.320
+as I've shown you here. I believe that's all. That's all you need to know. So
+
+38:17.280 --> 38:20.240
+some of you may already have all these accounts and don't have to worry about it,
+
+38:21.280 --> 38:27.600
+but some may not know all this. If you're coming from a design background, if all you do is work
+
+38:27.600 --> 38:32.000
+with Figma, et cetera, this is some of the important information that you'll need to know
+
+38:32.000 --> 38:37.440
+about because I don't want you to get frustrated during the process, so I just want you to have
+
+38:37.440 --> 38:43.520
+some information so that you can get started at least without too much hassle. All right,
+
+38:43.520 --> 38:49.680
+that's it, I think, for this chapter. I can take in my notes that I've explained everything
+
+38:49.680 --> 38:56.320
+I wanted to explain. It did take about 35 minutes. It's not unexpected, to be honest.
+
+38:56.320 --> 39:01.280
+It's a lot of information, and I kind of want to take my time with it. It's important that you
+
+39:01.840 --> 39:09.200
+and for me as well to understand all this. So great. I think that's it for this video.
+
+39:09.920 --> 39:16.640
+So I'll see you in the next chapter. Hi, everyone, and welcome to the second chapter of our course.
+
+39:16.640 --> 39:21.440
+Now, if you haven't watched the introduction to this course, I really suggest that you do that
+
+39:21.440 --> 39:25.120
+before continuing with the course because there are so many points that I'll explain in that
+
+39:25.760 --> 39:30.320
+introduction that I believe are so important to understand before continuing with the course. So
+
+39:32.000 --> 39:36.400
+in this chapter, what we're going to do is we're going to take care of some setup steps that are
+
+39:36.400 --> 39:43.520
+required for pretty much the rest of this course and all the other chapters that follow
+
+39:43.520 --> 39:49.200
+along after this one, chapter three, four, and et cetera. So we're going to talk about Flutter,
+
+39:49.200 --> 39:56.560
+Dart, Dart Pad, how to install Flutter, whether you're on Windows, Mac, or Linux.
+
+39:56.560 --> 40:04.560
+And we're also going to talk about Xcode, Android Studio, and we're going to talk about a few
+
+40:04.560 --> 40:11.600
+very useful extensions to our code editor. So if you're coming from a background where you
+
+40:11.600 --> 40:17.120
+haven't worked with any kind of programming language before, I'm going to take this chapter
+
+40:17.120 --> 40:22.320
+quite easy. So if you're an advanced programmer already, you may want to skip this and you already
+
+40:22.320 --> 40:30.720
+have Flutter installed, everything, you can skip this chapter without a problem. So let's start by
+
+40:30.720 --> 40:36.960
+talking about what Flutter is. Well, traditionally developers and programmers
+
+40:36.960 --> 40:42.960
+or software engineers, however you want to call them, they've been creating and writing code with
+
+40:42.960 --> 40:49.120
+their fingers in different languages, and then they're targeting different platforms. It's
+
+40:49.120 --> 40:54.640
+very important to understand what a language, programming language is versus a platform.
+
+40:55.600 --> 41:06.880
+Think of a platform as the end station where a software ends up being run on. So let's say
+
+41:06.880 --> 41:14.720
+Windows is a platform, Mac is a platform, Linux is a platform, and iOS that runs on all iPhones
+
+41:14.720 --> 41:22.800
+is a platform, Android is a platform, et cetera. Now, you would have programming languages that
+
+41:23.760 --> 41:29.200
+you as a software developer would use in order to target those platforms, to write software for
+
+41:29.200 --> 41:34.640
+those platforms. So you use a programming language in order to write a piece of code
+
+41:34.640 --> 41:41.520
+and be able to run that code on that target platform. So the programming language example
+
+41:41.520 --> 41:52.160
+is JavaScript, Python, Swift, Rust. What else is popular right now? Java, Kotlin, all these.
+
+41:52.800 --> 41:59.120
+These are programming languages. So you as a software developer who's trying to learn
+
+41:59.120 --> 42:05.840
+Flutter would use then Dart as your programming language, as I will soon explain. So
+
+42:08.880 --> 42:12.080
+that has been the tradition that a person sits in front of a computer and says,
+
+42:12.080 --> 42:16.080
+okay, I want to write a program for Windows. Then they go and write some code maybe with
+
+42:16.080 --> 42:23.440
+Csharp.net, or maybe they will just use some other technology. I don't know what's out there
+
+42:23.440 --> 42:30.640
+right now for Windows. Maybe they would use VB.net, and then they would be done and they
+
+42:30.640 --> 42:35.840
+would release the software for Windows and be like, okay, I'm done. Now, then someone comes
+
+42:35.840 --> 42:41.920
+into the project and says, oh, we need the same software for Macintosh, or we need the same software
+
+42:41.920 --> 42:53.200
+for some other, for instance, platform. Then you would have to go and write the same software,
+
+42:54.480 --> 43:01.040
+exact same code, pretty much, for the other platform. So this process would be very repetitive
+
+43:01.040 --> 43:06.160
+in that you would have to write the same software over and over again. So things such as Flutter
+
+43:06.160 --> 43:11.200
+came in in order to remedy that. So saying that a software engineer sits at home or sits in the
+
+43:11.200 --> 43:16.000
+office, works with a group of other people and a designer maybe, or a few designers, UXer as a
+
+43:16.000 --> 43:24.160
+product owner, et cetera. They would write the same code, which will then be run on different
+
+43:24.160 --> 43:32.640
+platforms. So as a software developer, you wouldn't have to maintain different, very similar pieces of
+
+43:32.640 --> 43:40.960
+code that only can be run on one specific platform. So Flutter in its ground basically is a UI
+
+43:40.960 --> 43:49.600
+framework for writing beautiful applications that run on multiple platforms at the same time.
+
+43:50.320 --> 43:58.000
+Developed by Google, has been in production for a very long time. It's tried and tested. It's
+
+43:58.000 --> 44:04.960
+open source. And if you don't come from a software engineering background, open source basically
+
+44:04.960 --> 44:15.760
+means that the code that is written for Flutter, basically the code that makes up Flutter, is open
+
+44:15.760 --> 44:22.720
+to the public for finding bugs and also for contributing to it or maybe just learning from
+
+44:22.720 --> 44:27.600
+it. So if you're, for instance, coming from a background of as a designer, it's kind of like
+
+44:27.600 --> 44:34.800
+you have your Figma file open to the entire world or your Adobe XD source open to the entire world
+
+44:35.120 --> 44:40.560
+for them to watch what you're doing as you're designing and also for them to be able to fix
+
+44:40.560 --> 44:49.440
+stuff in your design if they see it not working as it should. So that's open source. So Flutter is
+
+44:49.440 --> 44:56.880
+open source UI framework developed by Google. What a framework means, I mean, if you're not coming
+
+44:56.880 --> 45:02.720
+from a software engineering background, a framework is kind of like a set of tools provided to you
+
+45:02.720 --> 45:07.680
+as a software developer. So you can use these tools, take a bit of this one, take a bit of that
+
+45:07.680 --> 45:16.160
+one in order to produce an output. So Flutter in itself is a software, but it's more precisely
+
+45:16.800 --> 45:25.440
+referred to as a framework because it's a collection of tools. So if you hear framework,
+
+45:25.440 --> 45:29.280
+just know, oh, there's a collection of things I can use to produce some output. Now,
+
+45:30.240 --> 45:39.520
+that's what Flutter is. But what powers Flutter is a programming language called Dart. And
+
+45:40.400 --> 45:46.560
+Dart has been in the making for more than eight years is a language that at the moment being
+
+45:46.560 --> 45:53.440
+maintained by Google and also is open source. So anybody can contribute to it, anybody can learn
+
+45:53.440 --> 45:59.120
+from it and find exploits or maybe problems with it and it will get patched by the public or by
+
+45:59.120 --> 46:06.960
+Google themselves. So Dart is the language, the programming language that powers Flutter, you could
+
+46:06.960 --> 46:18.800
+say. So now you know what Flutter is and now you know what Dart is. And I think in the next step
+
+46:18.800 --> 46:27.680
+now what we can do is talk about a great piece of web software called Dart Pad. Now,
+
+46:29.120 --> 46:37.200
+Dart Pad, as I said, is a web software or you could just call it a website that allows you to
+
+46:37.200 --> 46:47.520
+run or write your Dart code, maybe pure Dart code or code for Flutter and run it directly in your
+
+46:47.520 --> 46:53.760
+browser without you even having to install anything. So just open your browser and as you
+
+46:53.760 --> 46:59.200
+will see soon we go to Dart Pad and you will see how it looks like. So let me just show you a little
+
+46:59.200 --> 47:05.200
+demonstration here. So here I have Dart Pad open and I can actually increase the size so you can
+
+47:05.200 --> 47:10.560
+see a little bit better. I may have to rearrange some components here on the screen so you can see
+
+47:10.560 --> 47:18.560
+the screen better. So I went to dartpad.dartlang.org and you can see here that there is a program
+
+47:18.560 --> 47:27.200
+written on the left-hand side and I can actually, yeah, let this what is Dart, Dart Pad allows you,
+
+47:27.200 --> 47:32.480
+blah, blah, text to be there so you can have context of what I'm talking about. And you can see
+
+47:32.480 --> 47:38.080
+that the program is sitting there and you are allowed then to either change the program the
+
+47:38.080 --> 47:45.120
+way it is or click anywhere here to see documentation down here or press the run button.
+
+47:45.120 --> 47:50.560
+So I'm just going to press the run button and you can see that the text hello got printed to the
+
+47:50.560 --> 47:56.640
+screen five times plus the number of times it was actually printed. It's also printed to the screen.
+
+47:56.640 --> 48:04.720
+So hello one, two, three, four, five. So what you see on this side is the source code if you
+
+48:04.720 --> 48:09.360
+remember from open source. So this is the source code written in the programming language called
+
+48:09.360 --> 48:18.400
+Dart. And this is the output of that program. So Dart Pad allows you to write text here and just
+
+48:18.400 --> 48:27.120
+execute it and see the results immediately. So that's what Dart is. I mean, sorry, Dart Pad is.
+
+48:27.120 --> 48:33.760
+And we're going to talk about Dart and Dart Pad more in the course. But right now what we should
+
+48:33.760 --> 48:44.160
+do is to start by installing Flutter. Because, I mean, you could say, okay, but Flutter is just the
+
+48:46.640 --> 48:54.160
+UI framework. How about Dart? Well, the way Flutter is packaged by default is that it includes the
+
+48:54.160 --> 48:59.840
+Dart programming language and its runtime. So the tool is required to run any Dart code.
+
+49:00.800 --> 49:06.400
+It packages all of that in just one big chunk for you. So you don't have to go and install
+
+49:06.400 --> 49:11.600
+different components like install Dart separately in Flutter. So let's just then improvise. And I'm
+
+49:11.600 --> 49:20.640
+going to say in here, let's say install Flutter. Okay? Then you go to this beautiful website called
+
+49:20.720 --> 49:25.200
+Flutter.dev. I'm going to increase the size here so you see.
+
+49:27.600 --> 49:36.000
+So we go there now. And you will see this beautiful website here. And what we're going to do is just
+
+49:36.000 --> 49:42.800
+to press on get started. And remember, we pressed on get started. But this website looks like this
+
+49:42.800 --> 49:47.840
+right now. Maybe in a few months or maybe in a few years, it will change. So you'll just have
+
+49:47.840 --> 49:53.200
+to find out a way to get to the installation part. Right now it's called get started. And I
+
+49:53.200 --> 49:59.840
+can see it's located as docs.flutter.dev get started install. Then pick your platform here.
+
+49:59.840 --> 50:04.320
+I'm on a Macintosh, but if you're on a Windows, just click on Windows and then you get instructions
+
+50:04.320 --> 50:12.080
+on how to install Flutter. And then, or if you're on Linux, you can also do the same. Just get
+
+50:12.080 --> 50:20.560
+instructions for your platform. Now I'm on a Mac and I'm going to click on Mac. And then I'm going
+
+50:20.560 --> 50:25.120
+to look at this information here. I'm going to increase the size so it's a little bit easier to
+
+50:25.120 --> 50:30.720
+read. And it says, okay, download the following installation bundle to get the latest stable
+
+50:30.720 --> 50:39.440
+release of the Flutter SDK. SDK means software development kit, I believe. So it's just like
+
+50:40.080 --> 50:46.800
+series of tools for you to use. It's just fancy words. So then we're going to do that. Let's just
+
+50:46.800 --> 50:54.880
+get Flutter Mac. I'm going to download it. And it may take some time because it is actually quite
+
+50:54.880 --> 51:02.320
+a chunky bit of software. As you can see, it's almost 1.2 gigabytes. So depending on your
+
+51:02.320 --> 51:06.880
+internet connection, it could take anything between a few seconds to a few minutes.
+
+51:07.520 --> 51:14.640
+And after you've done that, then you will have to unzip that in some folder.
+
+51:16.080 --> 51:23.040
+So what that means is just I can see that my Mac is already decompressing this zip file
+
+51:23.040 --> 51:27.120
+for me. So I don't have to do that myself. And it's already decompressed in this
+
+51:27.120 --> 51:32.880
+place. So I'm just going to click on it and I'm going to show you its content. So it looks like
+
+51:32.880 --> 51:42.080
+this. Okay. Now that you have this, what you need to do is to ensure that all these files are
+
+51:42.080 --> 51:51.360
+placed inside a location on your computer, which is protected so that you don't accidentally
+
+51:51.360 --> 51:57.040
+delete it. And it's also a good, like, you know exactly where it is. So by that, I mean,
+
+51:57.040 --> 52:01.200
+don't put it on your desktop and don't put it in like documents or anything. It's not a
+
+52:01.200 --> 52:09.840
+document. It's a software. What I like to do is usually to have a folder on a Macintosh called
+
+52:09.840 --> 52:17.360
+Dev. So I will open Terminal here, as you can see. Terminal, if you're not familiar with it,
+
+52:17.360 --> 52:25.760
+is an application that you can control pretty much the entire system with it. If you're on a Mac or
+
+52:25.760 --> 52:30.480
+if you're on Linux or any Unix based system. And if you're on Windows, you can also do a lot with
+
+52:30.480 --> 52:39.200
+your Terminal. So in Windows, that Terminal is called CMD, I believe, as in command, I believe.
+
+52:40.400 --> 52:47.680
+On Linux and Mac, it's called Terminal. I'm using a Terminal here called iTerm.
+
+52:49.680 --> 52:53.520
+But if you're on Vanilla Mac OS, then you would go and open Terminal
+
+52:54.080 --> 52:56.400
+like this, which is just looking like that.
+
+52:56.400 --> 53:01.920
+So I'm going to open iTerm right now, which is my Terminal. You can open the Terminal that
+
+53:01.920 --> 53:09.200
+you're comfortable with. I'm going to increase the size of this. I like to place
+
+53:10.640 --> 53:14.880
+my installations for these pieces of software in my home directory, which is denoted by this
+
+53:14.880 --> 53:23.040
+little funny character, slash dev. And if I look at the contents of this, I can see
+
+53:23.520 --> 53:29.680
+if I look at the contents of this, I can see I have a folder called Toolink. If I say Toolink
+
+53:30.560 --> 53:33.280
+and look at the contents of it, I can see Flutter is right there.
+
+53:34.560 --> 53:42.160
+So for me, Flutter installation, this folder that got downloaded for me in my downloads folder,
+
+53:43.040 --> 53:50.080
+I would go and copy its contents and place it in this folder. So if I say CD Flutter,
+
+53:51.040 --> 53:58.480
+and then you can see that I'm in my user, Dev folder, Toolink, Flutter. So this is where I
+
+53:58.480 --> 54:03.680
+choose to put Flutter. Now you can choose to put this downloaded folder anywhere else, as the
+
+54:03.680 --> 54:12.080
+documentation tells you, in the desired location, for example. So go ahead and do that. Pick a
+
+54:12.080 --> 54:17.600
+location. For me, this location works. For you, it may be, if you're on Windows, it would probably be
+
+54:17.840 --> 54:26.160
+C backslash, I don't know, you could say dev backslash Toolink backslash Flutter. This could
+
+54:26.160 --> 54:33.360
+be a good location for your Toolink or Flutter. So I'm imagining now that you've done that. You've
+
+54:33.360 --> 54:38.480
+gotten a folder, and for me, it's this one, where you've extracted your Flutter installation in.
+
+54:39.120 --> 54:47.120
+Now you can see that it says, in this third step, you will need to expose Flutter's binary
+
+54:47.120 --> 54:55.200
+files to your system. And what that basically means is that Flutter as an SDK or a toolkit
+
+54:55.200 --> 55:03.600
+or a framework, it has a lot of bits and pieces of software in it. And some of these bits are
+
+55:03.600 --> 55:09.200
+more important in that sense that they're actually executable in that. Imagine that
+
+55:10.400 --> 55:15.440
+on your computer, whether it's a Macintosh, Windows or Linux, you can have different
+
+55:15.440 --> 55:19.440
+documents. Some documents can be text. Some documents can be images. Some documents can
+
+55:20.320 --> 55:25.920
+be, I don't know what else they can be. Or a Word document, for instance. Okay,
+
+55:25.920 --> 55:32.080
+good. I came up with another example. Or they could be programs. A program is something that
+
+55:32.080 --> 55:36.240
+you can just double click on and a piece of software gets executed and then it will open.
+
+55:36.240 --> 55:43.040
+For instance, an example of the program is a Microsoft Word. Another example of program is
+
+55:43.040 --> 55:50.320
+Google Chrome web browser. Another example of program is Safari. So these are programs.
+
+55:50.320 --> 55:55.440
+And Flutter comes also with its own built-in programs that do very specific and important
+
+55:55.440 --> 56:05.360
+things on your computer related to Flutter, of course. Sorry, I have to see my recording studio.
+
+56:05.360 --> 56:12.560
+Nothing you had to do. It was just for me. So these important programs that are inside
+
+56:12.560 --> 56:17.280
+the Flutter installation, which you just downloaded, need to be exposed to your entire system
+
+56:17.920 --> 56:24.080
+so that you can work with Flutter with ease. And that means if you're, for instance,
+
+56:24.080 --> 56:30.000
+from a design background, it will allow you to anywhere in your terminal, just write Figma
+
+56:30.000 --> 56:35.360
+and Figma app would open. And that's the same thing with Flutter. In this folder, you see,
+
+56:35.360 --> 56:41.600
+we're in the Flutter folder where you downloaded your installation and installed it in this folder.
+
+56:41.600 --> 56:48.160
+There is a folder called bin, which means binary. In here, there are so many things that are important
+
+56:48.160 --> 56:53.920
+to the entire system to run. You see Flutter and Dart. These two, I said so many, but yeah,
+
+56:53.920 --> 57:01.840
+there's pretty much two. So these two binary executables need to be exposed to your system.
+
+57:02.400 --> 57:07.600
+And the way to do that on a Macintosh is to change your paths as is documented here.
+
+57:08.560 --> 57:18.080
+So the way I like to do that is I go and change my, if I do a vim and look at my zshrc,
+
+57:19.200 --> 57:27.440
+I can see my paths and you can see it here. So you see, I've actually put that export command
+
+57:27.440 --> 57:36.080
+as it is stated here. I put it here, you see. This may be a bit intimidating, to be honest with you.
+
+57:37.600 --> 57:43.600
+Well, all it's doing is that you see this file that I've placed here, I don't know if I can
+
+57:43.600 --> 57:48.080
+actually zoom into it. And if you can see, I don't know how that looked in the actual recording,
+
+57:48.720 --> 57:57.440
+but this is sort of like a set of instructions to my terminal on this Macintosh to tell it
+
+57:57.440 --> 58:03.120
+where different bits and pieces of binary executables are placed, such as Flutter,
+
+58:03.840 --> 58:10.000
+Dart, Python, et cetera, et cetera. So when I install a piece of software in this way,
+
+58:10.000 --> 58:13.040
+you see, we just downloaded a package and just put it somewhere on our computer.
+
+58:13.920 --> 58:19.680
+Macintosh won't know about the stuff that's in it. Of course it won't. So you have to tell it
+
+58:19.680 --> 58:26.320
+where those things are. Because otherwise, if you don't do this step, if you don't do the step three,
+
+58:26.320 --> 58:31.840
+then every time you want to run Flutter, then you have to specify exactly where that Flutter command
+
+58:31.840 --> 58:37.840
+is. So for me, it would be my home folder, dev tooling Flutter bin slash Flutter. But if you do
+
+58:37.840 --> 58:43.760
+this, then you can anywhere in your terminal, just write Flutter and your Macintosh or Linux or
+
+58:44.560 --> 58:52.800
+Windows computer will know where to find it. So do that. Put these instructions as specified here
+
+58:52.800 --> 59:00.720
+in your path. And after doing that, you may need to reload your path using a command on Windows and
+
+59:00.720 --> 59:08.240
+Linux called source and VSHRC for me. Depending on which shell you have, you may have to
+
+59:10.000 --> 59:16.080
+put that instruction in somewhere else. On Windows, I believe you will have to modify your
+
+59:17.760 --> 59:24.240
+environment variables. I remember this from many, many years ago. Let's see if you have to do that.
+
+59:24.400 --> 59:31.280
+Update your path, you see. If you wish to run Flutter commands in regular Windows console,
+
+59:31.280 --> 59:36.080
+take these steps, blah, blah. From the start search, end and select edit environment variables
+
+59:36.080 --> 59:40.960
+for your account. So what you'll just have to do, really, is just to follow these steps. I mean,
+
+59:40.960 --> 59:46.960
+I'm going through basically giving you some of the basics of these instructions so you can get
+
+59:46.960 --> 59:51.760
+like a head start. But these instructions can also change in the future. So don't rely just on what
+
+59:51.760 --> 59:59.040
+I'm telling you, please. Just go to the installation website here as you see docs.flutter.dev. Get
+
+59:59.040 --> 59:59.840
+started and install.
+

@@ -1,0 +1,522 @@
+This massive Flutter course will take you from being an absolute beginner to being able to
+release apps on the Google Play Store and the App Store. Vandad is a very experienced
+software developer and an excellent teacher. Hello everyone and welcome to this free Flutter
+course. My name is Vandad and I'm a Google Developer Expert for Flutter and Dart.
+Let's jump right in. Who is this course for? I designed this course mainly for absolute
+beginners, so whoever hasn't even done a written a single line of code before.
+I actually, when designing this course, I designed it for two specific personas. One was a graphic
+designer who was working mainly with Figma. Actually, it doesn't really matter what graphical
+tool you're using, Photoshop or Figma or whatever or Sketch. And the other persona was a project
+manager who's mainly working with Jira. So I made the assumption that you pretty much don't know
+anything about software development from before. And even if you're a software developer, you could
+perhaps jump over the things that you might know. But if you haven't done
+Flutter development from before, I strongly suggest that you actually follow the chapters
+chronologically, which is the way I've designed this course basically. So as I mentioned,
+when I designed this course, I wanted everybody to just follow the chapters one at a time and one
+after each other chronologically. So I highly recommend that you don't jump over chapters just
+because there's so much information provided in each chapter. And I will be referring back to
+information that I provided in previous chapters in each chapter. So I think it's very good if you
+can just follow the course the way I designed it to be consumed, which is chronologically.
+And what you learn in this course is not only the basics, but you'll also go from a complete
+beginner to being able to release your applications in Apple's App Store and Google's
+Play Store. And we're going to be using a blend of different tools and software. We're going to be
+using Visual Studio Code. We're using Firebase for the backend, which I'll teach you all about.
+We're using even Figma as a graphic designer to create our icons and screenshots and even our
+loading screens. So there's lots to be learned. And I'll take you through those steps. And I don't
+make any assumptions about what you may know from before. So I'll explain everything along the way.
+So you'll go from absolute beginner to being able to actually release your two applications,
+which is the same code base in Apple's App Store and Google's Play Store. If you're attending this
+course, please do follow me on social media. And I'd really appreciate it. I'm Van.np on Twitter.
+And also you can find me by my full name on LinkedIn. That'd be much appreciated.
+This course, of course, for free. But for those who want to and are able to support me,
+then you can do that by buying me a cup of coffee on buymeacoffee.com. So without further ado,
+let's just jump right into it. Hello, everyone, and welcome to the first chapter of our Flutter
+course. There are so many different topics that I could choose for the first chapter.
+And they're all very important. However, after going through the material that I've been
+preparing for you for this course, I realized that one of the absolute basic points that we
+have to go through is the developer accounts for Apple and Google. Now, if you're not familiar
+with the term of developer account, there are basically what a developer account allows you to
+do is to release your applications on Apple's App Store and Google's Play Store. As I mentioned
+in the introduction, you may choose to follow along this course without actually releasing the
+application to the App Store and the Play Store. But even if you do decide to not release the
+applications on the aforementioned stores, you will still, for the optimal experience of development
+for iOS and Android, you will most definitely need a developer account. And the reason behind that
+is, I mean, it is quite deep to try to explain the actual reason behind it. But from my perspective,
+one of the most important reasons you may want to have a developer account is to create the so-called
+app IDs. So every application on iOS and every application on Android has an identifier,
+which is usually something called a reverse domain identifier. And it's kind of like,
+I still find it strange the way it is, but somewhere, somehow it was decided that every
+application needs to have an identifier and every identifier is kind of like associated with a
+domain name. And a domain name is kind of like a website. For instance, if you have
+yourname.com as your website, then you would say that, okay, I'm going to create an application
+for iOS and Android in Flutter, and I'm going to call it foobar. Then it was somehow decided
+that your application's identifier would then in that case be, if you reverse it,
+then it would literally be your domain in reverse, which would be com.yourname.yourapplicationsname.
+I don't really know. I mean, if somebody knows the reason behind it, I would be glad to hear that.
+And I'm sure that there's resources out there explaining why that is the case, but it kind of
+feels like it's become the norm and we just have to roll with it. So the reason I explained the
+app identifier is that when you set up your backend later, when we set up the backend later
+together, in that the client that we write in Flutter is going to talk with our backend
+store the notes, retrieve the notes, create a user, sign in with a user, et cetera, et cetera,
+that backend setup also will require you to have your app identifier. And
+even though you don't necessarily need to have a developer account to get an app identifier,
+because an app identifier is just something that you decide, okay, here's my app identifier.
+I think my website is called this, blah, blah. And even though you actually need a website,
+that's the thing, but an app identifier is usually associated with a website. So don't
+worry about it. You don't have to have a website in order to follow along with these steps that I'm
+going to name here, but it is still good practice to create your developer account in order to
+officially register your app identifiers. And another reason that you will need a
+developer account for Apple and Google is that you will, for Apple, if you want to be able to
+deploy your application onto a telephone and not use a simulator,
+then you will need to register a developer account and use some resources that Apple provides you
+in forms of certificates and keys and profiles in order to deploy your application to a telephone
+or an iPad, for instance. In Android, the world is a little bit different in that you don't have
+to do the same process, but in order to then submit your application to Google for review,
+later, so that it can be available for everybody who has an Android telephone
+or a tablet, you will still need a developer account. So it goes without saying that it is
+a very important step that even if you decide not to deploy your application later to App Store and
+Play Store, it's still a very fundamental step. So I suggest that you actually go through these
+steps that I'm going to provide you in the first chapter. And that's why I actually decided to have
+this as chapter one. Sorry, I have to just edit my notes a little bit. If you haven't watched the
+introduction to this course, and you're just jumping here, I suggest that you go to the
+introduction and watch it. I know it was about 34 minutes. It was quite a long introduction,
+but there were so many important points that I feel everybody needs to know before you get
+started with the course. So please watch those. If you see me moving my head around, then you know
+the reason. And I explain a lot of things that are like the fundamentals of this course and the
+reasoning behind all those decisions, which I believe are so important that I still suggest
+everybody watched an introduction before they actually start with the course. So we've now
+talked about the basics. And if you go to why we need a developer account, I believe I've already
+covered this in that the developer account is the utility is an account that you register for Apple
+and Google that gives you extra resources as a developer in order to be able to deploy your
+test and deploy your applications to the respective app stores.
+Now, if we talk about developer accounts, there are two main types of developer accounts. One is
+an individual account, and the other one is a company account. And for me, the biggest
+difference between these two different accounts is the liability. And by liability, I mean, if you
+register an individual account, then you as an individual are liable for that application. And
+as users download your application and interact with it, if they have any problems and if, for
+instance, there's any judiciary problems, like if someone for some reason believes that you're
+storing their data in the wrong way or that you're storing their personal information without
+exposing that and telling the users about that, then they can personally hold you liable for,
+for instance, breach of information or GDPR infringements or whatever it is. So
+just know that you can register yourself as an individual for both Apple's App Store and Google's
+Play Store, but you need to also be aware that should you wish to do that, then you're personally
+liable for any problems that may be occurring in the future. So that's the personal account
+or an individual account. And as a company account, then you kind of like, based on what
+type of company you've created, you may or may not be personally liable for any damages that may
+be caused to your users and if they bring it up to you. Now, I know this is all sounding a lot
+serious. In reality, what we are trying to do is not that big a deal, but we are still trying to
+store. I mean, the goal of this course is to go through an application and create an application
+that can store users' notes. Notes can be quite personal and you're storing those notes then
+on a backend that you have full access to. So you're kind of like storing user-created data.
+So it is very important that you actually treat that data correctly. Make sure that nobody
+except those who are authorized can access that data. So from a responsibility point of view,
+it is actually a little bit different what kind of company account you want to create, if that's
+what you want to create now. Because for instance, in Sweden, where I live, you can have a personal
+company account in that, sorry, a personal company. So you can register a personal company. It
+means that you are personally liable for that company. And you can also create a company that
+it has like, it's like an umbrella. Basically, it sits on top and then there are people who are
+directors of the company and blah, blah. So you're not personally liable.
+And that is the same structure that you can find in many other countries. I believe US, Germany,
+Sweden, England, many other countries, you can set up companies that are either sole proprietorship
+or something called, English is not my first language, but it's something like that. Or you
+can create like a limited company that you have limited liability and you're not personally liable.
+So these are the different types of developer accounts that you can set up.
+So we can, I mean, that point, I think we all understand now that you can create
+individual or a company account. Now, I think, I mean, I personally registered already an account
+as an iOS developer and an Android app developer. So,
+and since I registered a company account, I can't go through setting up the exact same company again,
+but at least I can show you some of the steps involved in creating those accounts.
+So what we could do is to, now you can't see the screen right now, but I will bring it up here
+so that you can also see. Now I'm going to bring my studio here and I'm going to make this screen
+a little bit bigger so that you can see my screen better. So let me also make this a little bit
+smaller on top so that you can see the content a little bit better.
+So you can see here that there are two options available to you. Either you enroll as an individual
+or you enroll as an organization. And it is strongly recommended actually.
+So you need to make sure that you have two-factor authentication turned on.
+And so that's not a problem. All this means basically as an individual, it means that just
+you will need an account. You will need to set up an account. However, if you want to set up as an
+organization, like if you have a limited company and you want to create an Apple developer account
+that is linked to that organization, it's a little bit different because you will need to set up
+something called a duns or duns or I don't know how you want to pronounce it D-U-N-S.
+Which is kind of like, it's a new thing for me at least, but it is an identifier for your company
+that you either have been assigned to already. I think there is a company called DMB.
+So if you go to, let me see if I can bring the notes for that.
+Let's see. Learn more. If you go to learn more here. Here, DMB is called by Don and Bradstreet.
+So there then we have the ability to register a D-U-N-S number.
+For me, I was one of the lucky people to have already been assigned a D-U-N-S number for my
+company by DMB because you either have, let's see if they write it here.
+You see it says DMB may have already assigned your organization a free
+D-U-N-S number. Before enrolling, look up your organization to see if you have a D-U-N-S number.
+So you can just click on the link and we can go here and you can then select your region. For me,
+it would be Sweden. Then I would write my company name, some address information, contact information,
+etc. Then you can check whether there is a D-U-N-S number assigned to your company.
+So I suggest that you actually do this by going to this website.
+So that's for a D-U-N-S number if you already have one, but if you don't have one,
+then you will have to create and request a D-U-N-S number from DMB. I would show you the website for
+DMB and D-U-N-S number right now, but my browser is set up so that my locale is already provided to
+the browser, which is Swedish. Then if I go to the DMB website, you're going to see everything in
+Swedish. That doesn't make any sense just to read the information in Swedish. I believe you can go
+to DMB's website. So if I search for a DMB, D-U-N-S or D-U-N-S are here. So this is a Swedish
+localized website for DMB. Let's see if it can change the language.
+Actually, I can see here that they're very, they're actually in Sweden.
+And I wonder if we can, here, change country. Let's just say
+international.
+So if we go here, let's see if we can,
+if there's any way to actually request a D-U-N-S number, like if you say D-U-N-S.
+And I can't see anything related to that, to be honest with you. So if we go back
+here, I can see, I can request the D-U-N-S and here the locale is S-V-S-E. And here,
+the locale was E-N-G-B. So what happens if we just go back to this URL that we were on before,
+and then I just change the locale? Does that work? Well, unfortunately. But, I mean, here,
+D-U-N-S number, get a D-U-N-S number. Okay, that's good. And then, and you can here say,
+I'm an Apple developer, press continue. Oh, it sends you back here. That was really bad.
+So it says, look up your organization in Apple's website. And when you try to get a D-U-N-S number,
+it tells you to go to Apple's website. If we say that, then okay, legal business name, etc., etc.
+Then okay, legal business name, etc., etc. Okay, so you will need to go through this process,
+which doesn't seem to be completely easy to get a D-U-N-S number. You see, request the D-U-N-S
+number. So you probably just want to go to dmb.com, it's like d-u-n-s-number.html. And I can't
+explain this complete process, to be honest with you, because first of all, it will be a waste of
+time for both of us. Because these are so many moving parts and a third party company that I
+have no control over. So if I even try to explain their process, it may change tomorrow. So there's,
+it's not a good investment of our time. But everybody else has figured it out. And I'm
+pretty sure that if you just go and say, request the D-U-N-S number, you can just
+follow the process and then get your D-U-N-S number. But begin by going through,
+look up your organization. So you may already have been assigned a free D-U-N-S number. So
+do that first, please. But if you have to request the D-U-N-S number, I believe there is a little
+bit of a cost to it. And that is about $70. If I'm 70 to $80 at the time of recording this video.
+So count with almost about $100. And hopefully not more, hopefully actually a lot less, but around
+$70 at least. Does that make sense? I said so many numbers, $70 at least. So try to get your
+D-U-N-S number. At least that that's what Apple says you will need. Now, of course, if you want
+to register as a company, I can't stress this enough. You will need a website. I remember vividly
+when I registered a developer account at Apple and they rejected my request saying that, well,
+your website doesn't have any content. And they were right because I just created an empty website,
+like a domain. I know I didn't actually create an empty website. I registered a domain.
+And there was no website. So when you typed my website's name, it would just not show you anything.
+And they came back and said, no, your application is rejected because you don't have a website.
+What kind of company are you? So then I had to actually get like a hosting service and I have
+some content in there, have like a support. So if you are registering as a website, sorry,
+as a company and as an organization, you will need a hosting service. You will need a domain
+provider. You will need to ensure that you have a website because they're not the same thing. If
+you have a host and you have a domain provider, it still doesn't mean that you have content
+on your web page. But what I realized is that if you register your domain and have a hosting
+service, make sure that you have a website. Just have some content in there and say, hello,
+we are this business, that business. We work with this and this. If you have any questions,
+contact this email. And here's our phone number. Here's their address, et cetera. So
+you need to ensure that if you have an organization, it is actually an organization. It's not just like,
+hi, my name is Fubar. I'm sitting at home. Contact me if you have any questions. Not like that.
+So and of course, after you made your decision, you start the enrollment process. So
+now learn more, continue enrollment on the web you can do. And then you come here and you will
+basically need to provide your information and continue with the process. Now we're not going
+to go through this, but the important thing I have to mention here is that as you go through
+the enrollment process, as an Apple developer, unfortunately, there is a cost last time, which
+is about a few months ago when I registered, or I had to renew my registration. You have to renew
+your registration for Apple's developer account. You have to renew it every year. And as I've
+mentioned here, the process is not free, unfortunately. It costs, or last time I
+registered or renewed my registration, it costs $99. And I believe it's been $99 for a very long
+time. So if you're in Sweden, it costs about a thousand crowns. If you're in England, it probably
+costs about 80 pounds or something. And in the US it's about, yeah, just count with almost $100. So
+I used to be able to provide this like you have to have some sort of a credit card or debit card
+to be able to pay for it. So after you've done that, after you register your account as an
+organization, you will have direct access then, or an immediate access to your developer account.
+And you can start developing applications, et cetera, et cetera. So if you're following along
+with this course and you want to deploy your application to the App Store and Play Store,
+please do this first. Get your developer account either as an organization or as an individual.
+Get that process out of the way because a developer account, especially if you're an
+organization, as I mentioned here, is not a super fast process. I mean, when you get the account,
+then it's simple. It's fast and you're in there immediately. But the process itself is a long
+process. So I remember for me, it took about two weeks because I got one rejection. It took about
+one week for them to review the documents again. So it's not a fast process, unfortunately. It's
+like very, yeah, it's just a long, long, boring process. So get that out of the way, if you can,
+please. So that's for the long and not free part for iOS. And also, one more thing that I need to
+mention is that if you're registering and you want to sell applications, which is not the purpose of
+this course, but if you want to sell applications, then you will have to provide some banking
+and tax information. So they need to ensure that the stuff that you're selling in different
+countries, the money that is then being sent to your bank account, will be accounted for when
+you're paying your taxes. So, and I believe that if you're trying to sell apps on the app store,
+then you will have to fill in some forms with the US tax offices. I don't even remember IRS, I think
+internal revenue services or something like the IRS. I believe that you have to fill some forms,
+like send the forms to them, then they will come back with some sort of identifier to you.
+And then you will need to use that identifier on Apple's website in order to basically say
+that, yeah, yeah, I know, I'm selling stuff in the US, I'm selling stuff in Japan, I'm selling
+stuff in Sweden, Norway, but I'm going to pay taxes for them here in my country. And that's
+what the form says here. Here's my name, here's my company. I'm an organization or I'm an individual,
+so I have no company. My personal identification number in my country is this, is my address,
+my phone number, et cetera. And then you send it to them, to IRS, and then they come back and say,
+okay, now we know who you are. And here is your identifier number, like a business identifier
+number, BIN or something they call it, I think. I don't remember exactly, but I believe depending
+on whether you're a business or an individual, then the number is a little bit different.
+So if you're a business, I think it's BIN. And if you're an individual is in, I don't know.
+So I don't know what that dialogue was. Some Bluetooth devices wants to connect to my computer.
+I don't know what it is. So that's that part. It can be long and it's not free. Okay.
+That was a lot of information. That's for iOS. Now, what we can do now is to talk
+a little bit about Android as well. And the good thing about the Android process,
+like setting up your account for, as a Google developer, is that it's a lot more straightforward
+as you would expect from Google. And given that they're even like sending updates to
+an Android app to the Google developer console is a lot more straightforward than it is for iOS.
+I don't want to scare you, but it is a fact. And you will know that later when we actually
+get to the end of this course where we release the apps for iOS and Android, that it is a little
+bit more straightforward for Google Play Store. But you still need to sign up for a developer
+account. So I'm going to take in my notes that I've talked about that. So what we also need to know
+is that there is a URL that we can go to. I'm going to copy that and paste it over here. So
+you see which one I'm talking about. Over here. Then you can see that you can set up a developer
+account. And once you've logged in, so I'm assuming that you're logged in, then you go to
+play.google.com slash console slash user or you zero sign up where URL, it may change. So let's
+just, what you can do is just a Google, Google Play Console developer account or a Google
+developer account. Then you will end up in a URL that looks kind of like this. So don't count
+with this URL that I mentioned here because it may change. That's what I'm saying. And
+you can, as it is for iOS development, you can either set it up personally as an individual or
+you can set up as an organization. Now I happen to have set it up for myself as an organization
+because I do have a company here in Sweden. So it is a lot easier for me to tie all my business
+relations with Apple and Google into one entity, which is my developer account for,
+sorry, which is my company. So it wouldn't make so much sense for me to explain this either to go
+through all the details, but if you want to set it up for yourself as an individual, just press on
+get started. Or if you want to set up as an organization, just press get started there.
+As you can see, you can provide information about your organization. And you can see here as well,
+as soon as you say I'm an organization, then they say, okay, what's the website? So you can see if
+you say, I don't have a website, we recommend adding a website that represents your organization.
+Well, it kind of makes sense. I mean, if you're a company, where's your website? Every company
+should have a website unless you're like a pizza restaurant or something. Even a pizza restaurant
+probably needs a website, but we have a pizza restaurant here in our town that doesn't have
+a website. So they're on Facebook. And you probably don't want to say that your company's
+website is on Facebook. So yeah, where were we? Here. And if you say you're an individual,
+then you come here and they ask for some other stuff, but still interesting because
+it says enter the URL of your website or social media profile. So here you kind of have to need
+to enter that as well. So maybe you can get away with a Facebook URL. I laughed about it, but
+maybe you can get away with it. I don't know. But I don't recommend that, to be honest with you,
+because as you will see later in the course, when we actually submit our apps to App Store and Play
+Store, there are a few key data points that you have to provide to both stores. One is a privacy
+policy URL, and the other one is a support URL. And there are also two other emails you have to
+provide. The first one is the support email and the other one is a contact email. And if you're
+setting up a business account, then I really suggest that you actually set up a website,
+because if you set up a website and you have a domain, you have an email provider,
+then your email will kind of be like foobar at mybusiness.com. It's a lot more professional
+to set up an email that is connected to your email or to your domain than it is to say
+mrjohnson at gmail.com. I wouldn't trust a business that has a gmail.com account.
+I kind of want to know that, yeah, here's a serious business, that they have their own website,
+and blah, blah, blah. But on the contrary, setting up a website, setting up some emails
+doesn't necessarily mean you're serious either. But it makes it more dedicated, if you know what
+I mean. So yeah, that's the process for setting up an account also as an Android developer.
+I think that's about it. That's all I wanted to mention in this first chapter of our course.
+I highly recommend that you get your developer accounts for Apple and for
+Google. What you'll also need to know is that, I mean, I've talked a lot about now,
+Apple account and a Google developer account, but if you're developing your application
+on a Windows machine, for instance, if you're trying to learn how to develop Flutter
+applications and you don't care about releasing your application at all, you don't have to do
+any of this. Just follow along with the course as usual, no problem. But if you want to actually
+release your application for iOS, then you most definitely need to also have a Mac because you
+can't build your application otherwise. There are some tricks you can do. You can build your
+Flutter application and later on, like a friend's Macintosh if they have one, or you can send it to
+a service that's in the cloud and they build the app for you and then they will send it back to
+you and then you can submit it. Or maybe they even have to submit it. It's a bit hairy, to be
+honest with you, but it's a complicated topic. It is a little bit difficult to explain.
+For instance, if you're on a Windows machine, you can't even have Xcode. Xcode is the tool
+and the entire chain of tool sets that gets installed on a Macintosh in order to build
+an application for iOS platform. Now, why am I talking about this? The reasoning behind that
+is that if you're developing a Flutter application, then Flutter can be deployed
+on a Windows machine, Macintosh, or collectively called as desktop, web, Android, iOS, five
+platforms at the moment. If you're trying to release your application and build it for iOS,
+for instance, and test on an iPhone or an iPad, you can't do that on a Windows machine,
+unfortunately. There's nothing wrong with a Windows machine. It's just Apple's fault for
+locking down their build systems and alter tools to Macintosh. They haven't made the
+conscious decision or yeah, they haven't made the decision to
+bring their tool system and tooling to Windows, unfortunately, or Linux. Swift,
+which is the language to write native applications for iOS, can be run, I believe, on Linux.
+Windows might be, but its main platform is still Mac.
+I know that this is a lot of information also to learn, but if there is anything I want to
+close this chapter, the first chapter of this course with is, you can learn Flutter and follow
+along with the steps I'm going to provide in this course without having to register any accounts
+yet. So that's point one. Point two is that you will need a Macintosh if you want to use it for
+if you want to comfortably build and release your Flutter app for iOS.
+If you want to release your application on Google Play Store, which is point three,
+if you want to do that, you will need to register a developer account on Google Play Console,
+as I've shown you here. I believe that's all. That's all you need to know. So
+some of you may already have all these accounts and don't have to worry about it,
+but some may not know all this. If you're coming from a design background, if all you do is work
+with Figma, et cetera, this is some of the important information that you'll need to know
+about because I don't want you to get frustrated during the process, so I just want you to have
+some information so that you can get started at least without too much hassle. All right,
+that's it, I think, for this chapter. I can take in my notes that I've explained everything
+I wanted to explain. It did take about 35 minutes. It's not unexpected, to be honest.
+It's a lot of information, and I kind of want to take my time with it. It's important that you
+and for me as well to understand all this. So great. I think that's it for this video.
+So I'll see you in the next chapter. Hi, everyone, and welcome to the second chapter of our course.
+Now, if you haven't watched the introduction to this course, I really suggest that you do that
+before continuing with the course because there are so many points that I'll explain in that
+introduction that I believe are so important to understand before continuing with the course. So
+in this chapter, what we're going to do is we're going to take care of some setup steps that are
+required for pretty much the rest of this course and all the other chapters that follow
+along after this one, chapter three, four, and et cetera. So we're going to talk about Flutter,
+Dart, Dart Pad, how to install Flutter, whether you're on Windows, Mac, or Linux.
+And we're also going to talk about Xcode, Android Studio, and we're going to talk about a few
+very useful extensions to our code editor. So if you're coming from a background where you
+haven't worked with any kind of programming language before, I'm going to take this chapter
+quite easy. So if you're an advanced programmer already, you may want to skip this and you already
+have Flutter installed, everything, you can skip this chapter without a problem. So let's start by
+talking about what Flutter is. Well, traditionally developers and programmers
+or software engineers, however you want to call them, they've been creating and writing code with
+their fingers in different languages, and then they're targeting different platforms. It's
+very important to understand what a language, programming language is versus a platform.
+Think of a platform as the end station where a software ends up being run on. So let's say
+Windows is a platform, Mac is a platform, Linux is a platform, and iOS that runs on all iPhones
+is a platform, Android is a platform, et cetera. Now, you would have programming languages that
+you as a software developer would use in order to target those platforms, to write software for
+those platforms. So you use a programming language in order to write a piece of code
+and be able to run that code on that target platform. So the programming language example
+is JavaScript, Python, Swift, Rust. What else is popular right now? Java, Kotlin, all these.
+These are programming languages. So you as a software developer who's trying to learn
+Flutter would use then Dart as your programming language, as I will soon explain. So
+that has been the tradition that a person sits in front of a computer and says,
+okay, I want to write a program for Windows. Then they go and write some code maybe with
+Csharp.net, or maybe they will just use some other technology. I don't know what's out there
+right now for Windows. Maybe they would use VB.net, and then they would be done and they
+would release the software for Windows and be like, okay, I'm done. Now, then someone comes
+into the project and says, oh, we need the same software for Macintosh, or we need the same software
+for some other, for instance, platform. Then you would have to go and write the same software,
+exact same code, pretty much, for the other platform. So this process would be very repetitive
+in that you would have to write the same software over and over again. So things such as Flutter
+came in in order to remedy that. So saying that a software engineer sits at home or sits in the
+office, works with a group of other people and a designer maybe, or a few designers, UXer as a
+product owner, et cetera. They would write the same code, which will then be run on different
+platforms. So as a software developer, you wouldn't have to maintain different, very similar pieces of
+code that only can be run on one specific platform. So Flutter in its ground basically is a UI
+framework for writing beautiful applications that run on multiple platforms at the same time.
+Developed by Google, has been in production for a very long time. It's tried and tested. It's
+open source. And if you don't come from a software engineering background, open source basically
+means that the code that is written for Flutter, basically the code that makes up Flutter, is open
+to the public for finding bugs and also for contributing to it or maybe just learning from
+it. So if you're, for instance, coming from a background of as a designer, it's kind of like
+you have your Figma file open to the entire world or your Adobe XD source open to the entire world
+for them to watch what you're doing as you're designing and also for them to be able to fix
+stuff in your design if they see it not working as it should. So that's open source. So Flutter is
+open source UI framework developed by Google. What a framework means, I mean, if you're not coming
+from a software engineering background, a framework is kind of like a set of tools provided to you
+as a software developer. So you can use these tools, take a bit of this one, take a bit of that
+one in order to produce an output. So Flutter in itself is a software, but it's more precisely
+referred to as a framework because it's a collection of tools. So if you hear framework,
+just know, oh, there's a collection of things I can use to produce some output. Now,
+that's what Flutter is. But what powers Flutter is a programming language called Dart. And
+Dart has been in the making for more than eight years is a language that at the moment being
+maintained by Google and also is open source. So anybody can contribute to it, anybody can learn
+from it and find exploits or maybe problems with it and it will get patched by the public or by
+Google themselves. So Dart is the language, the programming language that powers Flutter, you could
+say. So now you know what Flutter is and now you know what Dart is. And I think in the next step
+now what we can do is talk about a great piece of web software called Dart Pad. Now,
+Dart Pad, as I said, is a web software or you could just call it a website that allows you to
+run or write your Dart code, maybe pure Dart code or code for Flutter and run it directly in your
+browser without you even having to install anything. So just open your browser and as you
+will see soon we go to Dart Pad and you will see how it looks like. So let me just show you a little
+demonstration here. So here I have Dart Pad open and I can actually increase the size so you can
+see a little bit better. I may have to rearrange some components here on the screen so you can see
+the screen better. So I went to dartpad.dartlang.org and you can see here that there is a program
+written on the left-hand side and I can actually, yeah, let this what is Dart, Dart Pad allows you,
+blah, blah, text to be there so you can have context of what I'm talking about. And you can see
+that the program is sitting there and you are allowed then to either change the program the
+way it is or click anywhere here to see documentation down here or press the run button.
+So I'm just going to press the run button and you can see that the text hello got printed to the
+screen five times plus the number of times it was actually printed. It's also printed to the screen.
+So hello one, two, three, four, five. So what you see on this side is the source code if you
+remember from open source. So this is the source code written in the programming language called
+Dart. And this is the output of that program. So Dart Pad allows you to write text here and just
+execute it and see the results immediately. So that's what Dart is. I mean, sorry, Dart Pad is.
+And we're going to talk about Dart and Dart Pad more in the course. But right now what we should
+do is to start by installing Flutter. Because, I mean, you could say, okay, but Flutter is just the
+UI framework. How about Dart? Well, the way Flutter is packaged by default is that it includes the
+Dart programming language and its runtime. So the tool is required to run any Dart code.
+It packages all of that in just one big chunk for you. So you don't have to go and install
+different components like install Dart separately in Flutter. So let's just then improvise. And I'm
+going to say in here, let's say install Flutter. Okay? Then you go to this beautiful website called
+Flutter.dev. I'm going to increase the size here so you see.
+So we go there now. And you will see this beautiful website here. And what we're going to do is just
+to press on get started. And remember, we pressed on get started. But this website looks like this
+right now. Maybe in a few months or maybe in a few years, it will change. So you'll just have
+to find out a way to get to the installation part. Right now it's called get started. And I
+can see it's located as docs.flutter.dev get started install. Then pick your platform here.
+I'm on a Macintosh, but if you're on a Windows, just click on Windows and then you get instructions
+on how to install Flutter. And then, or if you're on Linux, you can also do the same. Just get
+instructions for your platform. Now I'm on a Mac and I'm going to click on Mac. And then I'm going
+to look at this information here. I'm going to increase the size so it's a little bit easier to
+read. And it says, okay, download the following installation bundle to get the latest stable
+release of the Flutter SDK. SDK means software development kit, I believe. So it's just like
+series of tools for you to use. It's just fancy words. So then we're going to do that. Let's just
+get Flutter Mac. I'm going to download it. And it may take some time because it is actually quite
+a chunky bit of software. As you can see, it's almost 1.2 gigabytes. So depending on your
+internet connection, it could take anything between a few seconds to a few minutes.
+And after you've done that, then you will have to unzip that in some folder.
+So what that means is just I can see that my Mac is already decompressing this zip file
+for me. So I don't have to do that myself. And it's already decompressed in this
+place. So I'm just going to click on it and I'm going to show you its content. So it looks like
+this. Okay. Now that you have this, what you need to do is to ensure that all these files are
+placed inside a location on your computer, which is protected so that you don't accidentally
+delete it. And it's also a good, like, you know exactly where it is. So by that, I mean,
+don't put it on your desktop and don't put it in like documents or anything. It's not a
+document. It's a software. What I like to do is usually to have a folder on a Macintosh called
+Dev. So I will open Terminal here, as you can see. Terminal, if you're not familiar with it,
+is an application that you can control pretty much the entire system with it. If you're on a Mac or
+if you're on Linux or any Unix based system. And if you're on Windows, you can also do a lot with
+your Terminal. So in Windows, that Terminal is called CMD, I believe, as in command, I believe.
+On Linux and Mac, it's called Terminal. I'm using a Terminal here called iTerm.
+But if you're on Vanilla Mac OS, then you would go and open Terminal
+like this, which is just looking like that.
+So I'm going to open iTerm right now, which is my Terminal. You can open the Terminal that
+you're comfortable with. I'm going to increase the size of this. I like to place
+my installations for these pieces of software in my home directory, which is denoted by this
+little funny character, slash dev. And if I look at the contents of this, I can see
+if I look at the contents of this, I can see I have a folder called Toolink. If I say Toolink
+and look at the contents of it, I can see Flutter is right there.
+So for me, Flutter installation, this folder that got downloaded for me in my downloads folder,
+I would go and copy its contents and place it in this folder. So if I say CD Flutter,
+and then you can see that I'm in my user, Dev folder, Toolink, Flutter. So this is where I
+choose to put Flutter. Now you can choose to put this downloaded folder anywhere else, as the
+documentation tells you, in the desired location, for example. So go ahead and do that. Pick a
+location. For me, this location works. For you, it may be, if you're on Windows, it would probably be
+C backslash, I don't know, you could say dev backslash Toolink backslash Flutter. This could
+be a good location for your Toolink or Flutter. So I'm imagining now that you've done that. You've
+gotten a folder, and for me, it's this one, where you've extracted your Flutter installation in.
+Now you can see that it says, in this third step, you will need to expose Flutter's binary
+files to your system. And what that basically means is that Flutter as an SDK or a toolkit
+or a framework, it has a lot of bits and pieces of software in it. And some of these bits are
+more important in that sense that they're actually executable in that. Imagine that
+on your computer, whether it's a Macintosh, Windows or Linux, you can have different
+documents. Some documents can be text. Some documents can be images. Some documents can
+be, I don't know what else they can be. Or a Word document, for instance. Okay,
+good. I came up with another example. Or they could be programs. A program is something that
+you can just double click on and a piece of software gets executed and then it will open.
+For instance, an example of the program is a Microsoft Word. Another example of program is
+Google Chrome web browser. Another example of program is Safari. So these are programs.
+And Flutter comes also with its own built-in programs that do very specific and important
+things on your computer related to Flutter, of course. Sorry, I have to see my recording studio.
+Nothing you had to do. It was just for me. So these important programs that are inside
+the Flutter installation, which you just downloaded, need to be exposed to your entire system
+so that you can work with Flutter with ease. And that means if you're, for instance,
+from a design background, it will allow you to anywhere in your terminal, just write Figma
+and Figma app would open. And that's the same thing with Flutter. In this folder, you see,
+we're in the Flutter folder where you downloaded your installation and installed it in this folder.
+There is a folder called bin, which means binary. In here, there are so many things that are important
+to the entire system to run. You see Flutter and Dart. These two, I said so many, but yeah,
+there's pretty much two. So these two binary executables need to be exposed to your system.
+And the way to do that on a Macintosh is to change your paths as is documented here.
+So the way I like to do that is I go and change my, if I do a vim and look at my zshrc,
+I can see my paths and you can see it here. So you see, I've actually put that export command
+as it is stated here. I put it here, you see. This may be a bit intimidating, to be honest with you.
+Well, all it's doing is that you see this file that I've placed here, I don't know if I can
+actually zoom into it. And if you can see, I don't know how that looked in the actual recording,
+but this is sort of like a set of instructions to my terminal on this Macintosh to tell it
+where different bits and pieces of binary executables are placed, such as Flutter,
+Dart, Python, et cetera, et cetera. So when I install a piece of software in this way,
+you see, we just downloaded a package and just put it somewhere on our computer.
+Macintosh won't know about the stuff that's in it. Of course it won't. So you have to tell it
+where those things are. Because otherwise, if you don't do this step, if you don't do the step three,
+then every time you want to run Flutter, then you have to specify exactly where that Flutter command
+is. So for me, it would be my home folder, dev tooling Flutter bin slash Flutter. But if you do
+this, then you can anywhere in your terminal, just write Flutter and your Macintosh or Linux or
+Windows computer will know where to find it. So do that. Put these instructions as specified here
+in your path. And after doing that, you may need to reload your path using a command on Windows and
+Linux called source and VSHRC for me. Depending on which shell you have, you may have to
+put that instruction in somewhere else. On Windows, I believe you will have to modify your
+environment variables. I remember this from many, many years ago. Let's see if you have to do that.
+Update your path, you see. If you wish to run Flutter commands in regular Windows console,
+take these steps, blah, blah. From the start search, end and select edit environment variables
+for your account. So what you'll just have to do, really, is just to follow these steps. I mean,
+I'm going through basically giving you some of the basics of these instructions so you can get
+like a head start. But these instructions can also change in the future. So don't rely just on what
+I'm telling you, please. Just go to the installation website here as you see docs.flutter.dev. Get
+started and install.

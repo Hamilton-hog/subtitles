@@ -1,0 +1,1153 @@
+start	end	text
+0	4880	and try to follow along with the steps provided.
+4880	9240	So after you've done all of this,
+9240	12960	you should be able to be anywhere on your computer
+12960	15840	and just say Flutter doctor.
+15840	18720	Now Flutter doctor is a very important command
+18720	21640	because it looks at your Flutter installation
+21640	25360	and it kind of makes sure that it's in good health,
+25360	27920	as denoted by the word doctor.
+28440	32040	So because Flutter in itself is a framework
+32040	35440	and it depends on many other bits and pieces
+35440	37340	which your computer may need to have
+37340	40420	in order for Flutter to actually work optimally,
+42640	45420	Flutter doctor will then go through a series of steps
+45420	48040	to ensure that first Flutter is updated
+48040	51920	and that you for instance have Android tool chain
+51920	55480	that you have Xcode installed, Chrome, blah, blah.
+55480	60480	So I mean, this result at the moment
+60520	62160	looks quite fine on my computer,
+62160	63640	but if you're running Flutter doctor
+63640	64900	for the first time on your computer,
+64900	67400	you may get a few problems.
+67400	69560	Some of the problems that you will experience probably
+69560	72920	is gonna say Android SDK couldn't be found,
+72920	75040	Xcode couldn't be found,
+75040	78320	because if you're running Flutter on a Windows machine
+78320	81000	or a Linux machine, then you can't have Xcode.
+81000	84760	Xcode is like the software provided by Apple.
+85760	88560	And only runs unfortunately on Mac OS
+88560	93560	and it's used for compiling or creating Mac OS,
+96560	100040	iOS and iPad OS pieces of software.
+100040	103640	So although you can run Flutter on your Linux
+103640	107520	and on your Windows machine without a problem,
+107520	112520	you won't be able to produce or test your Flutter code
+113000	115440	running on an iPhone, unfortunately,
+115440	119320	unless you have access to Xcode.
+120200	122760	And the easiest way to get access to that is of course,
+122760	123800	to have a Macintosh.
+123800	127720	And that's unfortunate because yeah,
+127720	130640	it's just not available for other platforms.
+132160	137160	So you've run Flutter doctor and it's basically gonna tell you
+137880	140880	that, okay, now I'm gonna assume that you're on a Macintosh.
+140880	143920	It's gonna tell you that, okay, Xcode, for instance,
+143920	145240	you need to install Xcode.
+145240	148240	And the way to do that is you need to open App Store
+148240	151200	on your computer and just type Xcode here
+152360	155360	and go and install Xcode on your computer.
+157640	160000	So depending on, I don't know which version
+160000	161080	is the latest at the moment,
+161080	164760	but if you're trying to develop Flutter app to be able
+164880	167880	to run on your iOS phone or the iOS simulator,
+167880	169440	then you need to install Xcode.
+169440	171200	If you're on a Macintosh, sorry,
+171200	173480	if you're on a Linux computer or Windows,
+173480	174800	you don't have to do this step.
+174800	177160	Actually, you can't do unfortunately this step.
+179720	181760	So once you've done that,
+181760	186760	you also need to make sure that you've installed
+187840	190720	developer tools for Xcode.
+190720	192920	So you need to install Xcode.
+193200	194880	Developer tools for Xcode.
+194880	196480	So let's see how we can do that.
+196480	198680	Developer tools, Xcode.
+200560	202440	Command line tools, right.
+204560	208240	Let's see, install from terminal,
+208240	211880	there's a command that you can execute in order to do that.
+211880	214200	And that command actually looks like this.
+216120	220720	Here, I will zoom into it so you can see better.
+221320	225760	It says sudo xcode select install.
+225760	228480	So you need to issue that command in your terminal.
+228480	230960	So if I do that and it says, what's the password,
+230960	234440	I'll enter my password and it says they're already installed.
+234440	236600	So if you haven't done that,
+236600	238600	please go ahead and execute this command
+238600	242760	in order to install command line tools for your Xcode.
+244880	249360	Now, the next piece after Xcode that you will need is
+251080	253960	let's see if I can actually bring up.
+253960	255440	So we've talked about Flutter Doctor,
+255440	256480	that was Flutter Doctor.
+256480	258640	And we also talked about installing Xcode.
+258640	260880	So I'm now bringing that up a little bit late.
+261800	265600	But now the next step is to install Android Studio.
+267040	271400	So what Android Studio is, is like the equivalent of Xcode,
+271400	274720	but for writing Android specific applications.
+274720	278160	Now, in order to write Flutter applications,
+278160	280760	you don't need Android Studio per se,
+280760	284040	but you kind of need the SDK manager.
+284040	287640	Now, both iOS and Android,
+289920	292720	for programmers, they provide you with something called an SDK,
+292720	295080	just like Flutter is an SDK or toolkit.
+296000	298440	iOS and Android also provide you with SDK
+298440	301040	in order to write native applications.
+301040	305360	And since Flutter utilizes these native capabilities
+305360	307160	of each platform in order to, for instance,
+307160	310400	create an application that's compatible with iOS or Android,
+311640	316040	it will utilize the native components, sorry,
+316040	318000	or the native pieces of software,
+318000	321400	namely called Xcode, sorry,
+321400	325200	namely called iOS SDK and Android SDK.
+325200	327840	So you need to download Android Studio
+327840	329560	so you get access to the SDK manager
+329560	331920	so you can install an Android SDK.
+331920	333720	Now, Xcode in itself,
+333720	335480	when you download the latest version of Xcode,
+335480	339000	it comes with the latest version of the iOS SDK,
+339000	341280	but Android Studio doesn't do that.
+341280	342120	Well, wait a minute.
+342120	344000	Yeah, it probably does in the latest versions,
+344000	345800	but we can check that out.
+345800	348400	So if you go to your browser and just say Android Studio,
+349840	352560	and then you open up developerandroid.com.
+352560	353600	Let's just go there.
+354920	358440	And then you can just click on download Android Studio,
+358440	359960	and then there are download options,
+359960	363760	and you can see there's available for Windows, Mac, and Linux.
+363760	368760	So then please go ahead and download your Android Studio,
+369680	372920	and I can see for Macintosh is a package,
+372920	374120	so you can install it easily.
+374120	375560	You don't have to unzip anything,
+375560	378080	and for Windows is also like an executable,
+378080	381000	so tar.gz as well for Linux.
+381000	384680	So now let's say that you've done that.
+384680	386640	Now, after doing that,
+386640	389680	then you should be able to bring up Android Studio.
+391600	392440	Let's see.
+394560	396160	I'll bring it up here.
+397320	400200	Now, when you bring up your Android Studio,
+400200	403760	it will just pretty much be empty here on the screen,
+403760	405240	and you'll get some tips and tricks
+405240	406400	how to use Android Studio.
+406400	408000	But the important thing for you here
+408000	413000	is to be able to install the Android SDK.
+414200	417160	So if you go then to tools,
+417160	420000	I believe there is an SDK manager right here.
+421000	425560	So just ensure that you have an SDK installed.
+425560	428600	For me, I have Android 12 installed here.
+428600	430800	So ensure that you have one of these SDKs
+430800	434360	ready for you to use by Flutter.
+435280	436720	And as soon as you've done that,
+436720	441720	then when you run then your Flutter doctor command,
+442560	447560	then the part about Android SDK is going to be ticked here.
+449960	451440	Sorry, the Android Studio.
+452480	453320	So that's that.
+453320	455120	So we've talked about the Android tool chain,
+455120	457400	which is the Android SDK you can see.
+457400	458720	We've talked about Xcode.
+458720	460120	Chrome is just a web browser.
+460120	461400	If you want, you can have that.
+461400	464520	If you're developing Flutter applications for the web,
+464520	466160	it kinda is necessary.
+468520	470000	And then you can run Flutter.
+470960	473520	And then this, you're probably,
+473520	475560	if you're just getting started with Flutter,
+475560	478120	you're not gonna have this VS Code part ticked
+478120	481720	because VS Code is a code editor,
+481720	486200	an open source code editor provided by Microsoft.
+487280	489240	And it is the code editor
+489240	491880	that I'm gonna use for the entire course,
+491880	494200	for this entire course as we go on.
+494200	495160	And to be honest with you,
+495160	496520	I've tried Android Studio
+496520	498560	and I've tried VS Code for Flutter development
+498560	501280	and I can highly recommend that you use VS Code
+501280	504040	just for its sheer performance,
+504040	507440	it's for its simplicity, extensions,
+507440	512440	and its ability just to really focus on a simple editor
+512920	515120	without bothering you with lots of bells and whistles.
+515120	517320	So it's a preference though.
+517320	519960	Some people use Android Studio for Flutter development
+519960	521320	and some people use VS Code.
+521320	524440	So I don't think one is better than the other.
+524440	525920	It's completely a preference.
+525920	530920	So that's for Android Studio and the Android SDK.
+531120	535080	So now let's go ahead and install Visual Studio Code,
+535080	537880	which is the tool that I'm gonna use for this course.
+537880	540520	So let's bring up a new window
+540520	544480	and I'm gonna say, install Visual Studio Code.
+544480	547480	And I'm gonna bring the window up here so you see.
+547480	551920	Let's go here and you can download the one that you prefer
+551920	554160	for your computer, I've chosen Mac.
+554160	555840	And for me specifically,
+555840	557720	I have a Macintosh with an Apple Silicon.
+557720	560960	So I then choose this one Mac with an Apple Silicon
+560960	563240	and then it's gonna download that for you automatically.
+563240	565880	So it's just about 200 megabytes, I think,
+565880	567880	or actually 100 megabyte only.
+567880	570400	After you've done that just on a Macintosh,
+570400	575400	you would go and put that on in your applications folder.
+577080	579320	So I'm actually gonna delete that,
+579320	580680	which I downloaded just now
+580680	584000	because I already have VS Code on my system.
+586760	590400	So that's for Visual Studio Code.
+593000	597560	So let's go ahead now, now that we've done that,
+597560	602560	I'm gonna talk a little bit about some extensions
+603960	606280	that we're gonna use in Visual Studio Code.
+606280	609000	So let me bring up my terminal
+609000	612240	and we don't need that.
+612240	614280	Let's go and bring up Visual Studio Code.
+615200	618520	And then I already actually have
+618520	620800	so many Visual Studio Code windows open,
+621720	623840	but I can just say new window.
+623840	626680	So you see how Visual Studio Code looks like.
+627880	631040	And then let's see, don't show again.
+631040	633200	Okay, so this is pretty much how Visual Studio Code
+633200	636200	looks like, so it's a very simple application to begin with.
+637200	639240	Now, what we need to do for this example
+639240	641200	is to enable a few extensions.
+641200	644320	Now, the first extension that we're gonna enable
+644320	646240	is called error lens.
+646240	648880	And you need to go here on the left-hand side,
+648880	651520	find extensions and just type error,
+651520	656520	if I can type error and just say error lens, just like that.
+656520	659920	Click on error lens and just press enable or install,
+659920	660960	I believe it's called.
+660960	664720	So error lens allows you to see errors in line
+664840	667560	without you having to click on a specific line
+667560	669400	of error, basically.
+669400	674160	So it expands the entire error as you're coding,
+674160	676040	you will probably have some errors in your code.
+676040	678040	That error will be then displayed right there
+678040	679920	in front of your face in its entirety.
+679920	682400	So you don't have to press a little small button
+682400	684800	to be able to see that complete error.
+684800	687920	So it's a fantastic extension, to be honest with you.
+688800	691000	Now, the other thing that you'll need
+691000	695080	is something called bracket pair colorizer.
+695080	697160	And that bracket pair colorizer is something
+697160	701280	that is already installed in Visual Studio code.
+701280	704840	It used to be an extension that you could download,
+704840	708080	but it was so popular that Microsoft has added that
+708080	710080	internally to Visual Studio code.
+710080	711960	So you don't have to do that manually,
+711960	713480	sorry, by installing an extension.
+716200	717920	Now that we've talked about that,
+717960	720840	the next step is to actually install
+720840	723240	Flutter and Dart extensions.
+723240	726600	So here, just type Flutter.
+728040	728880	Let's do that.
+728880	732800	And then just click on the install button.
+732800	733800	I've already installed that,
+733800	735880	so there's a disable button for me here.
+736800	738560	The Flutter extension,
+738560	740840	and then you'll also need the Dart extension.
+740840	743760	So just type Dart and then install that as well.
+744760	748760	So after these two installations,
+750320	755320	we also need to install another great extension called block.
+755320	757120	B-L-O-C.
+758240	760600	I'm not gonna go into the details of what block is,
+760600	764520	because you will learn about block a lot later in the course,
+764520	768440	but it is just a great extension to have.
+768440	770360	As we go on, you're gonna learn about it.
+770400	773440	So I can't really explain exactly what it is right now,
+773440	774720	but just install it,
+774720	777280	and I will tell you more about block later
+777280	778600	in the course, I promise.
+780040	785040	So that was basically installing a block.
+786280	788840	Now, when you start up your Visual Studio code,
+788840	791520	it probably doesn't look like the way it does for me.
+791520	794320	And that is because I have a custom theme
+794320	798320	installed on my Visual Studio code called Tokyo Night.
+798520	803520	It is a very, very mellow, dark theme, as it's called.
+805120	807800	And themes in Visual Studio code can be installed
+807800	809760	just like you install an extension.
+809760	812320	So if you like my theme,
+812320	814680	you're more than welcome to go into extensions
+814680	819680	and then search for Tokyo Night and just install it.
+820000	823960	So it has different theme colors as well.
+823960	826400	This is the one I use, Tokyo Night.
+826400	829320	Actually, I use this one, Tokyo Night.
+829320	834320	So if you want that theme, please go ahead and install it.
+836800	838720	And now that we've talked about that,
+838720	843720	we come to the last point that I wanted to discuss basically
+844080	848080	before we wrap up this chapter, which is our chapter two.
+848080	851440	So now that we talked about a little bit of setup
+851440	853680	for setting up your Flutter installation
+853680	856040	and setting up your Flutter installation,
+856040	857480	and setting up your text editor,
+857480	860080	which in this case is Visual Studio code.
+861000	863000	In the next chapter, which is chapter three,
+863000	866360	we're gonna talk about Dart programming.
+866360	869400	So before we actually jump into writing Flutter applications,
+869400	874120	we're gonna talk about how to write code in Dart,
+874120	876920	or at least understand like the basics of Dart.
+876920	880320	So without further ado, let's close up this chapter
+880320	883040	and I'll see you in the next one.
+883040	885560	Hello everyone, and welcome to the third chapter
+885560	886720	of our Flutter course.
+887640	889760	In this chapter, I thought maybe we could focus
+889760	892160	a little bit on, actually not a little bit,
+892160	894520	but quite a lot on Dart.
+894520	896400	As you know from the previous chapter,
+896400	899200	we know now that Dart is the programming language
+899200	903000	that powers Flutter.
+903000	907000	So it would be a good idea for us at least
+907000	909440	to get a little bit of introduction to Dart,
+909440	912840	how it works, a little bit of its internals,
+912840	915400	different data types, functions, methods, classes,
+916240	919080	but this chapter as well, just like the entire course,
+919080	920880	I'm kind of assuming that you haven't done
+920880	922920	any programming at all before.
+922920	926520	So I'm gonna take things very slowly,
+926520	929720	take the concepts one at a time, introduce them to you.
+930760	933840	So, and I will give you some references to read more
+933840	938840	about the topics as we won't have really that much
+939160	943120	of a time in this course to go into detail about everything.
+943120	948120	So the goal of this chapter is to basically get you started
+948840	953840	with programming Dart and writing your apps
+954600	956160	then later for Flutter.
+958360	963360	In order to do that, we need to have a project set up.
+965200	967680	And by project, I mean, you need to have some kind
+967680	971600	of a playground set up so that you can start writing
+971600	974440	Dart code and then you can try it on, for instance,
+974440	978400	a telephone or a simulator or what have you.
+978400	982800	Now, a lot of people would rather go to Dart pad
+982800	984560	as we saw in the previous chapter
+984560	987760	and start writing their code in Dart pad.
+988680	989800	That's one way of doing it.
+989800	994800	But since in this course, we're gonna write an application,
+996480	998720	release it for iOS and Android,
+999680	1004320	it is safe to say that we can literally start actually
+1004320	1008640	creating our real project here and now
+1008640	1011160	so that we can then later build upon it
+1011160	1013640	rather than writing all our code in Dart pad
+1014680	1018560	because you can then by doing, by writing your code
+1018560	1021080	in an actual Flutter project, you can get used
+1021080	1025240	to how we work with Flutter as a whole.
+1025240	1027920	So I think this is a little bit of a time invested
+1027920	1031160	into later chapters as well, where we're gonna work
+1031160	1033240	and continue working on the same project.
+1033240	1035680	So we have to just set it up once.
+1035680	1040520	But at the same time, there is a little bit of a value
+1040520	1045120	in not blending in too much of our test code,
+1045120	1046760	like what we're doing in this chapter
+1046760	1051000	with what we're gonna do later in the actual application,
+1051000	1051840	if you know what I mean.
+1051840	1055720	So I think it would be better now for us to set up
+1055720	1060040	just a test application and then keep working on it.
+1060040	1061840	And then later on, when we start doing
+1061840	1062920	the actual application,
+1062920	1064720	then we create a separate project for that.
+1064720	1069720	So now let's then do that together.
+1071600	1074920	So I'm gonna bring my face down here
+1074920	1077240	so you see the entire screen.
+1078960	1082240	I'm then going to create a new terminal window
+1082240	1084800	and bring it up here on the screen so you can see it.
+1084800	1085880	And I'm gonna increase the font
+1085880	1088720	so it's a little bit easier to spot when I'm typing.
+1090680	1093960	So let's go to a folder where you try to,
+1093960	1097400	or where you keep your projects.
+1097400	1100440	For me, I go to dev projects
+1100440	1102960	and I have a folder there called Flutter.
+1102960	1107960	So I try to put all my Flutter projects in here.
+1109480	1113320	Then in order to create a new Flutter project,
+1113320	1117680	what you have to do is to issue the Flutter create command.
+1117680	1120960	And this create command is already shipped inside Flutter.
+1120960	1123560	So if you say which Flutter,
+1123560	1126280	this is gonna go and find the actual Flutter binary.
+1126280	1127840	If you remember from the previous chapters
+1127840	1129680	where we installed Flutter.
+1131040	1132440	It's gonna find the Flutter binary
+1132440	1135160	and then call the create command on it.
+1135160	1138080	So if you say Flutter create,
+1138080	1140720	it expects you to kind of like provide it
+1140720	1143280	with some sort of a name of a project.
+1144240	1146600	So let's just say, learning Dart.
+1151200	1154000	So that's the binary, that's the command
+1154000	1156120	and that is the name of the project.
+1156120	1161120	So this is the easiest way to create a new Flutter project
+1161360	1162440	in my opinion at least.
+1162440	1164320	So let's execute that command.
+1167920	1169160	It's gonna do its thing.
+1170280	1172440	And what I'm gonna do then is to,
+1172440	1176840	I've created a new folder called learning Dart.
+1176840	1180280	So let's go and I'm gonna say, CD learning Dart.
+1181480	1185280	And then I'm going to issue a command called code dot.
+1185280	1189400	And I can actually bring this a little bit to the right
+1189400	1192400	so you can, and also do it like this
+1192400	1194000	so you can see what I'm typing.
+1195720	1198800	As you can see, I've written code dot.
+1198800	1201800	And what code does is that it brings up Visual Studio code.
+1201800	1204480	So it's just like a command that you can issue
+1204480	1206320	in order to bring up Visual Studio code.
+1206320	1211320	And if I just bring up Visual Studio code
+1211760	1214840	the way it is right now, and for instance, you can see it,
+1214840	1216040	you can't see it right now
+1216040	1219600	but it's because I have a separate screen here.
+1219600	1222840	I'll bring up Visual Studio code as you can see here by hand.
+1224040	1228120	There is a good extension or there is an ability
+1228120	1233120	for Visual Studio code to install this code shortcut
+1233160	1234640	for you in terminal in your path.
+1234640	1239640	So if you say which code, it just says user local bin code.
+1240080	1242840	So it's just an executable that allows you then
+1242840	1245640	to open up Visual Studio code with a path.
+1245640	1248120	Like, so you can say open up Visual Studio code
+1248120	1249640	in this folder.
+1249640	1254160	So you can just say code dot, so.
+1255160	1257000	And you can do that in Visual Studio code.
+1257000	1259040	You can allow that to be installed
+1259040	1263680	by doing command shift P on Macintosh or control shift P,
+1263680	1267960	I believe in windows and Linux.
+1267960	1270800	And there's this little command here that says shell command
+1270800	1272640	install code command in path.
+1272640	1275480	So if you execute that once, then it's already set up for you.
+1275480	1277200	You don't have to do that anymore.
+1277200	1281760	So if you'd like to be able to say code dots in terminal
+1281760	1285640	and open the current folder within Visual Studio code
+1285640	1288120	without you having to open Visual Studio code manually
+1288120	1291480	and then doing file open, then I suggest
+1291480	1294480	that you do command shift P or control shift P
+1294480	1297080	in Visual Studio code, depending on which operating system
+1297080	1298960	you're using and then choosing shell command
+1298960	1302440	install code command in path.
+1302440	1305040	So I've already done that, so I can just say code dot
+1306240	1308160	and I'll bring this up here.
+1309200	1312760	So as you can see, this is the basics of a simple
+1315880	1319120	Flutter project that you create with Flutter Create.
+1319120	1322560	Now, Visual Studio code has a built-in terminal,
+1322560	1325320	so I don't have to have this terminal window open anymore.
+1325320	1327720	So I'm just going to close it.
+1327720	1329480	And I'm going to make this full screen,
+1329480	1332280	increase the size a little bit so you can see better.
+1332280	1337040	And perhaps I could even remove this Flutter logo on top right
+1337040	1340280	so you can see the content a little bit better as well.
+1341120	1346120	So that's the creation of our simple Flutter project.
+1346120	1349560	Now, in order for this Flutter project to run
+1349560	1352360	and you be able to run this application
+1352360	1355560	and keep testing your project,
+1355560	1357000	you would have to select a target.
+1357000	1359440	And you do that with command shift P
+1359440	1362320	and then choosing Flutter select device.
+1362320	1366200	So you can just say Flutter select device, enter.
+1366200	1368400	Command shift P is on Macintosh and control shift P
+1369400	1371440	I believe is in Linux and Windows.
+1371440	1374640	So do that, command shift P is a very important command.
+1374640	1376760	You're going to use it quite a lot in this course.
+1376760	1378120	So just learn that please.
+1379760	1381120	Then I'm going to say select device
+1381120	1384680	and I'm going to choose, since I'm on a Macintosh
+1384680	1387600	and as you saw earlier, we have Xcode already installed.
+1387600	1391440	Xcode comes also with the entire iOS SDK
+1391440	1393400	and also with the simulator.
+1393400	1397400	I can choose to run our application on iOS simulator
+1398400	1402160	or I can choose to run it on an actual phone.
+1402160	1406520	Now for this, I believe,
+1406520	1409640	I don't know if we've talked already about SCRCPY
+1409640	1410480	to be honest with you.
+1410480	1412800	I'm just going to search in my notes
+1414320	1415920	to see if you've talked about that.
+1415920	1420760	And if you just give me one second, please just check here.
+1420760	1423120	I believe we're going to set it up in chapter six.
+1423120	1425880	So we haven't set up SCRCPY yet.
+1425880	1428280	So for that purpose, I'm just going to say
+1429160	1431560	select device and I'm just going to say start iOS simulator.
+1431560	1433240	So that is going to, as you can see,
+1433240	1435080	start up iOS simulator.
+1435080	1437640	And that for now is like the best way
+1437640	1439560	for us to test our application.
+1439560	1443000	So while this is connecting,
+1443000	1445960	I can show you a little bit around as well.
+1445960	1448160	We have, as you can see, lots of files here
+1448160	1449120	already created for us.
+1449120	1451600	We're going to go through some of these.
+1451600	1452920	But one of the most important files
+1452920	1454840	that you're going to need to get used to
+1454840	1457640	is this lib slash main.dart.
+1457640	1461160	And this is where the majority of the code is written.
+1461160	1465440	So this is its contents at the moment.
+1466800	1468840	Let's see what it's doing with the simulator.
+1468840	1470720	I'm just going to have a look here.
+1474000	1476160	It's taking a little bit longer than expected.
+1476160	1478640	So what I'm going to do is I'm just going to
+1478640	1480440	kill the iOS simulator manually.
+1480440	1482960	This usually doesn't happen, but that's okay.
+1482960	1484640	If it does happen, then you know how to deal with it.
+1484640	1485920	Just close the simulator.
+1486920	1490320	And then I'm just going to go to Command-Shift-P,
+1490320	1494320	select device, and then start iOS simulator fresh.
+1494320	1496160	So it's starting right now.
+1498360	1500400	Okay, so that's our simulator.
+1500400	1502440	And I'm actually going to decrease the size of this
+1502440	1507440	a little bit since I realized that it is a very large font.
+1507480	1510360	So this is our main.dart file.
+1510360	1514800	This is like where the Flutter command line command
+1515160	1518440	has created, it is the file that has been created for us.
+1518440	1520200	So we don't have to play around with it too much,
+1520200	1522800	to be honest with you, at the moment.
+1522800	1524520	For the purpose of this chapter,
+1524520	1528200	we're just going to have a look at basically kind of like
+1528200	1532440	exploiting this code so that we can inject our code into it
+1532440	1533880	so we can learn Dart a little bit.
+1533880	1535840	So you don't have to understand all of this code
+1535840	1536800	the way it is right now.
+1536800	1538600	There's lots of comments and et cetera.
+1540600	1542560	So that's that part.
+1542560	1544640	So now that we're here and then you can see
+1545480	1546920	we have a little simulator here.
+1546920	1549880	And in order to run this application on this simulator,
+1549880	1553320	since you've already done the Flutter select command,
+1553320	1557000	you just go to run and you say run without debugging for now.
+1557000	1560640	So since the simulator is already selected,
+1560640	1562960	then it understands that it needs to compile this project
+1562960	1564960	for my simulator.
+1564960	1569960	So, and we're just going to give it some time
+1569960	1571440	depending on your machine and like,
+1571440	1573520	what do you have for specifications on your machine?
+1573520	1577080	This command could take anywhere between a couple of seconds
+1577080	1580120	to maybe 30 seconds or even more.
+1580120	1581720	And I'm not sure how long it's going to take
+1581720	1583880	for a fresh Flutter project, to be honest with you,
+1583880	1585440	to start running on the simulator,
+1585440	1588640	but it took about 21 seconds or 22 seconds.
+1591360	1593640	I will bring up the project now.
+1593640	1595600	And this is like the basic Flutter project.
+1595600	1597440	I'm not going to go into details about how it works,
+1597440	1600320	but you can press the plus button if you want to.
+1600320	1601160	But what I'm going to do,
+1601160	1602840	I'm just going to close this widget inspector
+1602840	1605640	that was opened automatically.
+1605640	1608800	And I'm just going to bring this a little bit down
+1608800	1611920	so that we can see the debug console, okay?
+1611920	1615920	So that's for setting up our project.
+1615920	1617200	So that part is done.
+1617200	1620120	Now, the first thing that we need to talk about
+1620120	1625120	when we start talking about Dart is the concept of keywords.
+1626840	1629080	Now, since I'm assuming that you haven't done
+1629080	1632000	any programming language in any other place before,
+1633360	1635560	you need to understand what keywords are.
+1636720	1639080	They're very important in understanding
+1639080	1640440	any programming language, basically.
+1640440	1643440	And keywords are concisely explained.
+1646400	1651400	They're words that are reserved for the programming language
+1653000	1657520	that you cannot use for anything else
+1657520	1660040	than what the programming language intends those words
+1660040	1661360	to be used as.
+1661480	1664480	I know that sounds a little bit difficult,
+1664480	1668120	but I mean, there's no real good analogy
+1668120	1669720	in like if you're coming from Figma,
+1669720	1671240	if you're coming from a design world,
+1671240	1674720	what a keyword could be because in a design world,
+1674720	1679520	you're not really talking in terms of code with your product
+1679520	1684520	or with your software where you're designing your stuff.
+1685160	1687720	But when you come to programming language,
+1687720	1688920	as you know, it's a language.
+1688920	1692960	So words mean stuff in a programming language.
+1692960	1696480	So a keyword is, as its name indicates,
+1696480	1699080	is a word that has a special meaning
+1699080	1701760	in that particular language.
+1701760	1705200	And I'll provide a link here for you that you can check out,
+1705200	1710200	but I'm gonna open it up and bring it to the screen here,
+1711480	1713960	increase the size a little bit so we can see better.
+1715640	1717040	Have a look at my screen here.
+1717360	1719720	And you can see this is part of the documentation
+1719720	1721240	for Dart programming language
+1721240	1723560	that explains what keywords are in Dart.
+1723560	1724800	And you can see there are some words
+1724800	1727840	that have special meaning like show, import,
+1727840	1730360	extends, async, await, break.
+1730360	1732520	So you can say that the language,
+1732520	1736360	the Dart language is made out of these keywords.
+1736360	1737240	That is pretty much it.
+1737240	1739400	It's just like series of keywords,
+1739400	1741600	like the things that you tell the language that,
+1741600	1743080	hey, I wanna do something.
+1743080	1744320	And then it says, okay, what do you wanna do?
+1744320	1746440	Then you say, okay, I wanna do this or this or this.
+1746440	1750280	So special words for the programming language
+1750280	1752920	so that it understands what you mean, basically.
+1755240	1757040	So that's for keywords.
+1758080	1760840	For now, we don't have to really go into so much more details
+1760840	1762240	about what a keyword is, but for now,
+1762240	1765160	just understand that a keyword is a special word
+1765160	1768400	in the programming language's brain,
+1768400	1769800	kind of so that you can talk to it.
+1769800	1771920	It's your interface with the programming language
+1771920	1774240	to make it understand what you wanna do, okay?
+1775240	1777120	And please check out the link that I provided here
+1777120	1778760	to understand more about keywords.
+1782160	1784040	Okay, so we've talked about keywords.
+1784040	1785480	I'm just gonna check it in my notes
+1785480	1788600	so that we know we've talked about it.
+1791280	1794480	Now, the next concept that we need to talk about
+1794480	1796800	are data types.
+1800720	1803000	If you, for instance, come from a design background,
+1803000	1806080	then you have different tools to work with.
+1806080	1809200	For instance, you may have, in your design system,
+1809200	1811800	whatever you're using, if you're using product from Adobe
+1811800	1814680	or if you're using, for instance, Figma or whatever,
+1814680	1816760	Visio or whatever tool you're using,
+1816760	1819440	then there's a set of components that you can work with.
+1819440	1821600	For instance, you can drag in a text field
+1821600	1824840	or you can drag in an image field, sorry, an image,
+1824840	1829840	or you can, for instance, assign a color to a text.
+1830240	1835240	So these are all things that you can do with that software.
+1836200	1838920	Now, a data type in a programming language,
+1838920	1843920	like Dart, is the type of a thing, for instance.
+1844080	1847480	You would say, I have some data in my mind.
+1847480	1848320	Okay, what is it?
+1848320	1851080	It's the first name of my friend.
+1851080	1855080	Okay, his name is Jack or whatever.
+1855760	1858440	And then you would say, okay, what type is Jack?
+1858440	1859280	Is it a number?
+1859280	1863440	No, is it like, is it a list of things?
+1863440	1866880	Well, yeah, it's a list of characters, yeah.
+1867920	1870880	Okay, then that is this data type.
+1872000	1875680	Or you could say, I'm thinking about my age.
+1875680	1879160	My age is, let's say I'm 37.
+1879160	1880800	Okay, what is 37?
+1880800	1881960	Is it a list of things?
+1881960	1883440	Well, yeah, kind of.
+1883960	1887560	It's a list of numbers, a list of digits,
+1887560	1890200	but it's also in itself a number.
+1890200	1895160	So then there has been this convention
+1895160	1896960	in different programming languages,
+1896960	1898880	and every programming language pretty much
+1898880	1901560	that you can use these days has this concept of data types.
+1901560	1903720	Data type is, as its name indicates,
+1903720	1908720	a specific name assigned to a series,
+1908720	1913720	to a series, a specific name assigned to a data
+1915760	1919760	that is bound to be of a specific type as well.
+1919760	1921600	So for instance, in Dart,
+1921600	1924600	you have data types called integers,
+1924600	1927400	or you have strings, or you have arrays and sets,
+1927400	1928600	which we'll talk about soon,
+1928600	1931200	but a data type just for now, no,
+1931200	1934120	it's just a stamp on a piece of data
+1934120	1936360	to say that you're of this specific type.
+1937360	1941280	So you could think of a data type as a nationality.
+1941280	1943520	You could say like every person coming from Sweden
+1943520	1946080	is Swedish, boom, that's his data type.
+1946080	1948800	So it's just a categorization of data
+1948800	1950720	based on their appearance
+1950720	1953280	or based on what they actually hold.
+1953280	1955640	So for instance, you can say,
+1955640	1957880	here's a university full of engineers,
+1957880	1961280	and these are software engineers,
+1961280	1962440	these are mechanical engineers,
+1962440	1964600	so the software engineer is a data type
+1964600	1966960	or is a person type or category type.
+1966960	1971280	So putting stamps on things based on the categorization
+1971280	1972880	is kind of what data type does.
+1972880	1976920	And in short, I mean, you just have to know
+1976920	1978520	that it's just a categorization of things
+1978520	1980560	based on what they hold.
+1980560	1984960	So, and there's a website that you can read
+1984960	1988400	about Dart data types, and it's right here.
+1988400	1992600	I don't know if I've provided it here on the link below,
+1992640	1995080	as you can see Dart Core Library HTML, so.
+1996720	2000440	And here you can read more about Dart data types,
+2001560	2003440	but we're not gonna go into so much detail
+2003440	2004560	about all of these right now.
+2004560	2007280	Just know that data type in Dart is,
+2007280	2010520	or any programming language basically that has data types
+2010520	2012840	is a categorization of data
+2012840	2015040	based on their appearance or contents.
+2017560	2020400	Now, let's talk a little about
+2020400	2022360	something called constants in Dart.
+2023600	2027800	A constant, usually in programming languages
+2027800	2032800	are values whose value cannot be changed.
+2033920	2037560	That's a little bit meta, but let's say for instance,
+2037560	2042560	the value of 10 is a number.
+2044920	2046440	It cannot be changed.
+2046440	2048920	10 is 10, and it will always be 10.
+2049560	2053800	Or your name, that is a constant.
+2053800	2055280	Although you can go and change it,
+2055280	2057560	but as long as that is your name, it is a constant.
+2057560	2062560	So, another example of a, I mean,
+2062840	2064960	there are so many values that can be constants,
+2064960	2067920	which will actually be quite abstract for me
+2067920	2071920	to explain right now, but just know that a constant
+2071920	2075800	is a value whose internal data cannot change
+2075800	2080400	during where you're writing your program,
+2080400	2083320	and also during when you're running your program.
+2083320	2087680	So, that is kind of what a constant is.
+2089280	2093320	But there is also this notion of a compile time constant
+2093320	2094720	and a runtime constant.
+2094720	2097760	And I mean, you don't have to know about
+2099200	2101560	like those different types of constants right now,
+2101560	2104520	just because like in Dart, a constant is a constant,
+2104520	2108520	whether it's runtime or compile time is a constant,
+2108520	2110240	it's just a constant, as you'll see soon.
+2110240	2114720	But I still believe that it's important to understand
+2114720	2117200	the difference between compile time and runtime.
+2119000	2120800	When you're talking about programming,
+2120800	2122440	when you're becoming a software developer,
+2122440	2123560	and I hope by the end of this course,
+2123560	2125040	you'll actually become a software developer
+2125040	2128240	if you're not already, that would be really amazing.
+2129200	2133600	But the notion of a compile time
+2134240	2136240	and runtime is very important to understand.
+2136240	2140640	And developers like to make a distinction
+2140640	2143480	between whether something has happened during compile time
+2143480	2145040	or something has happened during runtime.
+2145040	2150000	And compile time is, or before I explain compile time,
+2150000	2151360	maybe I should explain compile.
+2151360	2153480	Compile is where you take the program
+2153480	2157560	that you're writing here, and you tell the computer
+2157560	2161320	that I want you to package this up
+2161320	2166160	so that I can run it later on X and Y machine.
+2166160	2170000	So that process of packaging things up, simply said,
+2170000	2173880	is in very simple terms, is called compiling
+2173880	2175360	or a compilation, okay?
+2175360	2180360	So from where you start writing your program with a hand
+2180400	2182600	with your fingers until where you package it,
+2182600	2185720	you're pretty much just compiling it, okay?
+2185720	2189240	But when you run it, like we're running it at the moment
+2189240	2194240	on iOS simulator, that session from where you start
+2195840	2198680	outputting your program into this device
+2198680	2202440	and for it to run your program from that moment on,
+2202440	2207440	then the distinction separates into runtime.
+2207440	2210640	So you have then compile time and runtime,
+2210640	2213280	and a constant is a value that is the same
+2213280	2215320	during compile time and runtime.
+2215320	2216960	So its value doesn't change.
+2216960	2220280	So the value of 10 is 10 while you're writing your program
+2220280	2224920	and also stays the value of 10 while the program is running.
+2226160	2231160	So that is a very simple explanation of a constant.
+2232280	2237280	So now let's put constants and data types in practice.
+2240000	2243320	Now, in this project that was created for you
+2243360	2248360	by Flutter Create, in this line of code,
+2248640	2250760	as you can see, it says void main.
+2250760	2252400	We're not gonna talk about exactly what that is,
+2252400	2254520	but just press Enter at the end of it
+2254520	2257520	and just write final,
+2261160	2262760	and I'm gonna tell you what final is.
+2262760	2267760	So, and just saying name is equal to foo, okay?
+2268600	2272400	This is, there's lots going on in here
+2272400	2276400	and I'm gonna tell you what is actually happening here.
+2278360	2281080	But before we actually go through all these details,
+2281080	2284840	let's add something here called a constant.
+2284840	2289840	So I'm just gonna say const age is 27, or yeah, 27.
+2290160	2292560	As you can see, this is how you write code in Dart.
+2292560	2295560	You start by a keyword, usually,
+2295560	2297000	or a variable name or something
+2297000	2298760	as we're gonna talk about it.
+2298760	2300960	But const is a keyword, okay?
+2301960	2306280	And it tells Dart that what is following here is a name.
+2306280	2309160	Right after const, I'm gonna write some name.
+2309160	2312680	And in that name, then I'm gonna basically say,
+2312680	2316680	okay, I'm adding the value of 27 to this age.
+2318160	2321840	I'm sorry about this, my dog also barking a little bit.
+2321840	2325520	So what is happening here is that you're telling Dart
+2325520	2330520	that I'm putting the value of 27 into a constant called age.
+2331760	2333600	And you can refer to this age later.
+2333600	2338600	For instance, you can say then const age twice the age.
+2342280	2345480	You can say it's equal to age multiplied by two.
+2345480	2349000	And this is also a constant because at compile time,
+2349000	2350880	where Dart is basically trying to understand
+2350880	2353200	what you've written, it says, okay, you said 27,
+2353200	2355680	and then you're saying 27 is a constant.
+2355680	2357120	So its value is never gonna change.
+2357120	2359840	And if you tell me 27 multiplied by two,
+2359840	2363720	that also is a constant because both this side
+2363720	2366680	and this side are compile time constants.
+2368360	2371120	So that's what we mean by a constant.
+2371120	2373920	It's a value that is specified during compile time
+2373920	2375520	and it cannot change.
+2375520	2380120	So also it's important to notice that you're learning Dart
+2380120	2385120	and here is, sorry, I have to just tick some items
+2385880	2387800	in my notes to make sure that I've explained
+2387800	2388800	all of those to you.
+2390600	2393960	You can see here that every line of code in Dart
+2393960	2396080	needs to end with a semicolon.
+2396080	2397800	And that tells Dart that, yeah,
+2397800	2399760	you're starting a new line of code.
+2399760	2402400	Of course you can put two lines of code like this,
+2402400	2404640	but if you just press save,
+2404640	2407000	there is a program automatically running in the background
+2407000	2410240	which is called Dart FMT, which is the Dart formatter,
+2410240	2412360	which is gonna format your code and pre-ify it.
+2412360	2415360	So if I put a lot of spaces in here and just press save,
+2416200	2419400	you can see upon doing command S on Mac
+2419400	2421600	or control S on Linux and Windows,
+2421600	2424200	upon saving Dart formatter is gonna kick in
+2424200	2425760	and format the code for you.
+2425760	2428240	So just a little hint.
+2431080	2433480	Okay, those are constants.
+2433480	2435280	So we've talked about that.
+2435280	2437440	Now let's talk about variables a little bit.
+2438640	2443640	A variable is usually anything that contains
+2445400	2448640	a value that is not a constant.
+2448640	2451400	I mean, I think that's the simplest way
+2451400	2453560	of explaining what a variable is.
+2453560	2456960	A variable as a name indicates, it can vary.
+2456960	2459720	And that means that the data that it holds,
+2459720	2462000	it doesn't need to be constantly the same.
+2462000	2464720	It means that from where you start the program,
+2464720	2467800	you may actually assign a value to this variable
+2467800	2469960	and you may also change that variable
+2469960	2471960	depending on what type of variable it is.
+2472960	2477960	So there's also this notion of a final variable in Dart,
+2482560	2483600	which we'll talk about soon.
+2483600	2486360	So before we do that, let's go through this main function
+2486360	2491360	here and you could just say var name is foo.
+2493560	2497600	And here, what I've done is that I've created a variable
+2497600	2502600	indicated by the var keyword whose value is foo,
+2503640	2505600	or let's just say Alex,
+2507560	2509400	and set my column to end the line.
+2509400	2511360	Now, if I wanna change this value,
+2511360	2516360	all I could say here is to say name is equal to Anthony,
+2516560	2517400	or whatever.
+2518800	2523320	Now, this is basically us assigning a new value
+2523320	2525240	to this variable, saying Anthony.
+2527600	2532600	As I said, there is also the notion in Dart
+2533520	2536360	for a keyword called final.
+2536360	2539720	So you could just say final name equal to Alex.
+2539720	2541600	And it's a little bit strange
+2541600	2544640	because final is also a variable
+2544640	2546800	whose value cannot be changed.
+2546800	2551680	So you may be like, okay, what kind of a variable is that?
+2551680	2553760	How is that not a constant?
+2553760	2555320	Now, there's a little limitation
+2555320	2560240	because you may try to like say const name Alex.
+2561240	2565240	But this, as you will see later in the course,
+2568160	2570360	final gives you the flexibility
+2570360	2574120	to assign a value to your variable
+2574120	2578160	a little bit later maybe in the process of creating it,
+2578160	2580600	but it still indicates to Dart
+2580600	2584320	that the value of this variable is not gonna change
+2584320	2586760	after it has been assigned to.
+2586760	2588440	It's a little bit, yeah,
+2588440	2591480	it's just a little bit confusing maybe at the moment.
+2591480	2596080	So let's just say a variable is like a constant,
+2596080	2598120	but its value can be changed.
+2598120	2599720	Let's just leave it at that, okay?
+2599720	2602240	So that's it.
+2605120	2610120	Okay, now that we talked a little bit about variables,
+2610320	2611520	let's talk about functions.
+2611520	2615800	So I didn't specify exactly what this is
+2615800	2618920	just because we hadn't really come to functions,
+2618920	2623120	but a function is a body of code,
+2623120	2625960	is a grouping of a series of lines of code,
+2625960	2629520	one to N number, N lines of codes
+2629520	2634520	that is logically grouped.
+2635120	2638160	And it has a few properties.
+2638160	2641840	One is its return value here indicated by void.
+2643120	2646480	The other part of its information is its name
+2647360	2651040	followed by a pair of parenthesis,
+2651040	2653320	an open parenthesis and a closed parenthesis
+2654200	2656200	in which you will write something
+2656200	2660440	called the function arguments or parameters.
+2662720	2667720	It's pretty much just like imagine like a box
+2668040	2669720	where you input things in it.
+2669720	2673200	It does some processing and then it outputs that stuff,
+2673200	2675200	whatever it wants to output.
+2675200	2678400	So what we could do here is to create
+2678400	2681520	a very simple function for ourselves.
+2683240	2686840	As you saw before, or as I mentioned before,
+2687760	2690360	what you write for a function in the beginning
+2690360	2691560	is this data type.
+2691560	2694120	I mean, what data comes out of this function.
+2695000	2700000	And here, let's say we wanna add someone's first name
+2701480	2704080	and their last name with a space between it.
+2704080	2708560	So if I say foo as the first name and bar as the last name,
+2708560	2711080	then the full name should be foo bar
+2712120	2713840	and with a space in between.
+2713840	2718640	So as I said, then you need to specify the data type first,
+2718640	2719760	what you're gonna return.
+2719760	2721920	And if you looked at the documentation
+2721920	2722840	that I provided earlier,
+2722840	2725360	there's a data type called string,
+2725360	2727440	which is a series of characters.
+2727440	2730040	Basically it can be a name, a family name,
+2730040	2732760	the dress of your house or whatever.
+2732760	2734320	And that data type is string.
+2734320	2736960	Okay, so we say we're outputting string.
+2736960	2740760	And then you say, okay, what should this function be called?
+2740760	2742200	There's a convention in Dart
+2742200	2746160	that your functions should follow camel case
+2747680	2748920	naming convention, basically.
+2748920	2752480	Camel cases, if you, for instance, say in English,
+2752480	2754720	my function should be called get full name.
+2755600	2756440	That's my function name,
+2756440	2759840	but you cannot have spaces in your function names in Dart
+2759840	2762600	or pretty much every program language that I know about.
+2763520	2766040	Then remove all the spaces.
+2766040	2769000	And then except for the first word,
+2769000	2774000	change all the other words first letter to uppercase.
+2774200	2776080	So it was like this before,
+2776080	2779080	you could actually change them to uppercase first
+2779080	2781120	and then remove the spacing.
+2781120	2784360	So this is how you should write your function names.
+2784360	2786760	This is called camel case.
+2786760	2788080	Get full name, okay.
+2788080	2790840	And we said that we also have to open parenthesis.
+2792320	2797320	Now, let's just say then here,
+2797960	2801920	we need to specify some kind of function.
+2801920	2804400	We need to specify somehow
+2804400	2807520	that we're gonna accept the first name and the last name.
+2807520	2812320	Well, what kind of a data type does a first name have?
+2812320	2814280	Well, it's kind of like a string.
+2814280	2815120	It's a name.
+2815120	2816320	It's a series of characters.
+2816320	2818720	So let's just type string here.
+2818720	2820560	And then we wanna take a first name
+2820560	2822080	and we know about camel case now.
+2822080	2826040	So let's just say first name is uppercase
+2826040	2827840	and remove the spacing.
+2827840	2830160	So first name.
+2830160	2831800	Hey, that's the parameter.
+2832680	2833520	And then you wanna go to the next parameter.
+2833520	2834360	So just say comma.
+2836720	2839840	And then you wanna say string last name.
+2841080	2843360	You take the first name and the last name.
+2843360	2845880	Now, we also said that after the parenthesis,
+2845880	2847320	after you have accepted your parameters,
+2847320	2850760	you wanna go and create like your curly brackets here.
+2850760	2853480	I don't know actually if I mentioned that before,
+2853480	2858480	but every function is either its body or its logic.
+2858560	2863560	It's either followed by equal graded unsigned,
+2865000	2866600	which we're gonna talk about later
+2866600	2870200	or is by curly brackets.
+2870200	2872160	So we're just gonna use curly brackets.
+2873480	2876000	Now, what you wanna do here,
+2876000	2877240	you wanna take the first name
+2877240	2879480	and add a space to the first name
+2879480	2881080	and then follow that by the last name.
+2881080	2883760	So you need to tell Dart
+2883760	2885600	that that is the data you wanna return.
+2885600	2890600	And thankfully, there is a keyword called return
+2891880	2892720	that tells Dart
+2892720	2894440	that you wanna return some value from a function.
+2894440	2896640	So then what you're gonna do,
+2896640	2899240	you're gonna say, I wanna return what?
+2899240	2903760	The first name and I wanna add a space.
+2903760	2908760	Single quotes, the space, us, last name, right?
+2908800	2912840	So, I mean, this is a very simple implementation
+2912840	2913680	of get full name.
+2913680	2918120	So, however, there's actually a better way
+2918120	2919480	of doing this in Dart
+2919480	2921360	and I'll explain it to you right now.
+2921360	2924040	And that is by formatting your strings.
+2924040	2929040	So let's say that you want to basically tell Dart
+2930560	2933560	kind of like how your result looks like
+2933560	2936000	and you wanna ask Dart to insert the first name
+2936040	2938760	and last name into that result for you.
+2939800	2941360	And that's how you'll do it like this.
+2941360	2943760	You say, okay, I wanna return a string.
+2943760	2946480	You know, we could buy the single quotation marks here.
+2946480	2948040	And you can also do a string in Dart
+2948040	2949120	with double quotation marks,
+2949120	2951440	but I'm gonna explain that a little bit later.
+2952920	2956480	So let's say that you want to return
+2956480	2957720	the first name in here.
+2957720	2959200	But if you say first name,
+2961040	2963920	what's gonna happen here is that it's actually gonna return
+2964400	2966800	what's gonna happen here is that it's actually gonna take
+2966800	2970360	this first name as you've written in the string.
+2970360	2972560	So when you get this return value,
+2972560	2975040	it's actually gonna say first name,
+2975040	2977440	not the value that you pass to this.
+2977440	2981280	I know it may be a little bit difficult to understand
+2981280	2983080	when I say the value that you pass to this.
+2983080	2984240	What does it even mean?
+2985240	2988520	So let's put this actually to test first, okay?
+2988520	2992800	Go now into this build function,
+2992800	2994640	as you can see here on line 16.
+2994640	2996360	Now it may not be on line 16 for you,
+2996360	2998200	but for me it is at the moment on line 16.
+2998200	3002480	Just find this class my app stateless widget
+3002480	3006640	and find this widget build stuff that's written there.
+3006640	3009920	Create a new line here, okay?
+3009920	3014920	And just say full name or sorry, say print.
+3016560	3020040	As I'm writing it here, print.
+3020040	3024360	And then just say, what do we call our function?
+3024360	3025420	Get full name.
+3026600	3028120	See here?
+3028120	3029480	And it says, okay, what's the first name?
+3029480	3034560	I'll say quotation marks foo and the last name is bar
+3034560	3037360	and ended with a semicolon.
+3037360	3039960	So, and ignore this call for now.
+3039960	3042960	Sorry, this warning avoid print calls in production code.
+3042960	3046200	So, okay.
+3046200	3048880	So now we're calling that function.
+3049800	3054800	It's, I mean, it's called calling, it's called invoking.
+3054800	3055840	It may have other names,
+3055840	3058360	but usually programmers call this calling,
+3058360	3059960	call the function.
+3059960	3062040	And these are the parameters
+3062040	3064960	that you're passing to this function, okay?
+3064960	3069960	So, I mean, there are two words used for
+3071240	3074280	in the programming world to explain these parameters,
+3074280	3075520	like with name.
+3075520	3078040	And that is called a parameter or an argument.
+3078040	3080880	I mean, they're used interchangeably.
+3080880	3084200	The meaning of them is kind of like getting convoluted
+3084200	3086520	to the point that no one knows which one is which,
+3086520	3088960	but you could just use parameter or argument
+3088960	3090440	and everybody would understand what you're saying.
+3090440	3092240	So, but there's a little bit of a difference,
+3092240	3094480	which I'm not gonna go into the detail of,
+3094480	3096800	but if someone just says call this function
+3096800	3098480	with parameters or arguments,
+3098480	3100800	you know at least what you're doing, okay?
+3100800	3101640	Foobar.
+3102560	3104520	Now we're printing its value.
+3104520	3107000	All you have to do in order to execute this code
+3107000	3112000	is press command S and you will see the result outputted here.
+3112320	3114760	Now, what we did here,
+3118160	3123160	what we did here was a very key feature in Flutter
+3123960	3126640	called hot reload.
+3126640	3129280	As you saw, I didn't execute my code again.
+3129280	3131600	I didn't press like the run button again.
+3131600	3133200	I just said save.
+3133200	3138200	Now, saving in Flutter triggers an action called hot reload.
+3138240	3141680	Hot reload in Flutter, it's a whole topic of its own,
+3142960	3145760	which I'm not gonna go so much into detail of,
+3145760	3150600	but what hot reload does really is it looks for changes
+3154040	3157120	in your code hierarchy without complicating it too much.
+3157120	3161200	I'm just trying to phrase my sentence right
+3161200	3166200	so that it's not too complicated for this chapter.
+3166240	3168480	It looks for changes that you made to the code
+3168480	3172840	and executes only those changes, okay?
+3173880	3175920	And in the process of executing those changes,
+3175920	3180320	it might execute everything else that is in its path.
+3180320	3183400	And by doing a save,
+3183400	3185800	this function gets called somehow magically,
+3185800	3188760	which I'm not gonna go into right now,
+3188760	3192200	which in turn then calls or invokes our function
+3192200	3193320	called get full name,
+3193320	3196680	and its value will then be passed
+3196680	3200200	into another function called print, okay?
+3201800	3203520	I hope that that makes sense.
+3205240	3206280	And as you can see,
+3206280	3208000	the result isn't really what we expected.
+3208000	3209960	It just says first name.
+3209960	3213800	And that is because here we said return first name.
+3213800	3214640	And as you can see,
+3214640	3217240	if you put first name like this inside your string,
+3217280	3218800	it becomes its own string.
+3218800	3221760	It has nothing to do with this anymore.
+3221760	3224440	If you remove these quotation marks, however,
+3225360	3228680	then it says, oh, first name is this parameter.
+3228680	3230560	You see, it actually, it highlights it.
+3230560	3233360	So then if I press Command S on Mac
+3233360	3235400	or Control S on Linux on Windows,
+3235400	3239160	you will see full being printed to the screen, okay?
+3240040	3245040	You can also say last name here and it will say bar, right?
+3245240	3248440	And also notice that when I'm changing these things,
+3248440	3250880	it's not executing immediately automatically
+3250880	3251920	on pressing Command S.
+3251920	3253640	So just keep that in mind, please.
+3257720	3260080	So that's for a function.
+3260080	3264120	But before we move on explaining the basics of a function,
+3264120	3269120	I wanna also explain a little bit about string formatting.
+3271760	3273960	And that is we said that we're gonna put first name
+3273960	3276080	and a last name because this is what we did
+3276080	3278800	in the beginning, first name plus space plus last name.
+3278800	3280720	And this wasn't so pretty because it's like
+3280720	3283440	doing string concatenation in a very old fashioned manner.
+3283440	3286600	In a very old fashioned manner, yeah.
+3286600	3289320	I think I said it right the first time.
+3289320	3294000	But what you wanna do here is to use
+3294000	3296760	Dart's built-in formatting capabilities.
+3296760	3298480	And you do that by first saying that, okay,
+3298480	3300920	I wanna return some sort of a string.
+3300920	3305560	And I wanna have first name, space, last name.
+3305560	3309840	But as you saw this earlier, if I Command S or Control S,
+3309840	3313800	it just returns those strings exactly as I've written them,
+3313800	3315560	not the parameters.
+3315560	3318720	What you can do is just to put a dollar before them.
+3318720	3320480	And you can see their coloring now changes
+3320480	3321840	depending on a theme that you're using
+3321840	3324240	or depending on the text editor that you're using.
+3324240	3326800	If you're using Android Studio,
+3326800	3328600	it may not color it the same way.
+3328600	3330040	Or if you're using Visual Studio Code
+3330040	3332840	with a different theme on a different maybe platform,
+3332840	3334240	it may not even change the color.
+3334240	3336880	But for me, at least you can see that the colors change.
+3336880	3341640	So as to indicate that now I'm not actually returning
+3341640	3344600	the string exactly as you wrote,
+3344600	3348360	except returning the parameters that are here.
+3349360	3350840	So Command S.
+3350840	3354680	And now you can see that the result is full bar.
+3356040	3357800	Okay.
+3357800	3362800	So that is the basics of functions in Dart.
+3363760	3366280	Before we move on from functions,
+3366280	3368360	I also wanna explain quickly that
+3369800	3372880	a function doesn't necessarily have to return anything.
+3372880	3376840	And that means that you may have a function here
+3376840	3380560	that wants to just print some data to the screen
+3380560	3382680	or to here to the debug console.
+3382680	3385560	And you could just call it print my name
+3386520	3390120	and parenthesis and curly brackets.
+3390120	3392960	And as you can see here,
+3392960	3394760	I can just write the name of the function
+3394760	3398240	without any data type to be returned.
+3398240	3399840	But it's a little bit of a convention
+3399840	3403840	that you actually tell Dart that this is a void function.
+3403840	3406320	Meaning void is a keyword,
+3406320	3407840	as we talked about it earlier
+3407840	3410600	in the beginning of this chapter.
+3411600	3414240	Void is a keyword telling Dart
+3414240	3416840	that this is a function that doesn't return anything.
+3416840	3418360	And as you can see,
+3418360	3420360	Dart is completely fine with this function
+3420360	3421680	being completely empty.
+3421680	3423080	Meaning that, well, yeah,
+3423080	3425120	you said you are not returning anything.
+3425120	3427280	You're probably just gonna do some stuff in here.
+3427280	3429760	So I'm not gonna bother you with some errors saying that,
+3429760	3431280	oh, you forgot to do something.
+3432200	3434800	But as soon as you change the return value
+3434800	3436920	or the return data type of your function
+3436920	3438440	to, for instance, string,
+3439400	3442920	then you'll get an error saying that,
+3442920	3445120	oh, yeah, the body might complete normally
+3445120	3447240	causing null to be returned, blah, blah.
+3447240	3448640	You don't have to know exactly what that means.
+3448640	3451000	But essentially what that means
+3451000	3454440	is you're telling Dart that you're returning a string,
+3454440	3456160	but you're not returning anything.
+3456160	3461160	It's literally looking for the return keyword saying that,
+3461240	3462520	oh, you missed it.
+3462520	3465120	So you could silence that error
+3465120	3469400	by saying return an empty string, a semi-call.
+3471800	3476800	So I think this pretty much explains the basics
+3476880	3481480	of functions, to be honest with you.
+3482920	3484720	There's lots more to learn about functions.
+3484720	3485560	And as I said,
+3485560	3490080	functions can also be written using this syntax.
+3490080	3493000	And this syntax is used
+3493000	3495120	when your function is very simple
+3495120	3498480	or in that it doesn't need to break
+3498480	3502520	into different lines of code by a semi-colon.
+3502520	3506400	So a function who has a very simple logic,
+3506400	3510920	you can just skip writing these square brackets,
+3510920	3513480	no, curly brackets, sorry.
+3513480	3517360	And you can just say, you see, I will remove this,
+3518360	3522480	put equal sign, greater than sign,
+3522480	3525360	remove the closing curly bracket,
+3525360	3528680	and then you can remove the return statement, and that's it.
+3529720	3533520	That is a short hand, it's a function shorthand in Dart.
+3533520	3538200	And you could use it simply to simplify kind of your code.
+3538200	3539320	Some people may like it,
+3539320	3542680	some people kind of may be against it,
+3542680	3547440	just because it kind of splits your code
+3547440	3548760	into two different styles.
+3548760	3551200	Some functions are with curly brackets,
+3551200	3553880	some functions are with this pointer thingy.
+3553880	3558720	And kind of depends on you and your team, to be honest.
+3560080	3563360	I know usually from my experience,
+3563360	3566720	usually we software developers like to follow a convention.
+3566720	3571720	So in one project, the developers may decide,
+3572480	3574120	okay, we're just gonna go with this convention.
+3574120	3579120	And since using curly brackets engulfs the ability
+3580760	3585520	to have both complicated and simple return statements
+3585520	3589720	in a function, it's actually preferred as a convention
+3589720	3592480	than using this syntax simply because this syntax
+3592480	3594280	doesn't allow you to split your code
+3594280	3595800	into separate lines of code.
+3595800	3598080	It has to all be in one statement.
+3598080	3600160	So if that makes any sense.

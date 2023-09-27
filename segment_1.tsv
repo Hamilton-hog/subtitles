@@ -1,0 +1,523 @@
+start	end	text
+0	4320	This massive Flutter course will take you from being an absolute beginner to being able to
+4320	9360	release apps on the Google Play Store and the App Store. Vandad is a very experienced
+9360	14560	software developer and an excellent teacher. Hello everyone and welcome to this free Flutter
+14560	19360	course. My name is Vandad and I'm a Google Developer Expert for Flutter and Dart.
+20160	24800	Let's jump right in. Who is this course for? I designed this course mainly for absolute
+24800	29440	beginners, so whoever hasn't even done a written a single line of code before.
+30160	34080	I actually, when designing this course, I designed it for two specific personas. One was a graphic
+34080	38400	designer who was working mainly with Figma. Actually, it doesn't really matter what graphical
+38400	44160	tool you're using, Photoshop or Figma or whatever or Sketch. And the other persona was a project
+44160	50160	manager who's mainly working with Jira. So I made the assumption that you pretty much don't know
+50160	55200	anything about software development from before. And even if you're a software developer, you could
+55200	59280	perhaps jump over the things that you might know. But if you haven't done
+59280	63280	Flutter development from before, I strongly suggest that you actually follow the chapters
+63280	68960	chronologically, which is the way I've designed this course basically. So as I mentioned,
+70080	75120	when I designed this course, I wanted everybody to just follow the chapters one at a time and one
+75120	80560	after each other chronologically. So I highly recommend that you don't jump over chapters just
+80560	85600	because there's so much information provided in each chapter. And I will be referring back to
+85600	89920	information that I provided in previous chapters in each chapter. So I think it's very good if you
+89920	95120	can just follow the course the way I designed it to be consumed, which is chronologically.
+96480	102320	And what you learn in this course is not only the basics, but you'll also go from a complete
+102320	108240	beginner to being able to release your applications in Apple's App Store and Google's
+108240	113680	Play Store. And we're going to be using a blend of different tools and software. We're going to be
+113680	118560	using Visual Studio Code. We're using Firebase for the backend, which I'll teach you all about.
+119280	125120	We're using even Figma as a graphic designer to create our icons and screenshots and even our
+125520	132480	loading screens. So there's lots to be learned. And I'll take you through those steps. And I don't
+132480	137440	make any assumptions about what you may know from before. So I'll explain everything along the way.
+137440	143360	So you'll go from absolute beginner to being able to actually release your two applications,
+143360	149520	which is the same code base in Apple's App Store and Google's Play Store. If you're attending this
+149520	155600	course, please do follow me on social media. And I'd really appreciate it. I'm Van.np on Twitter.
+155600	160160	And also you can find me by my full name on LinkedIn. That'd be much appreciated.
+160160	166720	This course, of course, for free. But for those who want to and are able to support me,
+167360	175280	then you can do that by buying me a cup of coffee on buymeacoffee.com. So without further ado,
+175280	183520	let's just jump right into it. Hello, everyone, and welcome to the first chapter of our Flutter
+183520	190880	course. There are so many different topics that I could choose for the first chapter.
+192240	198720	And they're all very important. However, after going through the material that I've been
+198720	204880	preparing for you for this course, I realized that one of the absolute basic points that we
+204880	212960	have to go through is the developer accounts for Apple and Google. Now, if you're not familiar
+212960	218480	with the term of developer account, there are basically what a developer account allows you to
+218480	228320	do is to release your applications on Apple's App Store and Google's Play Store. As I mentioned
+228400	236160	in the introduction, you may choose to follow along this course without actually releasing the
+236160	245200	application to the App Store and the Play Store. But even if you do decide to not release the
+245200	253440	applications on the aforementioned stores, you will still, for the optimal experience of development
+253440	262080	for iOS and Android, you will most definitely need a developer account. And the reason behind that
+262080	271920	is, I mean, it is quite deep to try to explain the actual reason behind it. But from my perspective,
+271920	276480	one of the most important reasons you may want to have a developer account is to create the so-called
+277200	286080	app IDs. So every application on iOS and every application on Android has an identifier,
+286080	291680	which is usually something called a reverse domain identifier. And it's kind of like,
+292800	301600	I still find it strange the way it is, but somewhere, somehow it was decided that every
+302240	307040	application needs to have an identifier and every identifier is kind of like associated with a
+307040	310800	domain name. And a domain name is kind of like a website. For instance, if you have
+312240	320640	yourname.com as your website, then you would say that, okay, I'm going to create an application
+320640	327600	for iOS and Android in Flutter, and I'm going to call it foobar. Then it was somehow decided
+327600	334240	that your application's identifier would then in that case be, if you reverse it,
+334880	344800	then it would literally be your domain in reverse, which would be com.yourname.yourapplicationsname.
+346320	353680	I don't really know. I mean, if somebody knows the reason behind it, I would be glad to hear that.
+353680	357520	And I'm sure that there's resources out there explaining why that is the case, but it kind of
+357520	367680	feels like it's become the norm and we just have to roll with it. So the reason I explained the
+367680	375840	app identifier is that when you set up your backend later, when we set up the backend later
+375840	382320	together, in that the client that we write in Flutter is going to talk with our backend
+382880	388880	store the notes, retrieve the notes, create a user, sign in with a user, et cetera, et cetera,
+390880	398960	that backend setup also will require you to have your app identifier. And
+401280	407440	even though you don't necessarily need to have a developer account to get an app identifier,
+407440	412560	because an app identifier is just something that you decide, okay, here's my app identifier.
+412560	417440	I think my website is called this, blah, blah. And even though you actually need a website,
+417440	421360	that's the thing, but an app identifier is usually associated with a website. So don't
+421360	425840	worry about it. You don't have to have a website in order to follow along with these steps that I'm
+425840	432720	going to name here, but it is still good practice to create your developer account in order to
+432720	442480	officially register your app identifiers. And another reason that you will need a
+442480	452320	developer account for Apple and Google is that you will, for Apple, if you want to be able to
+453600	459760	deploy your application onto a telephone and not use a simulator,
+460720	467120	then you will need to register a developer account and use some resources that Apple provides you
+467120	473760	in forms of certificates and keys and profiles in order to deploy your application to a telephone
+473760	481200	or an iPad, for instance. In Android, the world is a little bit different in that you don't have
+481200	489360	to do the same process, but in order to then submit your application to Google for review,
+490160	494080	later, so that it can be available for everybody who has an Android telephone
+495360	500560	or a tablet, you will still need a developer account. So it goes without saying that it is
+500560	512480	a very important step that even if you decide not to deploy your application later to App Store and
+512480	519200	Play Store, it's still a very fundamental step. So I suggest that you actually go through these
+519200	524640	steps that I'm going to provide you in the first chapter. And that's why I actually decided to have
+524640	532640	this as chapter one. Sorry, I have to just edit my notes a little bit. If you haven't watched the
+532640	536720	introduction to this course, and you're just jumping here, I suggest that you go to the
+536720	541200	introduction and watch it. I know it was about 34 minutes. It was quite a long introduction,
+541200	547360	but there were so many important points that I feel everybody needs to know before you get
+547440	552240	started with the course. So please watch those. If you see me moving my head around, then you know
+552240	559520	the reason. And I explain a lot of things that are like the fundamentals of this course and the
+559520	565760	reasoning behind all those decisions, which I believe are so important that I still suggest
+565760	573200	everybody watched an introduction before they actually start with the course. So we've now
+573200	582000	talked about the basics. And if you go to why we need a developer account, I believe I've already
+582000	590800	covered this in that the developer account is the utility is an account that you register for Apple
+590800	597280	and Google that gives you extra resources as a developer in order to be able to deploy your
+597760	601760	test and deploy your applications to the respective app stores.
+604560	614720	Now, if we talk about developer accounts, there are two main types of developer accounts. One is
+614720	624640	an individual account, and the other one is a company account. And for me, the biggest
+624640	631760	difference between these two different accounts is the liability. And by liability, I mean, if you
+633840	642400	register an individual account, then you as an individual are liable for that application. And
+642400	646720	as users download your application and interact with it, if they have any problems and if, for
+646720	655840	instance, there's any judiciary problems, like if someone for some reason believes that you're
+655840	660320	storing their data in the wrong way or that you're storing their personal information without
+660320	666400	exposing that and telling the users about that, then they can personally hold you liable for,
+668560	675040	for instance, breach of information or GDPR infringements or whatever it is. So
+676800	684080	just know that you can register yourself as an individual for both Apple's App Store and Google's
+684080	690640	Play Store, but you need to also be aware that should you wish to do that, then you're personally
+690640	697680	liable for any problems that may be occurring in the future. So that's the personal account
+698480	705680	or an individual account. And as a company account, then you kind of like, based on what
+705680	716960	type of company you've created, you may or may not be personally liable for any damages that may
+716960	721360	be caused to your users and if they bring it up to you. Now, I know this is all sounding a lot
+721360	729040	serious. In reality, what we are trying to do is not that big a deal, but we are still trying to
+729040	739280	store. I mean, the goal of this course is to go through an application and create an application
+739280	747360	that can store users' notes. Notes can be quite personal and you're storing those notes then
+748320	754240	on a backend that you have full access to. So you're kind of like storing user-created data.
+755040	759600	So it is very important that you actually treat that data correctly. Make sure that nobody
+760240	769840	except those who are authorized can access that data. So from a responsibility point of view,
+769840	777200	it is actually a little bit different what kind of company account you want to create, if that's
+777200	783520	what you want to create now. Because for instance, in Sweden, where I live, you can have a personal
+783520	789280	company account in that, sorry, a personal company. So you can register a personal company. It
+789280	796880	means that you are personally liable for that company. And you can also create a company that
+798400	803760	it has like, it's like an umbrella. Basically, it sits on top and then there are people who are
+804400	808480	directors of the company and blah, blah. So you're not personally liable.
+809440	816240	And that is the same structure that you can find in many other countries. I believe US, Germany,
+816240	825040	Sweden, England, many other countries, you can set up companies that are either sole proprietorship
+825040	828960	or something called, English is not my first language, but it's something like that. Or you
+828960	833120	can create like a limited company that you have limited liability and you're not personally liable.
+833120	838560	So these are the different types of developer accounts that you can set up.
+839360	846480	So we can, I mean, that point, I think we all understand now that you can create
+846480	855600	individual or a company account. Now, I think, I mean, I personally registered already an account
+856240	862240	as an iOS developer and an Android app developer. So,
+864400	871280	and since I registered a company account, I can't go through setting up the exact same company again,
+871920	879520	but at least I can show you some of the steps involved in creating those accounts.
+880480	888960	So what we could do is to, now you can't see the screen right now, but I will bring it up here
+890560	899040	so that you can also see. Now I'm going to bring my studio here and I'm going to make this screen
+899040	906160	a little bit bigger so that you can see my screen better. So let me also make this a little bit
+906480	912960	smaller on top so that you can see the content a little bit better.
+914800	920560	So you can see here that there are two options available to you. Either you enroll as an individual
+920560	926560	or you enroll as an organization. And it is strongly recommended actually.
+929440	933200	So you need to make sure that you have two-factor authentication turned on.
+933200	939920	And so that's not a problem. All this means basically as an individual, it means that just
+940480	946880	you will need an account. You will need to set up an account. However, if you want to set up as an
+946880	952160	organization, like if you have a limited company and you want to create an Apple developer account
+952160	959040	that is linked to that organization, it's a little bit different because you will need to set up
+959040	963520	something called a duns or duns or I don't know how you want to pronounce it D-U-N-S.
+964640	972400	Which is kind of like, it's a new thing for me at least, but it is an identifier for your company
+972400	980880	that you either have been assigned to already. I think there is a company called DMB.
+980880	988720	So if you go to, let me see if I can bring the notes for that.
+990720	1002320	Let's see. Learn more. If you go to learn more here. Here, DMB is called by Don and Bradstreet.
+1002320	1011440	So there then we have the ability to register a D-U-N-S number.
+1013360	1018800	For me, I was one of the lucky people to have already been assigned a D-U-N-S number for my
+1018800	1026720	company by DMB because you either have, let's see if they write it here.
+1027680	1031440	You see it says DMB may have already assigned your organization a free
+1031440	1036800	D-U-N-S number. Before enrolling, look up your organization to see if you have a D-U-N-S number.
+1036800	1044880	So you can just click on the link and we can go here and you can then select your region. For me,
+1044880	1051040	it would be Sweden. Then I would write my company name, some address information, contact information,
+1051040	1057440	etc. Then you can check whether there is a D-U-N-S number assigned to your company.
+1057440	1061200	So I suggest that you actually do this by going to this website.
+1066000	1070880	So that's for a D-U-N-S number if you already have one, but if you don't have one,
+1070880	1078320	then you will have to create and request a D-U-N-S number from DMB. I would show you the website for
+1078320	1085360	DMB and D-U-N-S number right now, but my browser is set up so that my locale is already provided to
+1085360	1089280	the browser, which is Swedish. Then if I go to the DMB website, you're going to see everything in
+1089280	1096560	Swedish. That doesn't make any sense just to read the information in Swedish. I believe you can go
+1096560	1107040	to DMB's website. So if I search for a DMB, D-U-N-S or D-U-N-S are here. So this is a Swedish
+1108080	1113600	localized website for DMB. Let's see if it can change the language.
+1117520	1121760	Actually, I can see here that they're very, they're actually in Sweden.
+1121760	1128960	And I wonder if we can, here, change country. Let's just say
+1132880	1133600	international.
+1136400	1141200	So if we go here, let's see if we can,
+1143920	1150240	if there's any way to actually request a D-U-N-S number, like if you say D-U-N-S.
+1152560	1160160	And I can't see anything related to that, to be honest with you. So if we go back
+1163680	1170720	here, I can see, I can request the D-U-N-S and here the locale is S-V-S-E. And here,
+1170720	1176400	the locale was E-N-G-B. So what happens if we just go back to this URL that we were on before,
+1176880	1184720	and then I just change the locale? Does that work? Well, unfortunately. But, I mean, here,
+1184720	1193520	D-U-N-S number, get a D-U-N-S number. Okay, that's good. And then, and you can here say,
+1193520	1203040	I'm an Apple developer, press continue. Oh, it sends you back here. That was really bad.
+1203360	1214240	So it says, look up your organization in Apple's website. And when you try to get a D-U-N-S number,
+1215040	1226000	it tells you to go to Apple's website. If we say that, then okay, legal business name, etc., etc.
+1226720	1234160	Then okay, legal business name, etc., etc. Okay, so you will need to go through this process,
+1234160	1239600	which doesn't seem to be completely easy to get a D-U-N-S number. You see, request the D-U-N-S
+1239600	1248240	number. So you probably just want to go to dmb.com, it's like d-u-n-s-number.html. And I can't
+1248240	1252800	explain this complete process, to be honest with you, because first of all, it will be a waste of
+1252800	1260160	time for both of us. Because these are so many moving parts and a third party company that I
+1260160	1266080	have no control over. So if I even try to explain their process, it may change tomorrow. So there's,
+1266080	1271360	it's not a good investment of our time. But everybody else has figured it out. And I'm
+1271360	1274960	pretty sure that if you just go and say, request the D-U-N-S number, you can just
+1275520	1281920	follow the process and then get your D-U-N-S number. But begin by going through,
+1283120	1290560	look up your organization. So you may already have been assigned a free D-U-N-S number. So
+1291600	1297040	do that first, please. But if you have to request the D-U-N-S number, I believe there is a little
+1297040	1304000	bit of a cost to it. And that is about $70. If I'm 70 to $80 at the time of recording this video.
+1304720	1315040	So count with almost about $100. And hopefully not more, hopefully actually a lot less, but around
+1316720	1326160	$70 at least. Does that make sense? I said so many numbers, $70 at least. So try to get your
+1326160	1331920	D-U-N-S number. At least that that's what Apple says you will need. Now, of course, if you want
+1331920	1339840	to register as a company, I can't stress this enough. You will need a website. I remember vividly
+1339840	1348000	when I registered a developer account at Apple and they rejected my request saying that, well,
+1348640	1355680	your website doesn't have any content. And they were right because I just created an empty website,
+1355680	1360800	like a domain. I know I didn't actually create an empty website. I registered a domain.
+1362240	1368480	And there was no website. So when you typed my website's name, it would just not show you anything.
+1371440	1374960	And they came back and said, no, your application is rejected because you don't have a website.
+1374960	1381440	What kind of company are you? So then I had to actually get like a hosting service and I have
+1381440	1388880	some content in there, have like a support. So if you are registering as a website, sorry,
+1388880	1394400	as a company and as an organization, you will need a hosting service. You will need a domain
+1394400	1400480	provider. You will need to ensure that you have a website because they're not the same thing. If
+1400480	1406400	you have a host and you have a domain provider, it still doesn't mean that you have content
+1407520	1414480	on your web page. But what I realized is that if you register your domain and have a hosting
+1414480	1419680	service, make sure that you have a website. Just have some content in there and say, hello,
+1419680	1426240	we are this business, that business. We work with this and this. If you have any questions,
+1426240	1430480	contact this email. And here's our phone number. Here's their address, et cetera. So
+1430480	1437520	you need to ensure that if you have an organization, it is actually an organization. It's not just like,
+1437520	1444080	hi, my name is Fubar. I'm sitting at home. Contact me if you have any questions. Not like that.
+1444640	1450400	So and of course, after you made your decision, you start the enrollment process. So
+1452400	1458560	now learn more, continue enrollment on the web you can do. And then you come here and you will
+1458560	1463920	basically need to provide your information and continue with the process. Now we're not going
+1463920	1470400	to go through this, but the important thing I have to mention here is that as you go through
+1470400	1479040	the enrollment process, as an Apple developer, unfortunately, there is a cost last time, which
+1479040	1484320	is about a few months ago when I registered, or I had to renew my registration. You have to renew
+1484320	1493840	your registration for Apple's developer account. You have to renew it every year. And as I've
+1493840	1502000	mentioned here, the process is not free, unfortunately. It costs, or last time I
+1502000	1507520	registered or renewed my registration, it costs $99. And I believe it's been $99 for a very long
+1507520	1512720	time. So if you're in Sweden, it costs about a thousand crowns. If you're in England, it probably
+1512720	1519760	costs about 80 pounds or something. And in the US it's about, yeah, just count with almost $100. So
+1520320	1524400	I used to be able to provide this like you have to have some sort of a credit card or debit card
+1524400	1530400	to be able to pay for it. So after you've done that, after you register your account as an
+1530400	1535760	organization, you will have direct access then, or an immediate access to your developer account.
+1535760	1542720	And you can start developing applications, et cetera, et cetera. So if you're following along
+1543520	1550240	with this course and you want to deploy your application to the App Store and Play Store,
+1550240	1558640	please do this first. Get your developer account either as an organization or as an individual.
+1559600	1564160	Get that process out of the way because a developer account, especially if you're an
+1564160	1570480	organization, as I mentioned here, is not a super fast process. I mean, when you get the account,
+1570480	1576960	then it's simple. It's fast and you're in there immediately. But the process itself is a long
+1576960	1582640	process. So I remember for me, it took about two weeks because I got one rejection. It took about
+1582640	1591680	one week for them to review the documents again. So it's not a fast process, unfortunately. It's
+1591680	1602960	like very, yeah, it's just a long, long, boring process. So get that out of the way, if you can,
+1602960	1619600	please. So that's for the long and not free part for iOS. And also, one more thing that I need to
+1619600	1626800	mention is that if you're registering and you want to sell applications, which is not the purpose of
+1626800	1631520	this course, but if you want to sell applications, then you will have to provide some banking
+1632080	1637440	and tax information. So they need to ensure that the stuff that you're selling in different
+1637440	1642720	countries, the money that is then being sent to your bank account, will be accounted for when
+1642720	1650240	you're paying your taxes. So, and I believe that if you're trying to sell apps on the app store,
+1650240	1658320	then you will have to fill in some forms with the US tax offices. I don't even remember IRS, I think
+1659840	1665280	internal revenue services or something like the IRS. I believe that you have to fill some forms,
+1665280	1669680	like send the forms to them, then they will come back with some sort of identifier to you.
+1669680	1674960	And then you will need to use that identifier on Apple's website in order to basically say
+1674960	1679840	that, yeah, yeah, I know, I'm selling stuff in the US, I'm selling stuff in Japan, I'm selling
+1679840	1686960	stuff in Sweden, Norway, but I'm going to pay taxes for them here in my country. And that's
+1686960	1695360	what the form says here. Here's my name, here's my company. I'm an organization or I'm an individual,
+1695360	1703200	so I have no company. My personal identification number in my country is this, is my address,
+1703200	1708240	my phone number, et cetera. And then you send it to them, to IRS, and then they come back and say,
+1708240	1715920	okay, now we know who you are. And here is your identifier number, like a business identifier
+1715920	1720320	number, BIN or something they call it, I think. I don't remember exactly, but I believe depending
+1720320	1723920	on whether you're a business or an individual, then the number is a little bit different.
+1724880	1728800	So if you're a business, I think it's BIN. And if you're an individual is in, I don't know.
+1729600	1734560	So I don't know what that dialogue was. Some Bluetooth devices wants to connect to my computer.
+1734560	1743040	I don't know what it is. So that's that part. It can be long and it's not free. Okay.
+1745920	1753840	That was a lot of information. That's for iOS. Now, what we can do now is to talk
+1753840	1759680	a little bit about Android as well. And the good thing about the Android process,
+1759680	1766000	like setting up your account for, as a Google developer, is that it's a lot more straightforward
+1766000	1772320	as you would expect from Google. And given that they're even like sending updates to
+1772320	1777360	an Android app to the Google developer console is a lot more straightforward than it is for iOS.
+1777360	1782640	I don't want to scare you, but it is a fact. And you will know that later when we actually
+1782640	1788800	get to the end of this course where we release the apps for iOS and Android, that it is a little
+1788800	1798080	bit more straightforward for Google Play Store. But you still need to sign up for a developer
+1798080	1808080	account. So I'm going to take in my notes that I've talked about that. So what we also need to know
+1808080	1814000	is that there is a URL that we can go to. I'm going to copy that and paste it over here. So
+1814000	1822400	you see which one I'm talking about. Over here. Then you can see that you can set up a developer
+1822400	1826080	account. And once you've logged in, so I'm assuming that you're logged in, then you go to
+1826080	1834560	play.google.com slash console slash user or you zero sign up where URL, it may change. So let's
+1834560	1840480	just, what you can do is just a Google, Google Play Console developer account or a Google
+1840480	1846000	developer account. Then you will end up in a URL that looks kind of like this. So don't count
+1846000	1850400	with this URL that I mentioned here because it may change. That's what I'm saying. And
+1851760	1855920	you can, as it is for iOS development, you can either set it up personally as an individual or
+1855920	1861040	you can set up as an organization. Now I happen to have set it up for myself as an organization
+1861040	1866080	because I do have a company here in Sweden. So it is a lot easier for me to tie all my business
+1866080	1871200	relations with Apple and Google into one entity, which is my developer account for,
+1873600	1880880	sorry, which is my company. So it wouldn't make so much sense for me to explain this either to go
+1880880	1885120	through all the details, but if you want to set it up for yourself as an individual, just press on
+1885120	1888480	get started. Or if you want to set up as an organization, just press get started there.
+1888480	1893920	As you can see, you can provide information about your organization. And you can see here as well,
+1894480	1899920	as soon as you say I'm an organization, then they say, okay, what's the website? So you can see if
+1899920	1903520	you say, I don't have a website, we recommend adding a website that represents your organization.
+1903520	1908320	Well, it kind of makes sense. I mean, if you're a company, where's your website? Every company
+1908320	1913520	should have a website unless you're like a pizza restaurant or something. Even a pizza restaurant
+1913520	1917280	probably needs a website, but we have a pizza restaurant here in our town that doesn't have
+1917280	1925280	a website. So they're on Facebook. And you probably don't want to say that your company's
+1925280	1933680	website is on Facebook. So yeah, where were we? Here. And if you say you're an individual,
+1933680	1939840	then you come here and they ask for some other stuff, but still interesting because
+1940720	1947120	it says enter the URL of your website or social media profile. So here you kind of have to need
+1948080	1952400	to enter that as well. So maybe you can get away with a Facebook URL. I laughed about it, but
+1953280	1957120	maybe you can get away with it. I don't know. But I don't recommend that, to be honest with you,
+1957120	1963040	because as you will see later in the course, when we actually submit our apps to App Store and Play
+1963040	1971120	Store, there are a few key data points that you have to provide to both stores. One is a privacy
+1971200	1983840	policy URL, and the other one is a support URL. And there are also two other emails you have to
+1983840	1994160	provide. The first one is the support email and the other one is a contact email. And if you're
+1994160	1998560	setting up a business account, then I really suggest that you actually set up a website,
+1998560	2003040	because if you set up a website and you have a domain, you have an email provider,
+2003040	2012160	then your email will kind of be like foobar at mybusiness.com. It's a lot more professional
+2012160	2019280	to set up an email that is connected to your email or to your domain than it is to say
+2020000	2027920	mrjohnson at gmail.com. I wouldn't trust a business that has a gmail.com account.
+2029280	2032960	I kind of want to know that, yeah, here's a serious business, that they have their own website,
+2032960	2041040	and blah, blah, blah. But on the contrary, setting up a website, setting up some emails
+2041040	2046960	doesn't necessarily mean you're serious either. But it makes it more dedicated, if you know what
+2046960	2057680	I mean. So yeah, that's the process for setting up an account also as an Android developer.
+2059520	2066640	I think that's about it. That's all I wanted to mention in this first chapter of our course.
+2068320	2074000	I highly recommend that you get your developer accounts for Apple and for
+2077120	2083520	Google. What you'll also need to know is that, I mean, I've talked a lot about now,
+2084000	2093920	Apple account and a Google developer account, but if you're developing your application
+2096160	2100240	on a Windows machine, for instance, if you're trying to learn how to develop Flutter
+2100240	2104560	applications and you don't care about releasing your application at all, you don't have to do
+2104560	2112400	any of this. Just follow along with the course as usual, no problem. But if you want to actually
+2112400	2117840	release your application for iOS, then you most definitely need to also have a Mac because you
+2117840	2123840	can't build your application otherwise. There are some tricks you can do. You can build your
+2123840	2129040	Flutter application and later on, like a friend's Macintosh if they have one, or you can send it to
+2129040	2133600	a service that's in the cloud and they build the app for you and then they will send it back to
+2133600	2139280	you and then you can submit it. Or maybe they even have to submit it. It's a bit hairy, to be
+2139280	2145840	honest with you, but it's a complicated topic. It is a little bit difficult to explain.
+2148000	2153120	For instance, if you're on a Windows machine, you can't even have Xcode. Xcode is the tool
+2153680	2161840	and the entire chain of tool sets that gets installed on a Macintosh in order to build
+2162880	2168560	an application for iOS platform. Now, why am I talking about this? The reasoning behind that
+2168560	2175520	is that if you're developing a Flutter application, then Flutter can be deployed
+2175520	2184080	on a Windows machine, Macintosh, or collectively called as desktop, web, Android, iOS, five
+2184080	2192480	platforms at the moment. If you're trying to release your application and build it for iOS,
+2192480	2198800	for instance, and test on an iPhone or an iPad, you can't do that on a Windows machine,
+2198800	2205520	unfortunately. There's nothing wrong with a Windows machine. It's just Apple's fault for
+2205520	2211520	locking down their build systems and alter tools to Macintosh. They haven't made the
+2212720	2217840	conscious decision or yeah, they haven't made the decision to
+2218640	2226240	bring their tool system and tooling to Windows, unfortunately, or Linux. Swift,
+2226240	2232880	which is the language to write native applications for iOS, can be run, I believe, on Linux.
+2233920	2239680	Windows might be, but its main platform is still Mac.
+2240640	2245920	I know that this is a lot of information also to learn, but if there is anything I want to
+2246720	2253600	close this chapter, the first chapter of this course with is, you can learn Flutter and follow
+2253600	2258720	along with the steps I'm going to provide in this course without having to register any accounts
+2258720	2268000	yet. So that's point one. Point two is that you will need a Macintosh if you want to use it for
+2268640	2275520	if you want to comfortably build and release your Flutter app for iOS.
+2278000	2283600	If you want to release your application on Google Play Store, which is point three,
+2283600	2289360	if you want to do that, you will need to register a developer account on Google Play Console,
+2289920	2296320	as I've shown you here. I believe that's all. That's all you need to know. So
+2297280	2300240	some of you may already have all these accounts and don't have to worry about it,
+2301280	2307600	but some may not know all this. If you're coming from a design background, if all you do is work
+2307600	2312000	with Figma, et cetera, this is some of the important information that you'll need to know
+2312000	2317440	about because I don't want you to get frustrated during the process, so I just want you to have
+2317440	2323520	some information so that you can get started at least without too much hassle. All right,
+2323520	2329680	that's it, I think, for this chapter. I can take in my notes that I've explained everything
+2329680	2336320	I wanted to explain. It did take about 35 minutes. It's not unexpected, to be honest.
+2336320	2341280	It's a lot of information, and I kind of want to take my time with it. It's important that you
+2341840	2349200	and for me as well to understand all this. So great. I think that's it for this video.
+2349920	2356640	So I'll see you in the next chapter. Hi, everyone, and welcome to the second chapter of our course.
+2356640	2361440	Now, if you haven't watched the introduction to this course, I really suggest that you do that
+2361440	2365120	before continuing with the course because there are so many points that I'll explain in that
+2365760	2370320	introduction that I believe are so important to understand before continuing with the course. So
+2372000	2376400	in this chapter, what we're going to do is we're going to take care of some setup steps that are
+2376400	2383520	required for pretty much the rest of this course and all the other chapters that follow
+2383520	2389200	along after this one, chapter three, four, and et cetera. So we're going to talk about Flutter,
+2389200	2396560	Dart, Dart Pad, how to install Flutter, whether you're on Windows, Mac, or Linux.
+2396560	2404560	And we're also going to talk about Xcode, Android Studio, and we're going to talk about a few
+2404560	2411600	very useful extensions to our code editor. So if you're coming from a background where you
+2411600	2417120	haven't worked with any kind of programming language before, I'm going to take this chapter
+2417120	2422320	quite easy. So if you're an advanced programmer already, you may want to skip this and you already
+2422320	2430720	have Flutter installed, everything, you can skip this chapter without a problem. So let's start by
+2430720	2436960	talking about what Flutter is. Well, traditionally developers and programmers
+2436960	2442960	or software engineers, however you want to call them, they've been creating and writing code with
+2442960	2449120	their fingers in different languages, and then they're targeting different platforms. It's
+2449120	2454640	very important to understand what a language, programming language is versus a platform.
+2455600	2466880	Think of a platform as the end station where a software ends up being run on. So let's say
+2466880	2474720	Windows is a platform, Mac is a platform, Linux is a platform, and iOS that runs on all iPhones
+2474720	2482800	is a platform, Android is a platform, et cetera. Now, you would have programming languages that
+2483760	2489200	you as a software developer would use in order to target those platforms, to write software for
+2489200	2494640	those platforms. So you use a programming language in order to write a piece of code
+2494640	2501520	and be able to run that code on that target platform. So the programming language example
+2501520	2512160	is JavaScript, Python, Swift, Rust. What else is popular right now? Java, Kotlin, all these.
+2512800	2519120	These are programming languages. So you as a software developer who's trying to learn
+2519120	2525840	Flutter would use then Dart as your programming language, as I will soon explain. So
+2528880	2532080	that has been the tradition that a person sits in front of a computer and says,
+2532080	2536080	okay, I want to write a program for Windows. Then they go and write some code maybe with
+2536080	2543440	Csharp.net, or maybe they will just use some other technology. I don't know what's out there
+2543440	2550640	right now for Windows. Maybe they would use VB.net, and then they would be done and they
+2550640	2555840	would release the software for Windows and be like, okay, I'm done. Now, then someone comes
+2555840	2561920	into the project and says, oh, we need the same software for Macintosh, or we need the same software
+2561920	2573200	for some other, for instance, platform. Then you would have to go and write the same software,
+2574480	2581040	exact same code, pretty much, for the other platform. So this process would be very repetitive
+2581040	2586160	in that you would have to write the same software over and over again. So things such as Flutter
+2586160	2591200	came in in order to remedy that. So saying that a software engineer sits at home or sits in the
+2591200	2596000	office, works with a group of other people and a designer maybe, or a few designers, UXer as a
+2596000	2604160	product owner, et cetera. They would write the same code, which will then be run on different
+2604160	2612640	platforms. So as a software developer, you wouldn't have to maintain different, very similar pieces of
+2612640	2620960	code that only can be run on one specific platform. So Flutter in its ground basically is a UI
+2620960	2629600	framework for writing beautiful applications that run on multiple platforms at the same time.
+2630320	2638000	Developed by Google, has been in production for a very long time. It's tried and tested. It's
+2638000	2644960	open source. And if you don't come from a software engineering background, open source basically
+2644960	2655760	means that the code that is written for Flutter, basically the code that makes up Flutter, is open
+2655760	2662720	to the public for finding bugs and also for contributing to it or maybe just learning from
+2662720	2667600	it. So if you're, for instance, coming from a background of as a designer, it's kind of like
+2667600	2674800	you have your Figma file open to the entire world or your Adobe XD source open to the entire world
+2675120	2680560	for them to watch what you're doing as you're designing and also for them to be able to fix
+2680560	2689440	stuff in your design if they see it not working as it should. So that's open source. So Flutter is
+2689440	2696880	open source UI framework developed by Google. What a framework means, I mean, if you're not coming
+2696880	2702720	from a software engineering background, a framework is kind of like a set of tools provided to you
+2702720	2707680	as a software developer. So you can use these tools, take a bit of this one, take a bit of that
+2707680	2716160	one in order to produce an output. So Flutter in itself is a software, but it's more precisely
+2716800	2725440	referred to as a framework because it's a collection of tools. So if you hear framework,
+2725440	2729280	just know, oh, there's a collection of things I can use to produce some output. Now,
+2730240	2739520	that's what Flutter is. But what powers Flutter is a programming language called Dart. And
+2740400	2746560	Dart has been in the making for more than eight years is a language that at the moment being
+2746560	2753440	maintained by Google and also is open source. So anybody can contribute to it, anybody can learn
+2753440	2759120	from it and find exploits or maybe problems with it and it will get patched by the public or by
+2759120	2766960	Google themselves. So Dart is the language, the programming language that powers Flutter, you could
+2766960	2778800	say. So now you know what Flutter is and now you know what Dart is. And I think in the next step
+2778800	2787680	now what we can do is talk about a great piece of web software called Dart Pad. Now,
+2789120	2797200	Dart Pad, as I said, is a web software or you could just call it a website that allows you to
+2797200	2807520	run or write your Dart code, maybe pure Dart code or code for Flutter and run it directly in your
+2807520	2813760	browser without you even having to install anything. So just open your browser and as you
+2813760	2819200	will see soon we go to Dart Pad and you will see how it looks like. So let me just show you a little
+2819200	2825200	demonstration here. So here I have Dart Pad open and I can actually increase the size so you can
+2825200	2830560	see a little bit better. I may have to rearrange some components here on the screen so you can see
+2830560	2838560	the screen better. So I went to dartpad.dartlang.org and you can see here that there is a program
+2838560	2847200	written on the left-hand side and I can actually, yeah, let this what is Dart, Dart Pad allows you,
+2847200	2852480	blah, blah, text to be there so you can have context of what I'm talking about. And you can see
+2852480	2858080	that the program is sitting there and you are allowed then to either change the program the
+2858080	2865120	way it is or click anywhere here to see documentation down here or press the run button.
+2865120	2870560	So I'm just going to press the run button and you can see that the text hello got printed to the
+2870560	2876640	screen five times plus the number of times it was actually printed. It's also printed to the screen.
+2876640	2884720	So hello one, two, three, four, five. So what you see on this side is the source code if you
+2884720	2889360	remember from open source. So this is the source code written in the programming language called
+2889360	2898400	Dart. And this is the output of that program. So Dart Pad allows you to write text here and just
+2898400	2907120	execute it and see the results immediately. So that's what Dart is. I mean, sorry, Dart Pad is.
+2907120	2913760	And we're going to talk about Dart and Dart Pad more in the course. But right now what we should
+2913760	2924160	do is to start by installing Flutter. Because, I mean, you could say, okay, but Flutter is just the
+2926640	2934160	UI framework. How about Dart? Well, the way Flutter is packaged by default is that it includes the
+2934160	2939840	Dart programming language and its runtime. So the tool is required to run any Dart code.
+2940800	2946400	It packages all of that in just one big chunk for you. So you don't have to go and install
+2946400	2951600	different components like install Dart separately in Flutter. So let's just then improvise. And I'm
+2951600	2960640	going to say in here, let's say install Flutter. Okay? Then you go to this beautiful website called
+2960720	2965200	Flutter.dev. I'm going to increase the size here so you see.
+2967600	2976000	So we go there now. And you will see this beautiful website here. And what we're going to do is just
+2976000	2982800	to press on get started. And remember, we pressed on get started. But this website looks like this
+2982800	2987840	right now. Maybe in a few months or maybe in a few years, it will change. So you'll just have
+2987840	2993200	to find out a way to get to the installation part. Right now it's called get started. And I
+2993200	2999840	can see it's located as docs.flutter.dev get started install. Then pick your platform here.
+2999840	3004320	I'm on a Macintosh, but if you're on a Windows, just click on Windows and then you get instructions
+3004320	3012080	on how to install Flutter. And then, or if you're on Linux, you can also do the same. Just get
+3012080	3020560	instructions for your platform. Now I'm on a Mac and I'm going to click on Mac. And then I'm going
+3020560	3025120	to look at this information here. I'm going to increase the size so it's a little bit easier to
+3025120	3030720	read. And it says, okay, download the following installation bundle to get the latest stable
+3030720	3039440	release of the Flutter SDK. SDK means software development kit, I believe. So it's just like
+3040080	3046800	series of tools for you to use. It's just fancy words. So then we're going to do that. Let's just
+3046800	3054880	get Flutter Mac. I'm going to download it. And it may take some time because it is actually quite
+3054880	3062320	a chunky bit of software. As you can see, it's almost 1.2 gigabytes. So depending on your
+3062320	3066880	internet connection, it could take anything between a few seconds to a few minutes.
+3067520	3074640	And after you've done that, then you will have to unzip that in some folder.
+3076080	3083040	So what that means is just I can see that my Mac is already decompressing this zip file
+3083040	3087120	for me. So I don't have to do that myself. And it's already decompressed in this
+3087120	3092880	place. So I'm just going to click on it and I'm going to show you its content. So it looks like
+3092880	3102080	this. Okay. Now that you have this, what you need to do is to ensure that all these files are
+3102080	3111360	placed inside a location on your computer, which is protected so that you don't accidentally
+3111360	3117040	delete it. And it's also a good, like, you know exactly where it is. So by that, I mean,
+3117040	3121200	don't put it on your desktop and don't put it in like documents or anything. It's not a
+3121200	3129840	document. It's a software. What I like to do is usually to have a folder on a Macintosh called
+3129840	3137360	Dev. So I will open Terminal here, as you can see. Terminal, if you're not familiar with it,
+3137360	3145760	is an application that you can control pretty much the entire system with it. If you're on a Mac or
+3145760	3150480	if you're on Linux or any Unix based system. And if you're on Windows, you can also do a lot with
+3150480	3159200	your Terminal. So in Windows, that Terminal is called CMD, I believe, as in command, I believe.
+3160400	3167680	On Linux and Mac, it's called Terminal. I'm using a Terminal here called iTerm.
+3169680	3173520	But if you're on Vanilla Mac OS, then you would go and open Terminal
+3174080	3176400	like this, which is just looking like that.
+3176400	3181920	So I'm going to open iTerm right now, which is my Terminal. You can open the Terminal that
+3181920	3189200	you're comfortable with. I'm going to increase the size of this. I like to place
+3190640	3194880	my installations for these pieces of software in my home directory, which is denoted by this
+3194880	3203040	little funny character, slash dev. And if I look at the contents of this, I can see
+3203520	3209680	if I look at the contents of this, I can see I have a folder called Toolink. If I say Toolink
+3210560	3213280	and look at the contents of it, I can see Flutter is right there.
+3214560	3222160	So for me, Flutter installation, this folder that got downloaded for me in my downloads folder,
+3223040	3230080	I would go and copy its contents and place it in this folder. So if I say CD Flutter,
+3231040	3238480	and then you can see that I'm in my user, Dev folder, Toolink, Flutter. So this is where I
+3238480	3243680	choose to put Flutter. Now you can choose to put this downloaded folder anywhere else, as the
+3243680	3252080	documentation tells you, in the desired location, for example. So go ahead and do that. Pick a
+3252080	3257600	location. For me, this location works. For you, it may be, if you're on Windows, it would probably be
+3257840	3266160	C backslash, I don't know, you could say dev backslash Toolink backslash Flutter. This could
+3266160	3273360	be a good location for your Toolink or Flutter. So I'm imagining now that you've done that. You've
+3273360	3278480	gotten a folder, and for me, it's this one, where you've extracted your Flutter installation in.
+3279120	3287120	Now you can see that it says, in this third step, you will need to expose Flutter's binary
+3287120	3295200	files to your system. And what that basically means is that Flutter as an SDK or a toolkit
+3295200	3303600	or a framework, it has a lot of bits and pieces of software in it. And some of these bits are
+3303600	3309200	more important in that sense that they're actually executable in that. Imagine that
+3310400	3315440	on your computer, whether it's a Macintosh, Windows or Linux, you can have different
+3315440	3319440	documents. Some documents can be text. Some documents can be images. Some documents can
+3320320	3325920	be, I don't know what else they can be. Or a Word document, for instance. Okay,
+3325920	3332080	good. I came up with another example. Or they could be programs. A program is something that
+3332080	3336240	you can just double click on and a piece of software gets executed and then it will open.
+3336240	3343040	For instance, an example of the program is a Microsoft Word. Another example of program is
+3343040	3350320	Google Chrome web browser. Another example of program is Safari. So these are programs.
+3350320	3355440	And Flutter comes also with its own built-in programs that do very specific and important
+3355440	3365360	things on your computer related to Flutter, of course. Sorry, I have to see my recording studio.
+3365360	3372560	Nothing you had to do. It was just for me. So these important programs that are inside
+3372560	3377280	the Flutter installation, which you just downloaded, need to be exposed to your entire system
+3377920	3384080	so that you can work with Flutter with ease. And that means if you're, for instance,
+3384080	3390000	from a design background, it will allow you to anywhere in your terminal, just write Figma
+3390000	3395360	and Figma app would open. And that's the same thing with Flutter. In this folder, you see,
+3395360	3401600	we're in the Flutter folder where you downloaded your installation and installed it in this folder.
+3401600	3408160	There is a folder called bin, which means binary. In here, there are so many things that are important
+3408160	3413920	to the entire system to run. You see Flutter and Dart. These two, I said so many, but yeah,
+3413920	3421840	there's pretty much two. So these two binary executables need to be exposed to your system.
+3422400	3427600	And the way to do that on a Macintosh is to change your paths as is documented here.
+3428560	3438080	So the way I like to do that is I go and change my, if I do a vim and look at my zshrc,
+3439200	3447440	I can see my paths and you can see it here. So you see, I've actually put that export command
+3447440	3456080	as it is stated here. I put it here, you see. This may be a bit intimidating, to be honest with you.
+3457600	3463600	Well, all it's doing is that you see this file that I've placed here, I don't know if I can
+3463600	3468080	actually zoom into it. And if you can see, I don't know how that looked in the actual recording,
+3468720	3477440	but this is sort of like a set of instructions to my terminal on this Macintosh to tell it
+3477440	3483120	where different bits and pieces of binary executables are placed, such as Flutter,
+3483840	3490000	Dart, Python, et cetera, et cetera. So when I install a piece of software in this way,
+3490000	3493040	you see, we just downloaded a package and just put it somewhere on our computer.
+3493920	3499680	Macintosh won't know about the stuff that's in it. Of course it won't. So you have to tell it
+3499680	3506320	where those things are. Because otherwise, if you don't do this step, if you don't do the step three,
+3506320	3511840	then every time you want to run Flutter, then you have to specify exactly where that Flutter command
+3511840	3517840	is. So for me, it would be my home folder, dev tooling Flutter bin slash Flutter. But if you do
+3517840	3523760	this, then you can anywhere in your terminal, just write Flutter and your Macintosh or Linux or
+3524560	3532800	Windows computer will know where to find it. So do that. Put these instructions as specified here
+3532800	3540720	in your path. And after doing that, you may need to reload your path using a command on Windows and
+3540720	3548240	Linux called source and VSHRC for me. Depending on which shell you have, you may have to
+3550000	3556080	put that instruction in somewhere else. On Windows, I believe you will have to modify your
+3557760	3564240	environment variables. I remember this from many, many years ago. Let's see if you have to do that.
+3564400	3571280	Update your path, you see. If you wish to run Flutter commands in regular Windows console,
+3571280	3576080	take these steps, blah, blah. From the start search, end and select edit environment variables
+3576080	3580960	for your account. So what you'll just have to do, really, is just to follow these steps. I mean,
+3580960	3586960	I'm going through basically giving you some of the basics of these instructions so you can get
+3586960	3591760	like a head start. But these instructions can also change in the future. So don't rely just on what
+3591760	3599040	I'm telling you, please. Just go to the installation website here as you see docs.flutter.dev. Get
+3599040	3599840	started and install.

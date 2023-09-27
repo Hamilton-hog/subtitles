@@ -1,0 +1,3458 @@
+WEBVTT
+
+00:00.000 --> 00:04.880
+and try to follow along with the steps provided.
+
+00:04.880 --> 00:09.240
+So after you've done all of this,
+
+00:09.240 --> 00:12.960
+you should be able to be anywhere on your computer
+
+00:12.960 --> 00:15.840
+and just say Flutter doctor.
+
+00:15.840 --> 00:18.720
+Now Flutter doctor is a very important command
+
+00:18.720 --> 00:21.640
+because it looks at your Flutter installation
+
+00:21.640 --> 00:25.360
+and it kind of makes sure that it's in good health,
+
+00:25.360 --> 00:27.920
+as denoted by the word doctor.
+
+00:28.440 --> 00:32.040
+So because Flutter in itself is a framework
+
+00:32.040 --> 00:35.440
+and it depends on many other bits and pieces
+
+00:35.440 --> 00:37.340
+which your computer may need to have
+
+00:37.340 --> 00:40.420
+in order for Flutter to actually work optimally,
+
+00:42.640 --> 00:45.420
+Flutter doctor will then go through a series of steps
+
+00:45.420 --> 00:48.040
+to ensure that first Flutter is updated
+
+00:48.040 --> 00:51.920
+and that you for instance have Android tool chain
+
+00:51.920 --> 00:55.480
+that you have Xcode installed, Chrome, blah, blah.
+
+00:55.480 --> 01:00.480
+So I mean, this result at the moment
+
+01:00.520 --> 01:02.160
+looks quite fine on my computer,
+
+01:02.160 --> 01:03.640
+but if you're running Flutter doctor
+
+01:03.640 --> 01:04.900
+for the first time on your computer,
+
+01:04.900 --> 01:07.400
+you may get a few problems.
+
+01:07.400 --> 01:09.560
+Some of the problems that you will experience probably
+
+01:09.560 --> 01:12.920
+is gonna say Android SDK couldn't be found,
+
+01:12.920 --> 01:15.040
+Xcode couldn't be found,
+
+01:15.040 --> 01:18.320
+because if you're running Flutter on a Windows machine
+
+01:18.320 --> 01:21.000
+or a Linux machine, then you can't have Xcode.
+
+01:21.000 --> 01:24.760
+Xcode is like the software provided by Apple.
+
+01:25.760 --> 01:28.560
+And only runs unfortunately on Mac OS
+
+01:28.560 --> 01:33.560
+and it's used for compiling or creating Mac OS,
+
+01:36.560 --> 01:40.040
+iOS and iPad OS pieces of software.
+
+01:40.040 --> 01:43.640
+So although you can run Flutter on your Linux
+
+01:43.640 --> 01:47.520
+and on your Windows machine without a problem,
+
+01:47.520 --> 01:52.520
+you won't be able to produce or test your Flutter code
+
+01:53.000 --> 01:55.440
+running on an iPhone, unfortunately,
+
+01:55.440 --> 01:59.320
+unless you have access to Xcode.
+
+02:00.200 --> 02:02.760
+And the easiest way to get access to that is of course,
+
+02:02.760 --> 02:03.800
+to have a Macintosh.
+
+02:03.800 --> 02:07.720
+And that's unfortunate because yeah,
+
+02:07.720 --> 02:10.640
+it's just not available for other platforms.
+
+02:12.160 --> 02:17.160
+So you've run Flutter doctor and it's basically gonna tell you
+
+02:17.880 --> 02:20.880
+that, okay, now I'm gonna assume that you're on a Macintosh.
+
+02:20.880 --> 02:23.920
+It's gonna tell you that, okay, Xcode, for instance,
+
+02:23.920 --> 02:25.240
+you need to install Xcode.
+
+02:25.240 --> 02:28.240
+And the way to do that is you need to open App Store
+
+02:28.240 --> 02:31.200
+on your computer and just type Xcode here
+
+02:32.360 --> 02:35.360
+and go and install Xcode on your computer.
+
+02:37.640 --> 02:40.000
+So depending on, I don't know which version
+
+02:40.000 --> 02:41.080
+is the latest at the moment,
+
+02:41.080 --> 02:44.760
+but if you're trying to develop Flutter app to be able
+
+02:44.880 --> 02:47.880
+to run on your iOS phone or the iOS simulator,
+
+02:47.880 --> 02:49.440
+then you need to install Xcode.
+
+02:49.440 --> 02:51.200
+If you're on a Macintosh, sorry,
+
+02:51.200 --> 02:53.480
+if you're on a Linux computer or Windows,
+
+02:53.480 --> 02:54.800
+you don't have to do this step.
+
+02:54.800 --> 02:57.160
+Actually, you can't do unfortunately this step.
+
+02:59.720 --> 03:01.760
+So once you've done that,
+
+03:01.760 --> 03:06.760
+you also need to make sure that you've installed
+
+03:07.840 --> 03:10.720
+developer tools for Xcode.
+
+03:10.720 --> 03:12.920
+So you need to install Xcode.
+
+03:13.200 --> 03:14.880
+Developer tools for Xcode.
+
+03:14.880 --> 03:16.480
+So let's see how we can do that.
+
+03:16.480 --> 03:18.680
+Developer tools, Xcode.
+
+03:20.560 --> 03:22.440
+Command line tools, right.
+
+03:24.560 --> 03:28.240
+Let's see, install from terminal,
+
+03:28.240 --> 03:31.880
+there's a command that you can execute in order to do that.
+
+03:31.880 --> 03:34.200
+And that command actually looks like this.
+
+03:36.120 --> 03:40.720
+Here, I will zoom into it so you can see better.
+
+03:41.320 --> 03:45.760
+It says sudo xcode select install.
+
+03:45.760 --> 03:48.480
+So you need to issue that command in your terminal.
+
+03:48.480 --> 03:50.960
+So if I do that and it says, what's the password,
+
+03:50.960 --> 03:54.440
+I'll enter my password and it says they're already installed.
+
+03:54.440 --> 03:56.600
+So if you haven't done that,
+
+03:56.600 --> 03:58.600
+please go ahead and execute this command
+
+03:58.600 --> 04:02.760
+in order to install command line tools for your Xcode.
+
+04:04.880 --> 04:09.360
+Now, the next piece after Xcode that you will need is
+
+04:11.080 --> 04:13.960
+let's see if I can actually bring up.
+
+04:13.960 --> 04:15.440
+So we've talked about Flutter Doctor,
+
+04:15.440 --> 04:16.480
+that was Flutter Doctor.
+
+04:16.480 --> 04:18.640
+And we also talked about installing Xcode.
+
+04:18.640 --> 04:20.880
+So I'm now bringing that up a little bit late.
+
+04:21.800 --> 04:25.600
+But now the next step is to install Android Studio.
+
+04:27.040 --> 04:31.400
+So what Android Studio is, is like the equivalent of Xcode,
+
+04:31.400 --> 04:34.720
+but for writing Android specific applications.
+
+04:34.720 --> 04:38.160
+Now, in order to write Flutter applications,
+
+04:38.160 --> 04:40.760
+you don't need Android Studio per se,
+
+04:40.760 --> 04:44.040
+but you kind of need the SDK manager.
+
+04:44.040 --> 04:47.640
+Now, both iOS and Android,
+
+04:49.920 --> 04:52.720
+for programmers, they provide you with something called an SDK,
+
+04:52.720 --> 04:55.080
+just like Flutter is an SDK or toolkit.
+
+04:56.000 --> 04:58.440
+iOS and Android also provide you with SDK
+
+04:58.440 --> 05:01.040
+in order to write native applications.
+
+05:01.040 --> 05:05.360
+And since Flutter utilizes these native capabilities
+
+05:05.360 --> 05:07.160
+of each platform in order to, for instance,
+
+05:07.160 --> 05:10.400
+create an application that's compatible with iOS or Android,
+
+05:11.640 --> 05:16.040
+it will utilize the native components, sorry,
+
+05:16.040 --> 05:18.000
+or the native pieces of software,
+
+05:18.000 --> 05:21.400
+namely called Xcode, sorry,
+
+05:21.400 --> 05:25.200
+namely called iOS SDK and Android SDK.
+
+05:25.200 --> 05:27.840
+So you need to download Android Studio
+
+05:27.840 --> 05:29.560
+so you get access to the SDK manager
+
+05:29.560 --> 05:31.920
+so you can install an Android SDK.
+
+05:31.920 --> 05:33.720
+Now, Xcode in itself,
+
+05:33.720 --> 05:35.480
+when you download the latest version of Xcode,
+
+05:35.480 --> 05:39.000
+it comes with the latest version of the iOS SDK,
+
+05:39.000 --> 05:41.280
+but Android Studio doesn't do that.
+
+05:41.280 --> 05:42.120
+Well, wait a minute.
+
+05:42.120 --> 05:44.000
+Yeah, it probably does in the latest versions,
+
+05:44.000 --> 05:45.800
+but we can check that out.
+
+05:45.800 --> 05:48.400
+So if you go to your browser and just say Android Studio,
+
+05:49.840 --> 05:52.560
+and then you open up developerandroid.com.
+
+05:52.560 --> 05:53.600
+Let's just go there.
+
+05:54.920 --> 05:58.440
+And then you can just click on download Android Studio,
+
+05:58.440 --> 05:59.960
+and then there are download options,
+
+05:59.960 --> 06:03.760
+and you can see there's available for Windows, Mac, and Linux.
+
+06:03.760 --> 06:08.760
+So then please go ahead and download your Android Studio,
+
+06:09.680 --> 06:12.920
+and I can see for Macintosh is a package,
+
+06:12.920 --> 06:14.120
+so you can install it easily.
+
+06:14.120 --> 06:15.560
+You don't have to unzip anything,
+
+06:15.560 --> 06:18.080
+and for Windows is also like an executable,
+
+06:18.080 --> 06:21.000
+so tar.gz as well for Linux.
+
+06:21.000 --> 06:24.680
+So now let's say that you've done that.
+
+06:24.680 --> 06:26.640
+Now, after doing that,
+
+06:26.640 --> 06:29.680
+then you should be able to bring up Android Studio.
+
+06:31.600 --> 06:32.440
+Let's see.
+
+06:34.560 --> 06:36.160
+I'll bring it up here.
+
+06:37.320 --> 06:40.200
+Now, when you bring up your Android Studio,
+
+06:40.200 --> 06:43.760
+it will just pretty much be empty here on the screen,
+
+06:43.760 --> 06:45.240
+and you'll get some tips and tricks
+
+06:45.240 --> 06:46.400
+how to use Android Studio.
+
+06:46.400 --> 06:48.000
+But the important thing for you here
+
+06:48.000 --> 06:53.000
+is to be able to install the Android SDK.
+
+06:54.200 --> 06:57.160
+So if you go then to tools,
+
+06:57.160 --> 07:00.000
+I believe there is an SDK manager right here.
+
+07:01.000 --> 07:05.560
+So just ensure that you have an SDK installed.
+
+07:05.560 --> 07:08.600
+For me, I have Android 12 installed here.
+
+07:08.600 --> 07:10.800
+So ensure that you have one of these SDKs
+
+07:10.800 --> 07:14.360
+ready for you to use by Flutter.
+
+07:15.280 --> 07:16.720
+And as soon as you've done that,
+
+07:16.720 --> 07:21.720
+then when you run then your Flutter doctor command,
+
+07:22.560 --> 07:27.560
+then the part about Android SDK is going to be ticked here.
+
+07:29.960 --> 07:31.440
+Sorry, the Android Studio.
+
+07:32.480 --> 07:33.320
+So that's that.
+
+07:33.320 --> 07:35.120
+So we've talked about the Android tool chain,
+
+07:35.120 --> 07:37.400
+which is the Android SDK you can see.
+
+07:37.400 --> 07:38.720
+We've talked about Xcode.
+
+07:38.720 --> 07:40.120
+Chrome is just a web browser.
+
+07:40.120 --> 07:41.400
+If you want, you can have that.
+
+07:41.400 --> 07:44.520
+If you're developing Flutter applications for the web,
+
+07:44.520 --> 07:46.160
+it kinda is necessary.
+
+07:48.520 --> 07:50.000
+And then you can run Flutter.
+
+07:50.960 --> 07:53.520
+And then this, you're probably,
+
+07:53.520 --> 07:55.560
+if you're just getting started with Flutter,
+
+07:55.560 --> 07:58.120
+you're not gonna have this VS Code part ticked
+
+07:58.120 --> 08:01.720
+because VS Code is a code editor,
+
+08:01.720 --> 08:06.200
+an open source code editor provided by Microsoft.
+
+08:07.280 --> 08:09.240
+And it is the code editor
+
+08:09.240 --> 08:11.880
+that I'm gonna use for the entire course,
+
+08:11.880 --> 08:14.200
+for this entire course as we go on.
+
+08:14.200 --> 08:15.160
+And to be honest with you,
+
+08:15.160 --> 08:16.520
+I've tried Android Studio
+
+08:16.520 --> 08:18.560
+and I've tried VS Code for Flutter development
+
+08:18.560 --> 08:21.280
+and I can highly recommend that you use VS Code
+
+08:21.280 --> 08:24.040
+just for its sheer performance,
+
+08:24.040 --> 08:27.440
+it's for its simplicity, extensions,
+
+08:27.440 --> 08:32.440
+and its ability just to really focus on a simple editor
+
+08:32.920 --> 08:35.120
+without bothering you with lots of bells and whistles.
+
+08:35.120 --> 08:37.320
+So it's a preference though.
+
+08:37.320 --> 08:39.960
+Some people use Android Studio for Flutter development
+
+08:39.960 --> 08:41.320
+and some people use VS Code.
+
+08:41.320 --> 08:44.440
+So I don't think one is better than the other.
+
+08:44.440 --> 08:45.920
+It's completely a preference.
+
+08:45.920 --> 08:50.920
+So that's for Android Studio and the Android SDK.
+
+08:51.120 --> 08:55.080
+So now let's go ahead and install Visual Studio Code,
+
+08:55.080 --> 08:57.880
+which is the tool that I'm gonna use for this course.
+
+08:57.880 --> 09:00.520
+So let's bring up a new window
+
+09:00.520 --> 09:04.480
+and I'm gonna say, install Visual Studio Code.
+
+09:04.480 --> 09:07.480
+And I'm gonna bring the window up here so you see.
+
+09:07.480 --> 09:11.920
+Let's go here and you can download the one that you prefer
+
+09:11.920 --> 09:14.160
+for your computer, I've chosen Mac.
+
+09:14.160 --> 09:15.840
+And for me specifically,
+
+09:15.840 --> 09:17.720
+I have a Macintosh with an Apple Silicon.
+
+09:17.720 --> 09:20.960
+So I then choose this one Mac with an Apple Silicon
+
+09:20.960 --> 09:23.240
+and then it's gonna download that for you automatically.
+
+09:23.240 --> 09:25.880
+So it's just about 200 megabytes, I think,
+
+09:25.880 --> 09:27.880
+or actually 100 megabyte only.
+
+09:27.880 --> 09:30.400
+After you've done that just on a Macintosh,
+
+09:30.400 --> 09:35.400
+you would go and put that on in your applications folder.
+
+09:37.080 --> 09:39.320
+So I'm actually gonna delete that,
+
+09:39.320 --> 09:40.680
+which I downloaded just now
+
+09:40.680 --> 09:44.000
+because I already have VS Code on my system.
+
+09:46.760 --> 09:50.400
+So that's for Visual Studio Code.
+
+09:53.000 --> 09:57.560
+So let's go ahead now, now that we've done that,
+
+09:57.560 --> 10:02.560
+I'm gonna talk a little bit about some extensions
+
+10:03.960 --> 10:06.280
+that we're gonna use in Visual Studio Code.
+
+10:06.280 --> 10:09.000
+So let me bring up my terminal
+
+10:09.000 --> 10:12.240
+and we don't need that.
+
+10:12.240 --> 10:14.280
+Let's go and bring up Visual Studio Code.
+
+10:15.200 --> 10:18.520
+And then I already actually have
+
+10:18.520 --> 10:20.800
+so many Visual Studio Code windows open,
+
+10:21.720 --> 10:23.840
+but I can just say new window.
+
+10:23.840 --> 10:26.680
+So you see how Visual Studio Code looks like.
+
+10:27.880 --> 10:31.040
+And then let's see, don't show again.
+
+10:31.040 --> 10:33.200
+Okay, so this is pretty much how Visual Studio Code
+
+10:33.200 --> 10:36.200
+looks like, so it's a very simple application to begin with.
+
+10:37.200 --> 10:39.240
+Now, what we need to do for this example
+
+10:39.240 --> 10:41.200
+is to enable a few extensions.
+
+10:41.200 --> 10:44.320
+Now, the first extension that we're gonna enable
+
+10:44.320 --> 10:46.240
+is called error lens.
+
+10:46.240 --> 10:48.880
+And you need to go here on the left-hand side,
+
+10:48.880 --> 10:51.520
+find extensions and just type error,
+
+10:51.520 --> 10:56.520
+if I can type error and just say error lens, just like that.
+
+10:56.520 --> 10:59.920
+Click on error lens and just press enable or install,
+
+10:59.920 --> 11:00.960
+I believe it's called.
+
+11:00.960 --> 11:04.720
+So error lens allows you to see errors in line
+
+11:04.840 --> 11:07.560
+without you having to click on a specific line
+
+11:07.560 --> 11:09.400
+of error, basically.
+
+11:09.400 --> 11:14.160
+So it expands the entire error as you're coding,
+
+11:14.160 --> 11:16.040
+you will probably have some errors in your code.
+
+11:16.040 --> 11:18.040
+That error will be then displayed right there
+
+11:18.040 --> 11:19.920
+in front of your face in its entirety.
+
+11:19.920 --> 11:22.400
+So you don't have to press a little small button
+
+11:22.400 --> 11:24.800
+to be able to see that complete error.
+
+11:24.800 --> 11:27.920
+So it's a fantastic extension, to be honest with you.
+
+11:28.800 --> 11:31.000
+Now, the other thing that you'll need
+
+11:31.000 --> 11:35.080
+is something called bracket pair colorizer.
+
+11:35.080 --> 11:37.160
+And that bracket pair colorizer is something
+
+11:37.160 --> 11:41.280
+that is already installed in Visual Studio code.
+
+11:41.280 --> 11:44.840
+It used to be an extension that you could download,
+
+11:44.840 --> 11:48.080
+but it was so popular that Microsoft has added that
+
+11:48.080 --> 11:50.080
+internally to Visual Studio code.
+
+11:50.080 --> 11:51.960
+So you don't have to do that manually,
+
+11:51.960 --> 11:53.480
+sorry, by installing an extension.
+
+11:56.200 --> 11:57.920
+Now that we've talked about that,
+
+11:57.960 --> 12:00.840
+the next step is to actually install
+
+12:00.840 --> 12:03.240
+Flutter and Dart extensions.
+
+12:03.240 --> 12:06.600
+So here, just type Flutter.
+
+12:08.040 --> 12:08.880
+Let's do that.
+
+12:08.880 --> 12:12.800
+And then just click on the install button.
+
+12:12.800 --> 12:13.800
+I've already installed that,
+
+12:13.800 --> 12:15.880
+so there's a disable button for me here.
+
+12:16.800 --> 12:18.560
+The Flutter extension,
+
+12:18.560 --> 12:20.840
+and then you'll also need the Dart extension.
+
+12:20.840 --> 12:23.760
+So just type Dart and then install that as well.
+
+12:24.760 --> 12:28.760
+So after these two installations,
+
+12:30.320 --> 12:35.320
+we also need to install another great extension called block.
+
+12:35.320 --> 12:37.120
+B-L-O-C.
+
+12:38.240 --> 12:40.600
+I'm not gonna go into the details of what block is,
+
+12:40.600 --> 12:44.520
+because you will learn about block a lot later in the course,
+
+12:44.520 --> 12:48.440
+but it is just a great extension to have.
+
+12:48.440 --> 12:50.360
+As we go on, you're gonna learn about it.
+
+12:50.400 --> 12:53.440
+So I can't really explain exactly what it is right now,
+
+12:53.440 --> 12:54.720
+but just install it,
+
+12:54.720 --> 12:57.280
+and I will tell you more about block later
+
+12:57.280 --> 12:58.600
+in the course, I promise.
+
+13:00.040 --> 13:05.040
+So that was basically installing a block.
+
+13:06.280 --> 13:08.840
+Now, when you start up your Visual Studio code,
+
+13:08.840 --> 13:11.520
+it probably doesn't look like the way it does for me.
+
+13:11.520 --> 13:14.320
+And that is because I have a custom theme
+
+13:14.320 --> 13:18.320
+installed on my Visual Studio code called Tokyo Night.
+
+13:18.520 --> 13:23.520
+It is a very, very mellow, dark theme, as it's called.
+
+13:25.120 --> 13:27.800
+And themes in Visual Studio code can be installed
+
+13:27.800 --> 13:29.760
+just like you install an extension.
+
+13:29.760 --> 13:32.320
+So if you like my theme,
+
+13:32.320 --> 13:34.680
+you're more than welcome to go into extensions
+
+13:34.680 --> 13:39.680
+and then search for Tokyo Night and just install it.
+
+13:40.000 --> 13:43.960
+So it has different theme colors as well.
+
+13:43.960 --> 13:46.400
+This is the one I use, Tokyo Night.
+
+13:46.400 --> 13:49.320
+Actually, I use this one, Tokyo Night.
+
+13:49.320 --> 13:54.320
+So if you want that theme, please go ahead and install it.
+
+13:56.800 --> 13:58.720
+And now that we've talked about that,
+
+13:58.720 --> 14:03.720
+we come to the last point that I wanted to discuss basically
+
+14:04.080 --> 14:08.080
+before we wrap up this chapter, which is our chapter two.
+
+14:08.080 --> 14:11.440
+So now that we talked about a little bit of setup
+
+14:11.440 --> 14:13.680
+for setting up your Flutter installation
+
+14:13.680 --> 14:16.040
+and setting up your Flutter installation,
+
+14:16.040 --> 14:17.480
+and setting up your text editor,
+
+14:17.480 --> 14:20.080
+which in this case is Visual Studio code.
+
+14:21.000 --> 14:23.000
+In the next chapter, which is chapter three,
+
+14:23.000 --> 14:26.360
+we're gonna talk about Dart programming.
+
+14:26.360 --> 14:29.400
+So before we actually jump into writing Flutter applications,
+
+14:29.400 --> 14:34.120
+we're gonna talk about how to write code in Dart,
+
+14:34.120 --> 14:36.920
+or at least understand like the basics of Dart.
+
+14:36.920 --> 14:40.320
+So without further ado, let's close up this chapter
+
+14:40.320 --> 14:43.040
+and I'll see you in the next one.
+
+14:43.040 --> 14:45.560
+Hello everyone, and welcome to the third chapter
+
+14:45.560 --> 14:46.720
+of our Flutter course.
+
+14:47.640 --> 14:49.760
+In this chapter, I thought maybe we could focus
+
+14:49.760 --> 14:52.160
+a little bit on, actually not a little bit,
+
+14:52.160 --> 14:54.520
+but quite a lot on Dart.
+
+14:54.520 --> 14:56.400
+As you know from the previous chapter,
+
+14:56.400 --> 14:59.200
+we know now that Dart is the programming language
+
+14:59.200 --> 15:03.000
+that powers Flutter.
+
+15:03.000 --> 15:07.000
+So it would be a good idea for us at least
+
+15:07.000 --> 15:09.440
+to get a little bit of introduction to Dart,
+
+15:09.440 --> 15:12.840
+how it works, a little bit of its internals,
+
+15:12.840 --> 15:15.400
+different data types, functions, methods, classes,
+
+15:16.240 --> 15:19.080
+but this chapter as well, just like the entire course,
+
+15:19.080 --> 15:20.880
+I'm kind of assuming that you haven't done
+
+15:20.880 --> 15:22.920
+any programming at all before.
+
+15:22.920 --> 15:26.520
+So I'm gonna take things very slowly,
+
+15:26.520 --> 15:29.720
+take the concepts one at a time, introduce them to you.
+
+15:30.760 --> 15:33.840
+So, and I will give you some references to read more
+
+15:33.840 --> 15:38.840
+about the topics as we won't have really that much
+
+15:39.160 --> 15:43.120
+of a time in this course to go into detail about everything.
+
+15:43.120 --> 15:48.120
+So the goal of this chapter is to basically get you started
+
+15:48.840 --> 15:53.840
+with programming Dart and writing your apps
+
+15:54.600 --> 15:56.160
+then later for Flutter.
+
+15:58.360 --> 16:03.360
+In order to do that, we need to have a project set up.
+
+16:05.200 --> 16:07.680
+And by project, I mean, you need to have some kind
+
+16:07.680 --> 16:11.600
+of a playground set up so that you can start writing
+
+16:11.600 --> 16:14.440
+Dart code and then you can try it on, for instance,
+
+16:14.440 --> 16:18.400
+a telephone or a simulator or what have you.
+
+16:18.400 --> 16:22.800
+Now, a lot of people would rather go to Dart pad
+
+16:22.800 --> 16:24.560
+as we saw in the previous chapter
+
+16:24.560 --> 16:27.760
+and start writing their code in Dart pad.
+
+16:28.680 --> 16:29.800
+That's one way of doing it.
+
+16:29.800 --> 16:34.800
+But since in this course, we're gonna write an application,
+
+16:36.480 --> 16:38.720
+release it for iOS and Android,
+
+16:39.680 --> 16:44.320
+it is safe to say that we can literally start actually
+
+16:44.320 --> 16:48.640
+creating our real project here and now
+
+16:48.640 --> 16:51.160
+so that we can then later build upon it
+
+16:51.160 --> 16:53.640
+rather than writing all our code in Dart pad
+
+16:54.680 --> 16:58.560
+because you can then by doing, by writing your code
+
+16:58.560 --> 17:01.080
+in an actual Flutter project, you can get used
+
+17:01.080 --> 17:05.240
+to how we work with Flutter as a whole.
+
+17:05.240 --> 17:07.920
+So I think this is a little bit of a time invested
+
+17:07.920 --> 17:11.160
+into later chapters as well, where we're gonna work
+
+17:11.160 --> 17:13.240
+and continue working on the same project.
+
+17:13.240 --> 17:15.680
+So we have to just set it up once.
+
+17:15.680 --> 17:20.520
+But at the same time, there is a little bit of a value
+
+17:20.520 --> 17:25.120
+in not blending in too much of our test code,
+
+17:25.120 --> 17:26.760
+like what we're doing in this chapter
+
+17:26.760 --> 17:31.000
+with what we're gonna do later in the actual application,
+
+17:31.000 --> 17:31.840
+if you know what I mean.
+
+17:31.840 --> 17:35.720
+So I think it would be better now for us to set up
+
+17:35.720 --> 17:40.040
+just a test application and then keep working on it.
+
+17:40.040 --> 17:41.840
+And then later on, when we start doing
+
+17:41.840 --> 17:42.920
+the actual application,
+
+17:42.920 --> 17:44.720
+then we create a separate project for that.
+
+17:44.720 --> 17:49.720
+So now let's then do that together.
+
+17:51.600 --> 17:54.920
+So I'm gonna bring my face down here
+
+17:54.920 --> 17:57.240
+so you see the entire screen.
+
+17:58.960 --> 18:02.240
+I'm then going to create a new terminal window
+
+18:02.240 --> 18:04.800
+and bring it up here on the screen so you can see it.
+
+18:04.800 --> 18:05.880
+And I'm gonna increase the font
+
+18:05.880 --> 18:08.720
+so it's a little bit easier to spot when I'm typing.
+
+18:10.680 --> 18:13.960
+So let's go to a folder where you try to,
+
+18:13.960 --> 18:17.400
+or where you keep your projects.
+
+18:17.400 --> 18:20.440
+For me, I go to dev projects
+
+18:20.440 --> 18:22.960
+and I have a folder there called Flutter.
+
+18:22.960 --> 18:27.960
+So I try to put all my Flutter projects in here.
+
+18:29.480 --> 18:33.320
+Then in order to create a new Flutter project,
+
+18:33.320 --> 18:37.680
+what you have to do is to issue the Flutter create command.
+
+18:37.680 --> 18:40.960
+And this create command is already shipped inside Flutter.
+
+18:40.960 --> 18:43.560
+So if you say which Flutter,
+
+18:43.560 --> 18:46.280
+this is gonna go and find the actual Flutter binary.
+
+18:46.280 --> 18:47.840
+If you remember from the previous chapters
+
+18:47.840 --> 18:49.680
+where we installed Flutter.
+
+18:51.040 --> 18:52.440
+It's gonna find the Flutter binary
+
+18:52.440 --> 18:55.160
+and then call the create command on it.
+
+18:55.160 --> 18:58.080
+So if you say Flutter create,
+
+18:58.080 --> 19:00.720
+it expects you to kind of like provide it
+
+19:00.720 --> 19:03.280
+with some sort of a name of a project.
+
+19:04.240 --> 19:06.600
+So let's just say, learning Dart.
+
+19:11.200 --> 19:14.000
+So that's the binary, that's the command
+
+19:14.000 --> 19:16.120
+and that is the name of the project.
+
+19:16.120 --> 19:21.120
+So this is the easiest way to create a new Flutter project
+
+19:21.360 --> 19:22.440
+in my opinion at least.
+
+19:22.440 --> 19:24.320
+So let's execute that command.
+
+19:27.920 --> 19:29.160
+It's gonna do its thing.
+
+19:30.280 --> 19:32.440
+And what I'm gonna do then is to,
+
+19:32.440 --> 19:36.840
+I've created a new folder called learning Dart.
+
+19:36.840 --> 19:40.280
+So let's go and I'm gonna say, CD learning Dart.
+
+19:41.480 --> 19:45.280
+And then I'm going to issue a command called code dot.
+
+19:45.280 --> 19:49.400
+And I can actually bring this a little bit to the right
+
+19:49.400 --> 19:52.400
+so you can, and also do it like this
+
+19:52.400 --> 19:54.000
+so you can see what I'm typing.
+
+19:55.720 --> 19:58.800
+As you can see, I've written code dot.
+
+19:58.800 --> 20:01.800
+And what code does is that it brings up Visual Studio code.
+
+20:01.800 --> 20:04.480
+So it's just like a command that you can issue
+
+20:04.480 --> 20:06.320
+in order to bring up Visual Studio code.
+
+20:06.320 --> 20:11.320
+And if I just bring up Visual Studio code
+
+20:11.760 --> 20:14.840
+the way it is right now, and for instance, you can see it,
+
+20:14.840 --> 20:16.040
+you can't see it right now
+
+20:16.040 --> 20:19.600
+but it's because I have a separate screen here.
+
+20:19.600 --> 20:22.840
+I'll bring up Visual Studio code as you can see here by hand.
+
+20:24.040 --> 20:28.120
+There is a good extension or there is an ability
+
+20:28.120 --> 20:33.120
+for Visual Studio code to install this code shortcut
+
+20:33.160 --> 20:34.640
+for you in terminal in your path.
+
+20:34.640 --> 20:39.640
+So if you say which code, it just says user local bin code.
+
+20:40.080 --> 20:42.840
+So it's just an executable that allows you then
+
+20:42.840 --> 20:45.640
+to open up Visual Studio code with a path.
+
+20:45.640 --> 20:48.120
+Like, so you can say open up Visual Studio code
+
+20:48.120 --> 20:49.640
+in this folder.
+
+20:49.640 --> 20:54.160
+So you can just say code dot, so.
+
+20:55.160 --> 20:57.000
+And you can do that in Visual Studio code.
+
+20:57.000 --> 20:59.040
+You can allow that to be installed
+
+20:59.040 --> 21:03.680
+by doing command shift P on Macintosh or control shift P,
+
+21:03.680 --> 21:07.960
+I believe in windows and Linux.
+
+21:07.960 --> 21:10.800
+And there's this little command here that says shell command
+
+21:10.800 --> 21:12.640
+install code command in path.
+
+21:12.640 --> 21:15.480
+So if you execute that once, then it's already set up for you.
+
+21:15.480 --> 21:17.200
+You don't have to do that anymore.
+
+21:17.200 --> 21:21.760
+So if you'd like to be able to say code dots in terminal
+
+21:21.760 --> 21:25.640
+and open the current folder within Visual Studio code
+
+21:25.640 --> 21:28.120
+without you having to open Visual Studio code manually
+
+21:28.120 --> 21:31.480
+and then doing file open, then I suggest
+
+21:31.480 --> 21:34.480
+that you do command shift P or control shift P
+
+21:34.480 --> 21:37.080
+in Visual Studio code, depending on which operating system
+
+21:37.080 --> 21:38.960
+you're using and then choosing shell command
+
+21:38.960 --> 21:42.440
+install code command in path.
+
+21:42.440 --> 21:45.040
+So I've already done that, so I can just say code dot
+
+21:46.240 --> 21:48.160
+and I'll bring this up here.
+
+21:49.200 --> 21:52.760
+So as you can see, this is the basics of a simple
+
+21:55.880 --> 21:59.120
+Flutter project that you create with Flutter Create.
+
+21:59.120 --> 22:02.560
+Now, Visual Studio code has a built-in terminal,
+
+22:02.560 --> 22:05.320
+so I don't have to have this terminal window open anymore.
+
+22:05.320 --> 22:07.720
+So I'm just going to close it.
+
+22:07.720 --> 22:09.480
+And I'm going to make this full screen,
+
+22:09.480 --> 22:12.280
+increase the size a little bit so you can see better.
+
+22:12.280 --> 22:17.040
+And perhaps I could even remove this Flutter logo on top right
+
+22:17.040 --> 22:20.280
+so you can see the content a little bit better as well.
+
+22:21.120 --> 22:26.120
+So that's the creation of our simple Flutter project.
+
+22:26.120 --> 22:29.560
+Now, in order for this Flutter project to run
+
+22:29.560 --> 22:32.360
+and you be able to run this application
+
+22:32.360 --> 22:35.560
+and keep testing your project,
+
+22:35.560 --> 22:37.000
+you would have to select a target.
+
+22:37.000 --> 22:39.440
+And you do that with command shift P
+
+22:39.440 --> 22:42.320
+and then choosing Flutter select device.
+
+22:42.320 --> 22:46.200
+So you can just say Flutter select device, enter.
+
+22:46.200 --> 22:48.400
+Command shift P is on Macintosh and control shift P
+
+22:49.400 --> 22:51.440
+I believe is in Linux and Windows.
+
+22:51.440 --> 22:54.640
+So do that, command shift P is a very important command.
+
+22:54.640 --> 22:56.760
+You're going to use it quite a lot in this course.
+
+22:56.760 --> 22:58.120
+So just learn that please.
+
+22:59.760 --> 23:01.120
+Then I'm going to say select device
+
+23:01.120 --> 23:04.680
+and I'm going to choose, since I'm on a Macintosh
+
+23:04.680 --> 23:07.600
+and as you saw earlier, we have Xcode already installed.
+
+23:07.600 --> 23:11.440
+Xcode comes also with the entire iOS SDK
+
+23:11.440 --> 23:13.400
+and also with the simulator.
+
+23:13.400 --> 23:17.400
+I can choose to run our application on iOS simulator
+
+23:18.400 --> 23:22.160
+or I can choose to run it on an actual phone.
+
+23:22.160 --> 23:26.520
+Now for this, I believe,
+
+23:26.520 --> 23:29.640
+I don't know if we've talked already about SCRCPY
+
+23:29.640 --> 23:30.480
+to be honest with you.
+
+23:30.480 --> 23:32.800
+I'm just going to search in my notes
+
+23:34.320 --> 23:35.920
+to see if you've talked about that.
+
+23:35.920 --> 23:40.760
+And if you just give me one second, please just check here.
+
+23:40.760 --> 23:43.120
+I believe we're going to set it up in chapter six.
+
+23:43.120 --> 23:45.880
+So we haven't set up SCRCPY yet.
+
+23:45.880 --> 23:48.280
+So for that purpose, I'm just going to say
+
+23:49.160 --> 23:51.560
+select device and I'm just going to say start iOS simulator.
+
+23:51.560 --> 23:53.240
+So that is going to, as you can see,
+
+23:53.240 --> 23:55.080
+start up iOS simulator.
+
+23:55.080 --> 23:57.640
+And that for now is like the best way
+
+23:57.640 --> 23:59.560
+for us to test our application.
+
+23:59.560 --> 24:03.000
+So while this is connecting,
+
+24:03.000 --> 24:05.960
+I can show you a little bit around as well.
+
+24:05.960 --> 24:08.160
+We have, as you can see, lots of files here
+
+24:08.160 --> 24:09.120
+already created for us.
+
+24:09.120 --> 24:11.600
+We're going to go through some of these.
+
+24:11.600 --> 24:12.920
+But one of the most important files
+
+24:12.920 --> 24:14.840
+that you're going to need to get used to
+
+24:14.840 --> 24:17.640
+is this lib slash main.dart.
+
+24:17.640 --> 24:21.160
+And this is where the majority of the code is written.
+
+24:21.160 --> 24:25.440
+So this is its contents at the moment.
+
+24:26.800 --> 24:28.840
+Let's see what it's doing with the simulator.
+
+24:28.840 --> 24:30.720
+I'm just going to have a look here.
+
+24:34.000 --> 24:36.160
+It's taking a little bit longer than expected.
+
+24:36.160 --> 24:38.640
+So what I'm going to do is I'm just going to
+
+24:38.640 --> 24:40.440
+kill the iOS simulator manually.
+
+24:40.440 --> 24:42.960
+This usually doesn't happen, but that's okay.
+
+24:42.960 --> 24:44.640
+If it does happen, then you know how to deal with it.
+
+24:44.640 --> 24:45.920
+Just close the simulator.
+
+24:46.920 --> 24:50.320
+And then I'm just going to go to Command-Shift-P,
+
+24:50.320 --> 24:54.320
+select device, and then start iOS simulator fresh.
+
+24:54.320 --> 24:56.160
+So it's starting right now.
+
+24:58.360 --> 25:00.400
+Okay, so that's our simulator.
+
+25:00.400 --> 25:02.440
+And I'm actually going to decrease the size of this
+
+25:02.440 --> 25:07.440
+a little bit since I realized that it is a very large font.
+
+25:07.480 --> 25:10.360
+So this is our main.dart file.
+
+25:10.360 --> 25:14.800
+This is like where the Flutter command line command
+
+25:15.160 --> 25:18.440
+has created, it is the file that has been created for us.
+
+25:18.440 --> 25:20.200
+So we don't have to play around with it too much,
+
+25:20.200 --> 25:22.800
+to be honest with you, at the moment.
+
+25:22.800 --> 25:24.520
+For the purpose of this chapter,
+
+25:24.520 --> 25:28.200
+we're just going to have a look at basically kind of like
+
+25:28.200 --> 25:32.440
+exploiting this code so that we can inject our code into it
+
+25:32.440 --> 25:33.880
+so we can learn Dart a little bit.
+
+25:33.880 --> 25:35.840
+So you don't have to understand all of this code
+
+25:35.840 --> 25:36.800
+the way it is right now.
+
+25:36.800 --> 25:38.600
+There's lots of comments and et cetera.
+
+25:40.600 --> 25:42.560
+So that's that part.
+
+25:42.560 --> 25:44.640
+So now that we're here and then you can see
+
+25:45.480 --> 25:46.920
+we have a little simulator here.
+
+25:46.920 --> 25:49.880
+And in order to run this application on this simulator,
+
+25:49.880 --> 25:53.320
+since you've already done the Flutter select command,
+
+25:53.320 --> 25:57.000
+you just go to run and you say run without debugging for now.
+
+25:57.000 --> 26:00.640
+So since the simulator is already selected,
+
+26:00.640 --> 26:02.960
+then it understands that it needs to compile this project
+
+26:02.960 --> 26:04.960
+for my simulator.
+
+26:04.960 --> 26:09.960
+So, and we're just going to give it some time
+
+26:09.960 --> 26:11.440
+depending on your machine and like,
+
+26:11.440 --> 26:13.520
+what do you have for specifications on your machine?
+
+26:13.520 --> 26:17.080
+This command could take anywhere between a couple of seconds
+
+26:17.080 --> 26:20.120
+to maybe 30 seconds or even more.
+
+26:20.120 --> 26:21.720
+And I'm not sure how long it's going to take
+
+26:21.720 --> 26:23.880
+for a fresh Flutter project, to be honest with you,
+
+26:23.880 --> 26:25.440
+to start running on the simulator,
+
+26:25.440 --> 26:28.640
+but it took about 21 seconds or 22 seconds.
+
+26:31.360 --> 26:33.640
+I will bring up the project now.
+
+26:33.640 --> 26:35.600
+And this is like the basic Flutter project.
+
+26:35.600 --> 26:37.440
+I'm not going to go into details about how it works,
+
+26:37.440 --> 26:40.320
+but you can press the plus button if you want to.
+
+26:40.320 --> 26:41.160
+But what I'm going to do,
+
+26:41.160 --> 26:42.840
+I'm just going to close this widget inspector
+
+26:42.840 --> 26:45.640
+that was opened automatically.
+
+26:45.640 --> 26:48.800
+And I'm just going to bring this a little bit down
+
+26:48.800 --> 26:51.920
+so that we can see the debug console, okay?
+
+26:51.920 --> 26:55.920
+So that's for setting up our project.
+
+26:55.920 --> 26:57.200
+So that part is done.
+
+26:57.200 --> 27:00.120
+Now, the first thing that we need to talk about
+
+27:00.120 --> 27:05.120
+when we start talking about Dart is the concept of keywords.
+
+27:06.840 --> 27:09.080
+Now, since I'm assuming that you haven't done
+
+27:09.080 --> 27:12.000
+any programming language in any other place before,
+
+27:13.360 --> 27:15.560
+you need to understand what keywords are.
+
+27:16.720 --> 27:19.080
+They're very important in understanding
+
+27:19.080 --> 27:20.440
+any programming language, basically.
+
+27:20.440 --> 27:23.440
+And keywords are concisely explained.
+
+27:26.400 --> 27:31.400
+They're words that are reserved for the programming language
+
+27:33.000 --> 27:37.520
+that you cannot use for anything else
+
+27:37.520 --> 27:40.040
+than what the programming language intends those words
+
+27:40.040 --> 27:41.360
+to be used as.
+
+27:41.480 --> 27:44.480
+I know that sounds a little bit difficult,
+
+27:44.480 --> 27:48.120
+but I mean, there's no real good analogy
+
+27:48.120 --> 27:49.720
+in like if you're coming from Figma,
+
+27:49.720 --> 27:51.240
+if you're coming from a design world,
+
+27:51.240 --> 27:54.720
+what a keyword could be because in a design world,
+
+27:54.720 --> 27:59.520
+you're not really talking in terms of code with your product
+
+27:59.520 --> 28:04.520
+or with your software where you're designing your stuff.
+
+28:05.160 --> 28:07.720
+But when you come to programming language,
+
+28:07.720 --> 28:08.920
+as you know, it's a language.
+
+28:08.920 --> 28:12.960
+So words mean stuff in a programming language.
+
+28:12.960 --> 28:16.480
+So a keyword is, as its name indicates,
+
+28:16.480 --> 28:19.080
+is a word that has a special meaning
+
+28:19.080 --> 28:21.760
+in that particular language.
+
+28:21.760 --> 28:25.200
+And I'll provide a link here for you that you can check out,
+
+28:25.200 --> 28:30.200
+but I'm gonna open it up and bring it to the screen here,
+
+28:31.480 --> 28:33.960
+increase the size a little bit so we can see better.
+
+28:35.640 --> 28:37.040
+Have a look at my screen here.
+
+28:37.360 --> 28:39.720
+And you can see this is part of the documentation
+
+28:39.720 --> 28:41.240
+for Dart programming language
+
+28:41.240 --> 28:43.560
+that explains what keywords are in Dart.
+
+28:43.560 --> 28:44.800
+And you can see there are some words
+
+28:44.800 --> 28:47.840
+that have special meaning like show, import,
+
+28:47.840 --> 28:50.360
+extends, async, await, break.
+
+28:50.360 --> 28:52.520
+So you can say that the language,
+
+28:52.520 --> 28:56.360
+the Dart language is made out of these keywords.
+
+28:56.360 --> 28:57.240
+That is pretty much it.
+
+28:57.240 --> 28:59.400
+It's just like series of keywords,
+
+28:59.400 --> 29:01.600
+like the things that you tell the language that,
+
+29:01.600 --> 29:03.080
+hey, I wanna do something.
+
+29:03.080 --> 29:04.320
+And then it says, okay, what do you wanna do?
+
+29:04.320 --> 29:06.440
+Then you say, okay, I wanna do this or this or this.
+
+29:06.440 --> 29:10.280
+So special words for the programming language
+
+29:10.280 --> 29:12.920
+so that it understands what you mean, basically.
+
+29:15.240 --> 29:17.040
+So that's for keywords.
+
+29:18.080 --> 29:20.840
+For now, we don't have to really go into so much more details
+
+29:20.840 --> 29:22.240
+about what a keyword is, but for now,
+
+29:22.240 --> 29:25.160
+just understand that a keyword is a special word
+
+29:25.160 --> 29:28.400
+in the programming language's brain,
+
+29:28.400 --> 29:29.800
+kind of so that you can talk to it.
+
+29:29.800 --> 29:31.920
+It's your interface with the programming language
+
+29:31.920 --> 29:34.240
+to make it understand what you wanna do, okay?
+
+29:35.240 --> 29:37.120
+And please check out the link that I provided here
+
+29:37.120 --> 29:38.760
+to understand more about keywords.
+
+29:42.160 --> 29:44.040
+Okay, so we've talked about keywords.
+
+29:44.040 --> 29:45.480
+I'm just gonna check it in my notes
+
+29:45.480 --> 29:48.600
+so that we know we've talked about it.
+
+29:51.280 --> 29:54.480
+Now, the next concept that we need to talk about
+
+29:54.480 --> 29:56.800
+are data types.
+
+30:00.720 --> 30:03.000
+If you, for instance, come from a design background,
+
+30:03.000 --> 30:06.080
+then you have different tools to work with.
+
+30:06.080 --> 30:09.200
+For instance, you may have, in your design system,
+
+30:09.200 --> 30:11.800
+whatever you're using, if you're using product from Adobe
+
+30:11.800 --> 30:14.680
+or if you're using, for instance, Figma or whatever,
+
+30:14.680 --> 30:16.760
+Visio or whatever tool you're using,
+
+30:16.760 --> 30:19.440
+then there's a set of components that you can work with.
+
+30:19.440 --> 30:21.600
+For instance, you can drag in a text field
+
+30:21.600 --> 30:24.840
+or you can drag in an image field, sorry, an image,
+
+30:24.840 --> 30:29.840
+or you can, for instance, assign a color to a text.
+
+30:30.240 --> 30:35.240
+So these are all things that you can do with that software.
+
+30:36.200 --> 30:38.920
+Now, a data type in a programming language,
+
+30:38.920 --> 30:43.920
+like Dart, is the type of a thing, for instance.
+
+30:44.080 --> 30:47.480
+You would say, I have some data in my mind.
+
+30:47.480 --> 30:48.320
+Okay, what is it?
+
+30:48.320 --> 30:51.080
+It's the first name of my friend.
+
+30:51.080 --> 30:55.080
+Okay, his name is Jack or whatever.
+
+30:55.760 --> 30:58.440
+And then you would say, okay, what type is Jack?
+
+30:58.440 --> 30:59.280
+Is it a number?
+
+30:59.280 --> 31:03.440
+No, is it like, is it a list of things?
+
+31:03.440 --> 31:06.880
+Well, yeah, it's a list of characters, yeah.
+
+31:07.920 --> 31:10.880
+Okay, then that is this data type.
+
+31:12.000 --> 31:15.680
+Or you could say, I'm thinking about my age.
+
+31:15.680 --> 31:19.160
+My age is, let's say I'm 37.
+
+31:19.160 --> 31:20.800
+Okay, what is 37?
+
+31:20.800 --> 31:21.960
+Is it a list of things?
+
+31:21.960 --> 31:23.440
+Well, yeah, kind of.
+
+31:23.960 --> 31:27.560
+It's a list of numbers, a list of digits,
+
+31:27.560 --> 31:30.200
+but it's also in itself a number.
+
+31:30.200 --> 31:35.160
+So then there has been this convention
+
+31:35.160 --> 31:36.960
+in different programming languages,
+
+31:36.960 --> 31:38.880
+and every programming language pretty much
+
+31:38.880 --> 31:41.560
+that you can use these days has this concept of data types.
+
+31:41.560 --> 31:43.720
+Data type is, as its name indicates,
+
+31:43.720 --> 31:48.720
+a specific name assigned to a series,
+
+31:48.720 --> 31:53.720
+to a series, a specific name assigned to a data
+
+31:55.760 --> 31:59.760
+that is bound to be of a specific type as well.
+
+31:59.760 --> 32:01.600
+So for instance, in Dart,
+
+32:01.600 --> 32:04.600
+you have data types called integers,
+
+32:04.600 --> 32:07.400
+or you have strings, or you have arrays and sets,
+
+32:07.400 --> 32:08.600
+which we'll talk about soon,
+
+32:08.600 --> 32:11.200
+but a data type just for now, no,
+
+32:11.200 --> 32:14.120
+it's just a stamp on a piece of data
+
+32:14.120 --> 32:16.360
+to say that you're of this specific type.
+
+32:17.360 --> 32:21.280
+So you could think of a data type as a nationality.
+
+32:21.280 --> 32:23.520
+You could say like every person coming from Sweden
+
+32:23.520 --> 32:26.080
+is Swedish, boom, that's his data type.
+
+32:26.080 --> 32:28.800
+So it's just a categorization of data
+
+32:28.800 --> 32:30.720
+based on their appearance
+
+32:30.720 --> 32:33.280
+or based on what they actually hold.
+
+32:33.280 --> 32:35.640
+So for instance, you can say,
+
+32:35.640 --> 32:37.880
+here's a university full of engineers,
+
+32:37.880 --> 32:41.280
+and these are software engineers,
+
+32:41.280 --> 32:42.440
+these are mechanical engineers,
+
+32:42.440 --> 32:44.600
+so the software engineer is a data type
+
+32:44.600 --> 32:46.960
+or is a person type or category type.
+
+32:46.960 --> 32:51.280
+So putting stamps on things based on the categorization
+
+32:51.280 --> 32:52.880
+is kind of what data type does.
+
+32:52.880 --> 32:56.920
+And in short, I mean, you just have to know
+
+32:56.920 --> 32:58.520
+that it's just a categorization of things
+
+32:58.520 --> 33:00.560
+based on what they hold.
+
+33:00.560 --> 33:04.960
+So, and there's a website that you can read
+
+33:04.960 --> 33:08.400
+about Dart data types, and it's right here.
+
+33:08.400 --> 33:12.600
+I don't know if I've provided it here on the link below,
+
+33:12.640 --> 33:15.080
+as you can see Dart Core Library HTML, so.
+
+33:16.720 --> 33:20.440
+And here you can read more about Dart data types,
+
+33:21.560 --> 33:23.440
+but we're not gonna go into so much detail
+
+33:23.440 --> 33:24.560
+about all of these right now.
+
+33:24.560 --> 33:27.280
+Just know that data type in Dart is,
+
+33:27.280 --> 33:30.520
+or any programming language basically that has data types
+
+33:30.520 --> 33:32.840
+is a categorization of data
+
+33:32.840 --> 33:35.040
+based on their appearance or contents.
+
+33:37.560 --> 33:40.400
+Now, let's talk a little about
+
+33:40.400 --> 33:42.360
+something called constants in Dart.
+
+33:43.600 --> 33:47.800
+A constant, usually in programming languages
+
+33:47.800 --> 33:52.800
+are values whose value cannot be changed.
+
+33:53.920 --> 33:57.560
+That's a little bit meta, but let's say for instance,
+
+33:57.560 --> 34:02.560
+the value of 10 is a number.
+
+34:04.920 --> 34:06.440
+It cannot be changed.
+
+34:06.440 --> 34:08.920
+10 is 10, and it will always be 10.
+
+34:09.560 --> 34:13.800
+Or your name, that is a constant.
+
+34:13.800 --> 34:15.280
+Although you can go and change it,
+
+34:15.280 --> 34:17.560
+but as long as that is your name, it is a constant.
+
+34:17.560 --> 34:22.560
+So, another example of a, I mean,
+
+34:22.840 --> 34:24.960
+there are so many values that can be constants,
+
+34:24.960 --> 34:27.920
+which will actually be quite abstract for me
+
+34:27.920 --> 34:31.920
+to explain right now, but just know that a constant
+
+34:31.920 --> 34:35.800
+is a value whose internal data cannot change
+
+34:35.800 --> 34:40.400
+during where you're writing your program,
+
+34:40.400 --> 34:43.320
+and also during when you're running your program.
+
+34:43.320 --> 34:47.680
+So, that is kind of what a constant is.
+
+34:49.280 --> 34:53.320
+But there is also this notion of a compile time constant
+
+34:53.320 --> 34:54.720
+and a runtime constant.
+
+34:54.720 --> 34:57.760
+And I mean, you don't have to know about
+
+34:59.200 --> 35:01.560
+like those different types of constants right now,
+
+35:01.560 --> 35:04.520
+just because like in Dart, a constant is a constant,
+
+35:04.520 --> 35:08.520
+whether it's runtime or compile time is a constant,
+
+35:08.520 --> 35:10.240
+it's just a constant, as you'll see soon.
+
+35:10.240 --> 35:14.720
+But I still believe that it's important to understand
+
+35:14.720 --> 35:17.200
+the difference between compile time and runtime.
+
+35:19.000 --> 35:20.800
+When you're talking about programming,
+
+35:20.800 --> 35:22.440
+when you're becoming a software developer,
+
+35:22.440 --> 35:23.560
+and I hope by the end of this course,
+
+35:23.560 --> 35:25.040
+you'll actually become a software developer
+
+35:25.040 --> 35:28.240
+if you're not already, that would be really amazing.
+
+35:29.200 --> 35:33.600
+But the notion of a compile time
+
+35:34.240 --> 35:36.240
+and runtime is very important to understand.
+
+35:36.240 --> 35:40.640
+And developers like to make a distinction
+
+35:40.640 --> 35:43.480
+between whether something has happened during compile time
+
+35:43.480 --> 35:45.040
+or something has happened during runtime.
+
+35:45.040 --> 35:50.000
+And compile time is, or before I explain compile time,
+
+35:50.000 --> 35:51.360
+maybe I should explain compile.
+
+35:51.360 --> 35:53.480
+Compile is where you take the program
+
+35:53.480 --> 35:57.560
+that you're writing here, and you tell the computer
+
+35:57.560 --> 36:01.320
+that I want you to package this up
+
+36:01.320 --> 36:06.160
+so that I can run it later on X and Y machine.
+
+36:06.160 --> 36:10.000
+So that process of packaging things up, simply said,
+
+36:10.000 --> 36:13.880
+is in very simple terms, is called compiling
+
+36:13.880 --> 36:15.360
+or a compilation, okay?
+
+36:15.360 --> 36:20.360
+So from where you start writing your program with a hand
+
+36:20.400 --> 36:22.600
+with your fingers until where you package it,
+
+36:22.600 --> 36:25.720
+you're pretty much just compiling it, okay?
+
+36:25.720 --> 36:29.240
+But when you run it, like we're running it at the moment
+
+36:29.240 --> 36:34.240
+on iOS simulator, that session from where you start
+
+36:35.840 --> 36:38.680
+outputting your program into this device
+
+36:38.680 --> 36:42.440
+and for it to run your program from that moment on,
+
+36:42.440 --> 36:47.440
+then the distinction separates into runtime.
+
+36:47.440 --> 36:50.640
+So you have then compile time and runtime,
+
+36:50.640 --> 36:53.280
+and a constant is a value that is the same
+
+36:53.280 --> 36:55.320
+during compile time and runtime.
+
+36:55.320 --> 36:56.960
+So its value doesn't change.
+
+36:56.960 --> 37:00.280
+So the value of 10 is 10 while you're writing your program
+
+37:00.280 --> 37:04.920
+and also stays the value of 10 while the program is running.
+
+37:06.160 --> 37:11.160
+So that is a very simple explanation of a constant.
+
+37:12.280 --> 37:17.280
+So now let's put constants and data types in practice.
+
+37:20.000 --> 37:23.320
+Now, in this project that was created for you
+
+37:23.360 --> 37:28.360
+by Flutter Create, in this line of code,
+
+37:28.640 --> 37:30.760
+as you can see, it says void main.
+
+37:30.760 --> 37:32.400
+We're not gonna talk about exactly what that is,
+
+37:32.400 --> 37:34.520
+but just press Enter at the end of it
+
+37:34.520 --> 37:37.520
+and just write final,
+
+37:41.160 --> 37:42.760
+and I'm gonna tell you what final is.
+
+37:42.760 --> 37:47.760
+So, and just saying name is equal to foo, okay?
+
+37:48.600 --> 37:52.400
+This is, there's lots going on in here
+
+37:52.400 --> 37:56.400
+and I'm gonna tell you what is actually happening here.
+
+37:58.360 --> 38:01.080
+But before we actually go through all these details,
+
+38:01.080 --> 38:04.840
+let's add something here called a constant.
+
+38:04.840 --> 38:09.840
+So I'm just gonna say const age is 27, or yeah, 27.
+
+38:10.160 --> 38:12.560
+As you can see, this is how you write code in Dart.
+
+38:12.560 --> 38:15.560
+You start by a keyword, usually,
+
+38:15.560 --> 38:17.000
+or a variable name or something
+
+38:17.000 --> 38:18.760
+as we're gonna talk about it.
+
+38:18.760 --> 38:20.960
+But const is a keyword, okay?
+
+38:21.960 --> 38:26.280
+And it tells Dart that what is following here is a name.
+
+38:26.280 --> 38:29.160
+Right after const, I'm gonna write some name.
+
+38:29.160 --> 38:32.680
+And in that name, then I'm gonna basically say,
+
+38:32.680 --> 38:36.680
+okay, I'm adding the value of 27 to this age.
+
+38:38.160 --> 38:41.840
+I'm sorry about this, my dog also barking a little bit.
+
+38:41.840 --> 38:45.520
+So what is happening here is that you're telling Dart
+
+38:45.520 --> 38:50.520
+that I'm putting the value of 27 into a constant called age.
+
+38:51.760 --> 38:53.600
+And you can refer to this age later.
+
+38:53.600 --> 38:58.600
+For instance, you can say then const age twice the age.
+
+39:02.280 --> 39:05.480
+You can say it's equal to age multiplied by two.
+
+39:05.480 --> 39:09.000
+And this is also a constant because at compile time,
+
+39:09.000 --> 39:10.880
+where Dart is basically trying to understand
+
+39:10.880 --> 39:13.200
+what you've written, it says, okay, you said 27,
+
+39:13.200 --> 39:15.680
+and then you're saying 27 is a constant.
+
+39:15.680 --> 39:17.120
+So its value is never gonna change.
+
+39:17.120 --> 39:19.840
+And if you tell me 27 multiplied by two,
+
+39:19.840 --> 39:23.720
+that also is a constant because both this side
+
+39:23.720 --> 39:26.680
+and this side are compile time constants.
+
+39:28.360 --> 39:31.120
+So that's what we mean by a constant.
+
+39:31.120 --> 39:33.920
+It's a value that is specified during compile time
+
+39:33.920 --> 39:35.520
+and it cannot change.
+
+39:35.520 --> 39:40.120
+So also it's important to notice that you're learning Dart
+
+39:40.120 --> 39:45.120
+and here is, sorry, I have to just tick some items
+
+39:45.880 --> 39:47.800
+in my notes to make sure that I've explained
+
+39:47.800 --> 39:48.800
+all of those to you.
+
+39:50.600 --> 39:53.960
+You can see here that every line of code in Dart
+
+39:53.960 --> 39:56.080
+needs to end with a semicolon.
+
+39:56.080 --> 39:57.800
+And that tells Dart that, yeah,
+
+39:57.800 --> 39:59.760
+you're starting a new line of code.
+
+39:59.760 --> 40:02.400
+Of course you can put two lines of code like this,
+
+40:02.400 --> 40:04.640
+but if you just press save,
+
+40:04.640 --> 40:07.000
+there is a program automatically running in the background
+
+40:07.000 --> 40:10.240
+which is called Dart FMT, which is the Dart formatter,
+
+40:10.240 --> 40:12.360
+which is gonna format your code and pre-ify it.
+
+40:12.360 --> 40:15.360
+So if I put a lot of spaces in here and just press save,
+
+40:16.200 --> 40:19.400
+you can see upon doing command S on Mac
+
+40:19.400 --> 40:21.600
+or control S on Linux and Windows,
+
+40:21.600 --> 40:24.200
+upon saving Dart formatter is gonna kick in
+
+40:24.200 --> 40:25.760
+and format the code for you.
+
+40:25.760 --> 40:28.240
+So just a little hint.
+
+40:31.080 --> 40:33.480
+Okay, those are constants.
+
+40:33.480 --> 40:35.280
+So we've talked about that.
+
+40:35.280 --> 40:37.440
+Now let's talk about variables a little bit.
+
+40:38.640 --> 40:43.640
+A variable is usually anything that contains
+
+40:45.400 --> 40:48.640
+a value that is not a constant.
+
+40:48.640 --> 40:51.400
+I mean, I think that's the simplest way
+
+40:51.400 --> 40:53.560
+of explaining what a variable is.
+
+40:53.560 --> 40:56.960
+A variable as a name indicates, it can vary.
+
+40:56.960 --> 40:59.720
+And that means that the data that it holds,
+
+40:59.720 --> 41:02.000
+it doesn't need to be constantly the same.
+
+41:02.000 --> 41:04.720
+It means that from where you start the program,
+
+41:04.720 --> 41:07.800
+you may actually assign a value to this variable
+
+41:07.800 --> 41:09.960
+and you may also change that variable
+
+41:09.960 --> 41:11.960
+depending on what type of variable it is.
+
+41:12.960 --> 41:17.960
+So there's also this notion of a final variable in Dart,
+
+41:22.560 --> 41:23.600
+which we'll talk about soon.
+
+41:23.600 --> 41:26.360
+So before we do that, let's go through this main function
+
+41:26.360 --> 41:31.360
+here and you could just say var name is foo.
+
+41:33.560 --> 41:37.600
+And here, what I've done is that I've created a variable
+
+41:37.600 --> 41:42.600
+indicated by the var keyword whose value is foo,
+
+41:43.640 --> 41:45.600
+or let's just say Alex,
+
+41:47.560 --> 41:49.400
+and set my column to end the line.
+
+41:49.400 --> 41:51.360
+Now, if I wanna change this value,
+
+41:51.360 --> 41:56.360
+all I could say here is to say name is equal to Anthony,
+
+41:56.560 --> 41:57.400
+or whatever.
+
+41:58.800 --> 42:03.320
+Now, this is basically us assigning a new value
+
+42:03.320 --> 42:05.240
+to this variable, saying Anthony.
+
+42:07.600 --> 42:12.600
+As I said, there is also the notion in Dart
+
+42:13.520 --> 42:16.360
+for a keyword called final.
+
+42:16.360 --> 42:19.720
+So you could just say final name equal to Alex.
+
+42:19.720 --> 42:21.600
+And it's a little bit strange
+
+42:21.600 --> 42:24.640
+because final is also a variable
+
+42:24.640 --> 42:26.800
+whose value cannot be changed.
+
+42:26.800 --> 42:31.680
+So you may be like, okay, what kind of a variable is that?
+
+42:31.680 --> 42:33.760
+How is that not a constant?
+
+42:33.760 --> 42:35.320
+Now, there's a little limitation
+
+42:35.320 --> 42:40.240
+because you may try to like say const name Alex.
+
+42:41.240 --> 42:45.240
+But this, as you will see later in the course,
+
+42:48.160 --> 42:50.360
+final gives you the flexibility
+
+42:50.360 --> 42:54.120
+to assign a value to your variable
+
+42:54.120 --> 42:58.160
+a little bit later maybe in the process of creating it,
+
+42:58.160 --> 43:00.600
+but it still indicates to Dart
+
+43:00.600 --> 43:04.320
+that the value of this variable is not gonna change
+
+43:04.320 --> 43:06.760
+after it has been assigned to.
+
+43:06.760 --> 43:08.440
+It's a little bit, yeah,
+
+43:08.440 --> 43:11.480
+it's just a little bit confusing maybe at the moment.
+
+43:11.480 --> 43:16.080
+So let's just say a variable is like a constant,
+
+43:16.080 --> 43:18.120
+but its value can be changed.
+
+43:18.120 --> 43:19.720
+Let's just leave it at that, okay?
+
+43:19.720 --> 43:22.240
+So that's it.
+
+43:25.120 --> 43:30.120
+Okay, now that we talked a little bit about variables,
+
+43:30.320 --> 43:31.520
+let's talk about functions.
+
+43:31.520 --> 43:35.800
+So I didn't specify exactly what this is
+
+43:35.800 --> 43:38.920
+just because we hadn't really come to functions,
+
+43:38.920 --> 43:43.120
+but a function is a body of code,
+
+43:43.120 --> 43:45.960
+is a grouping of a series of lines of code,
+
+43:45.960 --> 43:49.520
+one to N number, N lines of codes
+
+43:49.520 --> 43:54.520
+that is logically grouped.
+
+43:55.120 --> 43:58.160
+And it has a few properties.
+
+43:58.160 --> 44:01.840
+One is its return value here indicated by void.
+
+44:03.120 --> 44:06.480
+The other part of its information is its name
+
+44:07.360 --> 44:11.040
+followed by a pair of parenthesis,
+
+44:11.040 --> 44:13.320
+an open parenthesis and a closed parenthesis
+
+44:14.200 --> 44:16.200
+in which you will write something
+
+44:16.200 --> 44:20.440
+called the function arguments or parameters.
+
+44:22.720 --> 44:27.720
+It's pretty much just like imagine like a box
+
+44:28.040 --> 44:29.720
+where you input things in it.
+
+44:29.720 --> 44:33.200
+It does some processing and then it outputs that stuff,
+
+44:33.200 --> 44:35.200
+whatever it wants to output.
+
+44:35.200 --> 44:38.400
+So what we could do here is to create
+
+44:38.400 --> 44:41.520
+a very simple function for ourselves.
+
+44:43.240 --> 44:46.840
+As you saw before, or as I mentioned before,
+
+44:47.760 --> 44:50.360
+what you write for a function in the beginning
+
+44:50.360 --> 44:51.560
+is this data type.
+
+44:51.560 --> 44:54.120
+I mean, what data comes out of this function.
+
+44:55.000 --> 45:00.000
+And here, let's say we wanna add someone's first name
+
+45:01.480 --> 45:04.080
+and their last name with a space between it.
+
+45:04.080 --> 45:08.560
+So if I say foo as the first name and bar as the last name,
+
+45:08.560 --> 45:11.080
+then the full name should be foo bar
+
+45:12.120 --> 45:13.840
+and with a space in between.
+
+45:13.840 --> 45:18.640
+So as I said, then you need to specify the data type first,
+
+45:18.640 --> 45:19.760
+what you're gonna return.
+
+45:19.760 --> 45:21.920
+And if you looked at the documentation
+
+45:21.920 --> 45:22.840
+that I provided earlier,
+
+45:22.840 --> 45:25.360
+there's a data type called string,
+
+45:25.360 --> 45:27.440
+which is a series of characters.
+
+45:27.440 --> 45:30.040
+Basically it can be a name, a family name,
+
+45:30.040 --> 45:32.760
+the dress of your house or whatever.
+
+45:32.760 --> 45:34.320
+And that data type is string.
+
+45:34.320 --> 45:36.960
+Okay, so we say we're outputting string.
+
+45:36.960 --> 45:40.760
+And then you say, okay, what should this function be called?
+
+45:40.760 --> 45:42.200
+There's a convention in Dart
+
+45:42.200 --> 45:46.160
+that your functions should follow camel case
+
+45:47.680 --> 45:48.920
+naming convention, basically.
+
+45:48.920 --> 45:52.480
+Camel cases, if you, for instance, say in English,
+
+45:52.480 --> 45:54.720
+my function should be called get full name.
+
+45:55.600 --> 45:56.440
+That's my function name,
+
+45:56.440 --> 45:59.840
+but you cannot have spaces in your function names in Dart
+
+45:59.840 --> 46:02.600
+or pretty much every program language that I know about.
+
+46:03.520 --> 46:06.040
+Then remove all the spaces.
+
+46:06.040 --> 46:09.000
+And then except for the first word,
+
+46:09.000 --> 46:14.000
+change all the other words first letter to uppercase.
+
+46:14.200 --> 46:16.080
+So it was like this before,
+
+46:16.080 --> 46:19.080
+you could actually change them to uppercase first
+
+46:19.080 --> 46:21.120
+and then remove the spacing.
+
+46:21.120 --> 46:24.360
+So this is how you should write your function names.
+
+46:24.360 --> 46:26.760
+This is called camel case.
+
+46:26.760 --> 46:28.080
+Get full name, okay.
+
+46:28.080 --> 46:30.840
+And we said that we also have to open parenthesis.
+
+46:32.320 --> 46:37.320
+Now, let's just say then here,
+
+46:37.960 --> 46:41.920
+we need to specify some kind of function.
+
+46:41.920 --> 46:44.400
+We need to specify somehow
+
+46:44.400 --> 46:47.520
+that we're gonna accept the first name and the last name.
+
+46:47.520 --> 46:52.320
+Well, what kind of a data type does a first name have?
+
+46:52.320 --> 46:54.280
+Well, it's kind of like a string.
+
+46:54.280 --> 46:55.120
+It's a name.
+
+46:55.120 --> 46:56.320
+It's a series of characters.
+
+46:56.320 --> 46:58.720
+So let's just type string here.
+
+46:58.720 --> 47:00.560
+And then we wanna take a first name
+
+47:00.560 --> 47:02.080
+and we know about camel case now.
+
+47:02.080 --> 47:06.040
+So let's just say first name is uppercase
+
+47:06.040 --> 47:07.840
+and remove the spacing.
+
+47:07.840 --> 47:10.160
+So first name.
+
+47:10.160 --> 47:11.800
+Hey, that's the parameter.
+
+47:12.680 --> 47:13.520
+And then you wanna go to the next parameter.
+
+47:13.520 --> 47:14.360
+So just say comma.
+
+47:16.720 --> 47:19.840
+And then you wanna say string last name.
+
+47:21.080 --> 47:23.360
+You take the first name and the last name.
+
+47:23.360 --> 47:25.880
+Now, we also said that after the parenthesis,
+
+47:25.880 --> 47:27.320
+after you have accepted your parameters,
+
+47:27.320 --> 47:30.760
+you wanna go and create like your curly brackets here.
+
+47:30.760 --> 47:33.480
+I don't know actually if I mentioned that before,
+
+47:33.480 --> 47:38.480
+but every function is either its body or its logic.
+
+47:38.560 --> 47:43.560
+It's either followed by equal graded unsigned,
+
+47:45.000 --> 47:46.600
+which we're gonna talk about later
+
+47:46.600 --> 47:50.200
+or is by curly brackets.
+
+47:50.200 --> 47:52.160
+So we're just gonna use curly brackets.
+
+47:53.480 --> 47:56.000
+Now, what you wanna do here,
+
+47:56.000 --> 47:57.240
+you wanna take the first name
+
+47:57.240 --> 47:59.480
+and add a space to the first name
+
+47:59.480 --> 48:01.080
+and then follow that by the last name.
+
+48:01.080 --> 48:03.760
+So you need to tell Dart
+
+48:03.760 --> 48:05.600
+that that is the data you wanna return.
+
+48:05.600 --> 48:10.600
+And thankfully, there is a keyword called return
+
+48:11.880 --> 48:12.720
+that tells Dart
+
+48:12.720 --> 48:14.440
+that you wanna return some value from a function.
+
+48:14.440 --> 48:16.640
+So then what you're gonna do,
+
+48:16.640 --> 48:19.240
+you're gonna say, I wanna return what?
+
+48:19.240 --> 48:23.760
+The first name and I wanna add a space.
+
+48:23.760 --> 48:28.760
+Single quotes, the space, us, last name, right?
+
+48:28.800 --> 48:32.840
+So, I mean, this is a very simple implementation
+
+48:32.840 --> 48:33.680
+of get full name.
+
+48:33.680 --> 48:38.120
+So, however, there's actually a better way
+
+48:38.120 --> 48:39.480
+of doing this in Dart
+
+48:39.480 --> 48:41.360
+and I'll explain it to you right now.
+
+48:41.360 --> 48:44.040
+And that is by formatting your strings.
+
+48:44.040 --> 48:49.040
+So let's say that you want to basically tell Dart
+
+48:50.560 --> 48:53.560
+kind of like how your result looks like
+
+48:53.560 --> 48:56.000
+and you wanna ask Dart to insert the first name
+
+48:56.040 --> 48:58.760
+and last name into that result for you.
+
+48:59.800 --> 49:01.360
+And that's how you'll do it like this.
+
+49:01.360 --> 49:03.760
+You say, okay, I wanna return a string.
+
+49:03.760 --> 49:06.480
+You know, we could buy the single quotation marks here.
+
+49:06.480 --> 49:08.040
+And you can also do a string in Dart
+
+49:08.040 --> 49:09.120
+with double quotation marks,
+
+49:09.120 --> 49:11.440
+but I'm gonna explain that a little bit later.
+
+49:12.920 --> 49:16.480
+So let's say that you want to return
+
+49:16.480 --> 49:17.720
+the first name in here.
+
+49:17.720 --> 49:19.200
+But if you say first name,
+
+49:21.040 --> 49:23.920
+what's gonna happen here is that it's actually gonna return
+
+49:24.400 --> 49:26.800
+what's gonna happen here is that it's actually gonna take
+
+49:26.800 --> 49:30.360
+this first name as you've written in the string.
+
+49:30.360 --> 49:32.560
+So when you get this return value,
+
+49:32.560 --> 49:35.040
+it's actually gonna say first name,
+
+49:35.040 --> 49:37.440
+not the value that you pass to this.
+
+49:37.440 --> 49:41.280
+I know it may be a little bit difficult to understand
+
+49:41.280 --> 49:43.080
+when I say the value that you pass to this.
+
+49:43.080 --> 49:44.240
+What does it even mean?
+
+49:45.240 --> 49:48.520
+So let's put this actually to test first, okay?
+
+49:48.520 --> 49:52.800
+Go now into this build function,
+
+49:52.800 --> 49:54.640
+as you can see here on line 16.
+
+49:54.640 --> 49:56.360
+Now it may not be on line 16 for you,
+
+49:56.360 --> 49:58.200
+but for me it is at the moment on line 16.
+
+49:58.200 --> 50:02.480
+Just find this class my app stateless widget
+
+50:02.480 --> 50:06.640
+and find this widget build stuff that's written there.
+
+50:06.640 --> 50:09.920
+Create a new line here, okay?
+
+50:09.920 --> 50:14.920
+And just say full name or sorry, say print.
+
+50:16.560 --> 50:20.040
+As I'm writing it here, print.
+
+50:20.040 --> 50:24.360
+And then just say, what do we call our function?
+
+50:24.360 --> 50:25.420
+Get full name.
+
+50:26.600 --> 50:28.120
+See here?
+
+50:28.120 --> 50:29.480
+And it says, okay, what's the first name?
+
+50:29.480 --> 50:34.560
+I'll say quotation marks foo and the last name is bar
+
+50:34.560 --> 50:37.360
+and ended with a semicolon.
+
+50:37.360 --> 50:39.960
+So, and ignore this call for now.
+
+50:39.960 --> 50:42.960
+Sorry, this warning avoid print calls in production code.
+
+50:42.960 --> 50:46.200
+So, okay.
+
+50:46.200 --> 50:48.880
+So now we're calling that function.
+
+50:49.800 --> 50:54.800
+It's, I mean, it's called calling, it's called invoking.
+
+50:54.800 --> 50:55.840
+It may have other names,
+
+50:55.840 --> 50:58.360
+but usually programmers call this calling,
+
+50:58.360 --> 50:59.960
+call the function.
+
+50:59.960 --> 51:02.040
+And these are the parameters
+
+51:02.040 --> 51:04.960
+that you're passing to this function, okay?
+
+51:04.960 --> 51:09.960
+So, I mean, there are two words used for
+
+51:11.240 --> 51:14.280
+in the programming world to explain these parameters,
+
+51:14.280 --> 51:15.520
+like with name.
+
+51:15.520 --> 51:18.040
+And that is called a parameter or an argument.
+
+51:18.040 --> 51:20.880
+I mean, they're used interchangeably.
+
+51:20.880 --> 51:24.200
+The meaning of them is kind of like getting convoluted
+
+51:24.200 --> 51:26.520
+to the point that no one knows which one is which,
+
+51:26.520 --> 51:28.960
+but you could just use parameter or argument
+
+51:28.960 --> 51:30.440
+and everybody would understand what you're saying.
+
+51:30.440 --> 51:32.240
+So, but there's a little bit of a difference,
+
+51:32.240 --> 51:34.480
+which I'm not gonna go into the detail of,
+
+51:34.480 --> 51:36.800
+but if someone just says call this function
+
+51:36.800 --> 51:38.480
+with parameters or arguments,
+
+51:38.480 --> 51:40.800
+you know at least what you're doing, okay?
+
+51:40.800 --> 51:41.640
+Foobar.
+
+51:42.560 --> 51:44.520
+Now we're printing its value.
+
+51:44.520 --> 51:47.000
+All you have to do in order to execute this code
+
+51:47.000 --> 51:52.000
+is press command S and you will see the result outputted here.
+
+51:52.320 --> 51:54.760
+Now, what we did here,
+
+51:58.160 --> 52:03.160
+what we did here was a very key feature in Flutter
+
+52:03.960 --> 52:06.640
+called hot reload.
+
+52:06.640 --> 52:09.280
+As you saw, I didn't execute my code again.
+
+52:09.280 --> 52:11.600
+I didn't press like the run button again.
+
+52:11.600 --> 52:13.200
+I just said save.
+
+52:13.200 --> 52:18.200
+Now, saving in Flutter triggers an action called hot reload.
+
+52:18.240 --> 52:21.680
+Hot reload in Flutter, it's a whole topic of its own,
+
+52:22.960 --> 52:25.760
+which I'm not gonna go so much into detail of,
+
+52:25.760 --> 52:30.600
+but what hot reload does really is it looks for changes
+
+52:34.040 --> 52:37.120
+in your code hierarchy without complicating it too much.
+
+52:37.120 --> 52:41.200
+I'm just trying to phrase my sentence right
+
+52:41.200 --> 52:46.200
+so that it's not too complicated for this chapter.
+
+52:46.240 --> 52:48.480
+It looks for changes that you made to the code
+
+52:48.480 --> 52:52.840
+and executes only those changes, okay?
+
+52:53.880 --> 52:55.920
+And in the process of executing those changes,
+
+52:55.920 --> 53:00.320
+it might execute everything else that is in its path.
+
+53:00.320 --> 53:03.400
+And by doing a save,
+
+53:03.400 --> 53:05.800
+this function gets called somehow magically,
+
+53:05.800 --> 53:08.760
+which I'm not gonna go into right now,
+
+53:08.760 --> 53:12.200
+which in turn then calls or invokes our function
+
+53:12.200 --> 53:13.320
+called get full name,
+
+53:13.320 --> 53:16.680
+and its value will then be passed
+
+53:16.680 --> 53:20.200
+into another function called print, okay?
+
+53:21.800 --> 53:23.520
+I hope that that makes sense.
+
+53:25.240 --> 53:26.280
+And as you can see,
+
+53:26.280 --> 53:28.000
+the result isn't really what we expected.
+
+53:28.000 --> 53:29.960
+It just says first name.
+
+53:29.960 --> 53:33.800
+And that is because here we said return first name.
+
+53:33.800 --> 53:34.640
+And as you can see,
+
+53:34.640 --> 53:37.240
+if you put first name like this inside your string,
+
+53:37.280 --> 53:38.800
+it becomes its own string.
+
+53:38.800 --> 53:41.760
+It has nothing to do with this anymore.
+
+53:41.760 --> 53:44.440
+If you remove these quotation marks, however,
+
+53:45.360 --> 53:48.680
+then it says, oh, first name is this parameter.
+
+53:48.680 --> 53:50.560
+You see, it actually, it highlights it.
+
+53:50.560 --> 53:53.360
+So then if I press Command S on Mac
+
+53:53.360 --> 53:55.400
+or Control S on Linux on Windows,
+
+53:55.400 --> 53:59.160
+you will see full being printed to the screen, okay?
+
+54:00.040 --> 54:05.040
+You can also say last name here and it will say bar, right?
+
+54:05.240 --> 54:08.440
+And also notice that when I'm changing these things,
+
+54:08.440 --> 54:10.880
+it's not executing immediately automatically
+
+54:10.880 --> 54:11.920
+on pressing Command S.
+
+54:11.920 --> 54:13.640
+So just keep that in mind, please.
+
+54:17.720 --> 54:20.080
+So that's for a function.
+
+54:20.080 --> 54:24.120
+But before we move on explaining the basics of a function,
+
+54:24.120 --> 54:29.120
+I wanna also explain a little bit about string formatting.
+
+54:31.760 --> 54:33.960
+And that is we said that we're gonna put first name
+
+54:33.960 --> 54:36.080
+and a last name because this is what we did
+
+54:36.080 --> 54:38.800
+in the beginning, first name plus space plus last name.
+
+54:38.800 --> 54:40.720
+And this wasn't so pretty because it's like
+
+54:40.720 --> 54:43.440
+doing string concatenation in a very old fashioned manner.
+
+54:43.440 --> 54:46.600
+In a very old fashioned manner, yeah.
+
+54:46.600 --> 54:49.320
+I think I said it right the first time.
+
+54:49.320 --> 54:54.000
+But what you wanna do here is to use
+
+54:54.000 --> 54:56.760
+Dart's built-in formatting capabilities.
+
+54:56.760 --> 54:58.480
+And you do that by first saying that, okay,
+
+54:58.480 --> 55:00.920
+I wanna return some sort of a string.
+
+55:00.920 --> 55:05.560
+And I wanna have first name, space, last name.
+
+55:05.560 --> 55:09.840
+But as you saw this earlier, if I Command S or Control S,
+
+55:09.840 --> 55:13.800
+it just returns those strings exactly as I've written them,
+
+55:13.800 --> 55:15.560
+not the parameters.
+
+55:15.560 --> 55:18.720
+What you can do is just to put a dollar before them.
+
+55:18.720 --> 55:20.480
+And you can see their coloring now changes
+
+55:20.480 --> 55:21.840
+depending on a theme that you're using
+
+55:21.840 --> 55:24.240
+or depending on the text editor that you're using.
+
+55:24.240 --> 55:26.800
+If you're using Android Studio,
+
+55:26.800 --> 55:28.600
+it may not color it the same way.
+
+55:28.600 --> 55:30.040
+Or if you're using Visual Studio Code
+
+55:30.040 --> 55:32.840
+with a different theme on a different maybe platform,
+
+55:32.840 --> 55:34.240
+it may not even change the color.
+
+55:34.240 --> 55:36.880
+But for me, at least you can see that the colors change.
+
+55:36.880 --> 55:41.640
+So as to indicate that now I'm not actually returning
+
+55:41.640 --> 55:44.600
+the string exactly as you wrote,
+
+55:44.600 --> 55:48.360
+except returning the parameters that are here.
+
+55:49.360 --> 55:50.840
+So Command S.
+
+55:50.840 --> 55:54.680
+And now you can see that the result is full bar.
+
+55:56.040 --> 55:57.800
+Okay.
+
+55:57.800 --> 56:02.800
+So that is the basics of functions in Dart.
+
+56:03.760 --> 56:06.280
+Before we move on from functions,
+
+56:06.280 --> 56:08.360
+I also wanna explain quickly that
+
+56:09.800 --> 56:12.880
+a function doesn't necessarily have to return anything.
+
+56:12.880 --> 56:16.840
+And that means that you may have a function here
+
+56:16.840 --> 56:20.560
+that wants to just print some data to the screen
+
+56:20.560 --> 56:22.680
+or to here to the debug console.
+
+56:22.680 --> 56:25.560
+And you could just call it print my name
+
+56:26.520 --> 56:30.120
+and parenthesis and curly brackets.
+
+56:30.120 --> 56:32.960
+And as you can see here,
+
+56:32.960 --> 56:34.760
+I can just write the name of the function
+
+56:34.760 --> 56:38.240
+without any data type to be returned.
+
+56:38.240 --> 56:39.840
+But it's a little bit of a convention
+
+56:39.840 --> 56:43.840
+that you actually tell Dart that this is a void function.
+
+56:43.840 --> 56:46.320
+Meaning void is a keyword,
+
+56:46.320 --> 56:47.840
+as we talked about it earlier
+
+56:47.840 --> 56:50.600
+in the beginning of this chapter.
+
+56:51.600 --> 56:54.240
+Void is a keyword telling Dart
+
+56:54.240 --> 56:56.840
+that this is a function that doesn't return anything.
+
+56:56.840 --> 56:58.360
+And as you can see,
+
+56:58.360 --> 57:00.360
+Dart is completely fine with this function
+
+57:00.360 --> 57:01.680
+being completely empty.
+
+57:01.680 --> 57:03.080
+Meaning that, well, yeah,
+
+57:03.080 --> 57:05.120
+you said you are not returning anything.
+
+57:05.120 --> 57:07.280
+You're probably just gonna do some stuff in here.
+
+57:07.280 --> 57:09.760
+So I'm not gonna bother you with some errors saying that,
+
+57:09.760 --> 57:11.280
+oh, you forgot to do something.
+
+57:12.200 --> 57:14.800
+But as soon as you change the return value
+
+57:14.800 --> 57:16.920
+or the return data type of your function
+
+57:16.920 --> 57:18.440
+to, for instance, string,
+
+57:19.400 --> 57:22.920
+then you'll get an error saying that,
+
+57:22.920 --> 57:25.120
+oh, yeah, the body might complete normally
+
+57:25.120 --> 57:27.240
+causing null to be returned, blah, blah.
+
+57:27.240 --> 57:28.640
+You don't have to know exactly what that means.
+
+57:28.640 --> 57:31.000
+But essentially what that means
+
+57:31.000 --> 57:34.440
+is you're telling Dart that you're returning a string,
+
+57:34.440 --> 57:36.160
+but you're not returning anything.
+
+57:36.160 --> 57:41.160
+It's literally looking for the return keyword saying that,
+
+57:41.240 --> 57:42.520
+oh, you missed it.
+
+57:42.520 --> 57:45.120
+So you could silence that error
+
+57:45.120 --> 57:49.400
+by saying return an empty string, a semi-call.
+
+57:51.800 --> 57:56.800
+So I think this pretty much explains the basics
+
+57:56.880 --> 58:01.480
+of functions, to be honest with you.
+
+58:02.920 --> 58:04.720
+There's lots more to learn about functions.
+
+58:04.720 --> 58:05.560
+And as I said,
+
+58:05.560 --> 58:10.080
+functions can also be written using this syntax.
+
+58:10.080 --> 58:13.000
+And this syntax is used
+
+58:13.000 --> 58:15.120
+when your function is very simple
+
+58:15.120 --> 58:18.480
+or in that it doesn't need to break
+
+58:18.480 --> 58:22.520
+into different lines of code by a semi-colon.
+
+58:22.520 --> 58:26.400
+So a function who has a very simple logic,
+
+58:26.400 --> 58:30.920
+you can just skip writing these square brackets,
+
+58:30.920 --> 58:33.480
+no, curly brackets, sorry.
+
+58:33.480 --> 58:37.360
+And you can just say, you see, I will remove this,
+
+58:38.360 --> 58:42.480
+put equal sign, greater than sign,
+
+58:42.480 --> 58:45.360
+remove the closing curly bracket,
+
+58:45.360 --> 58:48.680
+and then you can remove the return statement, and that's it.
+
+58:49.720 --> 58:53.520
+That is a short hand, it's a function shorthand in Dart.
+
+58:53.520 --> 58:58.200
+And you could use it simply to simplify kind of your code.
+
+58:58.200 --> 58:59.320
+Some people may like it,
+
+58:59.320 --> 59:02.680
+some people kind of may be against it,
+
+59:02.680 --> 59:07.440
+just because it kind of splits your code
+
+59:07.440 --> 59:08.760
+into two different styles.
+
+59:08.760 --> 59:11.200
+Some functions are with curly brackets,
+
+59:11.200 --> 59:13.880
+some functions are with this pointer thingy.
+
+59:13.880 --> 59:18.720
+And kind of depends on you and your team, to be honest.
+
+59:20.080 --> 59:23.360
+I know usually from my experience,
+
+59:23.360 --> 59:26.720
+usually we software developers like to follow a convention.
+
+59:26.720 --> 59:31.720
+So in one project, the developers may decide,
+
+59:32.480 --> 59:34.120
+okay, we're just gonna go with this convention.
+
+59:34.120 --> 59:39.120
+And since using curly brackets engulfs the ability
+
+59:40.760 --> 59:45.520
+to have both complicated and simple return statements
+
+59:45.520 --> 59:49.720
+in a function, it's actually preferred as a convention
+
+59:49.720 --> 59:52.480
+than using this syntax simply because this syntax
+
+59:52.480 --> 59:54.280
+doesn't allow you to split your code
+
+59:54.280 --> 59:55.800
+into separate lines of code.
+
+59:55.800 --> 59:58.080
+It has to all be in one statement.
+
+59:58.080 --> 01:00:00.160
+So if that makes any sense.
+
